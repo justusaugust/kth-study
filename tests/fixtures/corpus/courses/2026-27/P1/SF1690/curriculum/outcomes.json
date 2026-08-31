@@ -1,0 +1,19 @@
+[
+  {
+    "id": "outcome:sf1690:model-functions",
+    "courseId": "course:sf1690",
+    "slug": "model-functions",
+    "title": "Model elementary functions",
+    "description": "Use elementary functions to describe and reason about mathematical relationships.",
+    "sourceIds": ["source:sf1690:fixture-curriculum"],
+    "relationships": [
+      {
+        "type": "supports",
+        "from": "outcome:sf1690:model-functions",
+        "to": "concept:sf1690:quadratic-functions"
+      }
+    ],
+    "lastChecked": "2026-08-24",
+    "confidence": "fixture"
+  }
+]

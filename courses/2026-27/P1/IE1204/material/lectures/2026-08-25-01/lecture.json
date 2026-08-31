@@ -1,0 +1,39 @@
+{
+  "id": "lecture:ie1204:2026-08-25-01",
+  "courseId": "course:ie1204",
+  "slug": "2026-08-25-01",
+  "title": "Lecture 1 — digital abstraction and number systems",
+  "date": "2026-08-25",
+  "summary": "Digital systems replace continuous physical values with discrete logic states. Bits, voltage ranges, positional notation, and binary conversion provide the language for representing numbers in hardware.",
+  "conceptIds": [
+    "concept:ie1204:digital-abstraction",
+    "concept:ie1204:positional-number-systems",
+    "concept:ie1204:base-conversion-and-range"
+  ],
+  "sessionId": "session:ie1204:lecture-01",
+  "body": "Digital design assigns symbolic states to ranges of physical voltages. Those states become bits, and positional notation gives each bit a power-of-two weight. Weighted sums convert binary to decimal; repeated division converts decimal integers to binary. Bit width then determines how many distinct unsigned values a register can store.",
+  "sourceIds": [
+    "source:ie1204:lecture-1-introduction",
+    "source:ie1204:lecture-1-digital-design",
+    "source:ie1204:lecture-1-recordings"
+  ],
+  "lastChecked": "2026-08-30",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-25-01",
+      "to": "concept:ie1204:digital-abstraction"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-25-01",
+      "to": "concept:ie1204:positional-number-systems"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-25-01",
+      "to": "concept:ie1204:base-conversion-and-range"
+    }
+  ]
+}

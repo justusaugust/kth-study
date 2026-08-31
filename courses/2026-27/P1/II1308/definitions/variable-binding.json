@@ -1,0 +1,14 @@
+{
+  "id": "definition:ii1308:variable-binding",
+  "courseId": "course:ii1308",
+  "slug": "variable-binding",
+  "term": "Variable binding",
+  "statement": "In Python, assignment binds a variable name to the value produced by an expression.",
+  "notation": "name = expression",
+  "interpretation": "The value carries its data type, and a later assignment can bind the same name to a different value or type.",
+  "conceptIds": ["concept:ii1308:variables-values-and-types"],
+  "sourceIds": ["source:ii1308:python-variables"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "outcome:ii1308:command-line",
+    "courseId": "course:ii1308",
+    "slug": "command-line",
+    "title": "Work with files from the command line",
+    "description": "Use a command-line interpreter to complete simple tasks involving storage units, folders, paths, and files.",
+    "sourceIds": ["source:ii1308:official-course-page", "source:ii1308:course-memo"],
+    "relationships": [],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  },
+  {
+    "id": "outcome:ii1308:programming-concepts",
+    "courseId": "course:ii1308",
+    "slug": "programming-concepts",
+    "title": "Explain and use basic programming concepts",
+    "description": "Use variables, data types, expressions, input and output, and the control structures for sequence, selection, and iteration.",
+    "sourceIds": ["source:ii1308:official-course-page", "source:ii1308:course-memo"],
+    "relationships": [
+      {
+        "type": "supports",
+        "from": "outcome:ii1308:programming-concepts",
+        "to": "concept:ii1308:sequence-selection-iteration"
+      },
+      {
+        "type": "supports",
+        "from": "outcome:ii1308:programming-concepts",
+        "to": "concept:ii1308:variables-values-and-types"
+      }
+    ],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  },
+  {
+    "id": "outcome:ii1308:simple-programs",
+    "courseId": "course:ii1308",
+    "slug": "simple-programs",
+    "title": "Write and run simple programs",
+    "description": "Compose, execute, and inspect small programs using the core programming constructs introduced in the course.",
+    "sourceIds": ["source:ii1308:official-course-page", "source:ii1308:course-memo"],
+    "relationships": [],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  }
+]

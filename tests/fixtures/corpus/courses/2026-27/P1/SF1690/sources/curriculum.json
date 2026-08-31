@@ -1,0 +1,10 @@
+{
+  "id": "source:sf1690:fixture-curriculum",
+  "courseId": "course:sf1690",
+  "title": "Fixture curriculum source",
+  "kind": "fixture",
+  "url": "https://example.test/sf1690-curriculum",
+  "locator": "Fixture only; not real course evidence",
+  "lastChecked": "2026-08-24",
+  "confidence": "fixture"
+}

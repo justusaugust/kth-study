@@ -1,0 +1,12 @@
+{
+  "id": "source:ii1308:characters-and-text",
+  "courseId": "course:ii1308",
+  "title": "Module A — characters and text",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/63863/files/10531203",
+  "originalPath": "../material/lectures/2026-08-25-01/Characters_and_text_en.pdf",
+  "extractedTextPath": "../material/lectures/2026-08-25-01/Characters_and_text_en.txt",
+  "locator": "Canvas Module A; Unicode character codes, typefaces and fonts, strings, indexing, slicing, and length",
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

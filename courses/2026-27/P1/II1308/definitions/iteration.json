@@ -1,0 +1,14 @@
+{
+  "id": "definition:ii1308:iteration",
+  "courseId": "course:ii1308",
+  "slug": "iteration",
+  "term": "Iteration",
+  "statement": "Iteration executes the same instruction sequence repeatedly.",
+  "notation": "while condition: … or for item in sequence: …",
+  "interpretation": "A while-loop is governed by a condition; a for-loop consumes elements from a sequence.",
+  "conceptIds": ["concept:ii1308:sequence-selection-iteration"],
+  "sourceIds": ["source:ii1308:concepts-of-computation", "source:ii1308:python-control"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "explainer:sf1690:ellipse-distance-sum",
+  "atlasOrder": 5,
+  "kind": "conic-section",
+  "variant": "ellipse-distance-sum",
+  "courseId": "course:sf1690",
+  "slug": "ellipse-distance-sum",
+  "conceptIds": ["concept:sf1690:ellipses-and-hyperbolas"],
+  "title": "Ellipse from a constant distance sum",
+  "caption": "Change the semiaxes and move the point while the two focal distances continue to sum to $2a$.",
+  "accessibleSummary": "An interactive ellipse showing its two foci, principal axes, a movable point P, and the constant sum of its focal distances.",
+  "sourceIds": ["source:sf1690:adams-essex-calculus"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    { "type": "visualises", "from": "explainer:sf1690:ellipse-distance-sum", "to": "concept:sf1690:ellipses-and-hyperbolas" }
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

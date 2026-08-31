@@ -1,0 +1,614 @@
+{
+  "sessions": [
+    {
+      "id": "session:sf1690:lecture-01",
+      "courseId": "course:sf1690",
+      "slug": "lecture-01",
+      "kind": "lecture",
+      "sequence": 1,
+      "title": "Lecture 1 · Real numbers, coordinates, and lines",
+      "date": "2026-08-24",
+      "week": 35,
+      "lectureId": "lecture:sf1690:2026-08-24-01",
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-01",
+      "courseId": "course:sf1690",
+      "slug": "exercise-01",
+      "kind": "exercise",
+      "sequence": 2,
+      "title": "Exercise session 1",
+      "week": 35,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-01"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-02",
+      "courseId": "course:sf1690",
+      "slug": "lecture-02",
+      "kind": "lecture",
+      "sequence": 3,
+      "title": "Lecture 2 · Lines, circles, and conic sections",
+      "date": "2026-08-26",
+      "week": 35,
+      "lectureId": "lecture:sf1690:2026-08-26-02",
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:lecture-2-board-photos",
+        "source:sf1690:adams-essex-calculus"
+      ],
+      "lastChecked": "2026-08-26",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-02",
+      "courseId": "course:sf1690",
+      "slug": "exercise-02",
+      "kind": "exercise",
+      "sequence": 4,
+      "title": "Exercise session 2",
+      "week": 35,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-02"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-03",
+      "courseId": "course:sf1690",
+      "slug": "lecture-03",
+      "kind": "lecture",
+      "sequence": 5,
+      "title": "Lecture 3 · Functions, domains, and symmetry",
+      "date": "2026-08-27",
+      "week": 35,
+      "lectureId": "lecture:sf1690:2026-08-27-03",
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:adams-essex-calculus"
+      ],
+      "lastChecked": "2026-08-27",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-03",
+      "courseId": "course:sf1690",
+      "slug": "exercise-03",
+      "kind": "exercise",
+      "sequence": 6,
+      "title": "Exercise session 3",
+      "week": 35,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-03"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-04",
+      "courseId": "course:sf1690",
+      "slug": "lecture-04",
+      "kind": "lecture",
+      "sequence": 7,
+      "title": "Lecture 4 · Combining functions",
+      "date": "2026-08-28",
+      "week": 35,
+      "lectureId": "lecture:sf1690:2026-08-28-04",
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:adams-essex-calculus"
+      ],
+      "lastChecked": "2026-08-28",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-04",
+      "courseId": "course:sf1690",
+      "slug": "exercise-04",
+      "kind": "exercise",
+      "sequence": 8,
+      "title": "Exercise session 4",
+      "week": 36,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-04"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-05",
+      "courseId": "course:sf1690",
+      "slug": "lecture-05",
+      "kind": "lecture",
+      "sequence": 9,
+      "title": "Lecture 5 · Polynomials and rational functions",
+      "week": 37,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-05",
+      "courseId": "course:sf1690",
+      "slug": "exercise-05",
+      "kind": "exercise",
+      "sequence": 10,
+      "title": "Exercise session 5",
+      "week": 37,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-05"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-06",
+      "courseId": "course:sf1690",
+      "slug": "lecture-06",
+      "kind": "lecture",
+      "sequence": 11,
+      "title": "Lecture 6 · Trigonometric functions",
+      "week": 37,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-06",
+      "courseId": "course:sf1690",
+      "slug": "exercise-06",
+      "kind": "exercise",
+      "sequence": 12,
+      "title": "Exercise session 6",
+      "week": 37,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-06"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-07",
+      "courseId": "course:sf1690",
+      "slug": "lecture-07",
+      "kind": "lecture",
+      "sequence": 13,
+      "title": "Lecture 7 · Inverse functions",
+      "week": 37,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:checkpoint-01",
+      "courseId": "course:sf1690",
+      "slug": "checkpoint-01",
+      "kind": "checkpoint",
+      "sequence": 14,
+      "title": "Mini-exam · Lectures 1–4",
+      "week": 37,
+      "courseworkIds": [
+        "coursework:sf1690:mini-exam-01"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-07",
+      "courseId": "course:sf1690",
+      "slug": "exercise-07",
+      "kind": "exercise",
+      "sequence": 15,
+      "title": "Exercise session 7",
+      "week": 37,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-07"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-08",
+      "courseId": "course:sf1690",
+      "slug": "lecture-08",
+      "kind": "lecture",
+      "sequence": 16,
+      "title": "Lecture 8 · Inverse trigonometric functions",
+      "week": 38,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-08",
+      "courseId": "course:sf1690",
+      "slug": "exercise-08",
+      "kind": "exercise",
+      "sequence": 17,
+      "title": "Exercise session 8",
+      "week": 38,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-08"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-09",
+      "courseId": "course:sf1690",
+      "slug": "lecture-09",
+      "kind": "lecture",
+      "sequence": 18,
+      "title": "Lecture 9 · Exponential, logarithmic, and hyperbolic functions",
+      "week": 38,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-09",
+      "courseId": "course:sf1690",
+      "slug": "exercise-09",
+      "kind": "exercise",
+      "sequence": 19,
+      "title": "Exercise session 9",
+      "week": 38,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-09"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-10",
+      "courseId": "course:sf1690",
+      "slug": "lecture-10",
+      "kind": "lecture",
+      "sequence": 20,
+      "title": "Lecture 10 · Basics of complex numbers",
+      "week": 38,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-10",
+      "courseId": "course:sf1690",
+      "slug": "exercise-10",
+      "kind": "exercise",
+      "sequence": 21,
+      "title": "Exercise session 10",
+      "week": 38,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-10"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-11",
+      "courseId": "course:sf1690",
+      "slug": "lecture-11",
+      "kind": "lecture",
+      "sequence": 22,
+      "title": "Lecture 11 · De Moivre’s theorem and complex roots",
+      "week": 39,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-11",
+      "courseId": "course:sf1690",
+      "slug": "exercise-11",
+      "kind": "exercise",
+      "sequence": 23,
+      "title": "Exercise session 11",
+      "week": 39,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-11"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-12",
+      "courseId": "course:sf1690",
+      "slug": "lecture-12",
+      "kind": "lecture",
+      "sequence": 24,
+      "title": "Lecture 12 · Vectors",
+      "week": 39,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:checkpoint-02",
+      "courseId": "course:sf1690",
+      "slug": "checkpoint-02",
+      "kind": "checkpoint",
+      "sequence": 25,
+      "title": "Mini-exam · Lectures 5–10",
+      "week": 39,
+      "courseworkIds": [
+        "coursework:sf1690:mini-exam-02"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-12",
+      "courseId": "course:sf1690",
+      "slug": "exercise-12",
+      "kind": "exercise",
+      "sequence": 26,
+      "title": "Exercise session 12",
+      "week": 39,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-12"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-13",
+      "courseId": "course:sf1690",
+      "slug": "lecture-13",
+      "kind": "lecture",
+      "sequence": 27,
+      "title": "Lecture 13 · Dot product and orthogonality",
+      "week": 40,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-13",
+      "courseId": "course:sf1690",
+      "slug": "exercise-13",
+      "kind": "exercise",
+      "sequence": 28,
+      "title": "Exercise session 13",
+      "week": 40,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-13"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-14",
+      "courseId": "course:sf1690",
+      "slug": "lecture-14",
+      "kind": "lecture",
+      "sequence": 29,
+      "title": "Lecture 14 · Vector equations of lines and planes",
+      "week": 40,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-14",
+      "courseId": "course:sf1690",
+      "slug": "exercise-14",
+      "kind": "exercise",
+      "sequence": 30,
+      "title": "Exercise session 14",
+      "week": 40,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-14"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-15",
+      "courseId": "course:sf1690",
+      "slug": "lecture-15",
+      "kind": "lecture",
+      "sequence": 31,
+      "title": "Lecture 15 · Cross products",
+      "week": 41,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-15",
+      "courseId": "course:sf1690",
+      "slug": "exercise-15",
+      "kind": "exercise",
+      "sequence": 32,
+      "title": "Exercise session 15",
+      "week": 41,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-15"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:lecture-16",
+      "courseId": "course:sf1690",
+      "slug": "lecture-16",
+      "kind": "lecture",
+      "sequence": 33,
+      "title": "Lecture 16 · Course review",
+      "week": 41,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:checkpoint-03",
+      "courseId": "course:sf1690",
+      "slug": "checkpoint-03",
+      "kind": "checkpoint",
+      "sequence": 34,
+      "title": "Mini-exam · Lectures 11–14",
+      "week": 41,
+      "courseworkIds": [
+        "coursework:sf1690:mini-exam-03"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-16",
+      "courseId": "course:sf1690",
+      "slug": "exercise-16",
+      "kind": "exercise",
+      "sequence": 35,
+      "title": "Exercise session 16 · Course review",
+      "week": 41,
+      "courseworkIds": [
+        "coursework:sf1690:exercise-16"
+      ],
+      "sourceIds": [
+        "source:sf1690:canvas-course-plan-26"
+      ],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

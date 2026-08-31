@@ -1,0 +1,105 @@
+{
+  "id": "course:ie1204",
+  "code": "IE1204",
+  "slug": "ie1204",
+  "title": "Digital Design",
+  "academicYear": "2026-27",
+  "period": "P1",
+  "summary": "A 7.5-credit course in the abstractions and building blocks of digital systems: number systems, Boolean logic, combinational and sequential circuits, CMOS, and computer hardware design.",
+  "credits": 7.5,
+  "language": "English",
+  "startDate": "2026-08-24",
+  "endDate": "2026-10-23",
+  "links": [
+    {
+      "kind": "kth",
+      "label": "Official KTH course page",
+      "url": "https://www.kth.se/student/kurser/kurs/IE1204?l=en",
+      "sourceId": "source:ie1204:official-course-page"
+    },
+    {
+      "kind": "course-memo",
+      "label": "Autumn 2026 course memo",
+      "url": "https://www.kth.se/kurs-pm/IE1204/IE120420262-10786-10787",
+      "sourceId": "source:ie1204:official-course-page"
+    },
+    {
+      "kind": "canvas",
+      "label": "Canvas course room",
+      "url": "https://canvas.kth.se/courses/63848",
+      "sourceId": "source:ie1204:canvas-2026-material-map"
+    }
+  ],
+  "outcomeIds": [
+    "outcome:ie1204:number-systems",
+    "outcome:ie1204:boolean-logic",
+    "outcome:ie1204:analyse-circuits",
+    "outcome:ie1204:design-digital-systems"
+  ],
+  "conceptIds": [
+    "concept:ie1204:digital-abstraction",
+    "concept:ie1204:positional-number-systems",
+    "concept:ie1204:base-conversion-and-range",
+    "concept:ie1204:signed-integer-encodings",
+    "concept:ie1204:fixed-width-arithmetic-and-overflow",
+    "concept:ie1204:logic-gates-and-truth-tables",
+    "concept:ie1204:cmos-transistor-networks",
+    "concept:ie1204:cmos-power-consumption"
+  ],
+  "sourceIds": [
+    "source:ie1204:official-course-page",
+    "source:ie1204:lecture-1-introduction",
+    "source:ie1204:lecture-1-digital-design",
+    "source:ie1204:lecture-2-signed-arithmetic",
+    "source:ie1204:lecture-3-cmos-logic",
+    "source:ie1204:lecture-1-recordings",
+    "source:ie1204:lecture-2-recordings",
+    "source:ie1204:canvas-2026-material-map",
+    "source:ie1204:weekly-planner-2026",
+    "source:ie1204:exercise-sets-2026"
+  ],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:digital-abstraction"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:positional-number-systems"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:base-conversion-and-range"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:signed-integer-encodings"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:fixed-width-arithmetic-and-overflow"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:logic-gates-and-truth-tables"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:cmos-transistor-networks"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:cmos-power-consumption"
+    }
+  ]
+}

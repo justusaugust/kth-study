@@ -1,0 +1,20 @@
+{
+  "name": "kth-study",
+  "interface": {
+    "displayName": "KTH Study"
+  },
+  "plugins": [
+    {
+      "name": "kth-study",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kth-study"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    }
+  ]
+}

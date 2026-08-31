@@ -1,0 +1,27 @@
+{
+  "id": "explainer:sf1690:function-arithmetic-domain-lab",
+  "atlasOrder": 18,
+  "courseId": "course:sf1690",
+  "slug": "function-arithmetic-domain-lab",
+  "conceptIds": [
+    "concept:sf1690:function-arithmetic-and-domains"
+  ],
+  "title": "Combine two functions at one input",
+  "caption": "Switch the operation and move the shared input; the quotient exposes the extra domain restriction at a zero denominator.",
+  "accessibleSummary": "An interactive comparison of the sum, difference, product, and quotient of square-root functions, including live values and their shared domains.",
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "evidenceStatus": "curriculum",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:function-arithmetic-domain-lab",
+      "to": "concept:sf1690:function-arithmetic-and-domains"
+    }
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "kind": "systems-diagram",
+  "variant": "function-arithmetic"
+}

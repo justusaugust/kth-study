@@ -1,0 +1,1084 @@
+/* ---------------------------------------------------------------------------
+   Course compendium — warm paper, editorial register, annotated in pastel.
+   The page is open canvas: no wrapping field, structure from space and
+   hairlines. Five plate colors carry meaning — slate teaches (lectures,
+   current week), sage practises (exercises), sand holds material (readings,
+   labs, folders), clay examines (checkpoints), lilac reflects (review).
+   Blue stays annotation ink: links, verified shares, the current numeral.
+--------------------------------------------------------------------------- */
+
+.course-dossier {
+  width: min(100%, 72rem);
+  /* Clearance for the fixed reading-position instrument. */
+  padding-bottom: var(--space-24);
+}
+
+.course-dossier section,
+.course-archive,
+.course-concepts {
+  margin-top: clamp(var(--space-20), 9vw, 120px);
+}
+
+/* Section headings: quiet kicker with a trailing dashed rule, display title. */
+
+.course-section-heading {
+  margin-bottom: var(--space-8);
+}
+
+/* Folio numbering: each section kicker carries its number in the manual. */
+
+.course-dossier {
+  counter-reset: folio;
+}
+
+.course-section-heading p {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-2);
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  font-weight: 500;
+}
+
+.course-section-heading p::before {
+  counter-increment: folio;
+  content: counter(folio, decimal-leading-zero);
+  color: var(--ink-muted);
+  font-family: var(--font-display);
+  font-weight: 590;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.course-section-heading p::after {
+  content: "";
+  flex: 1;
+  max-width: 150px;
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.course-section-heading h2 {
+  margin: 0;
+  font-size: var(--text-section);
+  font-weight: 570;
+  letter-spacing: -0.018em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* Cover ------------------------------------------------------------------- */
+
+.course-passport {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(15.5rem, auto);
+  gap: var(--space-8) clamp(var(--space-10), 6vw, var(--space-20));
+  align-items: start;
+}
+
+.course-passport__identity h1 {
+  max-width: 16ch;
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-display);
+  font-weight: 570;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-wrap: balance;
+}
+
+.course-code {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--slate);
+  box-shadow: inset 0 0 0 1px var(--slate-line);
+  color: var(--slate-ink);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 590;
+  letter-spacing: 0.015em;
+}
+
+/* Margin metadata: publication-style facts set as type, no container. */
+
+.course-margin-data {
+  display: grid;
+  align-content: start;
+  margin: var(--space-2) 0 0;
+}
+
+.course-margin-data div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: baseline;
+  min-width: 0;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.course-margin-data div:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.course-margin-data dt {
+  color: var(--ink-tertiary);
+  font-size: 0.74rem;
+  font-weight: 530;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.course-margin-data dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 560;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.008em;
+  line-height: 1.5;
+}
+
+/* A generated editorial still life, with one small construction drawn over
+   the print rather than a diagram assembled from interface primitives. */
+
+.course-artifact {
+  grid-column: 1 / -1;
+  margin: var(--space-4) 0 0;
+}
+
+.course-artwork {
+  position: relative;
+  aspect-ratio: 2100 / 749;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.course-artwork img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.course-artwork__overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.82;
+}
+
+.course-artwork__overlay path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.course-artwork__overlay circle {
+  fill: var(--accent);
+  stroke: var(--canvas);
+  stroke-width: 8;
+}
+
+:root[data-theme="dark"] .course-artwork img {
+  filter: brightness(0.82) contrast(1.08);
+}
+
+@media (max-width: 640px) {
+  .course-artifact {
+    margin-top: var(--space-2);
+  }
+
+  .course-artwork {
+    aspect-ratio: 16 / 7;
+    width: calc(100% + 16px);
+    max-width: none;
+    margin-left: -8px;
+  }
+}
+
+.course-artifact figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  max-width: 62ch;
+  margin-top: var(--space-3);
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  line-height: 1.5;
+}
+
+.course-artifact__folio {
+  flex: 0 0 auto;
+  color: var(--ink-secondary);
+  font-family: var(--font-display);
+  font-weight: 590;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+.course-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-6);
+  margin-top: var(--space-5);
+}
+
+.course-source-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--ink-secondary);
+  font-size: 0.92rem;
+  font-weight: 520;
+  text-decoration: none;
+}
+
+.course-link-arrow {
+  margin-left: 0.3em;
+  color: var(--ink-tertiary);
+}
+
+@media (hover: hover) {
+  .course-source-links a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: auto;
+  }
+}
+
+
+/* Assessment band --------------------------------------------------------- */
+
+.assessment-band {
+  display: flex;
+  width: 100%;
+  min-height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--sheet-inset);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+.assessment-band__segment {
+  flex: var(--share) 1 0;
+  background: color-mix(in oklab, var(--accent) 62%, var(--canvas));
+}
+
+.assessment-band__segment + .assessment-band__segment {
+  box-shadow: -3px 0 0 var(--canvas);
+}
+
+.assessment-band__segment--unverified {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--rule-strong) 0 3px,
+    var(--sheet-inset) 3px 8px
+  );
+}
+
+.assessment-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assessment-list li {
+  display: grid;
+  grid-template-columns: minmax(3.5rem, auto) minmax(0, 1fr) auto;
+  gap: var(--space-1) var(--space-4);
+  align-items: baseline;
+}
+
+.assessment-list strong {
+  font-family: var(--font-display);
+  font-weight: 610;
+  font-variant-numeric: tabular-nums;
+}
+
+.assessment-list li > span:last-of-type {
+  color: var(--ink-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.assessment-list time {
+  grid-column: 2 / -1;
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+}
+
+.course-empty-note {
+  max-width: 50ch;
+  margin: 0;
+  color: var(--ink-secondary);
+}
+
+/* Course map --------------------------------------------------------------- */
+
+.course-map__rows {
+  display: grid;
+  gap: var(--space-10);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-map__row {
+  display: grid;
+  grid-template-columns: var(--register-w) minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.course-map__index {
+  color: var(--ink-muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 590;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+.course-map__outcome h3 {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 1.14rem;
+  font-weight: 580;
+  letter-spacing: -0.012em;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.course-map__supporting-note {
+  max-width: 48ch;
+  margin: var(--space-2) 0 0;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+}
+
+.outcome-disclosure {
+  margin-top: var(--space-1);
+}
+
+.outcome-disclosure__toggle {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: var(--text-label);
+  font-weight: 540;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .outcome-disclosure__toggle:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+    text-underline-position: from-font;
+  }
+}
+
+.outcome-disclosure__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+}
+
+.outcome-disclosure__panel > div {
+  overflow: hidden;
+}
+
+.outcome-disclosure__panel p {
+  max-width: 52ch;
+  margin: 0 0 var(--space-3);
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.outcome-disclosure__panel[data-open] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .outcome-disclosure__panel {
+    transition:
+      grid-template-rows var(--motion-structural) ease-out,
+      visibility var(--motion-structural) ease-out;
+  }
+}
+
+.course-map__label {
+  margin: var(--space-4) 0 0;
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  font-weight: 500;
+}
+
+.course-map__concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-map__concepts a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 var(--space-4);
+  border-radius: 9px;
+  background: var(--sage);
+  box-shadow: inset 0 0 0 1px var(--sage-line);
+  color: var(--sage-ink);
+  font-size: 0.9rem;
+  font-weight: 540;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .course-map__concepts a:hover {
+    background: var(--sheet-raised);
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .course-map__concepts a {
+    transition:
+      background-color var(--motion-micro) ease-out,
+      color var(--motion-micro) ease-out;
+  }
+}
+
+.course-map__concepts li[data-evidence="supplemental"] a {
+  color: var(--ink-secondary);
+  background: transparent;
+  box-shadow: none;
+  border: 1px dashed var(--rule-strong);
+}
+
+/* Week ledger — the centerpiece --------------------------------------------- */
+
+.week-ledger__weeks {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.week-ledger__week {
+  display: grid;
+  grid-template-columns: var(--register-w) minmax(0, 1fr);
+  gap: var(--space-4) var(--space-8);
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--rule-soft);
+  scroll-margin-top: var(--space-16);
+}
+
+.week-ledger__week:first-child {
+  border-top: 0;
+}
+
+/* The current teaching week is one coloured interruption in the register —
+   a 2px annotation rule and a marked numeral, never another panel. */
+.week-ledger__week[data-current] {
+  border-top: 2px solid var(--accent);
+}
+
+.week-ledger__register {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.week-ledger__register-word {
+  color: var(--ink-tertiary);
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  font-weight: 520;
+  line-height: 1.3;
+}
+
+.week-ledger__now {
+  align-self: start;
+  margin-top: var(--space-1);
+  color: var(--accent);
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  font-weight: 560;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.week-ledger__register-number {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 590;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.week-ledger__week[data-current] .week-ledger__register-number {
+  color: var(--accent);
+}
+
+/* One continuous timeline rule runs down the entry column. */
+.week-ledger__entries {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0 0 0 var(--space-4);
+  list-style: none;
+  border-left: 1px solid var(--rule);
+}
+
+.week-ledger__week[data-current] .week-ledger__entries {
+  border-left-color: color-mix(in oklab, var(--accent) 45%, var(--rule));
+}
+
+.ledger-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Kind labels: the compact pastel vocabulary. One quiet plate per entry. */
+
+.ledger-entry__mark {
+  display: none;
+}
+
+.ledger-entry__kind {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: 2.5px 9px;
+  border-radius: 6px;
+  background: var(--slate);
+  color: var(--slate-ink);
+  font-size: 0.72rem;
+  font-weight: 540;
+  letter-spacing: 0.005em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.ledger-entry[data-kind="exercise"] .ledger-entry__kind {
+  background: var(--sage);
+  color: var(--sage-ink);
+}
+
+.ledger-entry[data-kind="reading"] .ledger-entry__kind,
+.ledger-entry[data-kind="laboratory"] .ledger-entry__kind,
+.ledger-entry[data-kind="seminar"] .ledger-entry__kind {
+  background: var(--sand);
+  color: var(--sand-ink);
+}
+
+.ledger-entry[data-kind="checkpoint"] .ledger-entry__kind,
+.ledger-entry[data-kind="mini-exam"] .ledger-entry__kind,
+.ledger-entry[data-kind="quiz"] .ledger-entry__kind {
+  background: var(--clay);
+  color: var(--clay-ink);
+}
+
+.ledger-entry[data-kind="review"] .ledger-entry__kind {
+  background: var(--lilac);
+  color: var(--lilac-ink);
+}
+
+.ledger-entry[data-entity="assessment"] .ledger-entry__kind {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.ledger-entry[data-availability="upcoming"],
+.ledger-entry[data-availability="unavailable"] {
+  opacity: 0.55;
+}
+
+.ledger-entry[data-availability="upcoming"] .ledger-entry__kind,
+.ledger-entry[data-availability="unavailable"] .ledger-entry__kind {
+  background: var(--surface-inset-deep);
+  color: var(--ink-secondary);
+}
+
+.ledger-entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+
+.ledger-entry__head h4 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 570;
+  letter-spacing: -0.008em;
+  line-height: 1.35;
+}
+
+.ledger-entry__head a {
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .ledger-entry__head a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: auto;
+  }
+}
+
+.ledger-entry__head a:focus-visible {
+  color: var(--accent);
+}
+
+.ledger-entry__head time {
+  margin-left: auto;
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ledger-work {
+  margin-top: var(--space-2);
+}
+
+.ledger-work__note {
+  max-width: 56ch;
+  margin: 0;
+  color: var(--ink-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.ledger-work__note span[data-requirement] {
+  font-weight: 560;
+}
+
+.ledger-work__note span[data-requirement="required"],
+.ledger-work__note span[data-requirement="scheduled"] {
+  color: var(--accent);
+}
+
+.ledger-work__materials {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-tertiary);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+/* Lecture archive and concept register ------------------------------------- */
+
+.course-archive .lecture-list,
+.course-concepts .entity-list {
+  margin-top: 0;
+}
+
+.course-concepts .entity-list a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+/* Source colophon: modular object 3, manila folders on a shelf -------------- */
+
+.course-sources .course-section-heading h2 {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.course-sources__shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.source-folder__button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 44px;
+  padding: var(--space-3) var(--space-2);
+  border: 0;
+  border-radius: var(--radius-figure);
+  background: transparent;
+  cursor: pointer;
+  text-align: start;
+}
+
+.source-folder__object {
+  position: relative;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 46px;
+  perspective: 260px;
+}
+
+.source-folder__object::before {
+  content: "";
+  position: absolute;
+  inset: 4px 2px 0;
+  border-radius: 6px 8px 6px 6px;
+  background: var(--sand);
+  box-shadow: inset 0 0 0 1px var(--sand-line);
+}
+
+.source-folder__card {
+  position: absolute;
+  inset: 8px 8px 6px;
+  border-radius: 4px;
+  background: var(--sheet-raised);
+  box-shadow: inset 0 0 0 1px var(--rule-strong);
+}
+
+.source-folder__card:nth-child(2) {
+  inset: 6px 11px 6px 12px;
+}
+
+.source-folder__flap {
+  position: absolute;
+  inset: 14px 2px 0;
+  border-radius: 5px 5px 6px 6px;
+  background: var(--sand);
+  box-shadow: inset 0 0 0 1px var(--sand-line);
+  transform-origin: bottom center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .source-folder__card,
+  .source-folder__flap {
+    transition: transform var(--motion-micro) ease-out;
+  }
+}
+
+@media (hover: hover) {
+  .source-folder:not([data-open]) .source-folder__button:hover
+    .source-folder__card:first-child {
+    transform: translateY(-3px) rotate(-4deg);
+  }
+
+  .source-folder:not([data-open]) .source-folder__button:hover
+    .source-folder__card:nth-child(2) {
+    transform: translateY(-5px) rotate(3deg);
+  }
+
+  .source-folder__button:hover .source-folder__tab strong {
+    color: var(--accent);
+  }
+}
+
+.source-folder[data-open] .source-folder__flap {
+  transform: rotateX(-32deg);
+}
+
+.source-folder[data-open] .source-folder__card:first-child {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.source-folder[data-open] .source-folder__card:nth-child(2) {
+  transform: translateY(-6px) rotate(2deg);
+}
+
+.source-folder__tab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.source-folder__tab strong {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 590;
+  letter-spacing: -0.008em;
+  line-height: 1.3;
+}
+
+.source-folder__meta {
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.source-folder__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+}
+
+.source-folder__panel > div {
+  overflow: hidden;
+}
+
+.source-folder__panel[data-open] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .source-folder__panel {
+    transition:
+      grid-template-rows var(--motion-structural) ease-out,
+      visibility var(--motion-structural) ease-out;
+  }
+}
+
+.source-folder__panel ul {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-2);
+  list-style: none;
+}
+
+.source-folder__panel li {
+  position: relative;
+  display: grid;
+  gap: var(--space-1);
+}
+
+.source-folder__panel a,
+.source-folder__panel li strong {
+  font-size: 0.94rem;
+  font-weight: 540;
+  line-height: 1.35;
+}
+
+.source-folder__panel a {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  padding: var(--space-2);
+  border-radius: var(--radius-control);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: auto;
+}
+
+.source-folder__panel a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.source-folder__panel a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.source-folder__panel li:has(a) p,
+.source-folder__panel li:has(a) time {
+  pointer-events: none;
+}
+
+.source-folder__panel p,
+.source-folder__panel time {
+  margin: 0;
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  line-height: 1.45;
+}
+
+/* Reading-position instrument: bare type, bottom-left. Open, it is a
+   full typographic contents layer set directly on the page canvas. */
+
+.reading-position {
+  position: fixed;
+  bottom: max(var(--space-4), env(safe-area-inset-bottom));
+  right: var(--page-margin);
+  z-index: var(--layer-float);
+}
+
+.reading-position__toggle {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  justify-content: flex-end;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: 12px;
+  background: var(--sheet-raised);
+  box-shadow: var(--shadow-float);
+  cursor: pointer;
+  text-align: start;
+}
+
+/* The open layer carries the same label large; hide the collapsed line. */
+.reading-position[data-open] .reading-position__toggle {
+  visibility: hidden;
+}
+
+.reading-position__label {
+  color: var(--ink-tertiary);
+  font-size: 0.8rem;
+  font-weight: 540;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: min(14rem, calc(100vw - 2 * var(--page-margin)));
+}
+
+@media (hover: hover) {
+  .reading-position__toggle:hover .reading-position__label {
+    color: var(--ink);
+  }
+}
+
+.reading-position__panel {
+  position: fixed;
+  inset: 0;
+  outline: none;
+  z-index: var(--layer-popover);
+  overflow-y: auto;
+  padding: clamp(var(--space-10), 12vh, var(--space-24)) var(--page-margin)
+    var(--space-16);
+  background: var(--canvas);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reading-position__panel {
+    animation: reading-position-reveal var(--motion-structural) ease-out;
+  }
+}
+
+@keyframes reading-position-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.reading-position__kicker {
+  margin: 0 0 var(--space-8);
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  font-weight: 500;
+}
+
+.reading-position__panel ol {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reading-position__panel button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 540;
+  letter-spacing: -0.014em;
+  line-height: 1.2;
+  cursor: pointer;
+  text-align: start;
+}
+
+/* Active section: weight, ink, and one short accent mark — never a border. */
+.reading-position__panel button[aria-current] {
+  color: var(--ink);
+  font-weight: 610;
+}
+
+.reading-position__panel button[aria-current]::before {
+  content: "";
+  width: 1.1ch;
+  height: 2px;
+  margin-right: var(--space-3);
+  background: var(--accent);
+}
+
+@media (hover: hover) {
+  .reading-position__panel button:hover {
+    color: var(--ink);
+  }
+}
+
+.reading-position__week {
+  margin-top: var(--space-6);
+}
+
+.reading-position__week button {
+  color: var(--accent);
+  font-size: 1.05rem;
+  font-weight: 560;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Responsive ---------------------------------------------------------------- */
+
+@media (max-width: 840px) {
+  .course-passport {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .course-map__row {
+    grid-template-columns: var(--space-8) minmax(0, 1fr);
+  }
+
+  .week-ledger__week {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding: var(--space-6) 0;
+  }
+
+  .week-ledger__register {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+
+  .week-ledger__now {
+    margin-top: 0;
+  }
+
+  .week-ledger__register-number {
+    font-size: 1.35rem;
+  }
+
+  .ledger-entry__head time {
+    margin-left: 0;
+  }
+}

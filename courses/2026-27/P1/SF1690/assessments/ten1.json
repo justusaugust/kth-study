@@ -1,0 +1,35 @@
+{
+  "assessments": [
+    {
+      "id": "assessment:sf1690:ten1",
+      "courseId": "course:sf1690",
+      "slug": "ten1",
+      "code": "TEN1",
+      "title": "Written examination",
+      "kind": "written-exam",
+      "credits": 6,
+      "compulsory": true,
+      "description": "Written examination covering the course outcomes.",
+      "outcomeIds": [
+        "outcome:sf1690:solve-and-present",
+        "outcome:sf1690:read-mathematics"
+      ],
+      "conceptIds": [],
+      "sourceIds": ["source:sf1690:official-course-page"],
+      "lastChecked": "2026-08-24",
+      "confidence": "verified",
+      "relationships": [
+        {
+          "type": "assesses",
+          "from": "assessment:sf1690:ten1",
+          "to": "outcome:sf1690:solve-and-present"
+        },
+        {
+          "type": "assesses",
+          "from": "assessment:sf1690:ten1",
+          "to": "outcome:sf1690:read-mathematics"
+        }
+      ]
+    }
+  ]
+}

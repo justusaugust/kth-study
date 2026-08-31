@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:noise-margin",
+  "courseId": "course:ie1204",
+  "slug": "noise-margin",
+  "term": "Noise margin",
+  "statement": "The maximum voltage disturbance a logic output can tolerate while still being guaranteed as a valid input to the next gate.",
+  "notation": "$NM_H = V_{OH} - V_{IH},\\qquad NM_L = V_{IL} - V_{OL}$",
+  "interpretation": "A positive margin separates the driver's guaranteed output range from the receiver's required input range.",
+  "conceptIds": ["concept:ie1204:digital-abstraction"],
+  "sourceIds": ["source:ie1204:lecture-3-cmos-logic"],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "relationships": []
+}

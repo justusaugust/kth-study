@@ -1,0 +1,30 @@
+[
+  {
+    "id": "outcome:sf1690:solve-and-present",
+    "courseId": "course:sf1690",
+    "slug": "solve-and-present",
+    "title": "Solve and present mathematical problems",
+    "description": "Use relevant concepts, theorems, and methods to solve problems within the course content and present the solutions clearly.",
+    "sourceIds": ["source:sf1690:official-course-page"],
+    "relationships": [
+      {
+        "type": "supports",
+        "from": "outcome:sf1690:solve-and-present",
+        "to": "concept:sf1690:quadratic-functions"
+      }
+    ],
+    "lastChecked": "2026-08-24",
+    "confidence": "verified"
+  },
+  {
+    "id": "outcome:sf1690:read-mathematics",
+    "courseId": "course:sf1690",
+    "slug": "read-mathematics",
+    "title": "Read and comprehend mathematical text",
+    "description": "Read and comprehend mathematical text using the notation and concepts of the course.",
+    "sourceIds": ["source:sf1690:official-course-page"],
+    "relationships": [],
+    "lastChecked": "2026-08-24",
+    "confidence": "verified"
+  }
+]

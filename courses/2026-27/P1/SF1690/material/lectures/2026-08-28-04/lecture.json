@@ -1,0 +1,38 @@
+{
+  "id": "lecture:sf1690:2026-08-28-04",
+  "courseId": "course:sf1690",
+  "slug": "2026-08-28-04",
+  "title": "Lecture 4 — combining functions",
+  "date": "2026-08-28",
+  "summary": "Functions can be combined point by point, arranged in composition pipelines, or defined by different rules on different intervals. In every case, the domain records which inputs survive the full construction.",
+  "conceptIds": [
+    "concept:sf1690:function-arithmetic-and-domains",
+    "concept:sf1690:function-composition",
+    "concept:sf1690:piecewise-defined-functions"
+  ],
+  "sessionId": "session:sf1690:lecture-04",
+  "body": "Start with two functions at the same input: their sum, difference, product, and quotient are formed from the two output values, but only where both original functions are defined. Composition is ordered instead: in $f\\circ g$, evaluate $g$ first and feed its output into $f$. Piecewise functions choose a formula from the interval containing the input, so open and closed endpoints matter at every breakpoint.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-28-04",
+      "to": "concept:sf1690:function-arithmetic-and-domains"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-28-04",
+      "to": "concept:sf1690:function-composition"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-28-04",
+      "to": "concept:sf1690:piecewise-defined-functions"
+    }
+  ]
+}

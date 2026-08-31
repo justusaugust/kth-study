@@ -1,0 +1,27 @@
+{
+  "id": "explainer:sf1690:function-composition-pipeline",
+  "atlasOrder": 19,
+  "courseId": "course:sf1690",
+  "slug": "function-composition-pipeline",
+  "conceptIds": [
+    "concept:sf1690:function-composition"
+  ],
+  "title": "Reverse a composition pipeline",
+  "caption": "Swap the order of the square-root and shift functions, then move x to see both the output and the domain change.",
+  "accessibleSummary": "An interactive two-stage function pipeline comparing f after g with g after f and showing when an input is rejected by the square-root domain.",
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "evidenceStatus": "curriculum",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:function-composition-pipeline",
+      "to": "concept:sf1690:function-composition"
+    }
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "kind": "systems-diagram",
+  "variant": "function-composition"
+}

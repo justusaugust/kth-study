@@ -1,0 +1,44 @@
+{
+  "id": "lecture:sf1690:2026-08-24-01",
+  "courseId": "course:sf1690",
+  "slug": "2026-08-24-01",
+  "title": "Lecture 1 — inequalities, real numbers, and coordinate geometry",
+  "date": "2026-08-24",
+  "summary": "Real numbers form an ordered line; inequalities and intervals describe positions and solution sets, absolute value measures distance, and Cartesian coordinates extend distance and slope to the plane.",
+  "conceptIds": [
+    "concept:sf1690:real-numbers-and-lines",
+    "concept:sf1690:absolute-value",
+    "concept:sf1690:cartesian-distance-circles",
+    "concept:sf1690:lines-and-slopes"
+  ],
+  "sessionId": "session:sf1690:lecture-01",
+  "body": "Order on the real line gives inequalities their meaning: adding preserves order, while multiplying by a negative reverses it. Interval notation records complete solution sets, and absolute value measures distance on the line. In the plane, Cartesian coordinates turn horizontal and vertical change into a right triangle, so Pythagoras gives the distance formula, circles fix a distance from a centre, and slope measures rise per unit run.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:lecture-1-board-photos"
+  ],
+  "lastChecked": "2026-08-24",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-24-01",
+      "to": "concept:sf1690:real-numbers-and-lines"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-24-01",
+      "to": "concept:sf1690:absolute-value"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-24-01",
+      "to": "concept:sf1690:cartesian-distance-circles"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-24-01",
+      "to": "concept:sf1690:lines-and-slopes"
+    }
+  ]
+}

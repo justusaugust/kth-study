@@ -1,0 +1,27 @@
+{
+  "id": "explainer:ie1204:fixed-width-adder",
+  "atlasOrder": 13,
+  "courseId": "course:ie1204",
+  "slug": "fixed-width-adder",
+  "conceptIds": [
+    "concept:ie1204:fixed-width-arithmetic-and-overflow"
+  ],
+  "title": "Add inside four bits",
+  "caption": "Move both operands and compare the exact sum with the stored four-bit result and overflow state.",
+  "accessibleSummary": "An interactive four-bit two's-complement adder showing both operands, the wrapped result, exact sum, and signed overflow.",
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic"
+  ],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:fixed-width-adder",
+      "to": "concept:ie1204:fixed-width-arithmetic-and-overflow"
+    }
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "fixed-width-adder"
+}

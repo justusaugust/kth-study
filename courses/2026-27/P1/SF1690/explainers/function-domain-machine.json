@@ -1,0 +1,28 @@
+{
+  "id": "explainer:sf1690:function-domain-machine",
+  "atlasOrder": 15,
+  "courseId": "course:sf1690",
+  "slug": "function-domain-machine",
+  "conceptIds": [
+    "concept:sf1690:functions-domain-and-range"
+  ],
+  "title": "Pass an input through a function",
+  "caption": "Choose a rule and move x; the domain decides whether an output exists and the readout keeps the range visible.",
+  "accessibleSummary": "An interactive function machine for square, square root, reciprocal, and upper-semicircle rules showing input, output, domain, and range.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "evidenceStatus": "curriculum",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:function-domain-machine",
+      "to": "concept:sf1690:functions-domain-and-range"
+    }
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "kind": "systems-diagram",
+  "variant": "function-machine"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "source:sf1690:adams-essex-calculus",
+  "courseId": "course:sf1690",
+  "title": "Calculus: A Complete Course, 10th edition",
+  "kind": "book",
+  "originalPath": "material/lectures/2026-08-26-02/originals/angelo/calculus.pdf.zip",
+  "extractedTextPath": "../material/lectures/2026-08-28-04/extracted/sf1690-lecture-4-source-note.md",
+  "locator": "Robert A. Adams and Christopher Essex, Preliminaries P.2–P.5. Lecture 4 uses P.5, printed pages 33–38 in the retained 10th edition.",
+  "lastChecked": "2026-08-28",
+  "confidence": "supported"
+}

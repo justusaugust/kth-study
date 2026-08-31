@@ -1,0 +1,123 @@
+{
+  "id": "course:sf1690",
+  "code": "SF1690",
+  "slug": "sf1690",
+  "title": "Basic Course in Mathematics",
+  "academicYear": "2026-27",
+  "period": "P1",
+  "summary": "A 6.0-credit foundation course covering mathematical notation, number systems, inequalities, functions and graphs, polynomial methods, trigonometry, logarithms, and vectors.",
+  "credits": 6,
+  "language": "English",
+  "startDate": "2026-08-24",
+  "endDate": "2026-10-23",
+  "links": [
+    {
+      "kind": "kth",
+      "label": "Official KTH course page",
+      "url": "https://www.kth.se/student/kurser/kurs/SF1690?l=en",
+      "sourceId": "source:sf1690:official-course-page"
+    },
+    {
+      "kind": "canvas",
+      "label": "Canvas course room",
+      "url": "https://canvas.kth.se/courses/65013",
+      "sourceId": "source:sf1690:canvas-course-plan-26"
+    }
+  ],
+  "outcomeIds": [
+    "outcome:sf1690:solve-and-present",
+    "outcome:sf1690:read-mathematics"
+  ],
+  "conceptIds": [
+    "concept:sf1690:real-numbers-and-lines",
+    "concept:sf1690:absolute-value",
+    "concept:sf1690:cartesian-distance-circles",
+    "concept:sf1690:lines-and-slopes",
+    "concept:sf1690:parabolas-and-shifts",
+    "concept:sf1690:ellipses-and-hyperbolas",
+    "concept:sf1690:quadratic-functions",
+    "concept:sf1690:functions-domain-and-range",
+    "concept:sf1690:function-graphs-and-vertical-line-test",
+    "concept:sf1690:even-odd-function-symmetry",
+    "concept:sf1690:function-arithmetic-and-domains",
+    "concept:sf1690:function-composition",
+    "concept:sf1690:piecewise-defined-functions"
+  ],
+  "sourceIds": [
+    "source:sf1690:official-course-page",
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:lecture-1-board-photos",
+    "source:sf1690:lecture-2-board-photos",
+    "source:sf1690:adams-essex-calculus",
+    "source:sf1690:anton-busby-linear-algebra"
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:real-numbers-and-lines"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:absolute-value"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:cartesian-distance-circles"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:lines-and-slopes"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:quadratic-functions"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:parabolas-and-shifts"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:ellipses-and-hyperbolas"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:functions-domain-and-range"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:function-graphs-and-vertical-line-test"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:even-odd-function-symmetry"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:function-arithmetic-and-domains"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:function-composition"
+    },
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:piecewise-defined-functions"
+    }
+  ]
+}

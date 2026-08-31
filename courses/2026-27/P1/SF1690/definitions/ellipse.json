@@ -1,0 +1,14 @@
+{
+  "id": "definition:sf1690:ellipse",
+  "courseId": "course:sf1690",
+  "slug": "ellipse",
+  "term": "Ellipse",
+  "statement": "An ellipse is the locus of points for which the sum of distances to two fixed foci is constant.",
+  "notation": "$x^2/a^2+y^2/b^2=1$ and $d(P,F_1)+d(P,F_2)=2a$",
+  "interpretation": "The semiaxes $a$ and $b$ are the horizontal and vertical scales; a circle is the special case $a=b$.",
+  "conceptIds": ["concept:sf1690:ellipses-and-hyperbolas"],
+  "sourceIds": ["source:sf1690:adams-essex-calculus"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

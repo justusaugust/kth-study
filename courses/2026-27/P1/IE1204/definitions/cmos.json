@@ -1,0 +1,13 @@
+{
+  "id": "definition:ie1204:cmos",
+  "courseId": "course:ie1204",
+  "slug": "cmos",
+  "term": "CMOS",
+  "statement": "Complementary metal-oxide-semiconductor logic, in which pMOS pull-up and nMOS pull-down networks jointly drive a binary output.",
+  "interpretation": "The two transistor types use opposite gate polarities and connect the output to opposite supply rails.",
+  "conceptIds": ["concept:ie1204:cmos-transistor-networks"],
+  "sourceIds": ["source:ie1204:lecture-3-cmos-logic"],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "relationships": []
+}

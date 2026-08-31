@@ -1,0 +1,14 @@
+{
+  "id": "definition:sf1690:parabola",
+  "courseId": "course:sf1690",
+  "slug": "parabola",
+  "term": "Parabola",
+  "statement": "A parabola is the set of points whose distance to a fixed point, the focus, equals their perpendicular distance to a fixed line, the directrix.",
+  "notation": "$d(P,F)=d(P,L)$",
+  "interpretation": "For focus $(0,p)$ and directrix $y=-p$, the distance equality simplifies to $x^2=4py$.",
+  "conceptIds": ["concept:sf1690:parabolas-and-shifts"],
+  "sourceIds": ["source:sf1690:lecture-2-board-photos", "source:sf1690:adams-essex-calculus"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

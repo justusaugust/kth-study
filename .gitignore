@@ -1,0 +1,43 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+blob-report/
+notes/study-feedback.jsonl
+notes/study-asks.jsonl
+*.log
+courses/**/.generated/
+
+# Local project and agent state
+.agent/
+.claude/
+.playwright-cli/
+.playwright-mcp/
+AGENTS.md
+AUTOMATIONS.md
+organisation/
+inbox/
+notes/
+stdout
+/*.png
+docs/superpowers/
+public/course-artifacts/*.jpg
+plugins/kth-study/mcp/server.mjs
+plugins/kth-study/mcp/study-explainer-widget.html
+
+# Retained source material is local-only. The public corpus keeps authored
+# entities and source links, not downloaded course files or textbook archives.
+courses/**/material/canvas/
+courses/**/material/**/originals/
+courses/**/material/**/extracted/
+courses/**/material/**/*.pdf
+courses/**/material/**/*.zip
+courses/**/material/**/*.txt
+courses/**/material/**/*.jpg
+courses/**/material/**/*.jpeg
+courses/**/material/**/*.heic

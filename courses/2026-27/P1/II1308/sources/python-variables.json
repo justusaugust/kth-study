@@ -1,0 +1,12 @@
+{
+  "id": "source:ii1308:python-variables",
+  "courseId": "course:ii1308",
+  "title": "Module A — Python variables and expressions",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/63863/files/10518735",
+  "originalPath": "../material/lectures/2026-08-25-01/II1308_Python_2_Variable.pdf",
+  "extractedTextPath": "../material/lectures/2026-08-25-01/II1308_Python_2_Variable.txt",
+  "locator": "Canvas Module A; values, dynamic typing, basic data types, input, conversion, assignment, and expressions",
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

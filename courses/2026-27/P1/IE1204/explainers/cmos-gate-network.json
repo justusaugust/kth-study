@@ -1,0 +1,23 @@
+{
+  "id": "explainer:ie1204:cmos-gate-network",
+  "atlasOrder": 21,
+  "courseId": "course:ie1204",
+  "slug": "cmos-gate-network",
+  "conceptIds": ["concept:ie1204:cmos-transistor-networks"],
+  "title": "Trace a CMOS gate",
+  "caption": "Choose NOT, NAND, or NOR and toggle the inputs to reveal the conducting transistor network.",
+  "accessibleSummary": "An interactive CMOS schematic shows pMOS and nMOS switch states, the active pull-up or pull-down path, and the resulting output.",
+  "sourceIds": ["source:ie1204:lecture-3-cmos-logic"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:cmos-gate-network",
+      "to": "concept:ie1204:cmos-transistor-networks"
+    }
+  ],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "cmos-gates"
+}

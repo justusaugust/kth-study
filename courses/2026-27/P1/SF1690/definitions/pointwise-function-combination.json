@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:pointwise-function-combination",
+  "courseId": "course:sf1690",
+  "slug": "pointwise-function-combination",
+  "term": "Pointwise function combination",
+  "statement": "A new function formed by applying an arithmetic operation to $f(x)$ and $g(x)$ at the same input $x$.",
+  "notation": "$(f+g)(x)=f(x)+g(x)$, $(fg)(x)=f(x)g(x)$",
+  "interpretation": "Both original functions must accept the input; a quotient also requires a nonzero denominator output.",
+  "conceptIds": [
+    "concept:sf1690:function-arithmetic-and-domains"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Pointwise function combination"
+}

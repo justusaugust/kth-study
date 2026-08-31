@@ -1,0 +1,31 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:sf1690:exercise-01",
+      "courseId": "course:sf1690",
+      "slug": "exercise-01",
+      "kind": "exercise",
+      "sequence": 2,
+      "title": "Exercise session 1",
+      "week": 35,
+      "requirement": "recommended",
+      "description": "Recommended exercises for the first session.",
+      "materials": [
+        {
+          "title": "Calculus",
+          "section": "P1",
+          "page": "10",
+          "exercises": "29, 40, 42, 44, 45"
+        }
+      ],
+      "sessionIds": ["session:sf1690:exercise-01"],
+      "lectureIds": [],
+      "conceptIds": ["concept:sf1690:quadratic-functions"],
+      "assessmentIds": ["assessment:sf1690:ten1"],
+      "sourceIds": ["source:sf1690:fixture-curriculum"],
+      "lastChecked": "2026-08-24",
+      "confidence": "fixture",
+      "relationships": []
+    }
+  ]
+}

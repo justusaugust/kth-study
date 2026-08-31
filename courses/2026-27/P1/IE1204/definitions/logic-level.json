@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:logic-level",
+  "courseId": "course:ie1204",
+  "slug": "logic-level",
+  "term": "Logic level",
+  "statement": "A logic level is a range of physical values that a digital system interprets as LOW or HIGH.",
+  "notation": "$\\text{LOW}\\leftrightarrow0$, $\\text{HIGH}\\leftrightarrow1$",
+  "interpretation": "Using ranges instead of exact voltages lets small disturbances leave the symbolic value unchanged.",
+  "conceptIds": ["concept:ie1204:digital-abstraction"],
+  "sourceIds": ["source:ie1204:lecture-1-digital-design"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

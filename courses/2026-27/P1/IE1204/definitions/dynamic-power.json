@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:dynamic-power",
+  "courseId": "course:ie1204",
+  "slug": "dynamic-power",
+  "term": "Dynamic CMOS power",
+  "statement": "The power used to charge and discharge effective circuit capacitances as logic values switch.",
+  "notation": "$P_{\\mathrm{dynamic}} = \\frac{1}{2} C \\left(V_{\\mathrm{DD}}\\right)^2 f$",
+  "interpretation": "It grows linearly with capacitance and switching frequency and quadratically with supply voltage.",
+  "conceptIds": ["concept:ie1204:cmos-power-consumption"],
+  "sourceIds": ["source:ie1204:lecture-3-cmos-logic"],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "relationships": []
+}

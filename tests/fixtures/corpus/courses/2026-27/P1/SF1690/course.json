@@ -1,0 +1,24 @@
+{
+  "id": "course:sf1690",
+  "code": "SF1690",
+  "slug": "sf1690",
+  "title": "Basic Course in Mathematics",
+  "academicYear": "2026-27",
+  "period": "P1",
+  "summary": "A fixture course used to test the local study corpus.",
+  "credits": 6,
+  "language": "English",
+  "links": [],
+  "outcomeIds": ["outcome:sf1690:model-functions"],
+  "conceptIds": ["concept:sf1690:quadratic-functions"],
+  "sourceIds": ["source:sf1690:fixture-curriculum"],
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "course:sf1690",
+      "to": "concept:sf1690:quadratic-functions"
+    }
+  ],
+  "lastChecked": "2026-08-24",
+  "confidence": "fixture"
+}

@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "kthStudy": {
+      "title": "KTH Study",
+      "description": "Search and maintain the local curriculum study engine.",
+      "command": "node",
+      "args": [
+        "./mcp/server.mjs",
+        "--stdio",
+        "--root",
+        "../.."
+      ],
+      "cwd": ".",
+      "tool_timeout_sec": 120
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:piecewise-defined-function",
+  "courseId": "course:sf1690",
+  "slug": "piecewise-defined-function",
+  "term": "Piecewise-defined function",
+  "statement": "A function whose value is specified by different formulas on different subsets of its domain.",
+  "notation": "$p(x)=\\begin{cases}p_1(x),&x\\in D_1,\\\\p_2(x),&x\\in D_2.\\end{cases}$",
+  "interpretation": "The condition containing the input selects exactly one formula to evaluate.",
+  "conceptIds": [
+    "concept:sf1690:piecewise-defined-functions"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Piecewise-defined function"
+}

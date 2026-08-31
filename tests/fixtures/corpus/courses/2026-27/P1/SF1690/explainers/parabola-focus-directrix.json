@@ -1,0 +1,16 @@
+{
+  "id": "explainer:sf1690:parabola-focus-directrix",
+  "atlasOrder": 2,
+  "kind": "conic-section",
+  "variant": "parabola-focus-directrix",
+  "courseId": "course:sf1690",
+  "slug": "parabola-focus-directrix",
+  "conceptIds": ["concept:sf1690:quadratic-functions"],
+  "title": "Parabola from focal distance",
+  "caption": "A fixture conic visual.",
+  "accessibleSummary": "A parabola with a focus and directrix.",
+  "sourceIds": [],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "fixture"
+}

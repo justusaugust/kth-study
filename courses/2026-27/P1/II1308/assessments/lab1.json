@@ -1,0 +1,25 @@
+{
+  "assessments": [
+    {
+      "id": "assessment:ii1308:lab1",
+      "courseId": "course:ii1308",
+      "slug": "lab1",
+      "code": "LAB1",
+      "title": "Laboratory assignments",
+      "kind": "laboratory",
+      "credits": 1.5,
+      "compulsory": true,
+      "description": "Pass/fail course assessment completed through the four individual module quizzes; each quiz requires at least 80 percent.",
+      "outcomeIds": [
+        "outcome:ii1308:command-line",
+        "outcome:ii1308:programming-concepts",
+        "outcome:ii1308:simple-programs"
+      ],
+      "conceptIds": [],
+      "sourceIds": ["source:ii1308:official-course-page", "source:ii1308:course-memo"],
+      "lastChecked": "2026-08-26",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

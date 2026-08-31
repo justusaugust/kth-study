@@ -1,0 +1,92 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:ii1308:quiz-a",
+      "courseId": "course:ii1308",
+      "slug": "quiz-a",
+      "kind": "quiz",
+      "sequence": 2,
+      "title": "Module A quiz",
+      "week": 35,
+      "requirement": "required",
+      "description": "Individual Canvas quiz after studying Module A and completing its embedded exercises. A score of at least 80 percent is required; attempts are separated by a delay.",
+      "materials": [
+        {
+          "title": "Module A",
+          "section": "Control and Variables"
+        }
+      ],
+      "sessionIds": [],
+      "lectureIds": ["lecture:ii1308:2026-08-25-01"],
+      "conceptIds": [
+        "concept:ii1308:sequence-selection-iteration",
+        "concept:ii1308:variables-values-and-types",
+        "concept:ii1308:characters-and-strings"
+      ],
+      "assessmentIds": ["assessment:ii1308:lab1"],
+      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:ai-policy"],
+      "lastChecked": "2026-08-26",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:ii1308:quiz-b",
+      "courseId": "course:ii1308",
+      "slug": "quiz-b",
+      "kind": "quiz",
+      "sequence": 3,
+      "title": "Module B quiz",
+      "requirement": "required",
+      "description": "Individual Canvas quiz for Module B. A score of at least 80 percent is required.",
+      "materials": [{ "title": "Module B" }],
+      "sessionIds": [],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": ["assessment:ii1308:lab1"],
+      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:ai-policy"],
+      "lastChecked": "2026-08-26",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:ii1308:quiz-c",
+      "courseId": "course:ii1308",
+      "slug": "quiz-c",
+      "kind": "quiz",
+      "sequence": 4,
+      "title": "Module C quiz",
+      "requirement": "required",
+      "description": "Individual Canvas quiz for Module C. A score of at least 80 percent is required.",
+      "materials": [{ "title": "Module C" }],
+      "sessionIds": [],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": ["assessment:ii1308:lab1"],
+      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:ai-policy"],
+      "lastChecked": "2026-08-26",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:ii1308:quiz-d",
+      "courseId": "course:ii1308",
+      "slug": "quiz-d",
+      "kind": "quiz",
+      "sequence": 5,
+      "title": "Module D quiz",
+      "date": "2026-10-26",
+      "week": 44,
+      "requirement": "required",
+      "description": "Final individual module quiz. All four quizzes must be passed by the end of period 1; each requires at least 80 percent.",
+      "materials": [{ "title": "Module D" }],
+      "sessionIds": [],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": ["assessment:ii1308:lab1"],
+      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:seminar-1", "source:ii1308:ai-policy"],
+      "lastChecked": "2026-08-26",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

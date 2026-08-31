@@ -1,0 +1,18 @@
+{
+  "id": "definition:ie1204:logic-gate",
+  "courseId": "course:ie1204",
+  "slug": "logic-gate",
+  "term": "Logic gate",
+  "statement": "A digital building block that implements a Boolean function from one or more binary inputs to a binary output.",
+  "interpretation": "Its complete behaviour can be recorded as a truth table.",
+  "conceptIds": [
+    "concept:ie1204:logic-gates-and-truth-tables"
+  ],
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Logic gate"
+}

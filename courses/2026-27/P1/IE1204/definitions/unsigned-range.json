@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:unsigned-range",
+  "courseId": "course:ie1204",
+  "slug": "unsigned-range",
+  "term": "Unsigned N-bit range",
+  "statement": "An unsigned N-bit word contains $2^N$ distinct patterns and represents the integers from $0$ through $2^N-1$.",
+  "notation": "$0\\le n\\le2^N-1$",
+  "interpretation": "Each additional bit doubles the number of available patterns.",
+  "conceptIds": ["concept:ie1204:base-conversion-and-range"],
+  "sourceIds": ["source:ie1204:lecture-1-digital-design"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

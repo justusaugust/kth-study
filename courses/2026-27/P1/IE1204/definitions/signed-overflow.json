@@ -1,0 +1,18 @@
+{
+  "id": "definition:ie1204:signed-overflow",
+  "courseId": "course:ie1204",
+  "slug": "signed-overflow",
+  "term": "Signed overflow",
+  "statement": "The condition in which the exact result of a signed operation lies outside the range representable by the fixed-width result word.",
+  "interpretation": "For addition it occurs when equal-sign operands produce an opposite-sign stored result.",
+  "conceptIds": [
+    "concept:ie1204:fixed-width-arithmetic-and-overflow"
+  ],
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "verified",
+  "relationships": [],
+  "title": "Signed overflow"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "definition:sf1690:hyperbola",
+  "courseId": "course:sf1690",
+  "slug": "hyperbola",
+  "term": "Hyperbola",
+  "statement": "A hyperbola is a two-branch conic for which the absolute difference of the distances to two fixed foci is constant.",
+  "notation": "$x^2/a^2-y^2/b^2=1$",
+  "interpretation": "The standard horizontal hyperbola approaches the asymptotes $y=\\pm(b/a)x$.",
+  "conceptIds": ["concept:sf1690:ellipses-and-hyperbolas"],
+  "sourceIds": ["source:sf1690:adams-essex-calculus"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

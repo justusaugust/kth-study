@@ -1,0 +1,14 @@
+{
+  "id": "definition:ii1308:sequence",
+  "courseId": "course:ii1308",
+  "slug": "sequence",
+  "term": "Sequence",
+  "statement": "A sequence is an ordered series of instructions executed one after another.",
+  "notation": "step 1 → step 2 → step 3",
+  "interpretation": "Unless a control structure redirects execution, the next instruction follows the current one.",
+  "conceptIds": ["concept:ii1308:sequence-selection-iteration"],
+  "sourceIds": ["source:ii1308:concepts-of-computation"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

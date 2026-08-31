@@ -1,0 +1,23 @@
+{
+  "id": "explainer:ie1204:cmos-power-model",
+  "atlasOrder": 22,
+  "courseId": "course:ie1204",
+  "slug": "cmos-power-model",
+  "conceptIds": ["concept:ie1204:cmos-power-consumption"],
+  "title": "Scale CMOS power",
+  "caption": "Adjust voltage, capacitance, frequency, and leakage to compare dynamic and static power.",
+  "accessibleSummary": "An interactive CMOS power model calculates dynamic, static, and total power from four adjustable circuit parameters.",
+  "sourceIds": ["source:ie1204:lecture-3-cmos-logic"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:cmos-power-model",
+      "to": "concept:ie1204:cmos-power-consumption"
+    }
+  ],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "cmos-power"
+}

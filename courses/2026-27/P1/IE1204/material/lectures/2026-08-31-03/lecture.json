@@ -1,0 +1,41 @@
+{
+  "id": "lecture:ie1204:2026-08-31-03",
+  "courseId": "course:ie1204",
+  "slug": "2026-08-31-03",
+  "title": "Lecture 3 — logic levels, CMOS gates, and power",
+  "date": "2026-08-31",
+  "summary": "Truth tables define what a gate does; voltage ranges make those bits electrically reliable; complementary pMOS and nMOS networks implement the gates; and switching activity, voltage, capacitance, frequency, and leakage determine their power use.",
+  "conceptIds": [
+    "concept:ie1204:logic-gates-and-truth-tables",
+    "concept:ie1204:digital-abstraction",
+    "concept:ie1204:cmos-transistor-networks",
+    "concept:ie1204:cmos-power-consumption"
+  ],
+  "sessionId": "session:ie1204:lecture-03",
+  "body": "Begin with the behavioural layer: a truth table lists every input combination and the resulting output. The electrical layer then replaces ideal bits with guaranteed voltage ranges and noise margins. At transistor level, pMOS devices form a pull-up network to $V_{\\mathrm{DD}}$ and nMOS devices form a pull-down network to ground; complementary series and parallel arrangements implement NOT, NAND, and NOR.\n\nCMOS power has two components:\n\n$$\\begin{aligned} P_{\\mathrm{dynamic}} &= \\frac{1}{2} C \\left(V_{\\mathrm{DD}}\\right)^2 f \\\\ P_{\\mathrm{static}} &= I_{\\mathrm{leak}} V_{\\mathrm{DD}} \\end{aligned}$$",
+  "sourceIds": ["source:ie1204:lecture-3-cmos-logic"],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-31-03",
+      "to": "concept:ie1204:logic-gates-and-truth-tables"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-31-03",
+      "to": "concept:ie1204:digital-abstraction"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-31-03",
+      "to": "concept:ie1204:cmos-transistor-networks"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-31-03",
+      "to": "concept:ie1204:cmos-power-consumption"
+    }
+  ]
+}

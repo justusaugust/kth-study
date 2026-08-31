@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:range",
+  "courseId": "course:sf1690",
+  "slug": "range",
+  "term": "Range",
+  "statement": "The set of output values a function actually attains on its domain.",
+  "notation": "$R(f)=\\{f(x):x\\in D(f)\\}$",
+  "interpretation": "The range is determined by produced outputs and need not equal the domain.",
+  "conceptIds": [
+    "concept:sf1690:functions-domain-and-range"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Range"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "explainer:ie1204:logic-gate-truth-table",
+  "atlasOrder": 14,
+  "courseId": "course:ie1204",
+  "slug": "logic-gate-truth-table",
+  "conceptIds": [
+    "concept:ie1204:logic-gates-and-truth-tables"
+  ],
+  "title": "Drive a logic gate",
+  "caption": "Choose a gate and toggle its inputs; the output and active truth-table row update together.",
+  "accessibleSummary": "An interactive logic-gate explorer for AND, OR, XOR, NAND, NOR, and XNOR with two inputs and a highlighted truth-table row.",
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic",
+    "source:ie1204:lecture-3-cmos-logic"
+  ],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:logic-gate-truth-table",
+      "to": "concept:ie1204:logic-gates-and-truth-tables"
+    }
+  ],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "logic-gates"
+}

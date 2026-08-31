@@ -1,0 +1,28 @@
+{
+  "id": "explainer:sf1690:function-symmetry-explorer",
+  "atlasOrder": 17,
+  "courseId": "course:sf1690",
+  "slug": "function-symmetry-explorer",
+  "conceptIds": [
+    "concept:sf1690:even-odd-function-symmetry"
+  ],
+  "title": "Compare f(x) with f(−x)",
+  "caption": "Switch among even, odd, and neither examples and move a paired input across the graph.",
+  "accessibleSummary": "An interactive graph comparing paired points at x and negative x for even, odd, and neither functions.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "evidenceStatus": "curriculum",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:function-symmetry-explorer",
+      "to": "concept:sf1690:even-odd-function-symmetry"
+    }
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "kind": "systems-diagram",
+  "variant": "function-symmetry"
+}

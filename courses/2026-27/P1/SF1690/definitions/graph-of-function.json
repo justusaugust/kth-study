@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:graph-of-function",
+  "courseId": "course:sf1690",
+  "slug": "graph-of-function",
+  "term": "Graph of a function",
+  "statement": "The set of Cartesian points $(x,f(x))$ for all inputs $x$ in the function's domain.",
+  "notation": "$\\{(x,f(x)):x\\in D(f)\\}$",
+  "interpretation": "A vertical line can meet this set at most once.",
+  "conceptIds": [
+    "concept:sf1690:function-graphs-and-vertical-line-test"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Graph of a function"
+}

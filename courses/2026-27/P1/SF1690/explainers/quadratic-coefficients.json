@@ -1,0 +1,36 @@
+{
+  "id": "explainer:sf1690:quadratic-coefficients",
+  "atlasOrder": 9,
+  "kind": "function-plot",
+  "courseId": "course:sf1690",
+  "slug": "quadratic-coefficients",
+  "conceptIds": ["concept:sf1690:quadratic-functions"],
+  "title": "How coefficients move a parabola",
+  "caption": "Adjust a, b, and c to connect the algebraic coefficients with the graph's shape and position.",
+  "accessibleSummary": "An interactive coordinate plot of a quadratic function with controls for coefficients a, b, and c.",
+  "functions": [
+    {
+      "id": "primary",
+      "label": "f(x) = ax² + bx + c",
+      "family": "quadratic",
+      "coefficients": { "a": 1, "b": 0, "c": 0 },
+      "color": "blue"
+    }
+  ],
+  "controls": [
+    { "coefficient": "a", "min": -3, "max": 3, "step": 0.25 },
+    { "coefficient": "b", "min": -5, "max": 5, "step": 0.5 },
+    { "coefficient": "c", "min": -5, "max": 5, "step": 0.5 }
+  ],
+  "sourceIds": ["source:sf1690:official-course-page"],
+  "evidenceStatus": "supplemental",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:quadratic-coefficients",
+      "to": "concept:sf1690:quadratic-functions"
+    }
+  ],
+  "lastChecked": "2026-08-24",
+  "confidence": "supported"
+}

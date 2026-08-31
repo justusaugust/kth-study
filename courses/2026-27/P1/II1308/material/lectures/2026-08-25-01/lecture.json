@@ -1,0 +1,43 @@
+{
+  "id": "lecture:ii1308:2026-08-25-01",
+  "courseId": "course:ii1308",
+  "slug": "2026-08-25-01",
+  "title": "Lecture 1 — computation, variables, and text",
+  "date": "2026-08-25",
+  "summary": "Programs execute instructions in sequence, choose branches through selection, and repeat work through iteration. Python variables bind names to values, while strings store text as indexed character sequences.",
+  "conceptIds": [
+    "concept:ii1308:sequence-selection-iteration",
+    "concept:ii1308:variables-values-and-types",
+    "concept:ii1308:characters-and-strings"
+  ],
+  "sessionId": "session:ii1308:lecture-01",
+  "body": "Sequence, selection, and iteration determine which instruction runs next. Python evaluates expressions and binds their values to names; the value carries its type. Strings are ordered character sequences, so indexing, slicing, membership tests, and loops all operate on their positions and elements.",
+  "sourceIds": [
+    "source:ii1308:course-memo",
+    "source:ii1308:seminar-1",
+    "source:ii1308:concepts-of-computation",
+    "source:ii1308:python-control",
+    "source:ii1308:python-variables",
+    "source:ii1308:characters-and-text",
+    "source:ii1308:ai-policy"
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-08-25-01",
+      "to": "concept:ii1308:sequence-selection-iteration"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-08-25-01",
+      "to": "concept:ii1308:variables-values-and-types"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-08-25-01",
+      "to": "concept:ii1308:characters-and-strings"
+    }
+  ]
+}

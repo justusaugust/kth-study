@@ -1,0 +1,47 @@
+{
+  "assessments": [
+    {
+      "id": "assessment:ie1204:tena",
+      "courseId": "course:ie1204",
+      "slug": "tena",
+      "code": "TENA",
+      "title": "Written examination",
+      "kind": "written-exam",
+      "credits": 4,
+      "compulsory": true,
+      "date": "2026-10-19",
+      "description": "Proctored written examination on 19 October 2026, 08:00-12:00. Canvas lists exam registration from 15 to 29 September.",
+      "outcomeIds": [
+        "outcome:ie1204:number-systems",
+        "outcome:ie1204:boolean-logic",
+        "outcome:ie1204:analyse-circuits",
+        "outcome:ie1204:design-digital-systems"
+      ],
+      "conceptIds": [],
+      "sourceIds": ["source:ie1204:lecture-1-introduction", "source:ie1204:official-course-page", "source:ie1204:weekly-planner-2026"],
+      "lastChecked": "2026-08-30",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "assessment:ie1204:laba",
+      "courseId": "course:ie1204",
+      "slug": "laba",
+      "code": "LABA",
+      "title": "Laboratory work",
+      "kind": "laboratory",
+      "credits": 3.5,
+      "compulsory": true,
+      "description": "Laboratory work in digital design, assessed separately from the written examination.",
+      "outcomeIds": [
+        "outcome:ie1204:analyse-circuits",
+        "outcome:ie1204:design-digital-systems"
+      ],
+      "conceptIds": [],
+      "sourceIds": ["source:ie1204:official-course-page", "source:ie1204:canvas-2026-material-map", "source:ie1204:weekly-planner-2026"],
+      "lastChecked": "2026-08-30",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

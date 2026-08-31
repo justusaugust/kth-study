@@ -1,0 +1,29 @@
+{
+  "id": "lecture:sf1690:2026-08-26-02",
+  "courseId": "course:sf1690",
+  "slug": "2026-08-26-02",
+  "title": "Lecture 2 — lines, circles, and conic sections",
+  "date": "2026-08-26",
+  "summary": "Lines, circles, and conic sections all arise from coordinate equations. Slope and intercepts determine lines; distance and completing the square determine circles; focus and directrix or two foci determine parabolas and ellipses.",
+  "conceptIds": [
+    "concept:sf1690:lines-and-slopes",
+    "concept:sf1690:cartesian-distance-circles",
+    "concept:sf1690:parabolas-and-shifts",
+    "concept:sf1690:ellipses-and-hyperbolas"
+  ],
+  "sessionId": "session:sf1690:lecture-02",
+  "body": "A line can be read from its slope, intercepts, or general equation. Distance equations describe circles and disks, and completing the square reveals a circle's centre and radius. Replacing $x$ by $x-h$ and $y$ by $y-k$ shifts a graph. Distance conditions then define the conics: equal distance from a focus and directrix gives a parabola, a constant sum of distances to two foci gives an ellipse, and a constant difference gives a hyperbola.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:lecture-2-board-photos",
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported",
+  "relationships": [
+    { "type": "teaches", "from": "lecture:sf1690:2026-08-26-02", "to": "concept:sf1690:lines-and-slopes" },
+    { "type": "teaches", "from": "lecture:sf1690:2026-08-26-02", "to": "concept:sf1690:cartesian-distance-circles" },
+    { "type": "teaches", "from": "lecture:sf1690:2026-08-26-02", "to": "concept:sf1690:parabolas-and-shifts" },
+    { "type": "teaches", "from": "lecture:sf1690:2026-08-26-02", "to": "concept:sf1690:ellipses-and-hyperbolas" }
+  ]
+}

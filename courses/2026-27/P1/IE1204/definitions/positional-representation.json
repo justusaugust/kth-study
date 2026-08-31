@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:positional-representation",
+  "courseId": "course:ie1204",
+  "slug": "positional-representation",
+  "term": "Positional representation",
+  "statement": "A positional representation gives each digit a weight determined by its position and the base of the number system.",
+  "notation": "$N_b=\\sum_i x_i b^i$",
+  "interpretation": "The same digit contributes different values in different columns because each column has a different power-of-base weight.",
+  "conceptIds": ["concept:ie1204:positional-number-systems"],
+  "sourceIds": ["source:ie1204:lecture-1-digital-design"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

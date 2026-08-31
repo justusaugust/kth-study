@@ -1,0 +1,167 @@
+/* Switzer carries display voice, Onest carries reading voice.
+   Both are variable (100–900), self-hosted, no runtime dependency. */
+@font-face {
+  font-family: "Switzer";
+  src: url("/fonts/switzer.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Onest";
+  src: url("/fonts/onest.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-ui);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --font-display: "Switzer", "Helvetica Neue", system-ui, sans-serif;
+  --font-ui: "Onest", "Helvetica Neue", system-ui, sans-serif;
+  --font-prose: "Onest", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Materials — warm writing paper, warm graphite ink, slate annotation ink. */
+  --canvas: oklch(0.976 0.007 92);
+  --sheet: oklch(0.986 0.005 92);
+  --sheet-inset: oklch(0.955 0.009 92);
+  --sheet-raised: oklch(0.995 0.003 92);
+  --card: oklch(0.965 0.009 92);
+  --ink: oklch(0.26 0.012 80);
+  --ink-secondary: oklch(0.42 0.014 80);
+  --ink-tertiary: oklch(0.52 0.016 80);
+  --ink-muted: oklch(0.64 0.015 85);
+  --accent: oklch(0.45 0.07 235);
+  --accent-hover: oklch(0.38 0.075 235);
+  --accent-soft: oklch(0.915 0.028 230);
+  --focus: oklch(0.48 0.09 235);
+  /* Visual grammar: one restrained accent per mathematical family. */
+  --visual-number: oklch(0.49 0.105 235);
+  --visual-number-soft: oklch(0.925 0.03 235);
+  --visual-geometry: oklch(0.49 0.105 274);
+  --visual-geometry-soft: oklch(0.925 0.028 274);
+  --visual-conic: oklch(0.5 0.105 316);
+  --visual-conic-soft: oklch(0.925 0.029 316);
+  --visual-function: oklch(0.47 0.09 194);
+  --visual-function-soft: oklch(0.925 0.027 194);
+  --visual-systems: oklch(0.46 0.09 151);
+  --visual-systems-soft: oklch(0.925 0.028 151);
+  --pencil: oklch(0.5 0.15 25);
+  --pencil-soft: oklch(0.94 0.024 25);
+  --rule: oklch(0.906 0.012 92);
+  --rule-soft: oklch(0.936 0.01 92);
+  --rule-strong: oklch(0.845 0.016 92);
+
+  /* Pastel plates — the compendium's five annotation colors. */
+  --sage: oklch(0.912 0.031 140);
+  --slate: oklch(0.885 0.021 225);
+  --sand: oklch(0.912 0.037 92);
+  --clay: oklch(0.898 0.033 55);
+  --lilac: oklch(0.892 0.037 300);
+  --sage-line: oklch(0.78 0.062 140);
+  --slate-line: oklch(0.755 0.05 225);
+  --sand-line: oklch(0.77 0.075 92);
+  --clay-line: oklch(0.755 0.07 55);
+  --lilac-line: oklch(0.74 0.075 300);
+  --sage-ink: oklch(0.42 0.07 145);
+  --slate-ink: oklch(0.4 0.06 235);
+  --sand-ink: oklch(0.44 0.075 85);
+  --clay-ink: oklch(0.43 0.075 50);
+  --lilac-ink: oklch(0.42 0.08 300);
+
+  /* Legacy aliases used outside the course dossier. */
+  --surface: var(--sheet);
+  --surface-overlay: var(--sheet-raised);
+  --surface-inset: var(--sheet-inset);
+  --surface-inset-deep: oklch(0.938 0.011 92);
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-14: 56px; --space-16: 64px; --space-20: 80px;
+  --space-24: 96px; --space-28: 112px; --space-32: 128px;
+  --radius-control: 8px;
+  --radius-figure: 12px;
+  --radius-field: 24px;
+  --register-w: 52px;
+  --text-label: 0.8rem;
+  --text-prose: 1.0625rem;
+  --leading-prose: 1.62;
+  --text-section: 1.7rem;
+  --text-display: clamp(2.4rem, 4.4vw, 3.6rem);
+  --tracking-display: -0.022em;
+  --leading-display: 1.08;
+  --page-margin: clamp(20px, 4.5vw, 64px);
+  --layer-popover: 20;
+  --layer-float: 15;
+  --motion-micro: 160ms;
+  --motion-structural: 220ms;
+  --shadow-float: 0 10px 30px oklch(0.24 0.015 80 / 0.12);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* Warm lamplit charcoal — ink and paper trade places, hue stays warm. */
+  --canvas: oklch(0.205 0.008 80);
+  --sheet: oklch(0.235 0.009 80);
+  --sheet-inset: oklch(0.222 0.009 80);
+  --sheet-raised: oklch(0.272 0.01 80);
+  --card: oklch(0.248 0.01 80);
+  --ink: oklch(0.93 0.008 90);
+  --ink-secondary: oklch(0.77 0.01 90);
+  --ink-tertiary: oklch(0.65 0.012 88);
+  --ink-muted: oklch(0.53 0.012 85);
+  --accent: oklch(0.76 0.07 230);
+  --accent-hover: oklch(0.82 0.06 230);
+  --accent-soft: oklch(0.31 0.04 232);
+  --focus: oklch(0.78 0.09 230);
+  --visual-number: oklch(0.77 0.09 232);
+  --visual-number-soft: oklch(0.305 0.04 232);
+  --visual-geometry: oklch(0.78 0.085 274);
+  --visual-geometry-soft: oklch(0.305 0.038 274);
+  --visual-conic: oklch(0.79 0.085 316);
+  --visual-conic-soft: oklch(0.305 0.04 316);
+  --visual-function: oklch(0.78 0.075 194);
+  --visual-function-soft: oklch(0.305 0.035 194);
+  --visual-systems: oklch(0.77 0.075 151);
+  --visual-systems-soft: oklch(0.305 0.035 151);
+  --pencil: oklch(0.72 0.12 25);
+  --pencil-soft: oklch(0.28 0.04 25);
+  --rule: oklch(0.316 0.01 82);
+  --rule-soft: oklch(0.276 0.009 82);
+  --rule-strong: oklch(0.4 0.012 82);
+
+  /* Deep tinted plates — the same five voices, lamplit. */
+  --sage: oklch(0.318 0.036 145);
+  --slate: oklch(0.315 0.028 230);
+  --sand: oklch(0.325 0.036 88);
+  --clay: oklch(0.318 0.036 52);
+  --lilac: oklch(0.315 0.04 300);
+  --sage-line: oklch(0.46 0.06 145);
+  --slate-line: oklch(0.46 0.05 230);
+  --sand-line: oklch(0.47 0.065 88);
+  --clay-line: oklch(0.46 0.062 52);
+  --lilac-line: oklch(0.46 0.07 300);
+  --sage-ink: oklch(0.82 0.06 145);
+  --slate-ink: oklch(0.82 0.05 230);
+  --sand-ink: oklch(0.84 0.06 90);
+  --clay-ink: oklch(0.83 0.06 55);
+  --lilac-ink: oklch(0.82 0.06 300);
+
+  --surface-inset-deep: oklch(0.206 0.008 80);
+  --shadow-float: 0 10px 30px oklch(0 0 0 / 0.4);
+}
+* { box-sizing: border-box; }
+html { background: var(--canvas); scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; color: var(--ink); background: var(--canvas); }
+button, input, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+:root.theme-switching *,
+:root.theme-switching *::before,
+:root.theme-switching *::after { transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:composite-function",
+  "courseId": "course:sf1690",
+  "slug": "composite-function",
+  "term": "Composite function",
+  "statement": "The function obtained by using the output of one function as the input of another.",
+  "notation": "$(f\\circ g)(x)=f(g(x))$",
+  "interpretation": "$g$ is the inner function and acts first; $f$ is the outer function and acts second.",
+  "conceptIds": [
+    "concept:sf1690:function-composition"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Composite function"
+}

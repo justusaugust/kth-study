@@ -1,0 +1,12 @@
+{
+  "id": "source:ii1308:concepts-of-computation",
+  "courseId": "course:ii1308",
+  "title": "Module A — concepts of computation",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/63863/files/10531204",
+  "originalPath": "../material/lectures/2026-08-25-01/Concepts_of_Computation.pdf",
+  "extractedTextPath": "../material/lectures/2026-08-25-01/Concepts_of_Computation.txt",
+  "locator": "Canvas Module A; sequence, selection, iteration, and callable sequences",
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

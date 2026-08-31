@@ -1,0 +1,19 @@
+{
+  "id": "definition:ie1204:twos-complement",
+  "courseId": "course:ie1204",
+  "slug": "twos-complement",
+  "term": "Two's complement",
+  "statement": "An N-bit signed encoding in which the most significant bit has weight −2^(N−1) and all remaining bits retain positive powers-of-two weights.",
+  "notation": "−b_(N−1)2^(N−1) + Σ b_i2^i",
+  "interpretation": "It gives one zero and lets the same fixed-width adder handle positive and negative integers.",
+  "conceptIds": [
+    "concept:ie1204:signed-integer-encodings"
+  ],
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "verified",
+  "relationships": [],
+  "title": "Two's complement"
+}

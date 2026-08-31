@@ -1,0 +1,66 @@
+{
+  "id": "course:ii1308",
+  "code": "II1308",
+  "slug": "ii1308",
+  "title": "Introduction to Programming",
+  "academicYear": "2026-27",
+  "period": "P1",
+  "summary": "A 1.5-credit practical introduction to the KTH computing environment, command-line work, and the programming ideas needed to read and write small Python programs.",
+  "credits": 1.5,
+  "language": "English",
+  "startDate": "2026-08-24",
+  "endDate": "2026-10-26",
+  "links": [
+    {
+      "kind": "kth",
+      "label": "Official KTH course page",
+      "url": "https://www.kth.se/student/kurser/kurs/II1308?l=en",
+      "sourceId": "source:ii1308:official-course-page"
+    },
+    {
+      "kind": "canvas",
+      "label": "Canvas course room",
+      "url": "https://canvas.kth.se/courses/63863",
+      "sourceId": "source:ii1308:course-memo"
+    }
+  ],
+  "outcomeIds": [
+    "outcome:ii1308:command-line",
+    "outcome:ii1308:programming-concepts",
+    "outcome:ii1308:simple-programs"
+  ],
+  "conceptIds": [
+    "concept:ii1308:sequence-selection-iteration",
+    "concept:ii1308:variables-values-and-types",
+    "concept:ii1308:characters-and-strings"
+  ],
+  "sourceIds": [
+    "source:ii1308:official-course-page",
+    "source:ii1308:course-memo",
+    "source:ii1308:seminar-1",
+    "source:ii1308:concepts-of-computation",
+    "source:ii1308:python-control",
+    "source:ii1308:python-variables",
+    "source:ii1308:characters-and-text",
+    "source:ii1308:ai-policy"
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:sequence-selection-iteration"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:variables-values-and-types"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:characters-and-strings"
+    }
+  ]
+}

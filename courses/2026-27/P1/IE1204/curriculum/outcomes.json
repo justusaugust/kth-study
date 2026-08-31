@@ -1,0 +1,58 @@
+[
+  {
+    "id": "outcome:ie1204:number-systems",
+    "courseId": "course:ie1204",
+    "slug": "number-systems",
+    "title": "Represent and calculate with digital numbers",
+    "description": "Convert among number systems and carry out binary arithmetic, including signed representations and overflow.",
+    "sourceIds": ["source:ie1204:official-course-page"],
+    "relationships": [
+      {
+        "type": "supports",
+        "from": "outcome:ie1204:number-systems",
+        "to": "concept:ie1204:base-conversion-and-range"
+      }
+    ],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  },
+  {
+    "id": "outcome:ie1204:boolean-logic",
+    "courseId": "course:ie1204",
+    "slug": "boolean-logic",
+    "title": "Use Boolean algebra and logic gates",
+    "description": "Apply Boolean algebra, truth tables, and standard logic-gate representations to digital problems.",
+    "sourceIds": ["source:ie1204:official-course-page"],
+    "relationships": [],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  },
+  {
+    "id": "outcome:ie1204:analyse-circuits",
+    "courseId": "course:ie1204",
+    "slug": "analyse-circuits",
+    "title": "Analyse digital circuits",
+    "description": "Interpret logic levels, timing diagrams, combinational and sequential behaviour, and basic CMOS circuits.",
+    "sourceIds": ["source:ie1204:official-course-page"],
+    "relationships": [
+      {
+        "type": "supports",
+        "from": "outcome:ie1204:analyse-circuits",
+        "to": "concept:ie1204:digital-abstraction"
+      }
+    ],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  },
+  {
+    "id": "outcome:ie1204:design-digital-systems",
+    "courseId": "course:ie1204",
+    "slug": "design-digital-systems",
+    "title": "Design and implement digital systems",
+    "description": "Design, implement, and simulate digital building blocks and combine them into larger systems.",
+    "sourceIds": ["source:ie1204:official-course-page"],
+    "relationships": [],
+    "lastChecked": "2026-08-26",
+    "confidence": "verified"
+  }
+]

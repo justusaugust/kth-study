@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:domain",
+  "courseId": "course:sf1690",
+  "slug": "domain",
+  "term": "Domain",
+  "statement": "The set of all inputs for which a function is defined.",
+  "notation": "$D(f)$",
+  "interpretation": "For an unspecified real formula, use the largest real input set that produces real values.",
+  "conceptIds": [
+    "concept:sf1690:functions-domain-and-range"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Domain"
+}

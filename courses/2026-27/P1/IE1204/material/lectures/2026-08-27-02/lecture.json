@@ -1,0 +1,38 @@
+{
+  "id": "lecture:ie1204:2026-08-27-02",
+  "courseId": "course:ie1204",
+  "slug": "2026-08-27-02",
+  "title": "Lecture 2 — signed numbers, overflow, and logic gates",
+  "date": "2026-08-27",
+  "summary": "Signed binary encodings let a fixed-width register represent positive and negative integers. Two's-complement arithmetic makes addition and subtraction share the same circuitry, while overflow and extension rules explain what happens at the limits.",
+  "conceptIds": [
+    "concept:ie1204:signed-integer-encodings",
+    "concept:ie1204:fixed-width-arithmetic-and-overflow",
+    "concept:ie1204:logic-gates-and-truth-tables"
+  ],
+  "sessionId": "session:ie1204:lecture-02",
+  "body": "Start by comparing sign-magnitude with two's complement. In two's complement, negation means inverting the bits and adding one, so subtraction can be performed as addition. Because an $N$-bit register keeps only $N$ result bits, the mathematical sum may wrap outside the signed range; overflow detection identifies that case. Sign extension preserves a negative value when the register widens, and the final logic-gate tables connect these bit operations to their circuit-level building blocks.",
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic",
+    "source:ie1204:lecture-2-recordings"
+  ],
+  "lastChecked": "2026-08-30",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-27-02",
+      "to": "concept:ie1204:signed-integer-encodings"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-27-02",
+      "to": "concept:ie1204:fixed-width-arithmetic-and-overflow"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-08-27-02",
+      "to": "concept:ie1204:logic-gates-and-truth-tables"
+    }
+  ]
+}

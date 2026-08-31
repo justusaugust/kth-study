@@ -1,0 +1,26 @@
+{
+  "id": "explainer:ie1204:logic-levels",
+  "atlasOrder": 2,
+  "kind": "systems-diagram",
+  "variant": "logic-levels",
+  "courseId": "course:ie1204",
+  "slug": "logic-levels",
+  "conceptIds": ["concept:ie1204:digital-abstraction"],
+  "title": "Voltage becomes a bit",
+  "caption": "Move a physical voltage through the LOW, undefined, and HIGH input regions.",
+  "accessibleSummary": "An interactive voltage scale classifies values from zero to one volt as LOW, undefined, or HIGH using two guaranteed input ranges.",
+  "sourceIds": [
+    "source:ie1204:lecture-1-digital-design",
+    "source:ie1204:lecture-3-cmos-logic"
+  ],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:logic-levels",
+      "to": "concept:ie1204:digital-abstraction"
+    }
+  ],
+  "lastChecked": "2026-08-31",
+  "confidence": "verified"
+}

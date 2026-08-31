@@ -1,0 +1,23 @@
+{
+  "sessions": [
+    {
+      "id": "session:ie1204:lecture-02",
+      "courseId": "course:ie1204",
+      "slug": "lecture-02",
+      "kind": "lecture",
+      "sequence": 2,
+      "title": "Lecture 2 · Signed arithmetic and logic gates",
+      "date": "2026-08-27",
+      "week": 35,
+      "lectureId": "lecture:ie1204:2026-08-27-02",
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:ie1204:lecture-2-signed-arithmetic",
+        "source:ie1204:lecture-2-recordings"
+      ],
+      "lastChecked": "2026-08-30",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

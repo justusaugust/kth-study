@@ -1,0 +1,38 @@
+{
+  "id": "lecture:sf1690:2026-08-27-03",
+  "courseId": "course:sf1690",
+  "slug": "2026-08-27-03",
+  "title": "Lecture 3 — functions, domains, and symmetry",
+  "date": "2026-08-27",
+  "summary": "A function assigns one output to every allowed input. Domain and range describe where the function starts and what it produces; graphs, the vertical-line test, and symmetry reveal the same structure geometrically.",
+  "conceptIds": [
+    "concept:sf1690:functions-domain-and-range",
+    "concept:sf1690:function-graphs-and-vertical-line-test",
+    "concept:sf1690:even-odd-function-symmetry"
+  ],
+  "sessionId": "session:sf1690:lecture-03",
+  "body": "Begin with the one-output rule: each $x$ in the domain determines exactly one value $f(x)$, while the range collects the outputs that occur. On a graph, this becomes the vertical-line test—any vertical line may meet a function at most once. Comparing $f(-x)$ with $f(x)$ then identifies even functions through y-axis symmetry and odd functions through origin symmetry.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-27-03",
+      "to": "concept:sf1690:functions-domain-and-range"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-27-03",
+      "to": "concept:sf1690:function-graphs-and-vertical-line-test"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-08-27-03",
+      "to": "concept:sf1690:even-odd-function-symmetry"
+    }
+  ]
+}

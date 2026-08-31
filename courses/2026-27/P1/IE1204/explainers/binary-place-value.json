@@ -1,0 +1,31 @@
+{
+  "id": "explainer:ie1204:binary-place-value",
+  "atlasOrder": 1,
+  "kind": "systems-diagram",
+  "variant": "binary-place-value",
+  "courseId": "course:ie1204",
+  "slug": "binary-place-value",
+  "conceptIds": [
+    "concept:ie1204:positional-number-systems",
+    "concept:ie1204:base-conversion-and-range"
+  ],
+  "title": "Build a binary value",
+  "caption": "Toggle the bits and watch place weights reconstruct the decimal value.",
+  "accessibleSummary": "An interactive eight-bit word whose columns show powers of two, contributions, and the resulting decimal value.",
+  "sourceIds": ["source:ie1204:lecture-1-digital-design"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:binary-place-value",
+      "to": "concept:ie1204:positional-number-systems"
+    },
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:binary-place-value",
+      "to": "concept:ie1204:base-conversion-and-range"
+    }
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

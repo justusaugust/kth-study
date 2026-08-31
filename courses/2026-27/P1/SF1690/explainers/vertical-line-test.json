@@ -1,0 +1,28 @@
+{
+  "id": "explainer:sf1690:vertical-line-test",
+  "atlasOrder": 16,
+  "courseId": "course:sf1690",
+  "slug": "vertical-line-test",
+  "conceptIds": [
+    "concept:sf1690:function-graphs-and-vertical-line-test"
+  ],
+  "title": "Sweep a vertical line across a curve",
+  "caption": "Switch curves and move the test line; the marked intersections expose whether one input is being assigned more than one output.",
+  "accessibleSummary": "An interactive vertical-line test for a parabola, circle, sideways parabola, and upper semicircle, with live intersection counting.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "evidenceStatus": "curriculum",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:vertical-line-test",
+      "to": "concept:sf1690:function-graphs-and-vertical-line-test"
+    }
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "kind": "systems-diagram",
+  "variant": "vertical-line-test"
+}

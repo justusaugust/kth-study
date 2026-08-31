@@ -1,0 +1,27 @@
+{
+  "id": "explainer:sf1690:piecewise-branch-selector",
+  "atlasOrder": 20,
+  "courseId": "course:sf1690",
+  "slug": "piecewise-branch-selector",
+  "conceptIds": [
+    "concept:sf1690:piecewise-defined-functions"
+  ],
+  "title": "Move through a piecewise rule",
+  "caption": "Sweep x across both breakpoints; the active formula and output update while endpoint inequalities decide the boundary values.",
+  "accessibleSummary": "An interactive three-branch piecewise function with a movable input, active-branch highlight, and live function value.",
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "evidenceStatus": "curriculum",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:piecewise-branch-selector",
+      "to": "concept:sf1690:piecewise-defined-functions"
+    }
+  ],
+  "lastChecked": "2026-08-28",
+  "confidence": "supported",
+  "kind": "systems-diagram",
+  "variant": "piecewise-function"
+}

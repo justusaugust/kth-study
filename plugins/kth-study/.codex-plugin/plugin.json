@@ -1,0 +1,26 @@
+{
+  "name": "kth-study",
+  "version": "0.2.1+codex.20260831",
+  "description": "Search, explain, visualise, and maintain a file-backed KTH curriculum study engine.",
+  "author": {
+    "name": "Justus"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "KTH Study",
+    "shortDescription": "Search and explain the KTH curriculum.",
+    "longDescription": "KTH Study connects Codex to a file-backed curriculum graph with course pages, visual explainers, quizzes, and validated lecture ingestion.",
+    "developerName": "Justus",
+    "category": "Education",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": "Use KTH Study to help me understand my current course material.",
+    "brandColor": "#1E5DB3",
+    "composerIcon": "./assets/kth-study-small.svg",
+    "logo": "./assets/kth-study.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

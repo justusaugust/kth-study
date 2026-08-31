@@ -1,0 +1,19 @@
+{
+  "id": "definition:ie1204:sign-magnitude",
+  "courseId": "course:ie1204",
+  "slug": "sign-magnitude",
+  "term": "Sign-magnitude representation",
+  "statement": "An N-bit signed encoding whose leading bit gives the sign and whose remaining N−1 bits give the magnitude.",
+  "notation": "value = (−1)^s · magnitude",
+  "interpretation": "Simple to read, but it has two zeros and ordinary binary addition does not directly implement signed addition.",
+  "conceptIds": [
+    "concept:ie1204:signed-integer-encodings"
+  ],
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "verified",
+  "relationships": [],
+  "title": "Sign-magnitude representation"
+}

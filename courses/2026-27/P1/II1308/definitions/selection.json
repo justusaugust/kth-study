@@ -1,0 +1,14 @@
+{
+  "id": "definition:ii1308:selection",
+  "courseId": "course:ii1308",
+  "slug": "selection",
+  "term": "Selection",
+  "statement": "Selection evaluates a condition and chooses which instruction sequence should execute.",
+  "notation": "if condition: … else: …",
+  "interpretation": "A branch does not repeat by itself; it selects one path for the current execution.",
+  "conceptIds": ["concept:ii1308:sequence-selection-iteration"],
+  "sourceIds": ["source:ii1308:concepts-of-computation", "source:ii1308:python-control"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

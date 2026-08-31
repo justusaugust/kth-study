@@ -1,0 +1,142 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:sf1690:exercise-01", "courseId": "course:sf1690", "slug": "exercise-01", "kind": "exercise", "sequence": 2,
+      "title": "Exercise session 1", "week": 35, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 1.",
+      "materials": [
+        { "title": "Calculus", "section": "P1", "page": "10", "exercises": "29, 40, 42, 44, 45" },
+        { "title": "Calculus", "section": "P2", "page": "16", "exercises": "12, 14, 16, 20, 24, 26, 30, 35, 39, 40" }
+      ],
+      "sessionIds": ["session:sf1690:exercise-01"], "lectureIds": ["lecture:sf1690:2026-08-24-01"],
+      "conceptIds": ["concept:sf1690:real-numbers-and-lines", "concept:sf1690:absolute-value", "concept:sf1690:cartesian-distance-circles", "concept:sf1690:lines-and-slopes"], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-02", "courseId": "course:sf1690", "slug": "exercise-02", "kind": "exercise", "sequence": 4,
+      "title": "Exercise session 2", "week": 35, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 2.",
+      "materials": [{ "title": "Calculus", "section": "P3", "page": "22", "exercises": "4, 6, 12, 14, 16, 20, 37, 42, 46, 50, 51, 52, 53" }],
+      "sessionIds": ["session:sf1690:exercise-02"], "lectureIds": ["lecture:sf1690:2026-08-26-02"],
+      "conceptIds": ["concept:sf1690:lines-and-slopes", "concept:sf1690:cartesian-distance-circles", "concept:sf1690:parabolas-and-shifts", "concept:sf1690:ellipses-and-hyperbolas"], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26", "source:sf1690:adams-essex-calculus"], "lastChecked": "2026-08-26", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-03", "courseId": "course:sf1690", "slug": "exercise-03", "kind": "exercise", "sequence": 6,
+      "title": "Exercise session 3", "week": 35, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 3.",
+      "materials": [{ "title": "Calculus", "section": "P4", "page": "32", "exercises": "4, 6, 7, 8, 14, 18, 21, 22, 24, 26, 30, 34, 38, 46, 53" }],
+      "sessionIds": ["session:sf1690:exercise-03"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-04", "courseId": "course:sf1690", "slug": "exercise-04", "kind": "exercise", "sequence": 8,
+      "title": "Exercise session 4", "week": 36, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 4.",
+      "materials": [{ "title": "Calculus", "section": "P5", "page": "38", "exercises": "2, 7c-d, 10, 26, 27, 28, 29, 30, 31, 32, 33" }],
+      "sessionIds": ["session:sf1690:exercise-04"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-05", "courseId": "course:sf1690", "slug": "exercise-05", "kind": "exercise", "sequence": 10,
+      "title": "Exercise session 5", "week": 37, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 5.",
+      "materials": [{ "title": "Calculus", "section": "P6", "page": "45", "exercises": "2, 5, 6, 10, 12, 14, 18, 20, 22, 23" }],
+      "sessionIds": ["session:sf1690:exercise-05"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-06", "courseId": "course:sf1690", "slug": "exercise-06", "kind": "exercise", "sequence": 12,
+      "title": "Exercise session 6", "week": 37, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 6.",
+      "materials": [{ "title": "Calculus", "section": "P7", "page": "57", "exercises": "7, 9, 11, 12, 15, 16, 18, 22, 24, 28, 30, 51, 52, 53" }],
+      "sessionIds": ["session:sf1690:exercise-06"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:mini-exam-01", "courseId": "course:sf1690", "slug": "mini-exam-01", "kind": "mini-exam", "sequence": 14,
+      "title": "Mini-exam · Lectures 1–4", "week": 37, "requirement": "scheduled", "description": "Course-plan checkpoint during the first half of Exercise session 7, covering Lectures 1–4.",
+      "materials": [], "sessionIds": ["session:sf1690:checkpoint-01"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-07", "courseId": "course:sf1690", "slug": "exercise-07", "kind": "exercise", "sequence": 15,
+      "title": "Exercise session 7", "week": 37, "requirement": "recommended", "description": "Recommended exercises for the second half of Exercise session 7.",
+      "materials": [{ "title": "Calculus", "section": "3.1", "page": "171", "exercises": "4, 5, 6, 7, 10, 12, 20, 22, 23, 25, 34, 35" }],
+      "sessionIds": ["session:sf1690:exercise-07"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-08", "courseId": "course:sf1690", "slug": "exercise-08", "kind": "exercise", "sequence": 17,
+      "title": "Exercise session 8", "week": 38, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 8.",
+      "materials": [{ "title": "Calculus", "section": "3.5", "page": "199", "exercises": "1-10, 13, 14, 16, 18, 39" }],
+      "sessionIds": ["session:sf1690:exercise-08"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-09", "courseId": "course:sf1690", "slug": "exercise-09", "kind": "exercise", "sequence": 19,
+      "title": "Exercise session 9", "week": 38, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 9.",
+      "materials": [
+        { "title": "Calculus", "section": "3.2", "page": "175", "exercises": "1-18, 25-30" },
+        { "title": "Calculus", "section": "3.3", "page": "183", "exercises": "4, 6, 10, 12, 14, 15, 18" },
+        { "title": "Calculus", "section": "3.6", "page": "205", "exercises": "2, 3, 7" }
+      ],
+      "sessionIds": ["session:sf1690:exercise-09"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-10", "courseId": "course:sf1690", "slug": "exercise-10", "kind": "exercise", "sequence": 21,
+      "title": "Exercise session 10", "week": 38, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 10.",
+      "materials": [{ "title": "Calculus", "section": "Appendix", "page": "A10", "exercises": "15, 16, 19, 21, 25, 29, 30, 31, 32, 33" }],
+      "sessionIds": ["session:sf1690:exercise-10"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-11", "courseId": "course:sf1690", "slug": "exercise-11", "kind": "exercise", "sequence": 23,
+      "title": "Exercise session 11", "week": 39, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 11.",
+      "materials": [{ "title": "Calculus", "section": "Appendix", "page": "A10", "exercises": "37, 39, 42, 43, 44, 46, 48, 49, 52, 54, 55, 56" }],
+      "sessionIds": ["session:sf1690:exercise-11"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:mini-exam-02", "courseId": "course:sf1690", "slug": "mini-exam-02", "kind": "mini-exam", "sequence": 25,
+      "title": "Mini-exam · Lectures 5–10", "week": 39, "requirement": "scheduled", "description": "Course-plan checkpoint during the first half of Exercise session 12, covering Lectures 5–10.",
+      "materials": [], "sessionIds": ["session:sf1690:checkpoint-02"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-12", "courseId": "course:sf1690", "slug": "exercise-12", "kind": "exercise", "sequence": 26,
+      "title": "Exercise session 12", "week": 39, "requirement": "recommended", "description": "Recommended exercises for the second half of Exercise session 12.",
+      "materials": [{ "title": "Algebra", "section": "1.1", "page": "13", "exercises": "3, 5, 10, 11, 13, 16, 17, 20, D1, D5, P1, P2" }],
+      "sessionIds": ["session:sf1690:exercise-12"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-13", "courseId": "course:sf1690", "slug": "exercise-13", "kind": "exercise", "sequence": 28,
+      "title": "Exercise session 13", "week": 40, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 13.",
+      "materials": [{ "title": "Algebra", "section": "1.2", "page": "25", "exercises": "4, 5, 9, 15, 17, 18, 20, 26, 28, D3, D4, P4, P5" }],
+      "sessionIds": ["session:sf1690:exercise-13"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-14", "courseId": "course:sf1690", "slug": "exercise-14", "kind": "exercise", "sequence": 30,
+      "title": "Exercise session 14", "week": 40, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 14.",
+      "materials": [{ "title": "Algebra", "section": "1.3", "page": "35", "exercises": "1, 2, 5, 9, 13, 15, 21, 22, 25, 31, 32, 40, 45, D3, D4" }],
+      "sessionIds": ["session:sf1690:exercise-14"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-15", "courseId": "course:sf1690", "slug": "exercise-15", "kind": "exercise", "sequence": 32,
+      "title": "Exercise session 15", "week": 41, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 15.",
+      "materials": [{ "title": "Algebra", "section": "4.3", "page": "207", "exercises": "23, 27, 33, 34, 35, 38, 48, 49, D3, D4, P1, P2" }],
+      "sessionIds": ["session:sf1690:exercise-15"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:mini-exam-03", "courseId": "course:sf1690", "slug": "mini-exam-03", "kind": "mini-exam", "sequence": 34,
+      "title": "Mini-exam · Lectures 11–14", "week": 41, "requirement": "scheduled", "description": "Course-plan checkpoint during the first half of Exercise session 16, covering Lectures 11–14.",
+      "materials": [], "sessionIds": ["session:sf1690:checkpoint-03"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:exercise-16", "courseId": "course:sf1690", "slug": "exercise-16", "kind": "exercise", "sequence": 35,
+      "title": "Exercise session 16 · Course review", "week": 41, "requirement": "scheduled", "description": "Course-plan review during the second half of Exercise session 16.",
+      "materials": [], "sessionIds": ["session:sf1690:exercise-16"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+    }
+  ]
+}

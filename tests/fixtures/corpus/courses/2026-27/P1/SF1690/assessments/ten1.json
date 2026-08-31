@@ -1,0 +1,21 @@
+{
+  "assessments": [
+    {
+      "id": "assessment:sf1690:ten1",
+      "courseId": "course:sf1690",
+      "slug": "ten1",
+      "code": "TEN1",
+      "title": "Written examination",
+      "kind": "written-exam",
+      "credits": 6,
+      "compulsory": true,
+      "description": "Written examination covering the course outcomes.",
+      "outcomeIds": ["outcome:sf1690:model-functions"],
+      "conceptIds": ["concept:sf1690:quadratic-functions"],
+      "sourceIds": ["source:sf1690:fixture-curriculum"],
+      "lastChecked": "2026-08-24",
+      "confidence": "fixture",
+      "relationships": []
+    }
+  ]
+}

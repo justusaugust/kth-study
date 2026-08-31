@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:odd-function",
+  "courseId": "course:sf1690",
+  "slug": "odd-function",
+  "term": "Odd function",
+  "statement": "A function satisfying $f(-x)=-f(x)$ for every input in a domain symmetric about zero.",
+  "notation": "$f(-x)=-f(x)$",
+  "interpretation": "Its graph is symmetric about the origin.",
+  "conceptIds": [
+    "concept:sf1690:even-odd-function-symmetry"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Odd function"
+}

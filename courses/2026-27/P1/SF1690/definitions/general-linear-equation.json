@@ -1,0 +1,14 @@
+{
+  "id": "definition:sf1690:general-linear-equation",
+  "courseId": "course:sf1690",
+  "slug": "general-linear-equation",
+  "term": "General linear equation",
+  "statement": "Every line in the Cartesian plane can be represented by $Ax+By=C$, where $A$ and $B$ are not both zero.",
+  "notation": "$Ax+By=C$",
+  "interpretation": "Setting $y=0$ finds an $x$-intercept and setting $x=0$ finds a $y$-intercept.",
+  "conceptIds": ["concept:sf1690:lines-and-slopes"],
+  "sourceIds": ["source:sf1690:lecture-2-board-photos", "source:sf1690:adams-essex-calculus"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

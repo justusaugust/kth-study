@@ -1,0 +1,14 @@
+{
+  "id": "definition:sf1690:disk",
+  "courseId": "course:sf1690",
+  "slug": "disk",
+  "term": "Open and closed disk",
+  "statement": "The open disk of radius $r$ about $(h,k)$ is $(x-h)^2+(y-k)^2<r^2$; including the boundary gives the closed disk with $\\le r^2$.",
+  "notation": "$(x-h)^2+(y-k)^2<r^2$ or $\\le r^2$",
+  "interpretation": "The comparison sign decides whether points are inside, on, or outside the circle.",
+  "conceptIds": ["concept:sf1690:cartesian-distance-circles"],
+  "sourceIds": ["source:sf1690:lecture-2-board-photos", "source:sf1690:adams-essex-calculus"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

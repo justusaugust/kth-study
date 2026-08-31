@@ -1,0 +1,19 @@
+{
+  "id": "definition:sf1690:function",
+  "courseId": "course:sf1690",
+  "slug": "function",
+  "term": "Function",
+  "statement": "A rule that assigns a unique output $f(x)$ to every input $x$ in its domain.",
+  "notation": "$f:D\\to S$, $x\\mapsto f(x)$",
+  "interpretation": "One input must never receive two different outputs from the same function.",
+  "conceptIds": [
+    "concept:sf1690:functions-domain-and-range"
+  ],
+  "sourceIds": [
+    "source:sf1690:adams-essex-calculus"
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "supported",
+  "relationships": [],
+  "title": "Function"
+}

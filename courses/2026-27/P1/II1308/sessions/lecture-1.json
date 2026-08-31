@@ -1,0 +1,20 @@
+{
+  "sessions": [
+    {
+      "id": "session:ii1308:lecture-01",
+      "courseId": "course:ii1308",
+      "slug": "lecture-01",
+      "kind": "lecture",
+      "sequence": 1,
+      "title": "Lecture 1 · Course introduction and Module A foundations",
+      "date": "2026-08-25",
+      "week": 35,
+      "lectureId": "lecture:ii1308:2026-08-25-01",
+      "courseworkIds": [],
+      "sourceIds": ["source:ii1308:seminar-1", "source:ii1308:concepts-of-computation"],
+      "lastChecked": "2026-08-26",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

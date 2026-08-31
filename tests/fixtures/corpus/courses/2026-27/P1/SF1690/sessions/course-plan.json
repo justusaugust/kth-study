@@ -1,0 +1,33 @@
+{
+  "sessions": [
+    {
+      "id": "session:sf1690:lecture-01",
+      "courseId": "course:sf1690",
+      "slug": "lecture-01",
+      "kind": "lecture",
+      "sequence": 1,
+      "title": "Lecture 1",
+      "date": "2026-08-24",
+      "week": 35,
+      "courseworkIds": [],
+      "sourceIds": ["source:sf1690:fixture-curriculum"],
+      "lastChecked": "2026-08-24",
+      "confidence": "fixture",
+      "relationships": []
+    },
+    {
+      "id": "session:sf1690:exercise-01",
+      "courseId": "course:sf1690",
+      "slug": "exercise-01",
+      "kind": "exercise",
+      "sequence": 2,
+      "title": "Exercise session 1",
+      "week": 35,
+      "courseworkIds": ["coursework:sf1690:exercise-01"],
+      "sourceIds": ["source:sf1690:fixture-curriculum"],
+      "lastChecked": "2026-08-24",
+      "confidence": "fixture",
+      "relationships": []
+    }
+  ]
+}

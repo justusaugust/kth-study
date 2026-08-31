@@ -1,0 +1,19 @@
+{
+  "id": "explainer:sf1690:parabola-focus-directrix",
+  "atlasOrder": 6,
+  "kind": "conic-section",
+  "variant": "parabola-focus-directrix",
+  "courseId": "course:sf1690",
+  "slug": "parabola-focus-directrix",
+  "conceptIds": ["concept:sf1690:parabolas-and-shifts"],
+  "title": "Parabola from equal distances",
+  "caption": "Move the focus parameter or the point; the focus and directrix distances remain equal.",
+  "accessibleSummary": "An interactive parabola showing a point P, focus F, directrix, perpendicular foot Q, and the equal distances PF and PQ.",
+  "sourceIds": ["source:sf1690:lecture-2-board-photos", "source:sf1690:adams-essex-calculus"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    { "type": "visualises", "from": "explainer:sf1690:parabola-focus-directrix", "to": "concept:sf1690:parabolas-and-shifts" }
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

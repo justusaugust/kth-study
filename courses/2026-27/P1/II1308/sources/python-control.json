@@ -1,0 +1,12 @@
+{
+  "id": "source:ii1308:python-control",
+  "courseId": "course:ii1308",
+  "title": "Module A — Python control structures",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/63863/files/10518734",
+  "originalPath": "../material/lectures/2026-08-25-01/II1308_Python_1_Control.pdf",
+  "extractedTextPath": "../material/lectures/2026-08-25-01/II1308_Python_1_Control.txt",
+  "locator": "Canvas Module A; logical expressions, conditional branches, while-loops, for-loops, and range",
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

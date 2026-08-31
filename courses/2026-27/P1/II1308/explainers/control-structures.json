@@ -1,0 +1,23 @@
+{
+  "id": "explainer:ii1308:control-structures",
+  "atlasOrder": 3,
+  "kind": "systems-diagram",
+  "variant": "control-structures",
+  "courseId": "course:ii1308",
+  "slug": "control-structures",
+  "conceptIds": ["concept:ii1308:sequence-selection-iteration"],
+  "title": "Trace the route of execution",
+  "caption": "Switch among sequence, selection, and iteration, then advance one execution step at a time.",
+  "accessibleSummary": "An interactive control-flow trace compares the paths taken by sequence, selection, and iteration.",
+  "sourceIds": ["source:ii1308:concepts-of-computation", "source:ii1308:python-control"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ii1308:control-structures",
+      "to": "concept:ii1308:sequence-selection-iteration"
+    }
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

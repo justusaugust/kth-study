@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:bit",
+  "courseId": "course:ie1204",
+  "slug": "bit",
+  "term": "Bit",
+  "statement": "A bit is one binary digit and therefore has one of two symbolic values: 0 or 1.",
+  "notation": "$b\\in\\{0,1\\}$",
+  "interpretation": "A physical circuit represents the bit through an allowed state such as a voltage range; the bit itself is the abstract symbol.",
+  "conceptIds": ["concept:ie1204:digital-abstraction"],
+  "sourceIds": ["source:ie1204:lecture-1-digital-design"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

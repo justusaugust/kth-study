@@ -1,0 +1,14 @@
+{
+  "id": "definition:ii1308:character-string",
+  "courseId": "course:ii1308",
+  "slug": "character-string",
+  "term": "Character string",
+  "statement": "A character string is an ordered sequence of character values used to represent text.",
+  "notation": "text[index] or text[start:stop]",
+  "interpretation": "Each position has an index, so strings can be traversed, indexed, sliced, joined, and measured.",
+  "conceptIds": ["concept:ii1308:characters-and-strings"],
+  "sourceIds": ["source:ii1308:characters-and-text"],
+  "relationships": [],
+  "lastChecked": "2026-08-26",
+  "confidence": "verified"
+}

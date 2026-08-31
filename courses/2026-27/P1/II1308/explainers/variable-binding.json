@@ -1,0 +1,23 @@
+{
+  "id": "explainer:ii1308:variable-binding",
+  "atlasOrder": 4,
+  "kind": "systems-diagram",
+  "variant": "variable-binding",
+  "courseId": "course:ii1308",
+  "slug": "variable-binding",
+  "conceptIds": ["concept:ii1308:variables-values-and-types"],
+  "title": "Rebind a Python name",
+  "caption": "Assign three differently typed values to the same name and watch the reference move.",
+  "accessibleSummary": "An interactive binding diagram shows a Python variable name referring in turn to integer, floating-point, and string values.",
+  "sourceIds": ["source:ii1308:python-variables"],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ii1308:variable-binding",
+      "to": "concept:ii1308:variables-values-and-types"
+    }
+  ],
+  "lastChecked": "2026-08-26",
+  "confidence": "supported"
+}

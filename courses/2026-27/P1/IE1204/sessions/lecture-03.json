@@ -1,0 +1,23 @@
+{
+  "sessions": [
+    {
+      "id": "session:ie1204:lecture-03",
+      "courseId": "course:ie1204",
+      "slug": "lecture-03",
+      "kind": "lecture",
+      "sequence": 3,
+      "title": "Lecture 3 · Logic levels, CMOS gates, and power",
+      "date": "2026-08-31",
+      "week": 36,
+      "lectureId": "lecture:ie1204:2026-08-31-03",
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:ie1204:lecture-3-cmos-logic",
+        "source:ie1204:weekly-planner-2026"
+      ],
+      "lastChecked": "2026-08-31",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

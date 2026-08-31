@@ -1,0 +1,14 @@
+{
+  "id": "definition:sf1690:quadratic-function",
+  "courseId": "course:sf1690",
+  "slug": "quadratic-function",
+  "term": "Quadratic function",
+  "statement": "A function of the form $f(x)=ax^2+bx+c$ with $a\\ne0$.",
+  "notation": "$f(x)=ax^2+bx+c$",
+  "interpretation": "Its graph is a parabola.",
+  "conceptIds": ["concept:sf1690:quadratic-functions"],
+  "sourceIds": ["source:sf1690:fixture-curriculum"],
+  "relationships": [],
+  "lastChecked": "2026-08-24",
+  "confidence": "fixture"
+}

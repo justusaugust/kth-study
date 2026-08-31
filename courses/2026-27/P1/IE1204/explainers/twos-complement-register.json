@@ -1,0 +1,33 @@
+{
+  "id": "explainer:ie1204:twos-complement-register",
+  "atlasOrder": 12,
+  "courseId": "course:ie1204",
+  "slug": "twos-complement-register",
+  "conceptIds": [
+    "concept:ie1204:signed-integer-encodings",
+    "concept:ie1204:fixed-width-arithmetic-and-overflow"
+  ],
+  "title": "Read a two's-complement register",
+  "caption": "Toggle bits and sign-extend the word while its signed value is decoded from positional weights.",
+  "accessibleSummary": "An interactive two's-complement register showing bit weights, signed decimal value, representable range, and sign extension.",
+  "sourceIds": [
+    "source:ie1204:lecture-2-signed-arithmetic"
+  ],
+  "evidenceStatus": "lecture",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:twos-complement-register",
+      "to": "concept:ie1204:signed-integer-encodings"
+    },
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:twos-complement-register",
+      "to": "concept:ie1204:fixed-width-arithmetic-and-overflow"
+    }
+  ],
+  "lastChecked": "2026-08-27",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "twos-complement"
+}
