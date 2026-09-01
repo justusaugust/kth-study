@@ -91,6 +91,20 @@ describe("KTH Study MCP tools", () => {
     });
   });
 
+  it("resolves a concept ID to its linked visual", async () => {
+    const context = await createStudyContext(
+      path.resolve("tests/fixtures/corpus"),
+    );
+    const result = await callTool(context, "show_visual", {
+      id: "concept:sf1690:quadratic-functions",
+    });
+
+    expect(result.structuredContent).toMatchObject({
+      id: "explainer:sf1690:parabola-focus-directrix",
+      url: "/visuals/parabola-focus-directrix",
+    });
+  });
+
   it("lists pending browser questions for Codex", async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), "kth-mcp-asks-"));
     await fs.cp(path.resolve("tests/fixtures/corpus"), root, { recursive: true });

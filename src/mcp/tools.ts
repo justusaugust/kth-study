@@ -188,12 +188,15 @@ export async function callTool(
 
   if (name === "show_visual") {
     const id = stringArgument(args, "id");
-    const explainer = context.corpus.explainers.get(id);
+    const explainer = context.corpus.explainers.get(id) ??
+      [...context.corpus.explainers.values()].find((candidate) =>
+        context.corpus.concepts.has(id) && candidate.conceptIds.includes(id)
+      );
     if (!explainer) throw new Error(`Unknown explainer ID: ${id}`);
     return textResult(
       explainer.accessibleSummary,
       {
-        id,
+        id: explainer.id,
         url: url(entityUrl(explainer)),
         explainer,
         course: context.corpus.courses.get(explainer.courseId),
