@@ -25,6 +25,7 @@ export function HomePage() {
         <Link to="/courses/ie1204">Open IE1204</Link>
         <Link to="/courses/ii1308">Open II1308</Link>
         <Link to="/visuals">Browse visual explainers</Link>
+        <Link to="/deadlines">See upcoming deadlines</Link>
       </div>
     </section>
   );

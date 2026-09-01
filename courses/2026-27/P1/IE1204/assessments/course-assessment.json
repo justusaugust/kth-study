@@ -10,6 +10,7 @@
       "credits": 4,
       "compulsory": true,
       "date": "2026-10-19",
+      "time": "08:00",
       "description": "Proctored written examination on 19 October 2026, 08:00-12:00. Canvas lists exam registration from 15 to 29 September.",
       "outcomeIds": [
         "outcome:ie1204:number-systems",

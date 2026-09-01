@@ -160,6 +160,7 @@ export const SourceSchema = z.object({
     "curriculum",
     "course-memo",
     "lecture-material",
+    "schedule",
     "canvas",
     "book",
     "fixture",
@@ -191,6 +192,7 @@ export const AssessmentSchema = z
     credits: z.number().positive(),
     compulsory: z.boolean(),
     date: z.string().date().optional(),
+    time: z.string().regex(/^\d{2}:\d{2}$/).optional(),
     description: z.string().min(1),
     outcomeIds: z.array(EntityIdSchema).default([]),
     conceptIds: z.array(EntityIdSchema).default([]),
@@ -223,6 +225,7 @@ export const CourseSessionSchema = z
 
 const MaterialReferenceSchema = z.object({
   title: z.string().min(1),
+  url: z.string().url().optional(),
   section: z.string().min(1).optional(),
   page: z.string().min(1).optional(),
   exercises: z.string().min(1).optional(),
@@ -245,6 +248,7 @@ export const CourseworkSchema = z
     sequence: z.number().nonnegative(),
     title: z.string().min(1),
     date: z.string().date().optional(),
+    time: z.string().regex(/^\d{2}:\d{2}$/).optional(),
     week: z.number().int().min(1).max(53).optional(),
     requirement: z.enum(["required", "recommended", "scheduled", "optional"]),
     description: z.string().min(1),

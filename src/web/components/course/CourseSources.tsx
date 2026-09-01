@@ -13,6 +13,7 @@ const sourceKindLabels: Record<CourseResponse["sources"][number]["kind"], string
   curriculum: "Official curriculum",
   "course-memo": "Course memo",
   "lecture-material": "Lecture material",
+  schedule: "Schedule",
   canvas: "Canvas",
   book: "Book",
   fixture: "Fixture",

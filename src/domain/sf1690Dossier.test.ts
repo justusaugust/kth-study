@@ -31,9 +31,10 @@ describe("SF1690 course dossier", () => {
       expect.objectContaining({
         id: "assessment:sf1690:ten1",
         credits: 6,
+        date: "2026-10-20",
+        time: "14:00",
       }),
     ]);
-    expect(assessments[0]).not.toHaveProperty("date");
     expect(
       corpus.coursework.get("coursework:sf1690:exercise-01")?.materials,
     ).toEqual([

@@ -30,9 +30,17 @@ describe("KTH Study MCP protocol", () => {
 
     const tools = await client.listTools();
     expect(tools.tools.map((tool) => tool.name)).toContain("show_visual");
-    expect(client.getServerVersion()?.icons).toEqual([
-      expect.objectContaining({ src: expect.stringMatching(/^data:image\/svg\+xml;base64,/) }),
-      expect.objectContaining({ src: expect.stringMatching(/^data:image\/png;base64,/) }),
+    expect(client.getServerVersion()?.icons).toMatchObject([
+      {
+        src: expect.stringMatching(/^data:image\/svg\+xml;base64,/),
+        mimeType: "image/svg+xml",
+        sizes: ["24x24"],
+      },
+      {
+        src: expect.stringMatching(/^data:image\/png;base64,/),
+        mimeType: "image/png",
+        sizes: ["512x512"],
+      },
     ]);
     expect(tools.tools.every((tool) => tool.outputSchema)).toBe(true);
     expect(tools.tools.every((tool) => tool.annotations?.openWorldHint === false)).toBe(true);

@@ -309,10 +309,31 @@ test("lecture archive entries open a dedicated interactive lecture page", async 
       name: "Lecture 2 — lines, circles, and conic sections",
     }),
   ).toBeVisible();
+  const conceptSections = page.locator("details.lecture-concept");
+  await expect(conceptSections).toHaveCount(4);
+  await expect(conceptSections.first()).toHaveAttribute("open", "");
+
+  const linesSection = conceptSections.filter({ hasText: "Lines and slope" });
+  await linesSection.locator("summary").click();
+  await expect(linesSection).not.toHaveAttribute("open", "");
+  await linesSection.locator("summary").click();
+  await expect(linesSection).toHaveAttribute("open", "");
+
   await expect(page.getByRole("slider", { name: "Focus distance p" })).toBeVisible();
+  const parabolaSection = conceptSections.filter({ hasText: "Parabolas and graph shifts" });
   await expect(
-    page.getByRole("link", { name: "Study parabolas and graph shifts" }),
+    parabolaSection.getByRole("link", { name: "Open the standalone concept guide" }),
   ).toHaveAttribute("href", "/courses/sf1690/concepts/parabolas-and-shifts");
+
+  const firstPractice = page.locator(".practice-prompt").first();
+  await firstPractice.getByRole("textbox", { name: "Work it out" }).fill("My attempt");
+  await firstPractice.getByRole("button", { name: "Show a hint" }).click();
+  await expect(firstPractice.getByText("Hint 01")).toBeVisible();
+  await firstPractice.getByRole("button", { name: "Reveal solution" }).click();
+  await expect(firstPractice.locator(".practice-prompt__solution")).toBeVisible();
+
+  await expect(page.getByRole("heading", { name: "Assigned exercises" })).toBeVisible();
+  await expect(page.getByText(/Exercises 4, 6, 12, 14, 16/)).toBeVisible();
 
   await page.setViewportSize({ width: 375, height: 812 });
   await page.reload();

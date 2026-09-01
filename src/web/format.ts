@@ -9,6 +9,17 @@ export function formatStudyDate(value: string): string {
   }).format(date);
 }
 
+export function formatStudyDateLong(value: string): string {
+  const [year, month, day] = value.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-GB", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
 function dateParts(value: string) {
   const [year, month, day] = value.split("-").map(Number);
   return { year, month, day, date: new Date(Date.UTC(year, month - 1, day)) };
