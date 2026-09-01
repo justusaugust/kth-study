@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:canonical-sop-pos",
+  "courseId": "course:ie1204",
+  "slug": "canonical-sop-pos",
+  "term": "Canonical SOP and POS",
+  "notation": "$F=\\sum m(i)$ and $F=\\prod M(j)$",
+  "statement": "Canonical SOP ORs every minterm whose row has output one; canonical POS ANDs every maxterm whose row has output zero.",
+  "interpretation": "Either form can be generated mechanically from the same truth table.",
+  "conceptIds": ["concept:ie1204:boolean-equations-and-algebra"],
+  "sourceIds": ["source:ie1204:lecture-5-boolean-algebra"],
+  "lastChecked": "2026-09-01",
+  "confidence": "verified",
+  "relationships": []
+}

@@ -21,11 +21,13 @@ outcomeIds:
 lectureIds:
   - 'lecture:ie1204:2026-08-27-02'
   - 'lecture:ie1204:2026-08-31-03'
+  - 'lecture:ie1204:2026-09-01-05'
 evidenceStatus: lecture
 sourceIds:
   - 'source:ie1204:lecture-2-signed-arithmetic'
   - 'source:ie1204:lecture-3-cmos-logic'
-lastChecked: '2026-08-31'
+  - 'source:ie1204:lecture-5-boolean-algebra'
+lastChecked: '2026-09-01'
 confidence: verified
 relationships:
   - type: requires
@@ -37,6 +39,12 @@ relationships:
   - type: appears_in
     from: 'concept:ie1204:logic-gates-and-truth-tables'
     to: 'lecture:ie1204:2026-08-31-03'
+  - type: appears_in
+    from: 'concept:ie1204:logic-gates-and-truth-tables'
+    to: 'lecture:ie1204:2026-09-01-05'
+  - type: continues_to
+    from: 'concept:ie1204:logic-gates-and-truth-tables'
+    to: 'concept:ie1204:boolean-equations-and-algebra'
   - type: continues_to
     from: 'concept:ie1204:logic-gates-and-truth-tables'
     to: 'concept:ie1204:cmos-transistor-networks'

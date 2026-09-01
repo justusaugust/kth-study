@@ -11,6 +11,7 @@ import { MathText } from "../components/MathText";
 import { PracticePrompt } from "../components/PracticePrompt";
 import { SourceLinks } from "../components/SourceLinks";
 import { StudyMark } from "../components/StudyMark";
+import { BooleanFormsDiagram, StringIndexDiagram } from "../components/SystemsDiagram";
 import { formatStudyDate, formatStudyDateLong } from "../format";
 
 export function LecturePage() {
@@ -44,11 +45,18 @@ export function LecturePage() {
   const concepts = lecture.conceptIds
     .map((id) => data.concepts.find((concept) => concept.id === id))
     .filter((concept): concept is CourseResponse["concepts"][number] => Boolean(concept));
+  const lectureSourceIds = new Set(lecture.sourceIds);
+  const knownLectureSourceIds = new Set(data.lectures.flatMap((item) => item.sourceIds));
+  const belongsToLecture = (item: { sourceIds: string[] }) => {
+    const scopedSourceIds = item.sourceIds.filter((id) => knownLectureSourceIds.has(id));
+    return !scopedSourceIds.length || scopedSourceIds.some((id) => lectureSourceIds.has(id));
+  };
   const coursework = data.coursework.filter((item) =>
     item.lectureIds.includes(lecture.id),
   );
   const questions = data.questions.filter((question) =>
-    question.conceptIds.some((conceptId) => lecture.conceptIds.includes(conceptId)),
+    question.conceptIds.some((conceptId) => lecture.conceptIds.includes(conceptId)) &&
+    belongsToLecture(question),
   );
   const relatedSourceIds = new Set([
     ...lecture.sourceIds,
@@ -60,12 +68,20 @@ export function LecturePage() {
       .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
       .flatMap((item) => item.sourceIds),
     ...data.examples
-      .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
+      .filter((item) =>
+        item.conceptIds.some((id) => lecture.conceptIds.includes(id)) && belongsToLecture(item),
+      )
       .flatMap((item) => item.sourceIds),
     ...questions.flatMap((item) => item.sourceIds),
     ...coursework.flatMap((item) => item.sourceIds),
   ]);
   const sources = data.sources.filter((source) => relatedSourceIds.has(source.id));
+  const orderedLectures = [...data.lectures].sort(
+    (a, b) => a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug),
+  );
+  const lectureIndex = orderedLectures.findIndex((item) => item.id === lecture.id);
+  const previousLecture = orderedLectures[lectureIndex - 1];
+  const nextLecture = orderedLectures[lectureIndex + 1];
 
   return (
     <article className="lecture-page page-column">
@@ -112,14 +128,12 @@ export function LecturePage() {
               item.conceptIds.includes(concept.id),
             );
             const examples = data.examples.filter((item) =>
-              item.conceptIds.includes(concept.id),
+              item.conceptIds.includes(concept.id) && belongsToLecture(item),
             );
-            const conceptQuestions = data.questions.filter((item) =>
-              item.conceptIds.includes(concept.id),
-            );
+            const conceptQuestions = questions.filter((item) => item.conceptIds.includes(concept.id));
             return (
               <li key={concept.id}>
-                <details className="lecture-concept" open>
+                <details className="lecture-concept" open={index === 0}>
                   <summary className="lecture-concept__summary">
                     <span className="lecture-concept__index" aria-hidden="true">
                       {String(index + 1).padStart(2, "0")}
@@ -162,6 +176,14 @@ export function LecturePage() {
                     {explainer ? (
                       <div className="figure-frame lecture-concept__visual">
                         <ExplainerRenderer spec={explainer} mode="preview" />
+                      </div>
+                    ) : concept.slug === "boolean-equations-and-algebra" ? (
+                      <div className="figure-frame lecture-concept__visual">
+                        <BooleanFormsDiagram mode="preview" />
+                      </div>
+                    ) : concept.slug === "characters-and-strings" ? (
+                      <div className="figure-frame lecture-concept__visual">
+                        <StringIndexDiagram mode="preview" />
                       </div>
                     ) : null}
                     {examples.length ? (
@@ -257,6 +279,23 @@ export function LecturePage() {
         </header>
         <SourceLinks sources={sources} />
       </section>
+
+      {previousLecture || nextLecture ? (
+        <nav className="lecture-pagination" aria-label="Lecture navigation">
+          {previousLecture ? (
+            <Link to={`/courses/${data.course.code.toLowerCase()}/lectures/${previousLecture.slug}`}>
+              <span>Previous lecture</span>
+              <strong>{previousLecture.title}</strong>
+            </Link>
+          ) : null}
+          {nextLecture ? (
+            <Link className="lecture-pagination__next" to={`/courses/${data.course.code.toLowerCase()}/lectures/${nextLecture.slug}`}>
+              <span>Next lecture</span>
+              <strong>{nextLecture.title}</strong>
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
     </article>
   );
 }

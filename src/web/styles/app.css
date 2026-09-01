@@ -1279,6 +1279,81 @@ h4 {
   margin: 0;
 }
 
+.systems-diagram--string {
+  padding: var(--space-6);
+  border-radius: var(--radius-figure);
+  background: var(--surface-inset);
+}
+
+.string-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(3rem, 1fr);
+  gap: var(--space-2);
+  overflow-x: auto;
+}
+
+.string-cell {
+  display: grid;
+  min-height: 5rem;
+  place-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border-radius: 14px;
+  background: var(--sheet-raised);
+  color: var(--ink-secondary);
+}
+
+.string-cell[data-selected="true"] {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+
+.string-cell strong {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+}
+
+.string-cell small {
+  color: var(--ink-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.string-slice-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.string-slice-controls label {
+  display: grid;
+  gap: var(--space-3);
+  color: var(--ink-secondary);
+  font-size: var(--text-label);
+}
+
+.string-slice-controls label > span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.systems-equation--string {
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .systems-diagram--string {
+    padding: var(--space-4);
+  }
+
+  .string-slice-controls {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
 .digital-diagram,
 .function-concept {
   min-width: 0;
@@ -1541,6 +1616,99 @@ h4 {
 
 .truth-table [role="row"][data-current="true"] {
   background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+
+.boolean-table {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.boolean-table__heading,
+.boolean-table > [role="row"] {
+  display: grid;
+  grid-template-columns: 3rem 3rem 3rem minmax(9rem, 1fr);
+  gap: var(--space-2);
+  align-items: center;
+  min-height: 48px;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.boolean-table__heading {
+  min-height: auto;
+  color: var(--ink-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+}
+
+.boolean-table > [role="row"] {
+  background: var(--surface-inset);
+  color: var(--ink-secondary);
+  font-family: var(--font-mono);
+}
+
+.boolean-table > [role="row"][data-active="true"] {
+  background: color-mix(in oklch, var(--accent-soft) 68%, var(--surface-inset));
+  color: var(--accent-hover);
+}
+
+.boolean-table [role="cell"] > button {
+  width: 2.25rem;
+  min-height: 2.25rem;
+  border: 0;
+  border-radius: 10px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boolean-table [role="cell"] > button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft), 0 0 0 1.5px var(--focus) inset;
+}
+
+.boolean-equations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.boolean-equations > span {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
+  border-radius: 18px;
+  background: var(--surface-inset);
+}
+
+.boolean-equations small {
+  color: var(--ink-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+}
+
+.boolean-equations strong {
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  font-weight: 560;
+}
+
+.boolean-equations .boolean-equations__result {
+  grid-column: 1 / -1;
+  background: var(--accent-soft);
+}
+
+.boolean-equations__result strong {
   color: var(--accent-hover);
 }
 
@@ -3658,6 +3826,41 @@ h4 {
   text-underline-offset: 5px;
 }
 
+.lecture-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-16);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line);
+}
+
+.lecture-pagination a {
+  display: grid;
+  min-height: 44px;
+  gap: var(--space-1);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lecture-pagination a:hover strong {
+  color: var(--accent-hover);
+}
+
+.lecture-pagination span {
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+}
+
+.lecture-pagination strong {
+  font-weight: 570;
+}
+
+.lecture-pagination__next {
+  grid-column: 2;
+  text-align: right;
+}
+
 .practice-list {
   display: grid;
   max-width: 66ch;
@@ -4051,6 +4254,15 @@ h4 {
 
   .practice-prompt {
     padding: var(--space-4);
+  }
+
+  .lecture-pagination {
+    grid-template-columns: 1fr;
+  }
+
+  .lecture-pagination__next {
+    grid-column: 1;
+    text-align: left;
   }
 }
 

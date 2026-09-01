@@ -159,9 +159,11 @@ export async function loadCorpus(
         try {
           source.extractedText = await fs.readFile(sidecar, "utf8");
         } catch (error) {
-          throw new Error(
-            `Could not read extracted text for ${file} at ${sidecar}: ${String(error)}`,
-          );
+          if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+            throw new Error(
+              `Could not read extracted text for ${file} at ${sidecar}: ${String(error)}`,
+            );
+          }
         }
       }
       entities = [source];

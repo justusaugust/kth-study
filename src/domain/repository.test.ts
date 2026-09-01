@@ -62,7 +62,7 @@ describe("loadCorpus", () => {
     );
   });
 
-  it("can load a public corpus without private extracted source text", async () => {
+  it("can load a public corpus when private extracted source text is absent", async () => {
     const temporaryRoot = await fs.mkdtemp(
       path.join(os.tmpdir(), "kth-corpus-public-"),
     );
@@ -78,9 +78,7 @@ describe("loadCorpus", () => {
     source.extractedTextPath = "private-source.txt";
     await fs.writeFile(sourcePath, JSON.stringify(source));
 
-    const corpus = await loadCorpus(temporaryRoot, {
-      loadExtractedText: false,
-    });
+    const corpus = await loadCorpus(temporaryRoot);
 
     expect(
       corpus.sources.get("source:sf1690:fixture-curriculum")?.extractedText,

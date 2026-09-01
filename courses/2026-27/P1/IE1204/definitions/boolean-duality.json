@@ -1,0 +1,13 @@
+{
+  "id": "definition:ie1204:boolean-duality",
+  "courseId": "course:ie1204",
+  "slug": "boolean-duality",
+  "term": "Boolean duality",
+  "statement": "Replacing every AND by OR, every OR by AND, every zero by one, and every one by zero transforms a valid identity into another valid identity.",
+  "interpretation": "Identity and null laws, as well as SOP and POS reasoning, come in dual pairs.",
+  "conceptIds": ["concept:ie1204:boolean-equations-and-algebra"],
+  "sourceIds": ["source:ie1204:lecture-5-boolean-algebra"],
+  "lastChecked": "2026-09-01",
+  "confidence": "verified",
+  "relationships": []
+}

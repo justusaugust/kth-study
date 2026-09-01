@@ -1,21 +1,6 @@
 {
   "sessions": [
     {
-      "id": "session:ie1204:lecture-05",
-      "courseId": "course:ie1204",
-      "slug": "lecture-05",
-      "kind": "lecture",
-      "sequence": 5,
-      "title": "Lecture 5 · Truth tables and Boolean algebra",
-      "date": "2026-09-01",
-      "week": 36,
-      "courseworkIds": [],
-      "sourceIds": ["source:ie1204:canvas-2026-material-map", "source:ie1204:weekly-planner-2026"],
-      "lastChecked": "2026-08-30",
-      "confidence": "verified",
-      "relationships": []
-    },
-    {
       "id": "session:ie1204:lecture-04",
       "courseId": "course:ie1204",
       "slug": "lecture-04",

@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { SystemsDiagram } from "./SystemsDiagram";
+import { BooleanFormsDiagram, StringIndexDiagram, SystemsDiagram } from "./SystemsDiagram";
 
 afterEach(cleanup);
 
@@ -35,6 +35,16 @@ describe("SystemsDiagram", () => {
     expect(screen.getByText(/type str/i)).toBeVisible();
   });
 
+  it("shows that a string slice excludes its stop index", () => {
+    render(<StringIndexDiagram mode="full" />);
+
+    expect(screen.getByText("“KTH”")).toBeVisible();
+    fireEvent.change(screen.getByRole("slider", { name: /stop index/i }), {
+      target: { value: "5" },
+    });
+    expect(screen.getByText("“KTH S”")).toBeVisible();
+  });
+
   it("keeps a two's-complement value stable when it is sign-extended", () => {
     render(<SystemsDiagram variant="twos-complement" mode="full" />);
 
@@ -66,6 +76,18 @@ describe("SystemsDiagram", () => {
     expect(screen.getByText("Y = 1", { exact: true })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: "Input B is 0" }));
     expect(screen.getByText("Y = 0", { exact: true })).toBeVisible();
+  });
+
+  it("derives canonical Boolean forms from a truth table", () => {
+    render(<BooleanFormsDiagram mode="full" />);
+
+    expect(screen.getByText("¬A·B + A·¬B + A·B")).toBeVisible();
+    expect(screen.getByText("A+B", { exact: true })).toBeVisible();
+    fireEvent.click(screen.getByRole("tab", { name: "XOR" }));
+    expect(screen.getByText("¬A·B + A·¬B")).toBeVisible();
+    expect(screen.getByText("A ⊕ B")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: /A 0, B 0, output 0/i }));
+    expect(screen.getByRole("button", { name: /A 0, B 0, output 1/i })).toBePressed();
   });
 
   it("traces complementary CMOS networks", () => {

@@ -12,13 +12,27 @@
       "week": 38,
       "requirement": "recommended",
       "description": "Boolean algebra and logic-circuit practice; submit attempted solutions as PDF by 10:00 if pursuing the exercise bonus point.",
-      "materials": [{ "title": "IE1204 Exercise 2 P1 HT2026.pdf", "section": "Canvas Exercise 2" }],
-      "sessionIds": [],
-      "lectureIds": [],
-      "conceptIds": [],
+      "materials": [
+        {
+          "title": "Open Exercise 2 submission in Canvas",
+          "url": "https://canvas.kth.se/courses/63848/assignments/392904",
+          "section": "Upload PDF"
+        },
+        {
+          "title": "Download Exercise 2 worksheet",
+          "url": "https://canvas.kth.se/courses/63848/files/10564070?wrap=1",
+          "section": "IE1204 Exercise 2 P1 HT2026.pdf"
+        }
+      ],
+      "sessionIds": ["session:ie1204:lecture-05"],
+      "lectureIds": ["lecture:ie1204:2026-09-01-05"],
+      "conceptIds": [
+        "concept:ie1204:logic-gates-and-truth-tables",
+        "concept:ie1204:boolean-equations-and-algebra"
+      ],
       "assessmentIds": ["assessment:ie1204:tena"],
       "sourceIds": ["source:ie1204:exercise-sets-2026", "source:ie1204:weekly-planner-2026"],
-      "lastChecked": "2026-08-30",
+      "lastChecked": "2026-09-01",
       "confidence": "verified",
       "relationships": []
     },
@@ -34,12 +48,12 @@
       "requirement": "scheduled",
       "description": "Canvas checkpoint on Boolean algebra and logic circuits; complete before 14 September when practical.",
       "materials": [],
-      "sessionIds": [],
-      "lectureIds": [],
-      "conceptIds": [],
+      "sessionIds": ["session:ie1204:lecture-05"],
+      "lectureIds": ["lecture:ie1204:2026-09-01-05"],
+      "conceptIds": ["concept:ie1204:boolean-equations-and-algebra"],
       "assessmentIds": [],
       "sourceIds": ["source:ie1204:canvas-2026-material-map", "source:ie1204:weekly-planner-2026"],
-      "lastChecked": "2026-08-30",
+      "lastChecked": "2026-09-01",
       "confidence": "verified",
       "relationships": []
     },

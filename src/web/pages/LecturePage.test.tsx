@@ -33,15 +33,27 @@ describe("LecturePage", () => {
               confidence: "fixture",
             },
             lectures: [{
+              id: "lecture:sf1690:2026-08-27-03",
+              courseId: "course:sf1690",
+              slug: "2026-08-27-03",
+              title: "Lecture 3 — functions",
+              date: "2026-08-27",
+              summary: "Functions.",
+              conceptIds: ["concept:sf1690:function-composition"],
+              sourceIds: ["source:sf1690:lecture-03"],
+              relationships: [],
+              lastChecked: "2026-08-27",
+              confidence: "fixture",
+            }, {
               id: "lecture:sf1690:2026-08-28-04",
               courseId: "course:sf1690",
               slug: "2026-08-28-04",
               title: "Lecture 4 — combining functions",
               date: "2026-08-28",
               summary: "Combine functions.",
-              conceptIds: ["concept:sf1690:function-composition"],
+              conceptIds: ["concept:sf1690:function-composition", "concept:sf1690:second"],
               body: "The inner function acts first.",
-              sourceIds: [],
+              sourceIds: ["source:sf1690:lecture-04"],
               relationships: [],
               lastChecked: "2026-08-28",
               confidence: "fixture",
@@ -55,13 +67,24 @@ describe("LecturePage", () => {
               centralInsight: "Start with the inner function.",
               commonMistake: "Do not reverse the order.",
               outcomeIds: [],
-              lectureIds: ["lecture:sf1690:2026-08-28-04"],
+              lectureIds: ["lecture:sf1690:2026-08-27-03", "lecture:sf1690:2026-08-28-04"],
               evidenceStatus: "curriculum",
               body: "",
               sourceIds: [],
               relationships: [],
               lastChecked: "2026-08-28",
               confidence: "fixture",
+            }, {
+              id: "concept:sf1690:second",
+              courseId: "course:sf1690",
+              slug: "second",
+              title: "A second concept",
+              summary: "This concept starts collapsed.",
+              outcomeIds: [],
+              lectureIds: ["lecture:sf1690:2026-08-28-04"],
+              evidenceStatus: "curriculum",
+              body: "",
+              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
             }],
             explainers: [],
             definitions: [{
@@ -73,7 +96,7 @@ describe("LecturePage", () => {
               notation: "$(f\\circ g)(x)=f(g(x))$",
               interpretation: "Evaluate $g$ before $f$.",
               conceptIds: ["concept:sf1690:function-composition"],
-              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+              sourceIds: ["source:sf1690:lecture-04"], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
             }],
             examples: [{
               id: "example:sf1690:composition-order",
@@ -82,7 +105,7 @@ describe("LecturePage", () => {
               title: "Compare the order",
               conceptIds: ["concept:sf1690:function-composition"],
               body: "If $g(x)=x+1$, substitute that expression into $f$.",
-              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+              sourceIds: ["source:sf1690:lecture-04"], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
             }],
             questions: [{
               id: "question:sf1690:composition-order",
@@ -92,7 +115,16 @@ describe("LecturePage", () => {
               conceptIds: ["concept:sf1690:function-composition"],
               body: "In $(f\\circ g)(x)$, which function is evaluated first?",
               answer: "$g$ is evaluated first.",
-              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+              sourceIds: ["source:sf1690:lecture-04"], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+            }, {
+              id: "question:sf1690:previous-lecture",
+              courseId: "course:sf1690",
+              slug: "previous-lecture",
+              title: "Question from the previous lecture",
+              conceptIds: ["concept:sf1690:function-composition"],
+              body: "This should not leak into Lecture 4.",
+              answer: "It does not.",
+              sourceIds: ["source:sf1690:lecture-03"], relationships: [], lastChecked: "2026-08-27", confidence: "fixture",
             }],
             outcomes: [],
             assessments: [],
@@ -146,6 +178,8 @@ describe("LecturePage", () => {
 
     const concept = document.querySelector("details.lecture-concept") as HTMLDetailsElement;
     expect(concept.open).toBe(true);
+    expect(document.querySelectorAll("details.lecture-concept")[1]).not.toHaveAttribute("open");
+    expect(screen.queryByText("Question from the previous lecture")).not.toBeInTheDocument();
     fireEvent.click(screen.getByText("Function composition").closest("summary")!);
     expect(concept.open).toBe(false);
     fireEvent.click(screen.getByText("Function composition").closest("summary")!);
@@ -168,5 +202,9 @@ describe("LecturePage", () => {
       "https://example.com/exercise",
     );
     expect(screen.getByText(/Exercises 2, 7c-d, 10/)).toBeVisible();
+    expect(document.querySelector(".lecture-pagination a")).toHaveAttribute(
+      "href",
+      "/courses/sf1690/lectures/2026-08-27-03",
+    );
   });
 });

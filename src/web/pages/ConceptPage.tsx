@@ -14,6 +14,7 @@ import { SourceLinks } from "../components/SourceLinks";
 import { formatStudyDate } from "../format";
 import { PageError } from "../components/PageError";
 import { PracticePrompt } from "../components/PracticePrompt";
+import { BooleanFormsDiagram, StringIndexDiagram } from "../components/SystemsDiagram";
 
 function InlineMarkdown({ children }: { children: string }) {
   return (
@@ -97,6 +98,10 @@ export function ConceptPage() {
           <div className="figure-frame">
             {data.explainers[0] ? (
               <ExplainerRenderer spec={data.explainers[0]} mode="preview" />
+            ) : concept.slug === "boolean-equations-and-algebra" ? (
+              <BooleanFormsDiagram mode="preview" />
+            ) : concept.slug === "characters-and-strings" ? (
+              <StringIndexDiagram mode="preview" />
             ) : (
               <ConceptDiagram slug={concept.slug} />
             )}

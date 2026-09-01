@@ -1,0 +1,14 @@
+{
+  "id": "definition:ie1204:minterm-maxterm",
+  "courseId": "course:ie1204",
+  "slug": "minterm-maxterm",
+  "term": "Minterm and maxterm",
+  "notation": "$m_i$ is true on row $i$; $M_i$ is false on row $i$.",
+  "statement": "A minterm is an AND of every input variable or its complement; a maxterm is an OR of every input variable or its complement.",
+  "interpretation": "Minterms select one truth-table row for SOP, while maxterms exclude one row for POS.",
+  "conceptIds": ["concept:ie1204:boolean-equations-and-algebra"],
+  "sourceIds": ["source:ie1204:lecture-5-boolean-algebra"],
+  "lastChecked": "2026-09-01",
+  "confidence": "verified",
+  "relationships": []
+}

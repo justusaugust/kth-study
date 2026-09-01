@@ -187,6 +187,41 @@ test("quick search suggestions open their lecture routes", async ({ page }) => {
   await expect(page).toHaveURL(/\/courses\/ie1204\/lectures\/2026-08-31-03$/);
 });
 
+test("today's IE1204 lecture connects Boolean forms to the assigned work", async ({
+  page,
+}) => {
+  await page.goto("/courses/ie1204/lectures/2026-09-01-05");
+
+  await expect(
+    page.getByRole("heading", {
+      level: 1,
+      name: "Lecture 5 — truth tables and Boolean algebra",
+    }),
+  ).toBeVisible();
+  await expect(page.locator("details.lecture-concept")).toHaveCount(2);
+  await expect(
+    page.getByRole("link", { name: "Open Exercise 2 submission in Canvas" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Download Exercise 2 worksheet" }),
+  ).toBeVisible();
+
+  const booleanSection = page.locator("details.lecture-concept").filter({
+    hasText: "Boolean equations and algebra",
+  });
+  await booleanSection.locator("summary").click();
+  await booleanSection.getByRole("button", { name: /A 1, B 1, output 1/i }).click();
+  await expect(page.locator(".boolean-equations__result strong")).toHaveText("A ⊕ B");
+
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.reload();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    ),
+  ).toBe(0);
+});
+
 test("mobile navigation stays available without horizontal overflow", async ({
   page,
 }) => {
@@ -319,8 +354,9 @@ test("lecture archive entries open a dedicated interactive lecture page", async 
   await linesSection.locator("summary").click();
   await expect(linesSection).toHaveAttribute("open", "");
 
-  await expect(page.getByRole("slider", { name: "Focus distance p" })).toBeVisible();
   const parabolaSection = conceptSections.filter({ hasText: "Parabolas and graph shifts" });
+  await parabolaSection.locator("summary").click();
+  await expect(page.getByRole("slider", { name: "Focus distance p" })).toBeVisible();
   await expect(
     parabolaSection.getByRole("link", { name: "Open the standalone concept guide" }),
   ).toHaveAttribute("href", "/courses/sf1690/concepts/parabolas-and-shifts");
@@ -337,6 +373,7 @@ test("lecture archive entries open a dedicated interactive lecture page", async 
 
   await page.setViewportSize({ width: 375, height: 812 });
   await page.reload();
+  await page.locator("details.lecture-concept").filter({ hasText: "Parabolas and graph shifts" }).locator("summary").click();
   await expect(page.getByRole("slider", { name: "Focus distance p" })).toBeVisible();
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -419,6 +456,7 @@ test("the 27 August lectures expose their source-bounded interactive visuals", a
   await expect(page.getByRole("heading", { name: "Lecture overview" })).toBeVisible();
   await page.getByRole("button", { name: "Bit 1 with weight 4 is 0" }).click();
   await expect(page.getByText("−3₁₀")).toBeVisible();
+  await page.locator("details.lecture-concept").filter({ hasText: "Logic gates and truth tables" }).locator("summary").click();
   await page.getByRole("tab", { name: "XOR" }).click();
   await page.getByRole("button", { name: "Input B is 0" }).click();
   await expect(page.getByText("Y = 0", { exact: true })).toBeVisible();
@@ -432,6 +470,7 @@ test("the 27 August lectures expose their source-bounded interactive visuals", a
   await expect(page.getByRole("heading", { name: "Lecture overview" })).toBeVisible();
   await expect(page.getByText(/reconstruct/i)).toHaveCount(0);
   await expect(page.getByText(/authenticated Canvas/i)).toHaveCount(0);
+  await page.locator("details.lecture-concept").filter({ hasText: "Function graphs and the vertical-line test" }).locator("summary").click();
   await page.getByRole("tab", { name: "Circle", exact: true }).click();
   await expect(
     page.getByText("Two intersections — not a function of x"),

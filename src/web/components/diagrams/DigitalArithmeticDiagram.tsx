@@ -5,7 +5,8 @@ type DiagramMode = "preview" | "full";
 export type DigitalArithmeticVariant =
   | "twos-complement"
   | "fixed-width-adder"
-  | "logic-gates";
+  | "logic-gates"
+  | "boolean-forms";
 
 interface Props {
   mode: DiagramMode;
@@ -234,8 +235,120 @@ function LogicGates({ mode }: { mode: DiagramMode }) {
   );
 }
 
+const canonicalRows = [
+  { a: 0, b: 0, minterm: "¬A·¬B", maxterm: "(A+B)" },
+  { a: 0, b: 1, minterm: "¬A·B", maxterm: "(A+¬B)" },
+  { a: 1, b: 0, minterm: "A·¬B", maxterm: "(¬A+B)" },
+  { a: 1, b: 1, minterm: "A·B", maxterm: "(¬A+¬B)" },
+] as const;
+
+const booleanPresets = {
+  OR: [0, 1, 1, 1],
+  XOR: [0, 1, 1, 0],
+  AND: [0, 0, 0, 1],
+} as const;
+
+const simplifiedForms: Record<string, string> = {
+  "0000": "0",
+  "0001": "A·B",
+  "0011": "A",
+  "0101": "B",
+  "0110": "A ⊕ B",
+  "0111": "A+B",
+  "1000": "¬(A+B)",
+  "1001": "A ⊙ B",
+  "1010": "¬B",
+  "1100": "¬A",
+  "1110": "¬(A·B)",
+  "1111": "1",
+};
+
+function BooleanForms({ mode }: { mode: DiagramMode }) {
+  const [outputs, setOutputs] = useState<number[]>([0, 1, 1, 1]);
+  const key = outputs.join("");
+  const activePreset = Object.entries(booleanPresets).find(([, values]) =>
+    values.every((value, index) => value === outputs[index]),
+  )?.[0];
+  const sop = canonicalRows
+    .filter((_, index) => outputs[index] === 1)
+    .map((row) => row.minterm)
+    .join(" + ") || "0";
+  const pos = canonicalRows
+    .filter((_, index) => outputs[index] === 0)
+    .map((row) => row.maxterm)
+    .join("·") || "1";
+
+  function toggleOutput(index: number) {
+    setOutputs((current) =>
+      current.map((value, position) =>
+        position === index ? 1 - value : value,
+      ),
+    );
+  }
+
+  return (
+    <figure
+      className={`systems-diagram digital-diagram boolean-builder visual-topic--systems systems-diagram--${mode}`}
+      aria-label="Interactive Boolean canonical-form builder"
+    >
+      {mode === "full" ? (
+        <div className="diagram-choice-row" role="tablist" aria-label="Example functions">
+          {(Object.keys(booleanPresets) as Array<keyof typeof booleanPresets>).map((name) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activePreset === name}
+              key={name}
+              onClick={() => setOutputs([...booleanPresets[name]])}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+      ) : null}
+      <div className="boolean-table" role="table" aria-label="Two-input truth table">
+        <div className="boolean-table__heading" role="row">
+          <span role="columnheader">A</span>
+          <span role="columnheader">B</span>
+          <span role="columnheader">Y</span>
+          <span role="columnheader">Selected term</span>
+        </div>
+        {canonicalRows.map((row, index) => (
+          <div role="row" data-active={outputs[index] === 1 ? "true" : undefined} key={`${row.a}-${row.b}`}>
+            <span role="cell">{row.a}</span>
+            <span role="cell">{row.b}</span>
+            <span role="cell">
+              <button
+                type="button"
+                aria-label={`A ${row.a}, B ${row.b}, output ${outputs[index]}. Toggle output.`}
+                aria-pressed={outputs[index] === 1}
+                onClick={() => toggleOutput(index)}
+              >
+                {outputs[index]}
+              </button>
+            </span>
+            <span role="cell">{outputs[index] ? row.minterm : row.maxterm}</span>
+          </div>
+        ))}
+      </div>
+      <output className="boolean-equations" aria-live="polite">
+        <span><small>Canonical SOP · rows where Y = 1</small><strong>{sop}</strong></span>
+        <span><small>Canonical POS · rows where Y = 0</small><strong>{pos}</strong></span>
+        <span className="boolean-equations__result">
+          <small>Recognised simplification</small>
+          <strong>{simplifiedForms[key] ?? "Use Boolean identities to reduce it"}</strong>
+        </span>
+      </output>
+      <figcaption>
+        Toggle any output. Ones contribute minterms to SOP; zeros contribute maxterms to POS. Both equations preserve the same truth table.
+      </figcaption>
+    </figure>
+  );
+}
+
 export function DigitalArithmeticDiagram({ mode, variant }: Props) {
   if (variant === "twos-complement") return <TwosComplement mode={mode} />;
   if (variant === "fixed-width-adder") return <FixedWidthAdder mode={mode} />;
+  if (variant === "boolean-forms") return <BooleanForms mode={mode} />;
   return <LogicGates mode={mode} />;
 }

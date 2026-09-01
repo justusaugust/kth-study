@@ -322,6 +322,84 @@ function VariableBinding({ mode }: { mode: DiagramMode }) {
   );
 }
 
+export function StringIndexDiagram({ mode }: { mode: DiagramMode }) {
+  const text = "KTH STUDY";
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(3);
+
+  return (
+    <figure
+      className={`systems-diagram systems-diagram--string visual-topic--systems systems-diagram--${mode}`}
+      aria-label="Interactive Python string indexing diagram"
+    >
+      <div className="string-strip" aria-label={`String ${text}`}>
+        {[...text].map((character, index) => (
+          <span
+            className="string-cell"
+            data-selected={index >= start && index < end ? "true" : undefined}
+            key={`${character}-${index}`}
+          >
+            <strong>{character === " " ? "␠" : character}</strong>
+            <small>{index}</small>
+          </span>
+        ))}
+      </div>
+      <div className="string-slice-controls">
+        <label>
+          <span>Start index <output>{start}</output></span>
+          <input
+            className="liquid-range"
+            type="range"
+            aria-label="Start index"
+            min="0"
+            max={text.length - 1}
+            value={start}
+            style={liquidRangeStyle(start, 0, text.length - 1)}
+            onChange={(event) => setStart(Math.min(Number(event.target.value), end - 1))}
+          />
+        </label>
+        <label>
+          <span>Stop index <output>{end}</output></span>
+          <input
+            className="liquid-range"
+            type="range"
+            aria-label="Stop index"
+            min="1"
+            max={text.length}
+            value={end}
+            style={liquidRangeStyle(end, 1, text.length)}
+            onChange={(event) => setEnd(Math.max(Number(event.target.value), start + 1))}
+          />
+        </label>
+      </div>
+      <output className="systems-equation systems-equation--string" aria-live="polite">
+        <code>text[{start}:{end}]</code>
+        <span aria-hidden="true">→</span>
+        <strong>“{text.slice(start, end)}”</strong>
+      </output>
+      {mode === "full" ? (
+        <button
+          type="button"
+          className="diagram-reset systems-reset"
+          onClick={() => {
+            setStart(0);
+            setEnd(3);
+          }}
+        >
+          Restore slice
+        </button>
+      ) : null}
+      <figcaption>
+        Move the bounds. Python includes the start index and stops before the end index.
+      </figcaption>
+    </figure>
+  );
+}
+
+export function BooleanFormsDiagram({ mode }: { mode: DiagramMode }) {
+  return <DigitalArithmeticDiagram mode={mode} variant="boolean-forms" />;
+}
+
 export function SystemsDiagram({ variant, mode }: Props) {
   if (variant === "binary-place-value") return <BinaryPlaceValue mode={mode} />;
   if (variant === "logic-levels") return <LogicLevels mode={mode} />;

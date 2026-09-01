@@ -1,0 +1,29 @@
+{
+  "id": "lecture:ie1204:2026-09-01-05",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-01-05",
+  "title": "Lecture 5 — truth tables and Boolean algebra",
+  "date": "2026-09-01",
+  "summary": "A truth table can be translated mechanically into canonical sum-of-products or product-of-sums form. Boolean identities then reduce that equation while preserving the exact same input-output behaviour.",
+  "conceptIds": [
+    "concept:ie1204:logic-gates-and-truth-tables",
+    "concept:ie1204:boolean-equations-and-algebra"
+  ],
+  "sessionId": "session:ie1204:lecture-05",
+  "body": "A combinational circuit is specified by its current inputs and outputs, without memory. Start from the truth table, form one minterm for every row where the output is $1$, and OR those terms to obtain canonical SOP. Alternatively, form one maxterm for every row where the output is $0$, and AND those terms to obtain canonical POS.\n\n$$F(A,B)=\\sum m(i)=\\prod M(j)$$\n\nThe two canonical equations describe the same finite function. Boolean identities—especially distributivity, covering, combining, and complements—can then reduce the number of terms and literals without changing any truth-table row.",
+  "sourceIds": ["source:ie1204:lecture-5-boolean-algebra"],
+  "lastChecked": "2026-09-01",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-01-05",
+      "to": "concept:ie1204:logic-gates-and-truth-tables"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-01-05",
+      "to": "concept:ie1204:boolean-equations-and-algebra"
+    }
+  ]
+}

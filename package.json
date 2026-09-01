@@ -13,7 +13,7 @@
     "build": "tsc --noEmit && vite build && pnpm build:plugin && pnpm build:api",
     "build:api": "tsup src/vercel.ts --format esm --platform node --target node24 --out-dir server-build",
     "build:plugin": "tsx scripts/build-plugin.ts",
-    "test": "vitest run",
+    "test": "pnpm build:plugin && vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "validate:content": "tsx scripts/validate-content.ts",
