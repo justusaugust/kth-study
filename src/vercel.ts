@@ -16,11 +16,11 @@ const app = createApp(context, widgetHtml, {
   verificationToken: process.env.OPENAI_APPS_CHALLENGE,
 });
 
-export default (request: Request) => {
+export function fetch(request: Request) {
   const url = new URL(request.url, "https://kth-study.vercel.app");
   const requestPath = url.searchParams.get("_path");
   if (!requestPath) return new Response("Not found", { status: 404 });
   url.pathname = requestPath;
   url.searchParams.delete("_path");
   return app.fetch(new Request(url, request));
-};
+}
