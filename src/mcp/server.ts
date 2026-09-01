@@ -76,6 +76,7 @@ export function createKthStudyServer(
   widgetHtml: string,
   publicOrigin?: string,
 ): McpServer {
+  const widgetDomain = publicOrigin ?? "https://kth-study.vercel.app";
   const invoke = (name: string, args: Record<string, unknown>) =>
     callTool(context, name, args, publicOrigin);
   const server = new McpServer(
@@ -102,7 +103,7 @@ export function createKthStudyServer(
       _meta: {
         ui: {
           csp: { connectDomains: [], resourceDomains: [] },
-          ...(publicOrigin ? { domain: publicOrigin } : {}),
+          domain: widgetDomain,
           prefersBorder: false,
         },
       },
@@ -116,7 +117,7 @@ export function createKthStudyServer(
           _meta: {
             ui: {
               csp: { connectDomains: [], resourceDomains: [] },
-              ...(publicOrigin ? { domain: publicOrigin } : {}),
+              domain: widgetDomain,
               prefersBorder: false,
             },
             "openai/widgetDescription":

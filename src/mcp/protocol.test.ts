@@ -60,6 +60,7 @@ describe("KTH Study MCP protocol", () => {
       _meta: {
         ui: {
           csp: { connectDomains: [], resourceDomains: [] },
+          domain: "https://kth-study.vercel.app",
           prefersBorder: false,
         },
       },
