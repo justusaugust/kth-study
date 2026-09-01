@@ -23,14 +23,14 @@
       "id": "coursework:sf1690:exercise-03", "courseId": "course:sf1690", "slug": "exercise-03", "kind": "exercise", "sequence": 6,
       "title": "Exercise session 3", "week": 35, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 3.",
       "materials": [{ "title": "Calculus", "section": "P4", "page": "32", "exercises": "4, 6, 7, 8, 14, 18, 21, 22, 24, 26, 30, 34, 38, 46, 53" }],
-      "sessionIds": ["session:sf1690:exercise-03"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-03"], "lectureIds": ["lecture:sf1690:2026-08-27-03"], "conceptIds": ["concept:sf1690:functions-domain-and-range", "concept:sf1690:function-graphs-and-vertical-line-test", "concept:sf1690:even-odd-function-symmetry"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-04", "courseId": "course:sf1690", "slug": "exercise-04", "kind": "exercise", "sequence": 8,
       "title": "Exercise session 4", "week": 36, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 4.",
       "materials": [{ "title": "Calculus", "section": "P5", "page": "38", "exercises": "2, 7c-d, 10, 26, 27, 28, 29, 30, 31, 32, 33" }],
-      "sessionIds": ["session:sf1690:exercise-04"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-04"], "lectureIds": ["lecture:sf1690:2026-08-28-04"], "conceptIds": ["concept:sf1690:function-arithmetic-and-domains", "concept:sf1690:function-composition", "concept:sf1690:piecewise-defined-functions"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {

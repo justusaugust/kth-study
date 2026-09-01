@@ -73,6 +73,18 @@ describe("study API", () => {
     });
   });
 
+  it("returns deadline inputs across every course", async () => {
+    const app = createApp(await fixtureContext());
+    const response = await app.request("/api/deadlines");
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      courses: [{ code: "SF1690" }],
+      assessments: [{ id: "assessment:sf1690:ten1" }],
+      coursework: [{ id: "coursework:sf1690:exercise-01" }],
+    });
+  });
+
   it("returns 404 for unknown concepts", async () => {
     const app = createApp(await fixtureContext());
     expect(
@@ -101,7 +113,10 @@ describe("study API", () => {
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toMatchObject({
       examples: [{ id: "example:sf1690:quadratic-evaluation" }],
-      questions: [{ id: "question:sf1690:quadratic-shape" }],
+      questions: [{
+        id: "question:sf1690:quadratic-shape",
+        answer: "The graph opens downward because the leading coefficient is negative.",
+      }],
     });
   });
 
@@ -150,6 +165,15 @@ describe("study API", () => {
     ]);
     expect(payload.coursework).toEqual([
       expect.objectContaining({ id: "coursework:sf1690:exercise-01" }),
+    ]);
+    expect(payload.definitions).toEqual([
+      expect.objectContaining({ id: "definition:sf1690:quadratic-function" }),
+    ]);
+    expect(payload.examples).toEqual([
+      expect.objectContaining({ id: "example:sf1690:quadratic-evaluation" }),
+    ]);
+    expect(payload.questions).toEqual([
+      expect.objectContaining({ id: "question:sf1690:quadratic-shape" }),
     ]);
     expect(payload.journey[0]).toMatchObject({ week: 35 });
     expect(payload.sources[0]).not.toHaveProperty("originalPath");

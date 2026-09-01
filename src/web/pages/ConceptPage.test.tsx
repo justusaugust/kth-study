@@ -122,6 +122,7 @@ describe("ConceptPage", () => {
                 title: "Predict the opening",
                 conceptIds: ["concept:sf1690:quadratic-functions"],
                 body: "What does the sign of $a$ tell you?",
+                answer: "A positive $a$ opens upward.",
                 relationships: [],
                 sourceIds: [],
                 lastChecked: "2026-08-24",
@@ -165,7 +166,7 @@ describe("ConceptPage", () => {
       "example-quadratic-evaluation",
     );
     expect(screen.getByRole("heading", { name: "Self-check" })).toBeVisible();
-    expect(screen.getByText("Predict the opening").closest("li")).toHaveAttribute(
+    expect(screen.getByText("Predict the opening").closest("article")).toHaveAttribute(
       "id",
       "question-quadratic-shape",
     );

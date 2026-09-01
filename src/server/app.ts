@@ -6,6 +6,7 @@ import { cors } from "hono/cors";
 import {
   ConceptResponseSchema,
   CourseResponseSchema,
+  DeadlinesResponseSchema,
   ExplainerResponseSchema,
   SearchResponseSchema,
   VisualAtlasResponseSchema,
@@ -161,6 +162,16 @@ export function createApp(
     return c.json(VisualAtlasResponseSchema.parse({ items }));
   });
 
+  app.get("/api/deadlines", (c) =>
+    c.json(DeadlinesResponseSchema.parse({
+      courses: [...context.corpus.courses.values()].sort((left, right) =>
+        left.code.localeCompare(right.code),
+      ),
+      assessments: [...context.corpus.assessments.values()],
+      coursework: [...context.corpus.coursework.values()],
+    })),
+  );
+
   app.get("/api/courses/:courseCode", (c) => {
     const code = c.req.param("courseCode").toUpperCase();
     const course = [...context.corpus.courses.values()].find(
@@ -179,6 +190,15 @@ export function createApp(
     const explainers = [...context.corpus.explainers.values()].filter(
       (explainer) => explainer.courseId === course.id,
     );
+    const definitions = [...context.corpus.definitions.values()].filter(
+      (definition) => definition.courseId === course.id,
+    );
+    const examples = [...context.corpus.examples.values()].filter(
+      (example) => example.courseId === course.id,
+    );
+    const questions = [...context.corpus.questions.values()].filter(
+      (question) => question.courseId === course.id,
+    );
     const assessments = [...context.corpus.assessments.values()].filter(
       (assessment) => assessment.courseId === course.id,
     );
@@ -195,6 +215,9 @@ export function createApp(
       ...lectures.flatMap((lecture) => lecture.sourceIds),
       ...concepts.flatMap((concept) => concept.sourceIds),
       ...explainers.flatMap((explainer) => explainer.sourceIds),
+      ...definitions.flatMap((definition) => definition.sourceIds),
+      ...examples.flatMap((example) => example.sourceIds),
+      ...questions.flatMap((question) => question.sourceIds),
       ...assessments.flatMap((assessment) => assessment.sourceIds),
       ...sessions.flatMap((session) => session.sourceIds),
       ...coursework.flatMap((item) => item.sourceIds),
@@ -205,6 +228,9 @@ export function createApp(
       lectures,
       concepts,
       explainers,
+      definitions,
+      examples,
+      questions,
       assessments,
       sessions,
       coursework,
@@ -244,9 +270,9 @@ export function createApp(
       examples: [...context.corpus.examples.values()].filter((example) =>
         example.conceptIds.includes(concept.id),
       ),
-      questions: [...context.corpus.questions.values()]
-        .filter((question) => question.conceptIds.includes(concept.id))
-        .map(({ answer: _answer, ...question }) => question),
+      questions: [...context.corpus.questions.values()].filter((question) =>
+        question.conceptIds.includes(concept.id),
+      ),
     }));
   });
 

@@ -8,13 +8,20 @@
       "sequence": 2,
       "title": "Module 1 exercise set 1",
       "date": "2026-09-07",
+      "time": "10:00",
       "week": 37,
       "requirement": "recommended",
-      "description": "Submit attempted Module 1 solutions as PDF by 10:00 if pursuing the exercise bonus point; all five sets and more than 50% of their problems must be attempted.",
+      "description": "Upload one or more PDFs to Canvas Exercise 1 by 10:00 on Monday, 7 September 2026. Scanned or photographed solutions are accepted, and the latest submission is reviewed. Bonus rule: attempt all five exercise sets and more than 50% of their problems.",
       "materials": [
         {
-          "title": "IE1204 Exercise 1 P1 HT2026.pdf",
-          "section": "Canvas Exercise 1"
+          "title": "Open Exercise 1 submission in Canvas",
+          "url": "https://canvas.kth.se/courses/63848/assignments/392903",
+          "section": "Upload PDF"
+        },
+        {
+          "title": "Download Exercise 1 worksheet",
+          "url": "https://canvas.kth.se/courses/63848/files/10564069?wrap=1",
+          "section": "IE1204 Exercise 1 P1 HT2026.pdf"
         }
       ],
       "sessionIds": [],
@@ -32,7 +39,7 @@
       ],
       "assessmentIds": ["assessment:ie1204:tena"],
       "sourceIds": ["source:ie1204:exercise-sets-2026", "source:ie1204:weekly-planner-2026"],
-      "lastChecked": "2026-08-31",
+      "lastChecked": "2026-09-01",
       "confidence": "verified",
       "relationships": []
     },

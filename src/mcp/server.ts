@@ -21,7 +21,7 @@ import {
 } from "../domain";
 import { createStudyContext, type StudyContext } from "../server/context";
 import {
-  KTH_STUDY_ICON,
+  KTH_STUDY_ICONS,
   EXPLAINER_WIDGET_META,
   EXPLAINER_WIDGET_MIME,
   EXPLAINER_WIDGET_URI,
@@ -80,7 +80,7 @@ export function createKthStudyServer(
       name: "kth-study",
       title: "KTH Study",
       version: "0.2.1",
-      icons: [{ src: KTH_STUDY_ICON, mimeType: "image/png", sizes: ["512x512"] }],
+      icons: KTH_STUDY_ICONS,
     },
     {
       instructions:

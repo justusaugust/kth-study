@@ -2,6 +2,7 @@ import type { ZodType } from "zod";
 import {
   ConceptResponseSchema,
   CourseResponseSchema,
+  DeadlinesResponseSchema,
   ExplainerResponseSchema,
   FeedbackResponseSchema,
   StudyMutationResponseSchema,
@@ -13,6 +14,7 @@ import {
   VisualAtlasResponseSchema,
   type ConceptResponse,
   type CourseResponse,
+  type DeadlinesResponse,
   type ExplainerResponse,
   type SearchResponse,
   type VisualAtlasResponse,
@@ -56,6 +58,10 @@ export function search(params: URLSearchParams): Promise<SearchResponse> {
 
 export function getVisualAtlas(): Promise<VisualAtlasResponse> {
   return request(VisualAtlasResponseSchema, "/api/visuals");
+}
+
+export function getDeadlines(): Promise<DeadlinesResponse> {
+  return request(DeadlinesResponseSchema, "/api/deadlines");
 }
 
 export function getCourse(courseCode: string): Promise<CourseResponse> {

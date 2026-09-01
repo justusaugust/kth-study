@@ -24,6 +24,10 @@ export function AppShell() {
             <StudyIcon kind="explainer" />
             <span className="atlas-link-label">Visual atlas</span>
           </NavLink>
+          <NavLink className="atlas-link" to="/deadlines" aria-label="Deadlines">
+            <StudyIcon kind="date" />
+            <span className="atlas-link-label">Deadlines</span>
+          </NavLink>
         </nav>
         <QuickSearch
           id="global-search"

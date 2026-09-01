@@ -73,6 +73,9 @@ export const CourseResponseSchema = z.object({
   lectures: z.array(LectureSchema),
   concepts: z.array(ConceptSchema),
   explainers: z.array(ExplainerSpecSchema),
+  definitions: z.array(DefinitionSchema).default([]),
+  examples: z.array(ExampleSchema).default([]),
+  questions: z.array(QuestionSchema).default([]),
   assessments: z.array(AssessmentSchema),
   sessions: z.array(CourseSessionSchema),
   coursework: z.array(CourseworkSchema),
@@ -91,7 +94,7 @@ export const ConceptResponseSchema = z.object({
   nextConcepts: z.array(z.string()),
   sources: z.array(PublicSourceSchema),
   examples: z.array(ExampleSchema),
-  questions: z.array(PublicQuestionSchema),
+  questions: z.array(QuestionSchema),
 });
 
 export const ExplainerResponseSchema = z.object({
@@ -110,6 +113,12 @@ export const VisualAtlasItemSchema = z.object({
 
 export const VisualAtlasResponseSchema = z.object({
   items: z.array(VisualAtlasItemSchema),
+});
+
+export const DeadlinesResponseSchema = z.object({
+  courses: z.array(CourseSchema),
+  assessments: z.array(AssessmentSchema),
+  coursework: z.array(CourseworkSchema),
 });
 
 export const FeedbackResponseSchema = z.object({
@@ -148,6 +157,7 @@ export type CourseResponse = z.infer<typeof CourseResponseSchema>;
 export type ConceptResponse = z.infer<typeof ConceptResponseSchema>;
 export type ExplainerResponse = z.infer<typeof ExplainerResponseSchema>;
 export type VisualAtlasResponse = z.infer<typeof VisualAtlasResponseSchema>;
+export type DeadlinesResponse = z.infer<typeof DeadlinesResponseSchema>;
 export type StudyStatus = z.infer<typeof StudyStatusSchema>;
 export type StudyStateResponse = z.infer<typeof StudyStateResponseSchema>;
 export type StudyMutationResponse = z.infer<typeof StudyMutationResponseSchema>;

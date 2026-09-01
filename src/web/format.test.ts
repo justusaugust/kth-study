@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { formatStudyDateRange } from "./format";
+import { formatStudyDateLong, formatStudyDateRange } from "./format";
+
+it("formats a deadline with its weekday", () => {
+  expect(formatStudyDateLong("2026-09-07")).toBe("Monday, 7 September 2026");
+});
 
 describe("formatStudyDateRange", () => {
   it("compresses a same-year range without losing either boundary", () => {

@@ -13,6 +13,7 @@ import { SectionMarker, StudyMark } from "../components/StudyMark";
 import { SourceLinks } from "../components/SourceLinks";
 import { formatStudyDate } from "../format";
 import { PageError } from "../components/PageError";
+import { PracticePrompt } from "../components/PracticePrompt";
 
 function InlineMarkdown({ children }: { children: string }) {
   return (
@@ -162,21 +163,15 @@ export function ConceptPage() {
             </InlineMarkdown>
           </p>
           {data.questions.length ? (
-            <div className="pedagogy-list">
+            <div className="practice-list">
               <h3>Self-check</h3>
-              <ol>
-                {data.questions.map((question) => (
-                  <li key={question.id} id={`question-${question.slug}`}>
-                    <strong>{question.title}</strong>
-                    <ReactMarkdown
-                      remarkPlugins={[remarkMath]}
-                      rehypePlugins={[rehypeKatex]}
-                    >
-                      {question.body}
-                    </ReactMarkdown>
-                  </li>
-                ))}
-              </ol>
+              {data.questions.map((question) => (
+                <PracticePrompt
+                  key={question.id}
+                  question={question}
+                  hints={[concept.centralInsight, concept.commonMistake]}
+                />
+              ))}
             </div>
           ) : null}
         </div>

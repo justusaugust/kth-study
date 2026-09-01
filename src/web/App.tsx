@@ -10,6 +10,7 @@ const LecturePage = lazy(() => import("./pages/LecturePage").then((module) => ({
 const ConceptPage = lazy(() => import("./pages/ConceptPage").then((module) => ({ default: module.ConceptPage })));
 const VisualPage = lazy(() => import("./pages/VisualPage").then((module) => ({ default: module.VisualPage })));
 const VisualAtlasPage = lazy(() => import("./pages/VisualAtlasPage").then((module) => ({ default: module.VisualAtlasPage })));
+const DeadlinesPage = lazy(() => import("./pages/DeadlinesPage").then((module) => ({ default: module.DeadlinesPage })));
 
 export function App() {
   return (
@@ -23,6 +24,7 @@ export function App() {
           <Route path="courses/:courseCode/concepts/:conceptSlug" element={<ConceptPage />} />
           <Route path="visuals" element={<VisualAtlasPage />} />
           <Route path="visuals/:visualSlug" element={<VisualPage />} />
+          <Route path="deadlines" element={<DeadlinesPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Route>

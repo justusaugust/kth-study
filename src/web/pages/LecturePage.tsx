@@ -8,9 +8,10 @@ import { getCourse, MissingEntityError } from "../api";
 import { PageError } from "../components/PageError";
 import { ExplainerRenderer } from "../components/ExplainerRenderer";
 import { MathText } from "../components/MathText";
+import { PracticePrompt } from "../components/PracticePrompt";
 import { SourceLinks } from "../components/SourceLinks";
 import { StudyMark } from "../components/StudyMark";
-import { formatStudyDate } from "../format";
+import { formatStudyDate, formatStudyDateLong } from "../format";
 
 export function LecturePage() {
   const { courseCode = "", lectureSlug = "" } = useParams();
@@ -43,9 +44,28 @@ export function LecturePage() {
   const concepts = lecture.conceptIds
     .map((id) => data.concepts.find((concept) => concept.id === id))
     .filter((concept): concept is CourseResponse["concepts"][number] => Boolean(concept));
-  const sources = lecture.sourceIds
-    .map((id) => data.sources.find((source) => source.id === id))
-    .filter((source): source is CourseResponse["sources"][number] => Boolean(source));
+  const coursework = data.coursework.filter((item) =>
+    item.lectureIds.includes(lecture.id),
+  );
+  const questions = data.questions.filter((question) =>
+    question.conceptIds.some((conceptId) => lecture.conceptIds.includes(conceptId)),
+  );
+  const relatedSourceIds = new Set([
+    ...lecture.sourceIds,
+    ...concepts.flatMap((concept) => concept.sourceIds),
+    ...data.explainers
+      .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
+      .flatMap((item) => item.sourceIds),
+    ...data.definitions
+      .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
+      .flatMap((item) => item.sourceIds),
+    ...data.examples
+      .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
+      .flatMap((item) => item.sourceIds),
+    ...questions.flatMap((item) => item.sourceIds),
+    ...coursework.flatMap((item) => item.sourceIds),
+  ]);
+  const sources = data.sources.filter((source) => relatedSourceIds.has(source.id));
 
   return (
     <article className="lecture-page page-column">
@@ -64,6 +84,8 @@ export function LecturePage() {
         <div className="lecture-heading__meta">
           <span>{concepts.length} {concepts.length === 1 ? "concept" : "concepts"}</span>
           <span>{sources.length} {sources.length === 1 ? "source" : "sources"}</span>
+          <span>{questions.length} {questions.length === 1 ? "self-check" : "self-checks"}</span>
+          {coursework.length ? <span>{coursework.length} assigned set{coursework.length === 1 ? "" : "s"}</span> : null}
         </div>
       </header>
 
@@ -79,38 +101,154 @@ export function LecturePage() {
       <section className="lecture-spine" aria-labelledby="lecture-spine-title">
         <header className="course-section-heading">
           <p>Move through the ideas in lecture order</p>
-          <h2 id="lecture-spine-title">Lecture spine</h2>
+          <h2 id="lecture-spine-title">Lecture guide</h2>
         </header>
         <ol className="lecture-spine__list">
           {concepts.map((concept, index) => {
             const explainer = data.explainers.find((item) =>
               item.conceptIds.includes(concept.id),
             );
+            const definitions = data.definitions.filter((item) =>
+              item.conceptIds.includes(concept.id),
+            );
+            const examples = data.examples.filter((item) =>
+              item.conceptIds.includes(concept.id),
+            );
+            const conceptQuestions = data.questions.filter((item) =>
+              item.conceptIds.includes(concept.id),
+            );
             return (
-              <li className="lecture-concept" key={concept.id}>
-                <span className="lecture-concept__index" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="lecture-concept__body">
-                  <h3>{concept.title}</h3>
-                  <MathText as="p">{concept.summary}</MathText>
-                  {explainer ? (
-                    <div className="figure-frame lecture-concept__visual">
-                      <ExplainerRenderer spec={explainer} mode="preview" />
+              <li key={concept.id}>
+                <details className="lecture-concept" open>
+                  <summary className="lecture-concept__summary">
+                    <span className="lecture-concept__index" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="lecture-concept__summary-copy">
+                      <span role="heading" aria-level={3}>{concept.title}</span>
+                      <MathText as="span">{concept.summary}</MathText>
+                    </span>
+                    <span className="lecture-concept__disclosure" aria-hidden="true">
+                      <span className="lecture-concept__collapse-label">Collapse</span>
+                      <span className="lecture-concept__expand-label">Expand</span>
+                    </span>
+                  </summary>
+                  <div className="lecture-concept__body">
+                    <div className="lecture-concept__explanation">
+                      <MathText as="p" className="lecture-concept__insight">
+                        {concept.centralInsight ?? concept.summary}
+                      </MathText>
+                      <div className="markdown-body">
+                        <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+                          {concept.body}
+                        </ReactMarkdown>
+                      </div>
                     </div>
-                  ) : null}
-                  <Link
-                    className="lecture-concept__link"
-                    to={`/courses/${data.course.code.toLowerCase()}/concepts/${concept.slug}`}
-                  >
-                    Study {concept.title.toLowerCase()}
-                  </Link>
-                </div>
+                    {definitions.length ? (
+                      <div className="lecture-concept__definitions">
+                        <h4>Key definitions</h4>
+                        <div>
+                          {definitions.map((definition) => (
+                            <article key={definition.id}>
+                              <h5>{definition.term}</h5>
+                              {definition.notation ? <MathText as="div">{definition.notation}</MathText> : null}
+                              <MathText as="p">{definition.statement}</MathText>
+                              {definition.interpretation ? <MathText as="p">{definition.interpretation}</MathText> : null}
+                            </article>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                    {explainer ? (
+                      <div className="figure-frame lecture-concept__visual">
+                        <ExplainerRenderer spec={explainer} mode="preview" />
+                      </div>
+                    ) : null}
+                    {examples.length ? (
+                      <div className="lecture-concept__examples">
+                        <h4>Worked examples</h4>
+                        {examples.map((example) => (
+                          <article key={example.id} id={`example-${example.slug}`}>
+                            <h5>{example.title}</h5>
+                            <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+                              {example.body}
+                            </ReactMarkdown>
+                          </article>
+                        ))}
+                      </div>
+                    ) : null}
+                    {conceptQuestions.length ? (
+                      <div className="lecture-concept__practice">
+                        <p className="lecture-concept__eyebrow">Try it yourself</p>
+                        {conceptQuestions.map((question) => (
+                          <PracticePrompt
+                            key={question.id}
+                            question={question}
+                            hints={[concept.centralInsight, concept.commonMistake]}
+                          />
+                        ))}
+                      </div>
+                    ) : null}
+                    <Link
+                      className="lecture-concept__link"
+                      to={`/courses/${data.course.code.toLowerCase()}/concepts/${concept.slug}`}
+                    >
+                      Open the standalone concept guide
+                    </Link>
+                  </div>
+                </details>
               </li>
             );
           })}
         </ol>
       </section>
+
+      {coursework.length ? (
+        <section className="lecture-practice" aria-labelledby="lecture-practice-title">
+          <header className="course-section-heading">
+            <p>Continue with the official course-plan work</p>
+            <h2 id="lecture-practice-title">Assigned exercises</h2>
+          </header>
+          <div className="lecture-practice__list">
+            {coursework.map((item) => (
+              <article key={item.id}>
+                <div>
+                  <div className="lecture-practice__meta">
+                    <span className="lecture-practice__requirement">{item.requirement}</span>
+                    {item.date ? (
+                      <time dateTime={`${item.date}${item.time ? `T${item.time}` : ""}`}>
+                        Due {formatStudyDateLong(item.date)}{item.time ? ` at ${item.time}` : ""}
+                      </time>
+                    ) : null}
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+                {item.materials.length ? (
+                  <dl>
+                    {item.materials.map((material) => (
+                      <div key={`${material.title}-${material.section ?? ""}`}>
+                        <dt>
+                          {material.url ? (
+                            <a href={material.url} target="_blank" rel="noreferrer">
+                              {material.title}
+                            </a>
+                          ) : material.title}
+                        </dt>
+                        <dd>
+                          {material.section ?? (material.page ? `Page ${material.page}` : "Course material")}
+                          {material.section && material.page ? ` · Page ${material.page}` : ""}
+                          {material.exercises ? ` · Exercises ${material.exercises}` : ""}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="lecture-sources" aria-labelledby="lecture-sources-title">
         <header className="course-section-heading">

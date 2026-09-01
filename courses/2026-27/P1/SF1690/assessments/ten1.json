@@ -9,14 +9,16 @@
       "kind": "written-exam",
       "credits": 6,
       "compulsory": true,
-      "description": "Written examination covering the course outcomes.",
+      "date": "2026-10-20",
+      "time": "14:00",
+      "description": "Written examination on Tuesday, 20 October 2026 from 14:00 to 17:00.",
       "outcomeIds": [
         "outcome:sf1690:solve-and-present",
         "outcome:sf1690:read-mathematics"
       ],
       "conceptIds": [],
-      "sourceIds": ["source:sf1690:official-course-page"],
-      "lastChecked": "2026-08-24",
+      "sourceIds": ["source:sf1690:official-course-page", "source:sf1690:timeedit-schedule"],
+      "lastChecked": "2026-09-01",
       "confidence": "verified",
       "relationships": [
         {

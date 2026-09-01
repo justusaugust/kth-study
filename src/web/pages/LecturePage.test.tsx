@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { LecturePage } from "./LecturePage";
@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 describe("LecturePage", () => {
-  it("renders mathematics inside a concept summary", async () => {
+  it("expands a lecture into concept content, practice, and assigned exercises", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(
@@ -52,6 +52,8 @@ describe("LecturePage", () => {
               slug: "function-composition",
               title: "Function composition",
               summary: "The composite $(f\\circ g)(x)=f(g(x))$ applies $g$ first.",
+              centralInsight: "Start with the inner function.",
+              commonMistake: "Do not reverse the order.",
               outcomeIds: [],
               lectureIds: ["lecture:sf1690:2026-08-28-04"],
               evidenceStatus: "curriculum",
@@ -62,10 +64,57 @@ describe("LecturePage", () => {
               confidence: "fixture",
             }],
             explainers: [],
+            definitions: [{
+              id: "definition:sf1690:composite-function",
+              courseId: "course:sf1690",
+              slug: "composite-function",
+              term: "Composite function",
+              statement: "A function formed by applying one function after another.",
+              notation: "$(f\\circ g)(x)=f(g(x))$",
+              interpretation: "Evaluate $g$ before $f$.",
+              conceptIds: ["concept:sf1690:function-composition"],
+              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+            }],
+            examples: [{
+              id: "example:sf1690:composition-order",
+              courseId: "course:sf1690",
+              slug: "composition-order",
+              title: "Compare the order",
+              conceptIds: ["concept:sf1690:function-composition"],
+              body: "If $g(x)=x+1$, substitute that expression into $f$.",
+              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+            }],
+            questions: [{
+              id: "question:sf1690:composition-order",
+              courseId: "course:sf1690",
+              slug: "composition-order",
+              title: "Which function acts first?",
+              conceptIds: ["concept:sf1690:function-composition"],
+              body: "In $(f\\circ g)(x)$, which function is evaluated first?",
+              answer: "$g$ is evaluated first.",
+              sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+            }],
             outcomes: [],
             assessments: [],
             sessions: [],
-            coursework: [],
+            coursework: [{
+              id: "coursework:sf1690:exercise-04",
+              courseId: "course:sf1690",
+              slug: "exercise-04",
+              kind: "exercise",
+              sequence: 8,
+              title: "Exercise session 4",
+              date: "2026-09-07",
+              time: "10:00",
+              week: 36,
+              requirement: "recommended",
+              description: "Recommended exercises for Lecture 4.",
+              materials: [{ title: "Open exercise sheet", url: "https://example.com/exercise", section: "P5", page: "38", exercises: "2, 7c-d, 10" }],
+              sessionIds: [],
+              lectureIds: ["lecture:sf1690:2026-08-28-04"],
+              conceptIds: ["concept:sf1690:function-composition"],
+              assessmentIds: [], sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
+            }],
             journey: [],
             sources: [],
           }),
@@ -91,5 +140,33 @@ describe("LecturePage", () => {
     expect(document.querySelector(".lecture-concept__body .katex")).toBeInTheDocument();
     expect(document.querySelector(".lecture-note")).toHaveClass("markdown-body");
     expect(screen.queryByText(/\$\(f\\circ g\)\(x\)/)).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Key definitions" })).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Worked examples" })).toBeVisible();
+    expect(screen.getByRole("textbox", { name: "Work it out" })).toBeVisible();
+
+    const concept = document.querySelector("details.lecture-concept") as HTMLDetailsElement;
+    expect(concept.open).toBe(true);
+    fireEvent.click(screen.getByText("Function composition").closest("summary")!);
+    expect(concept.open).toBe(false);
+    fireEvent.click(screen.getByText("Function composition").closest("summary")!);
+    expect(concept.open).toBe(true);
+
+    fireEvent.change(screen.getByRole("textbox", { name: "Work it out" }), {
+      target: { value: "g acts first" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Show a hint" }));
+    expect(screen.getByText("Hint 01")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Reveal solution" }));
+    expect(
+      document.querySelector(".practice-prompt__solution"),
+    ).toHaveTextContent("is evaluated first");
+
+    expect(screen.getByRole("heading", { name: "Assigned exercises" })).toBeVisible();
+    expect(screen.getByText("Due Monday, 7 September 2026 at 10:00")).toBeVisible();
+    expect(screen.getByRole("link", { name: "Open exercise sheet" })).toHaveAttribute(
+      "href",
+      "https://example.com/exercise",
+    );
+    expect(screen.getByText(/Exercises 2, 7c-d, 10/)).toBeVisible();
   });
 });
