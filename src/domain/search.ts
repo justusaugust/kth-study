@@ -290,10 +290,41 @@ export function searchCorpus(
   query: string,
   filters: SearchFilters = {},
 ): SearchHit[] {
+  const normalizedQuery = query
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .split(" ")
+    .filter((term) => term && !["a", "an", "the", "what", "is", "are", "how", "do", "does", "work", "works", "show", "me", "explain"].includes(term))
+    .join(" ") || query;
+  const typeBoost: Record<SearchEntityType, number> = {
+    course: 1.4,
+    outcome: 0.8,
+    lecture: 1,
+    concept: 2,
+    definition: 1.6,
+    explainer: 1.5,
+    example: 1,
+    question: 0.8,
+    source: 0.15,
+  };
+
   return index
-    .search(query, {
+    .search(normalizedQuery, {
+      boost: {
+        title: 8,
+        aliases: 6,
+        summary: 3,
+        body: 0.4,
+        notation: 4,
+        courseCode: 8,
+        outcomeTitles: 2,
+        sourceTitles: 1,
+        relationshipTitles: 2,
+      },
+      boostDocument: (_id, _term, storedFields) =>
+        typeBoost[storedFields?.entityType as SearchEntityType] ?? 1,
       prefix: true,
-      fuzzy: query.trim().length >= 4 ? 0.2 : false,
+      fuzzy: normalizedQuery.length >= 4 ? 0.2 : false,
     })
     .filter((result) => {
       if (filters.courseId && result.courseId !== filters.courseId) return false;

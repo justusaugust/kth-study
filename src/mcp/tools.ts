@@ -50,6 +50,20 @@ function stringArgument(args: Record<string, unknown>, name: string): string {
   return value;
 }
 
+function sourceSummary(context: StudyContext, sourceIds: string[]): string {
+  const sources = sourceIds
+    .map((id) => context.corpus.sources.get(id))
+    .filter((source) => source !== undefined)
+    .map((source) => `${source.title}${source.url ? ` (${source.url})` : ""}`);
+  return sources.length ? ` Sources: ${sources.join("; ")}.` : "";
+}
+
+function nextAction(result: { id: string; entityType: SearchEntityType }): string {
+  if (result.entityType === "concept") return `Next: call explain_concept with ${result.id}.`;
+  if (result.entityType === "explainer") return `Next: call show_visual with ${result.id}.`;
+  return `Stable ID: ${result.id}.`;
+}
+
 export async function callTool(
   context: StudyContext,
   name: string,
@@ -71,7 +85,15 @@ export async function callTool(
         ? (args.visualKinds as ("function-plot" | "number-line" | "coordinate-plane" | "systems-diagram" | "conic-section")[])
         : undefined,
     }).slice(0, limit).map((result) => ({ ...result, url: url(result.url) }));
-    return textResult(`Found ${results.length} study item(s).`, { query, results });
+    const summary = results.length
+      ? [
+          "Best matches from the KTH Study corpus:",
+          ...results.slice(0, 8).map((result, index) =>
+            `${index + 1}. [${result.entityType}] ${result.title} — ${result.summary} ${nextAction(result)}`,
+          ),
+        ].join("\n")
+      : `No KTH Study material matched “${query}”.`;
+    return textResult(summary, { query, results });
   }
 
   if (name === "get_course_dates") {
@@ -101,13 +123,29 @@ export async function callTool(
     }));
     const assessmentSummary = result.flatMap(({ course, assessments }) =>
       assessments.map((assessment) =>
-        `${course.code} ${assessment.code}: ${assessment.date ?? "date not stored"} (last checked ${assessment.lastChecked}, ${assessment.confidence})`,
+        `${course.code} ${assessment.code} — ${assessment.title}: ${assessment.date ?? "date not stored"}${assessment.time ? ` at ${assessment.time}` : ""}. ${assessment.description} Evidence: ${assessment.confidence}, last checked ${assessment.lastChecked}.${sourceSummary(context, assessment.sourceIds)}`,
       ),
     );
+    const courseworkSummary = result.flatMap(({ course, upcomingCoursework }) =>
+      upcomingCoursework.map((item) => {
+        const links = item.materials
+          .filter((material) => material.url)
+          .map((material) => `${material.title}: ${material.url}`);
+        return `${course.code} — ${item.title}: ${item.date}${item.time ? ` at ${item.time}` : ""} (${item.requirement}). ${item.description}${links.length ? ` Links: ${links.join("; ")}.` : ""} Evidence: ${item.confidence}, last checked ${item.lastChecked}.${sourceSummary(context, item.sourceIds)}`;
+      }),
+    );
+    const sessionSummary = result.flatMap(({ course, upcomingSessions }) =>
+      upcomingSessions.map((session) =>
+        `${course.code} — ${session.title}: ${session.date} (${session.kind}). Evidence: ${session.confidence}, last checked ${session.lastChecked}.${sourceSummary(context, session.sourceIds)}`,
+      ),
+    );
+    const sections = [
+      assessmentSummary.length ? `Assessments:\n${assessmentSummary.join("\n")}` : "No assessments are stored for the selected course(s).",
+      courseworkSummary.length ? `Upcoming coursework:\n${courseworkSummary.join("\n")}` : "No dated upcoming coursework is stored for the selected course(s).",
+      sessionSummary.length ? `Upcoming sessions:\n${sessionSummary.join("\n")}` : "No dated upcoming sessions are stored for the selected course(s).",
+    ];
     return textResult(
-      assessmentSummary.length
-        ? assessmentSummary.join("\n")
-        : "No assessments are stored for the selected course(s).",
+      `KTH Study date evidence refreshed ${context.refreshedAt}.\n\n${sections.join("\n\n")}`,
       { refreshedAt: context.refreshedAt, courses: result },
     );
   }
@@ -126,7 +164,20 @@ export async function callTool(
     const visualInstruction = visuals[0]
       ? ` Interactive visual available: call show_visual with ${visuals[0].id}.`
       : "";
-    return textResult(`${concept.summary}${visualInstruction}`, {
+    const definitions = [...context.corpus.definitions.values()]
+      .filter((definition) => definition.conceptIds.includes(id))
+      .map((definition) =>
+        `${definition.term}${definition.notation ? ` (${definition.notation})` : ""}: ${definition.statement}${definition.interpretation ? ` ${definition.interpretation}` : ""}`,
+      );
+    const explanation = [
+      concept.summary,
+      concept.centralInsight ? `Central insight: ${concept.centralInsight}` : "",
+      definitions.length ? `Key definitions:\n${definitions.join("\n")}` : "",
+      concept.commonMistake ? `Common mistake: ${concept.commonMistake}` : "",
+      `Evidence: ${concept.confidence}, last checked ${concept.lastChecked}.${sourceSummary(context, concept.sourceIds)}`,
+      visualInstruction.trim(),
+    ].filter(Boolean).join("\n\n");
+    return textResult(explanation, {
       id,
       url: url(entityUrl(concept)),
       concept,

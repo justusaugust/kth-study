@@ -62,4 +62,17 @@ describe("searchCorpus", () => {
 
     expect(hits.map((hit) => hit.id)).toContain("course:ie1204");
   });
+
+  it("ranks authored study material ahead of raw sources for natural questions", async () => {
+    const corpus = await loadCorpus(path.resolve("."));
+    const index = buildSearchIndex(corpus);
+    const logicGateHits = searchCorpus(index, corpus, "what is a logic gate").slice(0, 5);
+    const parabolaHits = searchCorpus(index, corpus, "show me how parabolas work").slice(0, 5);
+
+    expect(logicGateHits[0]?.entityType).toBe("concept");
+    expect(logicGateHits.map((hit) => hit.id)).toContain("definition:ie1204:logic-gate");
+    expect(logicGateHits.every((hit) => hit.entityType !== "source")).toBe(true);
+    expect(parabolaHits.some((hit) => hit.entityType === "concept" || hit.entityType === "explainer")).toBe(true);
+    expect(parabolaHits[0]?.entityType).not.toBe("source");
+  });
 });

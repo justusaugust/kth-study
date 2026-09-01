@@ -46,6 +46,30 @@ describe("KTH Study MCP tools", () => {
     });
   });
 
+  it("returns answer-ready grounded results for representative ChatGPT prompts", async () => {
+    const context = await createStudyContext(path.resolve("."));
+    const search = await callTool(context, "search_study_hub", {
+      query: "what is a logic gate",
+      limit: 5,
+    }, "https://kth-study.vercel.app");
+    const dates = await callTool(context, "get_course_dates", {
+      courseCode: "SF1690",
+    }, "https://kth-study.vercel.app");
+    const concept = await callTool(context, "explain_concept", {
+      id: "concept:ie1204:logic-gates-and-truth-tables",
+    }, "https://kth-study.vercel.app");
+
+    expect(search.content[0]).toMatchObject({
+      text: expect.stringContaining("call explain_concept with concept:ie1204:logic-gates-and-truth-tables"),
+    });
+    expect(dates.content[0]).toMatchObject({
+      text: expect.stringMatching(/SF1690 TEN1[\s\S]*2026-10-20 at 14:00[\s\S]*last checked 2026-09-01/),
+    });
+    expect(concept.content[0]).toMatchObject({
+      text: expect.stringMatching(/Key definitions:[\s\S]*Logic gate[\s\S]*call show_visual/),
+    });
+  });
+
   it("returns stable web and widget metadata for show_visual", async () => {
     const context = await createStudyContext(
       path.resolve("tests/fixtures/corpus"),
