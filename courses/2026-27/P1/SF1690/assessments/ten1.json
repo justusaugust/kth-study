@@ -17,7 +17,7 @@
         "outcome:sf1690:read-mathematics"
       ],
       "conceptIds": [],
-      "sourceIds": ["source:sf1690:official-course-page", "source:sf1690:timeedit-schedule"],
+      "sourceIds": ["source:sf1690:official-course-page"],
       "lastChecked": "2026-09-01",
       "confidence": "verified",
       "relationships": [
