@@ -12,7 +12,7 @@ export {
   type ValidationIssue,
 } from "./graph";
 export { checkEquivalent, type MathCheck } from "./math";
-export { loadCorpus, type Corpus } from "./repository";
+export { loadCorpus, type Corpus, type LoadCorpusOptions } from "./repository";
 export {
   buildSearchIndex,
   recentCorpus,

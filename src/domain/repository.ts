@@ -47,6 +47,10 @@ export interface Corpus {
   relationships: Relationship[];
 }
 
+export interface LoadCorpusOptions {
+  loadExtractedText?: boolean;
+}
+
 type EntityMap = Map<string, StudyEntity>;
 
 async function filesBelow(directory: string): Promise<string[]> {
@@ -93,7 +97,10 @@ function insert<T extends StudyEntity>(
   allEntities.set(entity.id, entity);
 }
 
-export async function loadCorpus(root: string): Promise<Corpus> {
+export async function loadCorpus(
+  root: string,
+  { loadExtractedText = true }: LoadCorpusOptions = {},
+): Promise<Corpus> {
   const corpus: Corpus = {
     courses: new Map(),
     assessments: new Map(),
@@ -147,7 +154,7 @@ export async function loadCorpus(root: string): Promise<Corpus> {
       entities = [await readMarkdown(QuestionSchema, file)];
     } else if (/\/sources\/[^/]+\.json$/.test(relative)) {
       const source = parseFile(SourceSchema, await readJson(file), file);
-      if (source.extractedTextPath) {
+      if (source.extractedTextPath && loadExtractedText) {
         const sidecar = path.resolve(path.dirname(file), source.extractedTextPath);
         try {
           source.extractedText = await fs.readFile(sidecar, "utf8");

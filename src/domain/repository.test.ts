@@ -61,4 +61,29 @@ describe("loadCorpus", () => {
       /quadratic-coefficients\.json.*kind/i,
     );
   });
+
+  it("can load a public corpus without private extracted source text", async () => {
+    const temporaryRoot = await fs.mkdtemp(
+      path.join(os.tmpdir(), "kth-corpus-public-"),
+    );
+    await fs.cp(path.resolve("tests/fixtures/corpus"), temporaryRoot, {
+      recursive: true,
+    });
+
+    const sourcePath = path.join(
+      temporaryRoot,
+      "courses/2026-27/P1/SF1690/sources/curriculum.json",
+    );
+    const source = JSON.parse(await fs.readFile(sourcePath, "utf8"));
+    source.extractedTextPath = "private-source.txt";
+    await fs.writeFile(sourcePath, JSON.stringify(source));
+
+    const corpus = await loadCorpus(temporaryRoot, {
+      loadExtractedText: false,
+    });
+
+    expect(
+      corpus.sources.get("source:sf1690:fixture-curriculum")?.extractedText,
+    ).toBeUndefined();
+  });
 });

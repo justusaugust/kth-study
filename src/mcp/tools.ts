@@ -54,8 +54,10 @@ export async function callTool(
   context: StudyContext,
   name: string,
   args: Record<string, unknown>,
+  publicOrigin?: string,
 ) {
   const entities = entityMap(context);
+  const url = (path: string) => publicOrigin ? new URL(path, publicOrigin).href : path;
 
   if (name === "search_study_hub") {
     const query = stringArgument(args, "query");
@@ -68,7 +70,7 @@ export async function callTool(
       visualKinds: Array.isArray(args.visualKinds)
         ? (args.visualKinds as ("function-plot" | "number-line" | "coordinate-plane" | "systems-diagram" | "conic-section")[])
         : undefined,
-    }).slice(0, limit);
+    }).slice(0, limit).map((result) => ({ ...result, url: url(result.url) }));
     return textResult(`Found ${results.length} study item(s).`, { query, results });
   }
 
@@ -119,14 +121,14 @@ export async function callTool(
       .map((explainer) => ({
         id: explainer.id,
         title: explainer.title,
-        url: entityUrl(explainer),
+        url: url(entityUrl(explainer)),
       }));
     const visualInstruction = visuals[0]
       ? ` Interactive visual available: call show_visual with ${visuals[0].id}.`
       : "";
     return textResult(`${concept.summary}${visualInstruction}`, {
       id,
-      url: entityUrl(concept),
+      url: url(entityUrl(concept)),
       concept,
       course: context.corpus.courses.get(concept.courseId),
       visuals,
@@ -141,7 +143,7 @@ export async function callTool(
       explainer.accessibleSummary,
       {
         id,
-        url: entityUrl(explainer),
+        url: url(entityUrl(explainer)),
         explainer,
         course: context.corpus.courses.get(explainer.courseId),
         concepts: explainer.conceptIds
@@ -159,7 +161,7 @@ export async function callTool(
     const prerequisites = prerequisiteIds
       .map((entityId) => entities.get(entityId))
       .filter((entity): entity is StudyEntity => Boolean(entity))
-      .map((entity) => ({ id: entity.id, title: entity.title, url: entityUrl(entity) }));
+      .map((entity) => ({ id: entity.id, title: entity.title, url: url(entityUrl(entity)) }));
     return textResult(`Found ${prerequisites.length} prerequisite(s).`, {
       id,
       prerequisites,
@@ -183,8 +185,10 @@ export async function callTool(
     const id = stringArgument(args, "id");
     const entity = entities.get(id);
     if (!entity) throw new Error(`Unknown entity ID: ${id}`);
-    const url = `http://127.0.0.1:4318${entityUrl(entity)}`;
-    return textResult(url, { id, url });
+    const target = publicOrigin
+      ? url(entityUrl(entity))
+      : `http://127.0.0.1:4318${entityUrl(entity)}`;
+    return textResult(target, { id, url: target });
   }
 
   if (name === "list_pending_asks") {

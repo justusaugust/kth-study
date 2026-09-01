@@ -41,3 +41,5 @@ courses/**/material/**/*.txt
 courses/**/material/**/*.jpg
 courses/**/material/**/*.jpeg
 courses/**/material/**/*.heic
+.vercel
+server-build/

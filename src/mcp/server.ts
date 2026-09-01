@@ -21,7 +21,7 @@ import {
 } from "../domain";
 import { createStudyContext, type StudyContext } from "../server/context";
 import {
-  KTH_STUDY_ICON,
+  KTH_STUDY_ICONS,
   EXPLAINER_WIDGET_META,
   EXPLAINER_WIDGET_MIME,
   EXPLAINER_WIDGET_URI,
@@ -74,13 +74,16 @@ const localMutation = {
 export function createKthStudyServer(
   context: StudyContext,
   widgetHtml: string,
+  publicOrigin?: string,
 ): McpServer {
+  const invoke = (name: string, args: Record<string, unknown>) =>
+    callTool(context, name, args, publicOrigin);
   const server = new McpServer(
     {
       name: "kth-study",
       title: "KTH Study",
       version: "0.2.1",
-      icons: [{ src: KTH_STUDY_ICON, mimeType: "image/png", sizes: ["512x512"] }],
+      icons: KTH_STUDY_ICONS,
     },
     {
       instructions:
@@ -99,6 +102,7 @@ export function createKthStudyServer(
       _meta: {
         ui: {
           csp: { connectDomains: [], resourceDomains: [] },
+          ...(publicOrigin ? { domain: publicOrigin } : {}),
           prefersBorder: false,
         },
       },
@@ -112,6 +116,7 @@ export function createKthStudyServer(
           _meta: {
             ui: {
               csp: { connectDomains: [], resourceDomains: [] },
+              ...(publicOrigin ? { domain: publicOrigin } : {}),
               prefersBorder: false,
             },
             "openai/widgetDescription":
@@ -140,7 +145,7 @@ export function createKthStudyServer(
       }),
       annotations: readOnly,
     },
-    async (args) => callTool(context, "search_study_hub", args),
+    async (args) => invoke("search_study_hub", args),
   );
 
   server.registerTool(
@@ -157,13 +162,13 @@ export function createKthStudyServer(
       }),
       annotations: readOnly,
     },
-    async (args) => callTool(context, "get_course_dates", args),
+    async (args) => invoke("get_course_dates", args),
   );
 
   for (const [name, title, description] of [
     ["explain_concept", "Explain concept", "Retrieve a concept, its course context, and any linked interactive visuals. If visuals are returned, render the best match with show_visual unless the user asked for text only."],
     ["show_prerequisites", "Show prerequisites", "Use this to retrieve explicit prerequisite relationships for a stable entity ID."],
-    ["open_in_study_hub", "Open in Study Hub", "Use this to retrieve the local Study Hub URL for a stable entity ID."],
+    ["open_in_study_hub", "Open in Study Hub", "Use this to retrieve the Study Hub URL for a stable entity ID."],
   ] as const) {
     const outputSchema = name === "explain_concept"
       ? z.object({
@@ -185,7 +190,7 @@ export function createKthStudyServer(
         outputSchema,
         annotations: readOnly,
       },
-      async (args) => callTool(context, name, args),
+      async (args) => invoke(name, args),
     );
   }
 
@@ -206,7 +211,7 @@ export function createKthStudyServer(
       annotations: readOnly,
       _meta: EXPLAINER_WIDGET_META,
     },
-    async (args) => callTool(context, "show_visual", args),
+    async (args) => invoke("show_visual", args),
   );
 
   server.registerTool(
@@ -224,8 +229,10 @@ export function createKthStudyServer(
       }),
       annotations: readOnly,
     },
-    async (args) => callTool(context, "quiz_me", args),
+    async (args) => invoke("quiz_me", args),
   );
+
+  if (publicOrigin) return server;
 
   server.registerTool(
     "list_pending_asks",
@@ -236,7 +243,7 @@ export function createKthStudyServer(
       outputSchema: z.object({ asks: z.array(PendingAskSchema) }),
       annotations: readOnly,
     },
-    async (args) => callTool(context, "list_pending_asks", args),
+    async (args) => invoke("list_pending_asks", args),
   );
 
   server.registerTool(
@@ -253,7 +260,7 @@ export function createKthStudyServer(
       }),
       annotations: localMutation,
     },
-    async (args) => callTool(context, "resolve_pending_ask", args),
+    async (args) => invoke("resolve_pending_ask", args),
   );
 
   server.registerTool(
@@ -274,7 +281,7 @@ export function createKthStudyServer(
       }),
       annotations: { ...localMutation, destructiveHint: true },
     },
-    async (args) => callTool(context, "ingest_lecture", args),
+    async (args) => invoke("ingest_lecture", args),
   );
 
   return server;

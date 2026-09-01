@@ -92,6 +92,18 @@ describe("study API", () => {
     await expect(response.text()).resolves.toBe("");
   });
 
+  it("serves the exact OpenAI verification token only in production mode", async () => {
+    const app = createApp(await fixtureContext(), undefined, {
+      publicOrigin: "https://kth-study.vercel.app",
+      verificationToken: "test-challenge-token",
+    });
+
+    const response = await app.request("/.well-known/openai-apps-challenge");
+    expect(response.status).toBe(200);
+    await expect(response.text()).resolves.toBe("test-challenge-token");
+    expect((await app.request("/api/asks")).status).toBe(404);
+  });
+
   it("returns worked examples and self-checks for a concept", async () => {
     const app = createApp(await fixtureContext());
     const response = await app.request(

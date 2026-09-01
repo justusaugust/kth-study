@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "concurrently -k \"vite --host 127.0.0.1\" \"tsx watch src/server/main.ts --root . --port 4318\"",
     "dev:api": "tsx watch src/server/main.ts --root . --port 4318",
-    "build": "tsc --noEmit && vite build && pnpm build:plugin",
+    "build": "tsc --noEmit && vite build && pnpm build:plugin && pnpm build:api",
+    "build:api": "tsup src/vercel.ts --format esm --platform node --target node24 --out-dir server-build",
     "build:plugin": "tsx scripts/build-plugin.ts",
     "test": "vitest run",
     "test:watch": "vitest",

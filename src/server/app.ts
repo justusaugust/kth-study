@@ -69,6 +69,7 @@ function publicSource(source: Source) {
 export function createApp(
   context: StudyContext,
   widgetHtml = "<!doctype html><title>KTH Study</title>",
+  options: { publicOrigin?: string; verificationToken?: string } = {},
 ): Hono {
   const app = new Hono();
   const entities = allEntities(context);
@@ -77,7 +78,7 @@ export function createApp(
     const transport = new WebStandardStreamableHTTPServerTransport({
       enableJsonResponse: true,
     });
-    await createKthStudyServer(context, widgetHtml).connect(transport);
+    await createKthStudyServer(context, widgetHtml, options.publicOrigin).connect(transport);
     return transport.handleRequest(c.req.raw);
   });
 
@@ -305,7 +306,7 @@ export function createApp(
     return c.json({ entityId: id, neighbors });
   });
 
-  app.post("/api/feedback", async (c) => {
+  if (!options.publicOrigin) app.post("/api/feedback", async (c) => {
     let body: unknown;
     try {
       body = await c.req.json();
@@ -323,13 +324,13 @@ export function createApp(
     return c.json({ feedback: event }, 201);
   });
 
-  app.get("/api/study-state/:entityId", async (c) => {
+  if (!options.publicOrigin) app.get("/api/study-state/:entityId", async (c) => {
     const entityId = c.req.param("entityId");
     if (!entities.has(entityId)) return c.json(error("not_found", "Study entity not found."), 404);
     return c.json(await getStudyState(context.root, entityId));
   });
 
-  app.put("/api/study-state/:entityId", async (c) => {
+  if (!options.publicOrigin) app.put("/api/study-state/:entityId", async (c) => {
     const entityId = c.req.param("entityId");
     if (!entities.has(entityId)) return c.json(error("not_found", "Study entity not found."), 404);
     const parsed = StudyStatusSchema.safeParse((await c.req.json().catch(() => ({})) as { status?: unknown }).status);
@@ -337,7 +338,7 @@ export function createApp(
     return c.json(await setStudyStatus(context.root, entityId, parsed.data));
   });
 
-  app.post("/api/study-state/:entityId/undo", async (c) => {
+  if (!options.publicOrigin) app.post("/api/study-state/:entityId/undo", async (c) => {
     const entityId = c.req.param("entityId");
     const body = await c.req.json().catch(() => ({})) as { eventId?: unknown };
     if (typeof body.eventId !== "string") return c.json(error("invalid_body", "Undo requires an event ID."), 400);
@@ -348,22 +349,27 @@ export function createApp(
     }
   });
 
-  app.get("/api/asks", async (c) => {
+  if (!options.publicOrigin) app.get("/api/asks", async (c) => {
     return c.json({ asks: await listPendingAsks(context.root, c.req.query("entityId")) });
   });
 
-  app.post("/api/asks", async (c) => {
+  if (!options.publicOrigin) app.post("/api/asks", async (c) => {
     const body = await c.req.json().catch(() => ({})) as Record<string, unknown>;
     if (typeof body.entityId !== "string" || !entities.has(body.entityId)) return c.json(error("not_found", "Ask entity not found."), 404);
     if (typeof body.question !== "string" || !body.question.trim() || typeof body.sourceUrl !== "string") return c.json(error("invalid_body", "A question and source URL are required."), 400);
     return c.json({ ask: await createAsk(context.root, { entityId: body.entityId, question: body.question, sourceUrl: body.sourceUrl }) }, 201);
   });
 
-  app.post("/api/asks/:askId/cancel", async (c) => {
+  if (!options.publicOrigin) app.post("/api/asks/:askId/cancel", async (c) => {
     try { return c.json(await cancelAsk(context.root, c.req.param("askId"))); }
     catch { return c.json(error("not_found", "Pending ask not found."), 404); }
   });
 
+  app.get("/.well-known/openai-apps-challenge", (c) =>
+    options.verificationToken
+      ? c.text(options.verificationToken)
+      : c.body(null, 404),
+  );
   app.get("/.well-known/*", (c) => c.body(null, 404));
 
   const builtApp = path.join(context.root, "dist");

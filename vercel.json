@@ -1,0 +1,20 @@
+{
+  "framework": "vite",
+  "functions": {
+    "api/index.mjs": {
+      "includeFiles": "{courses,plugins/kth-study/{assets,mcp}}/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/mcp", "destination": "/api?_path=/mcp" },
+    {
+      "source": "/.well-known/openai-apps-challenge",
+      "destination": "/api?_path=/.well-known/openai-apps-challenge"
+    },
+    { "source": "/api/:path*", "destination": "/api?_path=/api/:path*" },
+    {
+      "source": "/((?!assets/|fonts/|course-artifacts/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import {
   validateCorpus,
   type Corpus,
   type CurriculumGraph,
+  type LoadCorpusOptions,
   type SearchDocument,
 } from "../domain";
 
@@ -17,8 +18,11 @@ export interface StudyContext {
   refreshedAt: string;
 }
 
-export async function createStudyContext(root: string): Promise<StudyContext> {
-  const corpus = await loadCorpus(root);
+export async function createStudyContext(
+  root: string,
+  options?: LoadCorpusOptions,
+): Promise<StudyContext> {
+  const corpus = await loadCorpus(root, options);
   const issues = validateCorpus(corpus);
   if (issues.length > 0) {
     throw new Error(

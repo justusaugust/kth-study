@@ -30,9 +30,10 @@ describe("KTH Study MCP protocol", () => {
 
     const tools = await client.listTools();
     expect(tools.tools.map((tool) => tool.name)).toContain("show_visual");
-    expect(client.getServerVersion()?.icons?.[0]?.src).toMatch(
-      /^data:image\/png;base64,/,
-    );
+    expect(client.getServerVersion()?.icons).toEqual([
+      expect.objectContaining({ src: expect.stringMatching(/^data:image\/svg\+xml;base64,/) }),
+      expect.objectContaining({ src: expect.stringMatching(/^data:image\/png;base64,/) }),
+    ]);
     expect(tools.tools.every((tool) => tool.outputSchema)).toBe(true);
     expect(tools.tools.every((tool) => tool.annotations?.openWorldHint === false)).toBe(true);
     expect(tools.tools.find((tool) => tool.name === "show_visual")?._meta).toMatchObject({
@@ -101,5 +102,32 @@ describe("KTH Study MCP protocol", () => {
         httpServer.close((error) => error ? reject(error) : resolve()),
       );
     }
+  });
+
+  it("exposes only public read tools and production URLs when hosted", async () => {
+    const context = await createStudyContext(path.resolve("tests/fixtures/corpus"));
+    const server = createKthStudyServer(
+      context,
+      "<!doctype html><title>KTH Study</title>",
+      "https://kth-study.vercel.app",
+    );
+    const client = new Client({ name: "public-test-client", version: "0.1.0" });
+    const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+    await server.connect(serverTransport);
+    await client.connect(clientTransport);
+
+    const tools = await client.listTools();
+    expect(tools.tools).toHaveLength(7);
+    expect(tools.tools.every((tool) => tool.annotations?.readOnlyHint)).toBe(true);
+    const result = await client.callTool({
+      name: "show_visual",
+      arguments: { id: "explainer:sf1690:quadratic-coefficients" },
+    });
+    expect(result.structuredContent).toMatchObject({
+      url: "https://kth-study.vercel.app/visuals/quadratic-coefficients",
+    });
+
+    await client.close();
+    await server.close();
   });
 });
