@@ -32,7 +32,7 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
   const current = parseDate(today);
   const monday = new Date(current);
   monday.setUTCDate(current.getUTCDate() - ((current.getUTCDay() + 6) % 7));
-  const days: WeekDay[] = Array.from({ length: 7 }, (_, index) => {
+  const days: WeekDay[] = Array.from({ length: 5 }, (_, index) => {
     const date = new Date(monday);
     date.setUTCDate(monday.getUTCDate() + index);
     return { date: dateKey(date), entries: [] };
@@ -126,7 +126,7 @@ export function HomePage() {
       <header className="home-intro">
         <p className="eyebrow">Week {weekNumber(today)} · {weekRange.format(parseDate(days[0].date))}–{weekRange.format(parseDate(days.at(-1)!.date))}</p>
         <h1 id="home-title">This week</h1>
-        <p className="lead">Lectures, exercises, and deadlines across the current courses.</p>
+        <p className="lead">Lectures, labs, exercises, and deadlines across the current courses.</p>
       </header>
 
       <div className="week-scroll" tabIndex={0} aria-label="Current week calendar">

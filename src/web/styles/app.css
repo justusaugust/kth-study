@@ -611,8 +611,8 @@ h4 {
 
 .week-grid {
   display: grid;
-  min-width: 780px;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  min-width: 700px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-block: 1px solid var(--rule);
 }
 
@@ -663,6 +663,7 @@ h4 {
 }
 
 .week-day li[data-kind="exercise"],
+.week-day li[data-kind="laboratory"],
 .week-day li[data-kind="quiz"],
 .week-day li[data-kind="assignment"] {
   border-color: var(--sage-line);

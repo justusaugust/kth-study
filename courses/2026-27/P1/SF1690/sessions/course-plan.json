@@ -137,14 +137,16 @@
       "kind": "exercise",
       "sequence": 8,
       "title": "Exercise session 4",
+      "date": "2026-08-31",
       "week": 36,
       "courseworkIds": [
         "coursework:sf1690:exercise-04"
       ],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:timeedit-schedule"
       ],
-      "lastChecked": "2026-08-24",
+      "lastChecked": "2026-09-02",
       "confidence": "verified",
       "relationships": []
     },
