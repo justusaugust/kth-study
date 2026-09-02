@@ -174,7 +174,7 @@ describe("LecturePage", () => {
     expect(screen.queryByText(/\$\(f\\circ g\)\(x\)/)).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Key definitions" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Worked examples" })).toBeVisible();
-    expect(screen.getByRole("textbox", { name: "Work it out" })).toBeVisible();
+    expect(screen.queryByRole("textbox", { name: "Work it out" })).not.toBeInTheDocument();
 
     const concept = document.querySelector("details.lecture-concept") as HTMLDetailsElement;
     expect(concept.open).toBe(true);
@@ -185,6 +185,7 @@ describe("LecturePage", () => {
     fireEvent.click(screen.getByText("Function composition").closest("summary")!);
     expect(concept.open).toBe(true);
 
+    fireEvent.click(screen.getByRole("button", { name: "Write your reasoning" }));
     fireEvent.change(screen.getByRole("textbox", { name: "Work it out" }), {
       target: { value: "g acts first" },
     });

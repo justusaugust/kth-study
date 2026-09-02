@@ -143,8 +143,6 @@ export function LecturePage() {
                       <MathText as="span">{concept.summary}</MathText>
                     </span>
                     <span className="lecture-concept__disclosure" aria-hidden="true">
-                      <span className="lecture-concept__collapse-label">Collapse</span>
-                      <span className="lecture-concept__expand-label">Expand</span>
                     </span>
                   </summary>
                   <div className="lecture-concept__body">

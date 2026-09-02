@@ -81,9 +81,8 @@ test("Fig. 09 is adjustable directly in the visual atlas", async ({ page }) => {
 
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/visuals?q=quadratic");
-  await expect(
-    page.getByRole("slider", { name: "Coefficient a" }),
-  ).toBeVisible();
+  await expect(page.getByRole("slider", { name: "Coefficient a" })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Open interactive visual" })).toBeVisible();
   expect(
     await page.evaluate(
       () =>
@@ -138,8 +137,11 @@ test("visual atlas filters preserve figure identity and semantic focus labels", 
   page,
 }) => {
   await page.goto("/visuals");
+  await expect(page.locator(".atlas-register > li")).toHaveCount(10);
+  await page.getByRole("button", { name: "Show 10 more" }).click();
+  await page.getByRole("button", { name: "Show 10 more" }).click();
   await expect(page.locator(".atlas-register > li")).toHaveCount(22);
-  await expect(page.locator(".atlas-count")).toHaveCount(0);
+  await expect(page.locator(".atlas-count")).toHaveText("22 visuals");
   const toolbar = await page.locator(".atlas-toolbar").boundingBox();
   expect(toolbar).not.toBeNull();
   expect(Math.round(toolbar!.height)).toBeLessThanOrEqual(104);
@@ -161,6 +163,8 @@ test("visual atlas filters preserve figure identity and semantic focus labels", 
   await page
     .getByRole("option", { name: /SF1690.*Basic Course in Mathematics/ })
     .click();
+  await expect(page.locator(".atlas-register > li")).toHaveCount(10);
+  await page.getByRole("button", { name: "Show 10 more" }).click();
   await expect(page.locator(".atlas-register > li")).toHaveCount(13);
   await expect(page.locator(".atlas-register > li").first()).toContainText("Fig. 05");
 
@@ -391,6 +395,7 @@ test("lecture archive entries open a dedicated interactive lecture page", async 
   ).toHaveAttribute("href", "/courses/sf1690/concepts/parabolas-and-shifts");
 
   const firstPractice = page.locator(".practice-prompt").first();
+  await firstPractice.getByRole("button", { name: "Write your reasoning" }).click();
   await firstPractice.getByRole("textbox", { name: "Work it out" }).fill("My attempt");
   await firstPractice.getByRole("button", { name: "Show a hint" }).click();
   await expect(firstPractice.getByText("Hint 01")).toBeVisible();
@@ -522,6 +527,7 @@ test("the SF1690 dossier stays honest and composed across breakpoints and themes
     await expect(page.getByText("6 ECTS").first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "Course map" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Week ledger" })).toBeVisible();
+    await page.locator("#ledger-week-35 summary").click();
     await expect(page.getByText("29, 40, 42, 44, 45")).toBeVisible();
     await expect(page.locator('input[type="checkbox"]')).toHaveCount(0);
     await expect(page.locator("body")).not.toContainText("material/lectures");
@@ -566,13 +572,22 @@ test("the two new course dossiers and lecture-one apparatus work across breakpoi
         name: "Lecture 1 — digital abstraction and number systems",
       }),
     ).toBeVisible();
-    await expect(page.getByRole("img", { name: /eight ceramic bit tiles/i })).toBeVisible();
+    if (width === 375) {
+      await expect(page.getByRole("img", { name: /eight ceramic bit tiles/i })).toHaveCount(0);
+    } else {
+      await expect(page.getByRole("img", { name: /eight ceramic bit tiles/i })).toBeVisible();
+    }
 
     await page.goto("/courses/ii1308");
     await expect(page.getByRole("heading", { name: "Introduction to Programming" })).toBeVisible();
     await expect(page.getByText("1.5 ECTS").first()).toBeVisible();
+    await page.locator(".week-ledger__week").filter({ hasText: "Module A quiz" }).locator("summary").click();
     await expect(page.getByText("Module A quiz")).toBeVisible();
-    await expect(page.getByRole("img", { name: /blank name tag/i })).toBeVisible();
+    if (width === 375) {
+      await expect(page.getByRole("img", { name: /blank name tag/i })).toHaveCount(0);
+    } else {
+      await expect(page.getByRole("img", { name: /blank name tag/i })).toBeVisible();
+    }
 
     expect(
       await page.evaluate(

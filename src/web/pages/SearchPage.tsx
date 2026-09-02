@@ -10,6 +10,7 @@ export function SearchPage() {
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
   const [draft, setDraft] = useState(params.get("q") ?? "");
+  const [visibleCount, setVisibleCount] = useState(10);
   const rawType = params.get("type");
   const activeType = isUserSearchType(rawType) ? rawType : null;
   const { results, status } = useLiveSearch(draft, activeType);
@@ -24,6 +25,8 @@ export function SearchPage() {
   useEffect(() => {
     setDraft(params.get("q") ?? "");
   }, [params]);
+
+  useEffect(() => setVisibleCount(10), [draft, activeType]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -82,9 +85,10 @@ export function SearchPage() {
         <p className="search-context">Recently added</p>
       ) : null}
       {status === "loading" ? <p className="search-status">Searching…</p> : null}
+      {status === "ready" && results.length ? <p className="search-count">{results.length} results</p> : null}
       {status === "ready" && results.length === 0 ? <p className="empty-state">No matches. Try another term or filter.</p> : null}
       <ol className="search-results">
-        {results.map((hit) => (
+        {results.slice(0, visibleCount).map((hit) => (
           <li key={hit.id}>
             <Link to={hit.url}>{hit.title}</Link>
             <MathText as="p">{hit.summary}</MathText>
@@ -96,6 +100,9 @@ export function SearchPage() {
           </li>
         ))}
       </ol>
+      {visibleCount < results.length ? (
+        <button className="show-more" type="button" onClick={() => setVisibleCount((count) => count + 10)}>Show 10 more</button>
+      ) : null}
     </section>
   );
 }

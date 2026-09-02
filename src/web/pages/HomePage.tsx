@@ -5,6 +5,7 @@ import { entityUrl } from "../../domain/ids";
 import { getDeadlines } from "../api";
 import { PageError } from "../components/PageError";
 import { QuickSearch } from "../components/QuickSearch";
+import { currentStudyDate } from "../format";
 
 type WeekEntry = {
   id: string;
@@ -22,13 +23,6 @@ type WeekDay = { date: string; entries: WeekEntry[] };
 
 const parseDate = (value: string) => new Date(`${value}T12:00:00Z`);
 const dateKey = (date: Date) => date.toISOString().slice(0, 10);
-
-export function currentDateKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
 
 export function buildWeekView(data: DeadlinesResponse, today: string) {
   const current = parseDate(today);
@@ -111,7 +105,8 @@ const weekRange = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "sho
 export function HomePage() {
   const [data, setData] = useState<DeadlinesResponse>();
   const [error, setError] = useState(false);
-  const today = currentDateKey();
+  const today = currentStudyDate();
+  const [activeDate, setActiveDate] = useState(today);
 
   useEffect(() => {
     let active = true;
@@ -120,6 +115,13 @@ export function HomePage() {
   }, []);
 
   const days = useMemo(() => data ? buildWeekView(data, today) : [], [data, today]);
+  const weekEntries = days.flatMap((day) => day.entries);
+
+  useEffect(() => {
+    if (days.length && !days.some((day) => day.date === activeDate)) {
+      setActiveDate(days[0].date);
+    }
+  }, [activeDate, days]);
 
   if (error) {
     return <PageError title="Unable to load this week." message="Refresh the page to try again." linkTo="/deadlines" linkLabel="Open deadlines" />;
@@ -134,10 +136,26 @@ export function HomePage() {
         <p className="lead">Lectures, labs, exercises, and deadlines across the current courses.</p>
       </header>
 
+      <div className="week-day-tabs" role="tablist" aria-label="Choose a weekday">
+        {days.map((day) => (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={day.date === activeDate}
+            onClick={() => setActiveDate(day.date)}
+            key={day.date}
+          >
+            <span>{dayName.format(parseDate(day.date))}</span>
+            <strong>{dayNumber.format(parseDate(day.date))}</strong>
+            {day.entries.length ? <i aria-label={`${day.entries.length} ${day.entries.length === 1 ? "item" : "items"}`} /> : null}
+          </button>
+        ))}
+      </div>
       <div className="week-scroll" tabIndex={0} aria-label="Current week calendar">
         <div className="week-grid">
-          {days.map((day) => (
-            <section className="week-day" data-today={day.date === today || undefined} key={day.date}>
+          {days.map((day) => {
+            const next = weekEntries.find((entry) => entry.date > day.date);
+            return <section className="week-day" data-active={day.date === activeDate || undefined} data-today={day.date === today || undefined} key={day.date}>
               <time dateTime={day.date}>
                 <span>{dayName.format(parseDate(day.date))}</span>
                 <strong>{dayNumber.format(parseDate(day.date))}</strong>
@@ -157,9 +175,16 @@ export function HomePage() {
                     </li>
                   ))}
                 </ol>
-              ) : <span className="week-empty" aria-label="Nothing scheduled">—</span>}
-            </section>
-          ))}
+              ) : (
+                <div className="week-empty">
+                  <strong>Nothing today</strong>
+                  {next
+                    ? <Link to={next.url}>Next: {next.title}</Link>
+                    : <span>No more scheduled items this week.</span>}
+                </div>
+              )}
+            </section>;
+          })}
         </div>
       </div>
 
@@ -174,9 +199,6 @@ export function HomePage() {
         <div className="home-links">
           <Link to="/deadlines">All deadlines</Link>
           <Link to="/visuals">Visual atlas</Link>
-          <Link to="/courses/sf1690">SF1690</Link>
-          <Link to="/courses/ie1204">IE1204</Link>
-          <Link to="/courses/ii1308">II1308</Link>
         </div>
       </section>
     </section>

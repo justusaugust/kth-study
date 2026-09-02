@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import type { Course } from "../../../domain";
-import { CoursePassport } from "./CoursePassport";
+import { CourseArtifactFigure, CoursePassport } from "./CoursePassport";
 
 afterEach(cleanup);
 
@@ -59,8 +59,7 @@ describe("CoursePassport", () => {
 
   it("renders a provided dithered artwork with a restrained construction overlay", () => {
     render(
-      <CoursePassport
-        course={course}
+      <CourseArtifactFigure
         artifact={{
           kind: "dithered-still-life",
           src: "/course-artifacts/sf1690-mathematics-still-life-dithered-v1.webp",
@@ -89,7 +88,7 @@ describe("CoursePassport", () => {
   });
 
   it("renders no artefact figure when none is provided", () => {
-    render(<CoursePassport course={course} />);
+    render(<CourseArtifactFigure />);
     expect(document.querySelector(".course-artifact")).toBeNull();
   });
 

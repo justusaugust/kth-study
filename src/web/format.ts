@@ -20,6 +20,15 @@ export function formatStudyDateLong(value: string): string {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
+export function currentStudyDate(date = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Stockholm",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
+}
+
 function dateParts(value: string) {
   const [year, month, day] = value.split("-").map(Number);
   return { year, month, day, date: new Date(Date.UTC(year, month - 1, day)) };

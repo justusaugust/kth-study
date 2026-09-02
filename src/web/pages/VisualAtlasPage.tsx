@@ -30,6 +30,7 @@ export function VisualAtlasPage() {
   const [params, setParams] = useSearchParams();
   const [data, setData] = useState<VisualAtlasResponse>();
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [visibleCount, setVisibleCount] = useState(10);
   const query = params.get("q") ?? "";
   const course = params.get("course") ?? "";
   const kind = params.get("kind") ?? "";
@@ -93,6 +94,8 @@ export function VisualAtlasPage() {
     });
   }, [course, data, kind, query]);
 
+  useEffect(() => setVisibleCount(10), [course, kind, query]);
+
   function updateParam(name: "q" | "course" | "kind", value: string) {
     const next = new URLSearchParams(params);
     if (value) next.set(name, value);
@@ -142,9 +145,10 @@ export function VisualAtlasPage() {
       {status === "ready" && items.length === 0 ? (
         <p className="empty-state">No visuals match these filters. Clear a filter or try another search.</p>
       ) : null}
+      {status === "ready" && items.length ? <p className="atlas-count">{items.length} {items.length === 1 ? "visual" : "visuals"}</p> : null}
 
       <ol className="atlas-register">
-        {items.map((item) => (
+        {items.slice(0, visibleCount).map((item) => (
           <li key={item.explainer.id} data-figure={item.figureNumber}>
             <header className="atlas-entry-heading">
               <span className="atlas-figure-code">Fig. {String(item.figureNumber).padStart(2, "0")}</span>
@@ -155,10 +159,17 @@ export function VisualAtlasPage() {
                 </h2>
               </div>
             </header>
-            <ExplainerRenderer spec={item.explainer} mode="preview" />
+            <p className="atlas-entry-summary">{item.explainer.accessibleSummary}</p>
+            <div className="atlas-entry-preview">
+              <ExplainerRenderer spec={item.explainer} mode="preview" />
+            </div>
+            <Link className="atlas-entry-open" to={`/visuals/${item.explainer.slug}`}>Open interactive visual</Link>
           </li>
         ))}
       </ol>
+      {visibleCount < items.length ? (
+        <button className="show-more" type="button" onClick={() => setVisibleCount((count) => count + 10)}>Show 10 more</button>
+      ) : null}
     </section>
   );
 }

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import type { CourseResponse } from "../../domain";
+import { entityUrl } from "../../domain/ids";
 import { getCourse, MissingEntityError } from "../api";
 import { PageError } from "../components/PageError";
-import { formatStudyDate } from "../format";
+import { currentStudyDate, formatStudyDate } from "../format";
 import { AssessmentBand } from "../components/course/AssessmentBand";
 import { CourseMap } from "../components/course/CourseMap";
 import {
+  CourseArtifactFigure,
   CoursePassport,
   type CourseArtifact,
 } from "../components/course/CoursePassport";
@@ -42,6 +44,64 @@ const courseArtifacts: Record<string, CourseArtifact> = {
   },
 };
 
+function CourseNow({ data, courseCode }: { data: CourseResponse; courseCode: string }) {
+  const today = currentStudyDate();
+  const nextSession = [...data.sessions]
+    .filter((item) => item.date && item.date >= today)
+    .sort((a, b) => `${a.date}T${a.time ?? "23:59"}`.localeCompare(`${b.date}T${b.time ?? "23:59"}`))[0];
+  const nextDue = [...data.assessments, ...data.coursework]
+    .filter((item) => item.date && item.date >= today)
+    .sort((a, b) => `${a.date}T${a.time ?? "23:59"}`.localeCompare(`${b.date}T${b.time ?? "23:59"}`))[0];
+  const latestLecture = [...data.lectures]
+    .filter((item) => item.date <= today)
+    .sort((a, b) => b.date.localeCompare(a.date))[0];
+  const items = [
+    nextSession && {
+      label: "Next session",
+      title: nextSession.title,
+      date: nextSession.date!,
+      detail: [nextSession.time, nextSession.location].filter(Boolean).join(" · "),
+      url: nextSession.lectureId
+        ? `/courses/${courseCode}/lectures/${nextSession.lectureId.split(":").at(-1)}`
+        : entityUrl(nextSession),
+    },
+    nextDue && {
+      label: "Next due",
+      title: nextDue.title,
+      date: nextDue.date!,
+      detail: nextDue.time,
+      url: entityUrl(nextDue),
+    },
+    latestLecture && {
+      label: "Latest lecture",
+      title: latestLecture.title,
+      date: latestLecture.date,
+      url: `/courses/${courseCode}/lectures/${latestLecture.slug}`,
+    },
+  ].filter((item): item is NonNullable<typeof item> => Boolean(item));
+
+  if (!items.length) return null;
+  return (
+    <section className="course-now" id="course-now" aria-labelledby="course-now-title">
+      <header className="course-section-heading">
+        <p>Continue from here</p>
+        <h2 id="course-now-title">Next up</h2>
+      </header>
+      <ol>
+        {items.map((item) => (
+          <li key={item.label}>
+            <Link to={item.url}>
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+              <small>{formatStudyDate(item.date)}{item.detail ? ` · ${item.detail}` : ""}</small>
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
 export function CoursePage() {
   const { courseCode = "" } = useParams();
   const [data, setData] = useState<CourseResponse>();
@@ -73,15 +133,16 @@ export function CoursePage() {
 
   const readingSections = [
     { id: "course-passport", label: "Course passport" },
+    { id: "course-now", label: "Next up" },
+    ...(data.lectures.length
+      ? [{ id: "lecture-archive", label: "Lecture archive" }]
+      : []),
+    ...(data.journey.length ? [{ id: "week-ledger", label: "Week ledger" }] : []),
     ...(data.assessments.length
       ? [{ id: "course-assessment", label: "Assessment" }]
       : []),
     ...(data.outcomes.length || data.concepts.length
       ? [{ id: "course-map", label: "Course map" }]
-      : []),
-    ...(data.journey.length ? [{ id: "week-ledger", label: "Week ledger" }] : []),
-    ...(data.lectures.length
-      ? [{ id: "lecture-archive", label: "Lecture archive" }]
       : []),
     { id: "concept-register", label: "Concept register" },
     ...(data.sources.length ? [{ id: "course-sources", label: "Sources" }] : []),
@@ -89,26 +150,10 @@ export function CoursePage() {
 
   return (
     <article className="page-column course-page course-dossier">
-      <CoursePassport
-        course={data.course}
-        artifact={courseArtifacts[courseCode.toLowerCase()]}
-      />
-      <AssessmentBand
-        courseCredits={data.course.credits}
-        assessments={data.assessments}
-      />
-      <CourseMap
-        courseCode={courseCode}
-        outcomes={data.outcomes}
-        concepts={data.concepts}
-      />
-      <WeekLedger
-        groups={data.journey}
-        sessions={data.sessions}
-        coursework={data.coursework}
-        courseStart={data.course.startDate}
-        courseEnd={data.course.endDate}
-      />
+      <CoursePassport course={data.course} />
+      <CourseNow data={data} courseCode={courseCode} />
+      <CourseArtifactFigure artifact={courseArtifacts[courseCode.toLowerCase()]} />
+      <ReadingPosition sections={readingSections} currentWeek={currentWeek} />
       {data.lectures.length ? (
         <section
           className="course-archive"
@@ -139,6 +184,22 @@ export function CoursePage() {
           </ol>
         </section>
       ) : null}
+      <WeekLedger
+        groups={data.journey}
+        sessions={data.sessions}
+        coursework={data.coursework}
+        courseStart={data.course.startDate}
+        courseEnd={data.course.endDate}
+      />
+      <AssessmentBand
+        courseCredits={data.course.credits}
+        assessments={data.assessments}
+      />
+      <CourseMap
+        courseCode={courseCode}
+        outcomes={data.outcomes}
+        concepts={data.concepts}
+      />
       <section
         className="course-concepts"
         id="concept-register"
@@ -164,7 +225,6 @@ export function CoursePage() {
         )}
       </section>
       <CourseSources sources={data.sources} />
-      <ReadingPosition sections={readingSections} currentWeek={currentWeek} />
     </article>
   );
 }

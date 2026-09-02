@@ -53,7 +53,7 @@ function stubAtlas() {
 }
 
 describe("VisualAtlasPage", () => {
-  it("shows every visual and keeps figure numbers stable while filtering", async () => {
+  it("shows the result count and keeps figure numbers stable while filtering", async () => {
     stubAtlas();
 
     render(
@@ -64,7 +64,7 @@ describe("VisualAtlasPage", () => {
 
     expect(await screen.findByText("Fig. 01")).toBeVisible();
     expect(screen.getByText("Fig. 05")).toBeVisible();
-    expect(screen.queryByText(/^\d+ visuals?$/)).not.toBeInTheDocument();
+    expect(screen.getByText("2 visuals")).toBeVisible();
 
     const courseSelect = screen.getByRole("combobox", { name: /^Course/ });
     fireEvent.click(courseSelect);
@@ -74,7 +74,7 @@ describe("VisualAtlasPage", () => {
 
     expect(screen.queryByText("Fig. 01")).not.toBeInTheDocument();
     expect(screen.getByText("Fig. 05")).toBeVisible();
-    expect(screen.queryByText(/^\d+ visuals?$/)).not.toBeInTheDocument();
+    expect(screen.getByText("1 visual")).toBeVisible();
     expect(courseSelect).toHaveTextContent(/SF1690.*Basic Course in Mathematics/);
   });
 
@@ -93,7 +93,7 @@ describe("VisualAtlasPage", () => {
     fireEvent.click(screen.getByRole("combobox", { name: /^Visual form/ }));
     fireEvent.click(screen.getByRole("option", { name: "Conic sections" }));
 
-    expect(screen.queryByText(/^\d+ visuals?$/)).not.toBeInTheDocument();
+    expect(screen.getByText("1 visual")).toBeVisible();
     expect(screen.getByTestId("location")).toHaveTextContent("kind=conic-section");
   });
 

@@ -131,7 +131,10 @@ export function ReadingPosition({
             }
           }}
         >
-          <p className="reading-position__kicker">Contents</p>
+          <header className="reading-position__panel-head">
+            <p className="reading-position__kicker">Jump to</p>
+            <button type="button" className="reading-position__close" onClick={() => setOpen(false)}>Close</button>
+          </header>
           <ol>
             {sections.map((section) => (
               <li key={section.id}>
@@ -164,7 +167,7 @@ export function ReadingPosition({
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >
-        <span className="reading-position__label">{activeLabel}</span>
+        <span className="reading-position__label">Jump to · {activeLabel}</span>
       </button>
     </nav>
   );

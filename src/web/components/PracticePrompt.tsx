@@ -21,13 +21,15 @@ export function PracticePrompt({
 }) {
   const attemptId = useId();
   const [attempt, setAttempt] = useState("");
+  const [writing, setWriting] = useState(false);
   const [hintCount, setHintCount] = useState(0);
   const [solutionOpen, setSolutionOpen] = useState(false);
   const availableHints = [...new Set(hints.filter((hint): hint is string => Boolean(hint)))];
-  const changed = attempt.length > 0 || hintCount > 0 || solutionOpen;
+  const changed = writing || attempt.length > 0 || hintCount > 0 || solutionOpen;
 
   function reset() {
     setAttempt("");
+    setWriting(false);
     setHintCount(0);
     setSolutionOpen(false);
   }
@@ -41,15 +43,21 @@ export function PracticePrompt({
       <div className="practice-prompt__question">
         <Markdown>{question.body}</Markdown>
       </div>
-      <label htmlFor={attemptId}>Work it out</label>
-      <textarea
-        id={attemptId}
-        value={attempt}
-        onChange={(event) => setAttempt(event.target.value)}
-        placeholder="Write your reasoning here before revealing the solution."
-        rows={4}
-      />
+      {writing ? (
+        <>
+          <label htmlFor={attemptId}>Work it out</label>
+          <textarea
+            id={attemptId}
+            value={attempt}
+            onChange={(event) => setAttempt(event.target.value)}
+            placeholder="Write your reasoning here before revealing the solution."
+            rows={4}
+            autoFocus
+          />
+        </>
+      ) : null}
       <div className="practice-prompt__controls">
+        {!writing ? <button type="button" onClick={() => setWriting(true)}>Write your reasoning</button> : null}
         {hintCount < availableHints.length ? (
           <button type="button" onClick={() => setHintCount((count) => count + 1)}>
             {hintCount ? "Another hint" : "Show a hint"}

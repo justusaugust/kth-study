@@ -4,7 +4,7 @@ import type {
   CourseSession,
   Coursework,
 } from "../../../domain";
-import { formatStudyDate } from "../../format";
+import { currentStudyDate, formatStudyDate } from "../../format";
 
 const requirementLabels: Record<Coursework["requirement"], string> = {
   required: "Required",
@@ -38,16 +38,6 @@ function courseworkDescription(coursework: Coursework): string {
   return coursework.description.replace(repeatedPrefix, "");
 }
 
-/* The teaching calendar lives in Europe/Stockholm, not the viewer's zone. */
-function stockholmDate(today: Date): string {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Europe/Stockholm",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(today);
-}
-
 export function isoWeekOf(isoDate: string): number {
   const [year, month, day] = isoDate.split("-").map(Number);
   const date = new Date(Date.UTC(year, month - 1, day));
@@ -64,7 +54,7 @@ export function resolveCurrentWeek(
   today = new Date(),
 ): number | undefined {
   if (!courseStart || !courseEnd) return undefined;
-  const iso = stockholmDate(today);
+  const iso = currentStudyDate(today);
   if (iso < courseStart || iso > courseEnd) return undefined;
   const week = isoWeekOf(iso);
   return groups.some((group) => group.week === week) ? week : undefined;
@@ -201,7 +191,7 @@ export function WeekLedger({
   const sessionById = new Map(sessions.map((session) => [session.id, session]));
   const courseworkById = new Map(coursework.map((work) => [work.id, work]));
   const currentWeek = resolveCurrentWeek(groups, courseStart, courseEnd, today);
-  const todayIso = stockholmDate(today ?? new Date());
+  const todayIso = currentStudyDate(today ?? new Date());
 
   return (
     <section
@@ -225,7 +215,8 @@ export function WeekLedger({
                 : undefined
             }
           >
-            <h3 className="week-ledger__register">
+            <details open={group.week === currentWeek}>
+            <summary className="week-ledger__register">
               {group.week ? (
                 <>
                   <span className="week-ledger__register-word">Week</span>
@@ -241,7 +232,8 @@ export function WeekLedger({
                   Not yet scheduled
                 </span>
               )}
-            </h3>
+              <span className="week-ledger__count">{group.items.length}</span>
+            </summary>
             <ol className="week-ledger__entries">
               {group.items.map((item) => (
                 <LedgerEntry
@@ -257,6 +249,7 @@ export function WeekLedger({
                 />
               ))}
             </ol>
+            </details>
           </li>
         ))}
       </ol>

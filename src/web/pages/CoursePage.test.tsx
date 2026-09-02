@@ -202,10 +202,11 @@ describe("CoursePage", () => {
       (heading) => heading.textContent?.trim(),
     );
     expect(sectionNames).toEqual([
+      "Next up",
+      "Lecture archive",
+      "Week ledger",
       "Assessment",
       "Course map",
-      "Week ledger",
-      "Lecture archive",
       "Concept register",
       "Sources",
     ]);

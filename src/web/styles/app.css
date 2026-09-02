@@ -1381,6 +1381,7 @@ h4 {
   }
 }
 
+
 .diagram-slider output {
   min-width: 2.5ch;
   color: var(--ink);
@@ -5098,5 +5099,381 @@ h4 {
 
   .global-search {
     transition: none;
+  }
+}
+
+/* Task-first mobile flow -------------------------------------------------- */
+
+.week-day-tabs,
+.atlas-entry-summary,
+.atlas-entry-open {
+  display: none;
+}
+
+.week-empty {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--text-label);
+}
+
+.week-empty strong {
+  color: var(--ink-secondary);
+  font-weight: 580;
+}
+
+.week-empty a {
+  padding: 0;
+  color: var(--accent);
+}
+
+.deadline-group {
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+}
+
+.deadline-group[data-next="true"] {
+  border-top: 2px solid var(--accent);
+  background: transparent;
+}
+
+.deadline-item {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.deadline-item summary {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-8) var(--space-4) 0;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+.deadline-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.deadline-item summary::after {
+  content: "+";
+  position: absolute;
+  top: var(--space-3);
+  right: 0;
+  color: var(--ink-tertiary);
+  font-size: 1.15rem;
+}
+
+.deadline-item[open] summary::after {
+  content: "−";
+}
+
+.deadline-item__body {
+  max-width: 62ch;
+  padding: 0 0 var(--space-5);
+}
+
+.deadline-item__body > p {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-secondary);
+  font-family: var(--font-prose);
+  line-height: 1.6;
+}
+
+.deadline-item__body > .deadline-item__provenance {
+  color: var(--ink-tertiary);
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+}
+
+.deadline-item__open {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: var(--space-2);
+  color: var(--accent);
+  font-weight: 560;
+}
+
+.deadline-undated-list .deadline-item {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.lecture-concept {
+  overflow: visible;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+}
+
+.lecture-concept__summary {
+  padding: var(--space-6) 0;
+}
+
+.lecture-concept__summary:focus-visible {
+  box-shadow: none;
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.lecture-concept__disclosure::after {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+}
+
+.lecture-concept__body {
+  padding-right: 0;
+  padding-bottom: var(--space-12);
+}
+
+.lecture-concept__definitions > div {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.lecture-concept__definitions article {
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--rule-soft);
+  border-radius: 0;
+  background: transparent;
+}
+
+.practice-prompt {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lecture-concept__practice .practice-prompt + .practice-prompt {
+  margin-top: 0;
+}
+
+.search-count,
+.atlas-count {
+  margin: 0 0 var(--space-4);
+  color: var(--ink-tertiary);
+  font-size: var(--text-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.show-more {
+  min-height: 44px;
+  margin-top: var(--space-6);
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 560;
+  cursor: pointer;
+}
+
+.atlas-entry-open {
+  min-height: 44px;
+  align-items: center;
+  color: var(--accent);
+  font-weight: 560;
+}
+
+.atlas-query input {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .week-day-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: var(--space-10);
+    border-block: 1px solid var(--rule);
+  }
+
+  .week-day-tabs button {
+    display: grid;
+    min-width: 0;
+    min-height: 56px;
+    place-content: center;
+    gap: 1px;
+    border: 0;
+    border-inline-start: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-tertiary);
+    font: inherit;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .week-day-tabs button:last-child {
+    border-inline-end: 1px solid var(--rule);
+  }
+
+  .week-day-tabs button[aria-selected="true"] {
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  .week-day-tabs span {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+  }
+
+  .week-day-tabs strong {
+    font-size: 1rem;
+  }
+
+  .week-day-tabs i {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .week-scroll {
+    margin-top: 0;
+    overflow: visible;
+  }
+
+  .week-grid {
+    min-width: 0;
+    grid-template-columns: 1fr;
+    border: 0;
+  }
+
+  .week-day {
+    display: none;
+    min-height: 13rem;
+    padding: var(--space-6) 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .week-day[data-active="true"] {
+    display: block;
+  }
+
+  .week-day > time {
+    display: none;
+  }
+
+  .week-day ol,
+  .week-empty {
+    margin-top: 0;
+  }
+
+  .week-day li + li {
+    margin-top: var(--space-1);
+  }
+
+  .week-day a {
+    padding-block: var(--space-3);
+    font-size: 0.95rem;
+  }
+
+  .filter-row {
+    flex-wrap: nowrap;
+    margin-inline: calc(-1 * var(--page-margin));
+    padding-inline: var(--page-margin);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-row button {
+    flex: 0 0 auto;
+  }
+
+  .breadcrumb {
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .breadcrumb a::before {
+    content: "← ";
+  }
+
+  .breadcrumb > span {
+    display: none;
+  }
+
+  .lecture-concept__summary {
+    grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+    padding-inline: 0;
+  }
+
+  .lecture-concept__disclosure {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .lecture-concept__body {
+    padding: 0 0 var(--space-10);
+  }
+
+  .lecture-concept__visual {
+    margin-inline: 0;
+  }
+
+  .practice-prompt {
+    padding-inline: 0;
+  }
+
+  .atlas-register {
+    gap: 0;
+  }
+
+  .atlas-register > li {
+    padding: var(--space-7) 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .atlas-entry-heading {
+    margin-bottom: var(--space-3);
+  }
+
+  .atlas-entry-preview {
+    display: none;
+  }
+
+  .atlas-entry-summary {
+    display: block;
+    margin: 0;
+    color: var(--ink-secondary);
+    font-family: var(--font-prose);
+    line-height: 1.55;
+  }
+
+  .atlas-entry-open {
+    display: inline-flex;
+    margin-top: var(--space-2);
+  }
+
+  .deadline-group {
+    padding: var(--space-6) 0;
+  }
+}
+
+@media (pointer: coarse) {
+  a,
+  button,
+  summary,
+  input[type="range"] {
+    touch-action: manipulation;
+  }
+
+  .show-more:active,
+  .week-day-tabs button:active,
+  .deadline-item summary:active {
+    opacity: 0.68;
   }
 }

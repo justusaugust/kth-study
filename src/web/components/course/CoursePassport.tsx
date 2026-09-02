@@ -13,10 +13,8 @@ export interface CourseArtifact {
 
 export function CoursePassport({
   course,
-  artifact,
 }: {
   course: Course;
-  artifact?: CourseArtifact;
 }) {
   const dateRange = formatStudyDateRange(course.startDate, course.endDate);
 
@@ -70,19 +68,19 @@ export function CoursePassport({
           <dd>{formatStudyDate(course.lastChecked)}</dd>
         </div>
       </dl>
-      {artifact ? (
-        <figure className="course-artifact">
-          <CourseIllustration
-            src={artifact.src}
-            label={artifact.alt}
-            overlay={artifact.overlay}
-          />
-          <figcaption>
-            <span className="course-artifact__folio">{artifact.folio}</span>
-            {artifact.caption}
-          </figcaption>
-        </figure>
-      ) : null}
     </header>
+  );
+}
+
+export function CourseArtifactFigure({ artifact }: { artifact?: CourseArtifact }) {
+  if (!artifact) return null;
+  return (
+    <figure className="course-artifact">
+      <CourseIllustration src={artifact.src} label={artifact.alt} overlay={artifact.overlay} />
+      <figcaption>
+        <span className="course-artifact__folio">{artifact.folio}</span>
+        {artifact.caption}
+      </figcaption>
+    </figure>
   );
 }

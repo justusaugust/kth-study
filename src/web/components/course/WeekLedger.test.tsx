@@ -1,4 +1,4 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import type {
   CourseJourneyGroup,
@@ -223,6 +223,9 @@ describe("WeekLedger", () => {
       document.querySelector("#session-exercise-session-01 #coursework-exercise-01"),
     ).not.toBeNull();
 
+    document.querySelectorAll<HTMLDetailsElement>(".week-ledger__week details:not([open])").forEach((details) => {
+      fireEvent.click(details.querySelector("summary")!);
+    });
     expect(screen.getByText(/Scheduled/)).toBeVisible();
     expect(
       screen.getByRole("link", { name: "Written examination" }),

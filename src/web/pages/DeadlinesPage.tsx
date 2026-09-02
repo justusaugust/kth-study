@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import type { DeadlinesResponse } from "../../domain/api";
 import { entityUrl } from "../../domain/ids";
 import { getDeadlines } from "../api";
-import { formatStudyDateLong } from "../format";
+import { currentStudyDate, formatStudyDateLong } from "../format";
 import { PageError } from "../components/PageError";
 
 type DeadlineItem = {
@@ -28,13 +28,6 @@ const requirementLabels: Record<string, string> = {
   scheduled: "Scheduled",
   optional: "Optional",
 };
-
-function localDateKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
 
 export function buildDeadlineItems(data: DeadlinesResponse) {
   const courses = new Map(data.courses.map((course) => [course.id, course]));
@@ -131,7 +124,7 @@ export function DeadlinesPage() {
 
   const { groups, undated } = useMemo(() => {
     return data
-      ? buildDeadlineSchedule(data, localDateKey())
+      ? buildDeadlineSchedule(data, currentStudyDate())
       : { groups: [], undated: [] };
   }, [data]);
 
@@ -183,24 +176,29 @@ export function DeadlinesPage() {
 function DeadlineEntry({ item, compact = false }: { item: DeadlineItem; compact?: boolean }) {
   const Heading = compact ? "h3" : "h2";
   return (
-    <article className="deadline-item">
-      <div className="deadline-item__meta">
-        <span>{item.courseCode} · {item.courseTitle}</span>
-        <span className="deadline-item__kind">{item.requirement}</span>
-        {item.time ? <time dateTime={`${item.date}T${item.time}`}>{item.time}</time> : null}
-      </div>
-      <Heading><Link to={item.url}>{item.title}</Link></Heading>
-      <p>{item.description}</p>
-      <p className="deadline-item__provenance">
-        {item.confidence === "verified" ? "Verified" : "Supported"} · Checked {formatStudyDateLong(item.lastChecked)}
-      </p>
-      {item.links.length ? (
-        <div className="deadline-item__links">
-          {item.links.map((link) => (
-            <a href={link.url} key={link.url} rel="noreferrer" target="_blank">{link.title}</a>
-          ))}
+    <details className="deadline-item">
+      <summary>
+        <div className="deadline-item__meta">
+          <span>{item.courseCode} · {item.courseTitle}</span>
+          <span className="deadline-item__kind">{item.requirement}</span>
+          {item.time ? <time dateTime={`${item.date}T${item.time}`}>{item.time}</time> : null}
         </div>
-      ) : null}
-    </article>
+        <Heading>{item.title}</Heading>
+      </summary>
+      <div className="deadline-item__body">
+        <p>{item.description}</p>
+        <p className="deadline-item__provenance">
+          {item.confidence === "verified" ? "Verified" : "Supported"} · Checked {formatStudyDateLong(item.lastChecked)}
+        </p>
+        <Link className="deadline-item__open" to={item.url}>Open in course</Link>
+        {item.links.length ? (
+          <div className="deadline-item__links" aria-label="Sources">
+            {item.links.map((link) => (
+              <a href={link.url} key={link.url} rel="noreferrer" target="_blank">{link.title}</a>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </details>
   );
 }
