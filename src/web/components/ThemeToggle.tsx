@@ -40,7 +40,7 @@ export function ThemeToggle() {
           <StudyIcon kind="theme-light" />
         </span>
       </span>
-      {next === "dark" ? "Mörk" : "Ljus"}
+      <span className="theme-toggle__label">{next === "dark" ? "Mörk" : "Ljus"}</span>
     </button>
   );
 }

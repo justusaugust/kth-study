@@ -1,8 +1,8 @@
 /* ---------------------------------------------------------------------------
-   Kompendium med register — sans, ruleless.
+   Kompendium med register — sans, open, and quietly ruled.
    Structure comes from space, scale, and quiet ground shifts; the signature
    is the two-digit mono register hanging in the left margin, baseline-locked
-   to its section heading. No hairlines, no cards, no shadows.
+   to its section heading. No card shells or shadows.
 --------------------------------------------------------------------------- */
 
 /* Shell ------------------------------------------------------------------ */
@@ -14,11 +14,13 @@
 }
 
 .study-header {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: var(--space-2) var(--space-6);
-  padding: var(--space-4) var(--page-margin) var(--space-3);
+  gap: var(--space-4);
+  min-height: 68px;
+  padding: var(--space-3) var(--page-margin);
+  border-bottom: 1px solid var(--rule-soft);
 }
 
 .study-wordmark {
@@ -35,7 +37,7 @@
 .course-rail {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -45,13 +47,25 @@
   display: none;
 }
 
+.course-rail__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 0 0 auto;
+}
+
+.course-rail__group--tools {
+  padding-inline-start: var(--space-3);
+  border-inline-start: 1px solid var(--rule);
+}
+
 .course-link,
 .atlas-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 0 var(--space-3);
-  border-radius: var(--radius-control);
+  padding: 0 var(--space-2);
   color: var(--ink-secondary);
   font-size: 0.9rem;
   font-weight: 500;
@@ -73,21 +87,40 @@
 .course-link:hover,
 .atlas-link:hover {
   color: var(--ink);
-  background: var(--surface-inset);
 }
 
 .course-link.active,
 .atlas-link.active {
   color: var(--accent);
-  background: var(--accent-soft);
+}
+
+.course-link.active::after,
+.atlas-link.active::after {
+  position: absolute;
+  right: var(--space-2);
+  bottom: 3px;
+  left: var(--space-2);
+  height: 2px;
+  background: currentColor;
+  content: "";
+}
+
+.header-search-mode {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  width: min(100%, 54rem);
+  margin-inline: auto;
 }
 
 .header-search {
-  flex: 1 1 200px;
-  max-width: 340px;
-  margin-left: auto;
+  width: 100%;
+  max-width: none;
 }
 
+.header-search-trigger,
+.header-search-close,
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -103,10 +136,13 @@
   cursor: pointer;
 }
 
+.header-search-trigger svg,
 .theme-toggle svg {
   color: var(--ink-tertiary);
 }
 
+.header-search-trigger:hover,
+.header-search-close:hover,
 .theme-toggle:hover {
   color: var(--ink);
   background: var(--surface-inset);
@@ -4686,16 +4722,18 @@ h4 {
 
 @media (max-width: 760px) {
   .study-header {
-    display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: var(--space-1);
+    gap: 0 var(--space-1);
+    padding-block: var(--space-2) 0;
   }
 
   .course-rail {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1 / -1;
+    grid-row: 2;
     min-width: 0;
-    gap: 0;
+    gap: var(--space-2);
+    margin-inline: calc(-1 * var(--page-margin));
+    padding-inline: var(--page-margin);
     overscroll-behavior-x: contain;
   }
 
@@ -4705,12 +4743,12 @@ h4 {
 
   .course-link,
   .atlas-link,
+  .header-search-trigger,
   .theme-toggle {
     padding-inline: var(--space-2);
   }
 
   .atlas-link {
-    order: -1;
     justify-content: center;
     width: 44px;
     padding-inline: 0;
@@ -4720,18 +4758,27 @@ h4 {
     display: none;
   }
 
+  .header-action-label,
+  .theme-toggle__label {
+    display: none;
+  }
+
+  .header-search-trigger {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
   .theme-toggle {
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
   }
 
-  .header-search {
+  .header-search-mode {
     grid-column: 1 / -1;
-    grid-row: 2;
-    flex-basis: 100%;
-    max-width: none;
-    margin-left: 0;
+    grid-row: 1;
+    padding-bottom: var(--space-2);
   }
 
   .search-popover {

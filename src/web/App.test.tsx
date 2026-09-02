@@ -26,6 +26,11 @@ function searchHit(
   };
 }
 
+function openGlobalSearch() {
+  fireEvent.click(screen.getByRole("button", { name: "Search" }));
+  return screen.getByRole("searchbox", { name: "Search all courses" });
+}
+
 describe("App", () => {
   it("gives an unknown route a useful way back into the app", () => {
     render(
@@ -41,17 +46,15 @@ describe("App", () => {
     );
   });
 
-  it("grounds the interface in KTH Study Hub", () => {
+  it("grounds the interface in KTH Study", () => {
     render(
       <MemoryRouter>
         <App />
       </MemoryRouter>,
     );
 
-    expect(screen.getByRole("banner")).toHaveTextContent("KTH Study Hub");
-    expect(
-      screen.getByRole("searchbox", { name: "Search all courses" }),
-    ).toBeVisible();
+    expect(screen.getByRole("banner")).toHaveTextContent("KTH Study");
+    expect(screen.getByRole("button", { name: "Search" })).toBeVisible();
   });
 
   it("shows up to five eligible live results and respects the active filter", async () => {
@@ -91,7 +94,7 @@ describe("App", () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByRole("searchbox", { name: "Search all courses" });
+    const input = openGlobalSearch();
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
 
@@ -133,7 +136,7 @@ describe("App", () => {
       </MemoryRouter>,
     );
 
-    fireEvent.focus(screen.getByRole("searchbox", { name: "Search all courses" }));
+    fireEvent.focus(openGlobalSearch());
     expect(await screen.findAllByRole("option")).toHaveLength(3);
     const recentLabel = screen.getByText("Recently added");
     expect(recentLabel).toBeVisible();
@@ -166,7 +169,7 @@ describe("App", () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByRole("searchbox", { name: "Search all courses" });
+    const input = openGlobalSearch();
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
 
@@ -201,7 +204,7 @@ describe("App", () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByRole("searchbox", { name: "Search all courses" });
+    const input = openGlobalSearch();
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
     await screen.findByRole("option");
@@ -240,7 +243,7 @@ describe("App", () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByRole("searchbox", { name: "Search all courses" });
+    const input = openGlobalSearch();
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
     await screen.findAllByRole("option");

@@ -11,9 +11,11 @@ interface QuickSearchProps {
   label: string;
   placeholder: string;
   variant: "header" | "home";
+  autoFocus?: boolean;
+  onDismiss?: () => void;
 }
 
-export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProps) {
+export function QuickSearch({ id, label, placeholder, variant, autoFocus, onDismiss }: QuickSearchProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const listId = `${useId().replaceAll(":", "")}-results`;
@@ -26,6 +28,11 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
   const activeIndexRef = useRef(-1);
   const { results, status } = useLiveSearch(query, activeType);
   const suggestions = results.slice(0, 5);
+
+  function dismiss() {
+    setOpen(false);
+    onDismiss?.();
+  }
 
   useEffect(() => {
     if (location.pathname !== "/search") return;
@@ -56,7 +63,7 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
     } else {
       navigate(searchPageUrl(query, activeType));
     }
-    setOpen(false);
+    dismiss();
   }
 
   function onKeyDown(event: KeyboardEvent<HTMLInputElement>) {
@@ -75,10 +82,10 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
     } else if (event.key === "Enter" && suggestions[activeIndexRef.current]) {
       event.preventDefault();
       navigate(suggestions[activeIndexRef.current].url);
-      setOpen(false);
+      dismiss();
     } else if (event.key === "Escape") {
-      setOpen(false);
       highlight(-1);
+      dismiss();
     }
   }
 
@@ -99,6 +106,7 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
             className="global-search"
             id={id}
             type="search"
+            autoFocus={autoFocus}
             value={query}
             onFocus={() => setOpen(true)}
             onChange={(event) => {
@@ -122,7 +130,7 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
             onSelect={(type) => {
               if (type === "explainer") {
                 navigate(visualAtlasUrl(query));
-                setOpen(false);
+                dismiss();
                 return;
               }
               setActiveType(type);
@@ -153,7 +161,7 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
                         to={hit.url}
                         role="option"
                         aria-selected={activeIndex === index}
-                        onClick={() => setOpen(false)}
+                        onClick={dismiss}
                       >
                         <strong>{hit.title}</strong>
                         <MathText className="suggestion-summary">{hit.summary}</MathText>
@@ -164,7 +172,7 @@ export function QuickSearch({ id, label, placeholder, variant }: QuickSearchProp
                 </ol>
               ) : null}
               {query.trim() ? (
-                <Link className="search-view-all" to={searchPageUrl(query, activeType)} onClick={() => setOpen(false)}>
+                <Link className="search-view-all" to={searchPageUrl(query, activeType)} onClick={dismiss}>
                   View all results
                 </Link>
               ) : null}

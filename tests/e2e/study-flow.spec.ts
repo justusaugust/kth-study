@@ -174,6 +174,7 @@ test("visual atlas filters preserve figure identity and semantic focus labels", 
 
 test("quick search suggestions open their lecture routes", async ({ page }) => {
   await page.goto("/courses/ie1204");
+  await page.getByRole("button", { name: "Search" }).click();
   await page.getByRole("searchbox", { name: "Search all courses" }).fill("IE1204");
   const lecture = page.getByRole("option", {
     name: /Lecture 3 — logic levels, CMOS gates, and power/i,
@@ -228,9 +229,16 @@ test("mobile navigation stays available without horizontal overflow", async ({
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/visuals/quadratic-coefficients");
 
-  await expect(page.getByRole("navigation", { name: "Courses" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Primary" })).toBeVisible();
   await expect(page.getByRole("link", { name: "Visual atlas" })).toBeVisible();
   await expect(page.getByRole("link", { name: "SF1690" }).first()).toBeVisible();
+
+  const search = page.getByRole("button", { name: "Search" });
+  await search.click();
+  await expect(page.getByRole("searchbox", { name: "Search all courses" })).toBeFocused();
+  await expect(page.getByRole("navigation", { name: "Primary" })).not.toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(search).toBeFocused();
 
   const horizontalOverflow = await page.evaluate(
     () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
