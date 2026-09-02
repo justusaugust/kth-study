@@ -88,7 +88,7 @@ export function createKthStudyServer(
     },
     {
       instructions:
-        "When KTH Study is selected, use its tools before any built-in web search. For concepts, definitions, examples, or visuals, start with search_study_hub and do not use web search. For exams, deadlines, labs, lectures, or schedules, start with get_course_dates; use web search only when that result says the requested date is missing or stale, or when the user explicitly asks for a live recheck. Search before using stable IDs. When explain_concept returns visuals, call show_visual for the best matching explainer in the same answer unless the user asks for text only. Use show_visual only with explainer IDs. Keep explanations concise, define notation, and distinguish course evidence from general clarification. All tools operate on the local KTH curriculum corpus. Only call ingest_lecture with an already-prepared transaction explicitly authorized by the user.",
+        "When KTH Study is selected, use its tools before built-in search or generated interactive visuals. For concepts, definitions, examples, or visuals, start with search_study_hub and do not use web search. For requests to show, demonstrate, or interact with a course concept, call show_visual for the best matching explainer instead of generating a replacement visual. For exams, deadlines, labs, lectures, or schedules, start with get_course_dates; use web search only when that result says the requested date is missing or stale, or when the user explicitly asks for a live recheck. Search before using stable IDs. Use show_visual only with explainer IDs. Keep explanations concise, define notation, and distinguish course evidence from general clarification. All tools operate on the local KTH curriculum corpus. Only call ingest_lecture with an already-prepared transaction explicitly authorized by the user.",
     },
   );
 
@@ -132,7 +132,7 @@ export function createKthStudyServer(
     "search_study_hub",
     {
       title: "Search KTH Study Hub",
-      description: "Primary first call for KTH concepts, definitions, examples, lectures, or visuals. When KTH Study is selected, use this instead of built-in web search, then pass the returned stable ID to the matching tool.",
+      description: "Primary first call for KTH concepts, definitions, examples, lectures, or visuals. When KTH Study is selected, always use this before answering or generating a visual, then pass the returned stable ID to the matching tool.",
       inputSchema: z.object({
         query: z.string().min(1),
         courseId: z.string().optional(),
@@ -200,7 +200,7 @@ export function createKthStudyServer(
     "show_visual",
     {
       title: "Show visual explainer",
-      description: "Render the interactive visual that best matches the user's concept. Use a stable explainer ID returned by search_study_hub or explain_concept.",
+      description: "Render KTH Study's authored interactive visual for requests to show, demonstrate, or interact with a course concept. Prefer this over generating a replacement visual. Use a stable explainer ID returned by search_study_hub or explain_concept.",
       inputSchema: z.object({ id: ids }),
       outputSchema: z.object({
         id: z.string(),
