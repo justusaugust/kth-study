@@ -235,8 +235,26 @@ test("mobile navigation stays available without horizontal overflow", async ({
 
   const search = page.getByRole("button", { name: "Search" });
   await search.click();
-  await expect(page.getByRole("searchbox", { name: "Search all courses" })).toBeFocused();
+  const searchbox = page.getByRole("searchbox", {
+    name: "Search all courses",
+  });
+  await expect(searchbox).toBeFocused();
   await expect(page.getByRole("navigation", { name: "Primary" })).not.toBeVisible();
+  expect(
+    await page.locator(".header-search-mode").evaluate((element) => {
+      const bounds = element.getBoundingClientRect();
+      return {
+        position: getComputedStyle(element).position,
+        width: Math.round(bounds.width),
+        height: Math.round(bounds.height),
+      };
+    }),
+  ).toEqual({ position: "fixed", width: 375, height: 812 });
+  expect(
+    await searchbox.evaluate((element) =>
+      parseFloat(getComputedStyle(element).fontSize),
+    ),
+  ).toBeGreaterThanOrEqual(16);
   await page.keyboard.press("Escape");
   await expect(search).toBeFocused();
 

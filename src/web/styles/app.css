@@ -14,6 +14,9 @@
 }
 
 .study-header {
+  position: sticky;
+  z-index: var(--layer-float);
+  top: 0;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
@@ -21,6 +24,7 @@
   min-height: 68px;
   padding: var(--space-3) var(--page-margin);
   border-bottom: 1px solid var(--rule-soft);
+  background: var(--canvas);
 }
 
 .study-wordmark {
@@ -399,6 +403,7 @@ h4 {
   border-radius: var(--radius-control);
   background: var(--surface-inset);
   color: var(--ink);
+  font-size: 1rem;
   transition: background-color 140ms ease, box-shadow 140ms ease;
 }
 
@@ -4776,16 +4781,43 @@ h4 {
   }
 
   .header-search-mode {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    padding-bottom: var(--space-2);
+    position: fixed;
+    z-index: var(--layer-popover);
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: max(var(--space-4), env(safe-area-inset-top))
+      max(var(--page-margin), env(safe-area-inset-right))
+      max(var(--space-4), env(safe-area-inset-bottom))
+      max(var(--page-margin), env(safe-area-inset-left));
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    background: var(--canvas);
   }
 
-  .search-popover {
-    right: auto;
-    left: 0;
+  .header-search .search-input-shell {
+    margin-right: calc(44px + var(--space-3));
+  }
+
+  .header-search-close {
+    position: absolute;
+    top: max(var(--space-4), env(safe-area-inset-top));
+    right: max(var(--page-margin), env(safe-area-inset-right));
+    justify-content: center;
+    width: 44px;
+    padding: 0;
+  }
+
+  .header-search .search-popover {
+    position: static;
     width: 100%;
     min-width: 0;
+    margin-top: var(--space-4);
+    padding: 0;
+    background: transparent;
   }
 
   .search-popover .search-filter-row {
