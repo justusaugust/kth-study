@@ -61,7 +61,7 @@ test("every current Study Hub route renders without runtime or layout failures",
         .map((image) => image.currentSrc || image.src),
     }));
 
-    expect(layout.overflow, route).toBeLessThanOrEqual(1);
+    expect(layout.overflow, route).toBe(0);
     expect(layout.emptyLinks, route).toEqual([]);
     expect(layout.failedImages, route).toEqual([]);
   }
