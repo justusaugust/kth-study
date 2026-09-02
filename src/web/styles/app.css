@@ -658,7 +658,6 @@ h4 {
 }
 
 .week-day li {
-  padding-inline-start: var(--space-3);
   border-inline-start: 3px solid var(--slate-line);
 }
 
@@ -675,6 +674,9 @@ h4 {
 }
 
 .week-day a {
+  display: block;
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
   color: var(--ink);
   font-size: 0.78rem;
   font-weight: 560;
