@@ -1,6 +1,6 @@
 {
   "name": "kth-study",
-  "version": "0.2.1+codex.20260831",
+  "version": "0.2.1+codex.20260902104237",
   "description": "Search, explain, visualise, and maintain a file-backed KTH curriculum study engine.",
   "author": {
     "name": "Justus"
@@ -19,7 +19,7 @@
     ],
     "defaultPrompt": "Use KTH Study to help me understand my current course material.",
     "brandColor": "#1E5DB3",
-    "composerIcon": "./assets/kth-study-small.svg",
+    "composerIcon": "./assets/kth-study.png",
     "logo": "./assets/kth-study.png"
   },
   "mcpServers": "./.mcp.json"
