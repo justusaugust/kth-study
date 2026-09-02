@@ -19,6 +19,9 @@ const data = {
     kind: "laboratory",
     title: "Laboratory 1",
     date: "2026-09-02",
+    time: "15:00",
+    endTime: "17:00",
+    location: "Q15",
   }],
   coursework: [{
     id: "coursework:ie1204:exercise-01",
@@ -48,6 +51,9 @@ describe("current week", () => {
     expect(days[2].entries[0]).toMatchObject({
       title: "Laboratory 1",
       kind: "laboratory",
+      time: "15:00",
+      endTime: "17:00",
+      location: "Q15",
       url: "/courses/ie1204#session-lab-01",
     });
     expect(days.flatMap((day) => day.entries).some((item) => item.title === "Exercise set 1")).toBe(false);

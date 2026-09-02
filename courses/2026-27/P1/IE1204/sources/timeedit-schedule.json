@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:timeedit-schedule",
+  "courseId": "course:ie1204",
+  "title": "KTH TimeEdit schedule for IE1204 HT26",
+  "kind": "schedule",
+  "url": "https://cloud.timeedit.net/kth/web/public01/s.html?enddate=20261023&object=IE1204-10786%20%28HT26%29&p=0.m%2C2.w&sid=10&startdate=20260824",
+  "locator": "3 September 2026; Lecture; 13:00–15:00; E2. 3 September 2026; Lab; 15:00–17:00; Q15. 4 September 2026; Lab; 13:00–15:00; U61",
+  "lastChecked": "2026-09-02",
+  "confidence": "verified"
+}

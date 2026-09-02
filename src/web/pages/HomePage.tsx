@@ -13,6 +13,8 @@ type WeekEntry = {
   courseCode: string;
   kind: string;
   time?: string;
+  endTime?: string;
+  location?: string;
   url: string;
 };
 
@@ -52,6 +54,9 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
       title: session.title,
       courseCode: course.code,
       kind: session.kind,
+      time: session.time,
+      endTime: session.endTime,
+      location: session.location,
       url: session.lectureId
         ? `/courses/${course.code.toLowerCase()}/lectures/${session.lectureId.split(":").at(-1)}`
         : entityUrl(session),
@@ -142,7 +147,11 @@ export function HomePage() {
                   {day.entries.map((entry) => (
                     <li data-kind={entry.kind} key={entry.id}>
                       <Link to={entry.url}>
-                        <span>{entry.courseCode}{entry.time ? ` · ${entry.time}` : ""}</span>
+                        <span>{[
+                          entry.courseCode,
+                          entry.time && `${entry.time}${entry.endTime ? `–${entry.endTime}` : ""}`,
+                          entry.location,
+                        ].filter(Boolean).join(" · ")}</span>
                         {entry.title}
                       </Link>
                     </li>

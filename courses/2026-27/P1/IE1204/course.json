@@ -28,6 +28,12 @@
       "label": "Canvas course room",
       "url": "https://canvas.kth.se/courses/63848",
       "sourceId": "source:ie1204:canvas-2026-material-map"
+    },
+    {
+      "kind": "schedule",
+      "label": "Autumn 2026 timetable",
+      "url": "https://cloud.timeedit.net/kth/web/public01/s.html?enddate=20261023&object=IE1204-10786%20%28HT26%29&p=0.m%2C2.w&sid=10&startdate=20260824",
+      "sourceId": "source:ie1204:timeedit-schedule"
     }
   ],
   "outcomeIds": [
@@ -57,6 +63,7 @@
     "source:ie1204:lecture-1-recordings",
     "source:ie1204:lecture-2-recordings",
     "source:ie1204:canvas-2026-material-map",
+    "source:ie1204:timeedit-schedule",
     "source:ie1204:weekly-planner-2026",
     "source:ie1204:exercise-sets-2026"
   ],
