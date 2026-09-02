@@ -234,6 +234,9 @@ test("mobile navigation stays available without horizontal overflow", async ({
   await expect(page.getByRole("link", { name: "SF1690" }).first()).toBeVisible();
 
   const search = page.getByRole("button", { name: "Search" });
+  const theme = page.getByRole("button", { name: /Switch to .* theme/ });
+  expect((await search.boundingBox())?.width).toBe(44);
+  expect((await theme.boundingBox())?.width).toBe(44);
   await search.click();
   const searchbox = page.getByRole("searchbox", {
     name: "Search all courses",

@@ -4772,12 +4772,18 @@ h4 {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
+    justify-content: center;
+    width: 44px;
+    padding-inline: 0;
   }
 
   .theme-toggle {
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
+    justify-content: center;
+    width: 44px;
+    padding-inline: 0;
   }
 
   .header-search-mode {
