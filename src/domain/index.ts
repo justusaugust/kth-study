@@ -7,6 +7,7 @@ export {
 } from "./courseJourney";
 export {
   buildGraph,
+  validateLectureCoverage,
   validateCorpus,
   type CurriculumGraph,
   type ValidationIssue,

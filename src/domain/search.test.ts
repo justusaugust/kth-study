@@ -63,6 +63,15 @@ describe("searchCorpus", () => {
     expect(hits.map((hit) => hit.id)).toContain("course:ie1204");
   });
 
+  it("puts the course and its lectures first for an exact course-code query", async () => {
+    const corpus = await loadCorpus(path.resolve("."));
+    const index = buildSearchIndex(corpus);
+    const hits = searchCorpus(index, corpus, "IE1204").slice(0, 5);
+
+    expect(hits[0]?.id).toBe("course:ie1204");
+    expect(hits.slice(1).every((hit) => hit.entityType === "lecture")).toBe(true);
+  });
+
   it("ranks authored study material ahead of raw sources for natural questions", async () => {
     const corpus = await loadCorpus(path.resolve("."));
     const index = buildSearchIndex(corpus);

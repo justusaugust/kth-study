@@ -118,39 +118,10 @@ export const VisualAtlasResponseSchema = z.object({
 export const DeadlinesResponseSchema = z.object({
   courses: z.array(CourseSchema),
   assessments: z.array(AssessmentSchema),
+  sessions: z.array(CourseSessionSchema),
   coursework: z.array(CourseworkSchema),
+  sources: z.array(PublicSourceSchema),
 });
-
-export const FeedbackResponseSchema = z.object({
-  feedback: z.object({
-    entityId: z.string(),
-    action: z.enum(["unclear", "ask_codex", "revisit_later"]),
-    createdAt: z.string().datetime(),
-  }),
-});
-
-export const StudyStatusSchema = z.enum(["clear", "unclear", "revisit_later"]);
-export const StudyStateResponseSchema = z.object({
-  entityId: z.string(),
-  status: StudyStatusSchema,
-  lastEventId: z.string().uuid().optional(),
-});
-export const StudyMutationResponseSchema = z.object({
-  previous: StudyStatusSchema,
-  current: StudyStatusSchema,
-  eventId: z.string().uuid(),
-});
-export const PendingAskSchema = z.object({
-  id: z.string().uuid(),
-  kind: z.literal("created"),
-  entityId: z.string(),
-  question: z.string(),
-  sourceUrl: z.string(),
-  createdAt: z.string().datetime(),
-  status: z.literal("pending"),
-});
-export const PendingAsksResponseSchema = z.object({ asks: z.array(PendingAskSchema) });
-export const PendingAskResponseSchema = z.object({ ask: PendingAskSchema });
 
 export type SearchResponse = z.infer<typeof SearchResponseSchema>;
 export type CourseResponse = z.infer<typeof CourseResponseSchema>;
@@ -158,7 +129,3 @@ export type ConceptResponse = z.infer<typeof ConceptResponseSchema>;
 export type ExplainerResponse = z.infer<typeof ExplainerResponseSchema>;
 export type VisualAtlasResponse = z.infer<typeof VisualAtlasResponseSchema>;
 export type DeadlinesResponse = z.infer<typeof DeadlinesResponseSchema>;
-export type StudyStatus = z.infer<typeof StudyStatusSchema>;
-export type StudyStateResponse = z.infer<typeof StudyStateResponseSchema>;
-export type StudyMutationResponse = z.infer<typeof StudyMutationResponseSchema>;
-export type PendingAsk = z.infer<typeof PendingAskSchema>;

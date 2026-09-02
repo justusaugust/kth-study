@@ -96,7 +96,7 @@ describe("KTH Study MCP protocol", () => {
         ),
       );
       const tools = await client.listTools();
-      expect(tools.tools).toHaveLength(10);
+      expect(tools.tools).toHaveLength(8);
       expect(tools.tools.map((tool) => tool.name)).toContain("get_course_dates");
       const result = await client.callTool({
         name: "show_visual",

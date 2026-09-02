@@ -8,7 +8,6 @@ import { getConcept, MissingEntityError } from "../api";
 import { ExplainerRenderer } from "../components/ExplainerRenderer";
 import { ConceptDiagram } from "../components/ConceptDiagram";
 import { DefinitionBoard } from "../components/DefinitionBoard";
-import { StudyActions } from "../components/StudyActions";
 import { SectionMarker, StudyMark } from "../components/StudyMark";
 import { SourceLinks } from "../components/SourceLinks";
 import { formatStudyDate } from "../format";
@@ -52,6 +51,7 @@ export function ConceptPage() {
   if (!data) return <p className="loading">Loading concept…</p>;
 
   const { concept, course } = data;
+  const chatgptAppUrl = import.meta.env.VITE_CHATGPT_APP_URL?.trim();
   let sectionCount = 0;
   const nextRegister = () => String(++sectionCount).padStart(2, "0");
 
@@ -182,13 +182,15 @@ export function ConceptPage() {
         </div>
       </section>
 
-      <StudyActions
-        register={nextRegister()}
-        entityId={concept.id}
-        sourceUrl={`/courses/${course.code.toLowerCase()}/concepts/${concept.slug}`}
-      />
-
       <footer className="source-footer">
+        <p className="chatgpt-handoff">
+          <strong>Ask ChatGPT</strong>
+          {chatgptAppUrl ? (
+            <a href={chatgptAppUrl} rel="noreferrer" target="_blank">Open KTH Study in ChatGPT</a>
+          ) : (
+            <span>The official KTH Study app link will appear here after launch.</span>
+          )}
+        </p>
         <div className="source-summary">
           <StudyMark kind="date">Checked {formatStudyDate(concept.lastChecked)}</StudyMark>
         </div>

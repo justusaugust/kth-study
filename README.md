@@ -21,6 +21,8 @@ pnpm dev
 
 `pnpm dev` starts the web app on `http://127.0.0.1:4173` and the validated local service on `http://127.0.0.1:4318`. A production build is also served by the local service, so plugin links to port 4318 resolve to the same stable study pages.
 
+Set `VITE_CHATGPT_APP_URL` to the public KTH Study app URL after its ChatGPT launch. Until then, the web handoff says that the link is not yet available.
+
 ## What is included
 
 - the React/Vite Study Hub
@@ -34,6 +36,8 @@ pnpm dev
 The repository contains authored study material and links to its sources. Downloaded Canvas files, recordings, textbook archives, raw classroom photographs, personal administration, and local study state are deliberately excluded. KTH and third-party course material remains subject to its owners' access and copyright terms.
 
 Dates and course status can change. Verify consequential deadlines, examinations, registrations, and room information in the current KTH source before relying on them.
+
+Content validation also fails when a past session marked as a lecture has no authored `lectureId`, preventing published lecture coverage from silently falling behind the schedule.
 
 ## Verification
 

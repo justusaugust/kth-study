@@ -16,6 +16,8 @@ type DeadlineItem = {
   courseCode: string;
   courseTitle: string;
   requirement: string;
+  lastChecked: string;
+  confidence: string;
   url: string;
   links: Array<{ title: string; url: string }>;
 };
@@ -36,6 +38,11 @@ function localDateKey(date = new Date()) {
 
 export function buildDeadlineItems(data: DeadlinesResponse) {
   const courses = new Map(data.courses.map((course) => [course.id, course]));
+  const sources = new Map(data.sources.map((source) => [source.id, source]));
+  const sourceLinks = (sourceIds: string[]) => sourceIds.flatMap((id) => {
+    const source = sources.get(id);
+    return source?.url ? [{ title: source.title, url: source.url }] : [];
+  });
   const assessments: DeadlineItem[] = data.assessments.map((assessment) => {
     const course = courses.get(assessment.courseId)!;
     return {
@@ -48,8 +55,10 @@ export function buildDeadlineItems(data: DeadlinesResponse) {
       courseCode: course.code,
       courseTitle: course.title,
       requirement: assessment.compulsory ? "Compulsory assessment" : "Assessment",
+      lastChecked: assessment.lastChecked,
+      confidence: assessment.confidence,
       url: entityUrl(assessment),
-      links: [],
+      links: sourceLinks(assessment.sourceIds),
     };
   });
   const coursework: DeadlineItem[] = data.coursework.map((item) => {
@@ -64,10 +73,15 @@ export function buildDeadlineItems(data: DeadlinesResponse) {
       courseCode: course.code,
       courseTitle: course.title,
       requirement: requirementLabels[item.requirement] ?? item.requirement,
+      lastChecked: item.lastChecked,
+      confidence: item.confidence,
       url: entityUrl(item),
-      links: item.materials.flatMap((material) =>
-        material.url ? [{ title: material.title, url: material.url }] : [],
-      ),
+      links: [...new Map([
+        ...item.materials.flatMap((material) =>
+          material.url ? [[material.url, { title: material.title, url: material.url }] as const] : [],
+        ),
+        ...sourceLinks(item.sourceIds).map((link) => [link.url, link] as const),
+      ]).values()],
     };
   });
   return [...assessments, ...coursework];
@@ -177,6 +191,9 @@ function DeadlineEntry({ item, compact = false }: { item: DeadlineItem; compact?
       </div>
       <Heading><Link to={item.url}>{item.title}</Link></Heading>
       <p>{item.description}</p>
+      <p className="deadline-item__provenance">
+        {item.confidence === "verified" ? "Verified" : "Supported"} · Checked {formatStudyDateLong(item.lastChecked)}
+      </p>
       {item.links.length ? (
         <div className="deadline-item__links">
           {item.links.map((link) => (

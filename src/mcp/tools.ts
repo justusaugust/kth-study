@@ -7,7 +7,6 @@ import {
 } from "../domain";
 import { ingestLecture, type IngestLectureInput } from "../ingest/ingestLecture";
 import type { StudyContext } from "../server/context";
-import { listPendingAsks, resolveAsk } from "../server/askQueue";
 import { EXPLAINER_WIDGET_META } from "./resources";
 
 function entityMap(context: StudyContext): Map<string, StudyEntity> {
@@ -161,9 +160,6 @@ export async function callTool(
         title: explainer.title,
         url: url(entityUrl(explainer)),
       }));
-    const visualInstruction = visuals[0]
-      ? ` Interactive visual available: call show_visual with ${visuals[0].id}.`
-      : "";
     const definitions = [...context.corpus.definitions.values()]
       .filter((definition) => definition.conceptIds.includes(id))
       .map((definition) =>
@@ -175,7 +171,6 @@ export async function callTool(
       definitions.length ? `Key definitions:\n${definitions.join("\n")}` : "",
       concept.commonMistake ? `Common mistake: ${concept.commonMistake}` : "",
       `Evidence: ${concept.confidence}, last checked ${concept.lastChecked}.${sourceSummary(context, concept.sourceIds)}`,
-      visualInstruction.trim(),
     ].filter(Boolean).join("\n\n");
     return textResult(explanation, {
       id,
@@ -243,17 +238,6 @@ export async function callTool(
       ? url(entityUrl(entity))
       : `http://127.0.0.1:4318${entityUrl(entity)}`;
     return textResult(target, { id, url: target });
-  }
-
-  if (name === "list_pending_asks") {
-    const asks = await listPendingAsks(context.root, typeof args.entityId === "string" ? args.entityId : undefined);
-    return textResult(`Found ${asks.length} pending question(s).`, { asks });
-  }
-
-  if (name === "resolve_pending_ask") {
-    const id = stringArgument(args, "id");
-    const result = await resolveAsk(context.root, id);
-    return textResult("Pending question resolved.", { result });
   }
 
   if (name === "ingest_lecture") {

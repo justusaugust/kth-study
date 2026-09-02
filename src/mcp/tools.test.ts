@@ -1,6 +1,4 @@
 import path from "node:path";
-import os from "node:os";
-import { promises as fs } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { createStudyContext } from "../server/context";
 import { callTool } from "./tools";
@@ -22,7 +20,7 @@ describe("KTH Study MCP tools", () => {
         }),
       ]),
     });
-    expect(result.content[0]).toMatchObject({
+    expect(result.content[0]).not.toMatchObject({
       text: expect.stringContaining("call show_visual"),
     });
   });
@@ -66,7 +64,7 @@ describe("KTH Study MCP tools", () => {
       text: expect.stringMatching(/SF1690 TEN1[\s\S]*2026-10-20 at 14:00[\s\S]*last checked 2026-09-01/),
     });
     expect(concept.content[0]).toMatchObject({
-      text: expect.stringMatching(/Key definitions:[\s\S]*Logic gate[\s\S]*call show_visual/),
+      text: expect.stringMatching(/Key definitions:[\s\S]*Logic gate/),
     });
   });
 
@@ -105,17 +103,4 @@ describe("KTH Study MCP tools", () => {
     });
   });
 
-  it("lists pending browser questions for Codex", async () => {
-    const root = await fs.mkdtemp(path.join(os.tmpdir(), "kth-mcp-asks-"));
-    await fs.cp(path.resolve("tests/fixtures/corpus"), root, { recursive: true });
-    const context = await createStudyContext(root);
-    const { createAsk } = await import("../server/askQueue");
-    await createAsk(context.root, {
-      entityId: "concept:sf1690:quadratic-functions",
-      question: "Why does a change the opening?",
-      sourceUrl: "/courses/sf1690/concepts/quadratic-functions",
-    });
-    const result = await callTool(context, "list_pending_asks", {});
-    expect(result.structuredContent).toMatchObject({ asks: [{ question: "Why does a change the opening?" }] });
-  });
 });

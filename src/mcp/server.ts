@@ -15,7 +15,6 @@ import {
   CourseSchema,
   CourseworkSchema,
   ExplainerSpecSchema,
-  PendingAskSchema,
   PublicQuestionSchema,
   SearchHitSchema,
 } from "../domain";
@@ -88,7 +87,7 @@ export function createKthStudyServer(
     },
     {
       instructions:
-        "When KTH Study is selected, use its tools before built-in search or generated interactive visuals. For concepts, definitions, examples, or visuals, start with search_study_hub and do not use web search. For requests to show, demonstrate, or interact with a course concept, call show_visual for the best matching explainer instead of generating a replacement visual. For exams, deadlines, labs, lectures, or schedules, start with get_course_dates; use web search only when that result says the requested date is missing or stale, or when the user explicitly asks for a live recheck. Search before using stable IDs. Use show_visual only with explainer IDs. Keep explanations concise, define notation, and distinguish course evidence from general clarification. All tools operate on the local KTH curriculum corpus. Only call ingest_lecture with an already-prepared transaction explicitly authorized by the user.",
+        "When KTH Study is selected, use its tools before built-in search or generated interactive visuals. For concepts, definitions, examples, or visuals, start with search_study_hub and do not use web search. Use explain_concept for text-first explanations. Call show_visual only when the user asks to see, demonstrate, or interact with a concept, or when a visual is clearly useful; do not force a visual into every explanation. For exams, deadlines, labs, lectures, or schedules, start with get_course_dates; use web search only when that result says the requested date is missing or stale, or when the user explicitly asks for a live recheck. Search before using stable IDs. Use show_visual only with explainer IDs. Keep explanations concise, define notation, and distinguish course evidence from general clarification. All tools operate on the local KTH curriculum corpus. Only call ingest_lecture with an already-prepared transaction explicitly authorized by the user.",
     },
   );
 
@@ -167,7 +166,7 @@ export function createKthStudyServer(
   );
 
   for (const [name, title, description] of [
-    ["explain_concept", "Explain concept", "Retrieve a concept, its course context, and any linked interactive visuals. If visuals are returned, render the best match with show_visual unless the user asked for text only."],
+    ["explain_concept", "Explain concept", "Retrieve a concept, its course context, and linked interactive visuals. Return a text explanation by default; render a visual only when the user asks to see or interact with one, or when a visual is clearly useful."],
     ["show_prerequisites", "Show prerequisites", "Use this to retrieve explicit prerequisite relationships for a stable entity ID."],
     ["open_in_study_hub", "Open in Study Hub", "Use this to retrieve the Study Hub URL for a stable entity ID."],
   ] as const) {
@@ -234,35 +233,6 @@ export function createKthStudyServer(
   );
 
   if (publicOrigin) return server;
-
-  server.registerTool(
-    "list_pending_asks",
-    {
-      title: "List pending study questions",
-      description: "Use this to list unresolved questions explicitly queued from the local Study Hub.",
-      inputSchema: z.object({ entityId: z.string().optional() }),
-      outputSchema: z.object({ asks: z.array(PendingAskSchema) }),
-      annotations: readOnly,
-    },
-    async (args) => invoke("list_pending_asks", args),
-  );
-
-  server.registerTool(
-    "resolve_pending_ask",
-    {
-      title: "Resolve pending study question",
-      description: "Use this after answering a queued question to mark that local question as resolved.",
-      inputSchema: z.object({ id: ids }),
-      outputSchema: z.object({
-        result: z.object({
-          askId: z.string().uuid(),
-          status: z.literal("resolved"),
-        }),
-      }),
-      annotations: localMutation,
-    },
-    async (args) => invoke("resolve_pending_ask", args),
-  );
 
   server.registerTool(
     "ingest_lecture",

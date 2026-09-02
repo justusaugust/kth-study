@@ -1,7 +1,7 @@
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { loadCorpus } from "./repository";
-import { validateCorpus } from "./graph";
+import { validateCorpus, validateLectureCoverage } from "./graph";
 
 async function loadFixtureCorpus() {
   return loadCorpus(path.resolve("tests/fixtures/corpus"));
@@ -93,5 +93,16 @@ describe("validateCorpus", () => {
     expect(validateCorpus(corpus)).toContainEqual(
       expect.objectContaining({ code: "duplicate-atlas-order" }),
     );
+  });
+
+  it("reports a past lecture session without an authored lecture record", async () => {
+    const corpus = await loadFixtureCorpus();
+    const session = corpus.sessions.get("session:sf1690:lecture-01")!;
+    session.lectureId = undefined;
+
+    expect(validateLectureCoverage(corpus, "2026-08-25")).toContainEqual(
+      expect.objectContaining({ code: "missing-past-lecture", entityId: session.id }),
+    );
+    expect(validateLectureCoverage(corpus, "2026-08-24")).toEqual([]);
   });
 });

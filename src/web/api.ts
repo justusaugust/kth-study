@@ -4,12 +4,6 @@ import {
   CourseResponseSchema,
   DeadlinesResponseSchema,
   ExplainerResponseSchema,
-  FeedbackResponseSchema,
-  StudyMutationResponseSchema,
-  StudyStateResponseSchema,
-  PendingAskSchema,
-  PendingAskResponseSchema,
-  PendingAsksResponseSchema,
   SearchResponseSchema,
   VisualAtlasResponseSchema,
   type ConceptResponse,
@@ -18,10 +12,6 @@ import {
   type ExplainerResponse,
   type SearchResponse,
   type VisualAtlasResponse,
-  type StudyStatus,
-  type StudyMutationResponse,
-  type StudyStateResponse,
-  type PendingAsk,
 } from "../domain/api";
 
 export class ApiUnavailableError extends Error {}
@@ -83,52 +73,4 @@ export function getExplainer(visualSlug: string): Promise<ExplainerResponse> {
     ExplainerResponseSchema,
     `/api/explainers/${encodeURIComponent(visualSlug)}`,
   );
-}
-
-export function postFeedback(
-  entityId: string,
-  action: "unclear" | "ask_codex" | "revisit_later",
-) {
-  return request(FeedbackResponseSchema, "/api/feedback", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ entityId, action }),
-  });
-}
-
-export function getStudyState(entityId: string): Promise<StudyStateResponse> {
-  return request(StudyStateResponseSchema, `/api/study-state/${encodeURIComponent(entityId)}`);
-}
-
-export function setStudyStatus(entityId: string, status: StudyStatus): Promise<StudyMutationResponse> {
-  return request(StudyMutationResponseSchema, `/api/study-state/${encodeURIComponent(entityId)}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ status }),
-  });
-}
-
-export function undoStudyStatus(entityId: string, eventId: string): Promise<StudyMutationResponse> {
-  return request(StudyMutationResponseSchema, `/api/study-state/${encodeURIComponent(entityId)}/undo`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ eventId }),
-  });
-}
-
-export async function getPendingAsks(entityId: string): Promise<PendingAsk[]> {
-  const response = await request(PendingAsksResponseSchema, `/api/asks?entityId=${encodeURIComponent(entityId)}`);
-  return response.asks;
-}
-
-export async function createPendingAsk(entityId: string, question: string, sourceUrl: string): Promise<PendingAsk> {
-  const response = await request(PendingAskResponseSchema, "/api/asks", {
-    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ entityId, question, sourceUrl }),
-  });
-  return response.ask;
-}
-
-export async function cancelPendingAsk(askId: string): Promise<void> {
-  const response = await fetch(`/api/asks/${encodeURIComponent(askId)}/cancel`, { method: "POST" });
-  if (!response.ok) throw new ApiUnavailableError("Could not cancel the pending question.");
 }

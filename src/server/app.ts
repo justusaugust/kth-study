@@ -19,9 +19,6 @@ import {
   type StudyEntity,
 } from "../domain";
 import { createKthStudyServer } from "../mcp/server";
-import { appendFeedback, FeedbackSchema } from "./feedback";
-import { getStudyState, setStudyStatus, StudyStatusSchema, undoStudyStatus } from "./studyState";
-import { cancelAsk, createAsk, listPendingAsks } from "./askQueue";
 import type { StudyContext } from "./context";
 
 const entityTypes: SearchEntityType[] = [
@@ -169,7 +166,9 @@ export function createApp(
         left.code.localeCompare(right.code),
       ),
       assessments: [...context.corpus.assessments.values()],
+      sessions: [...context.corpus.sessions.values()],
       coursework: [...context.corpus.coursework.values()],
+      sources: [...context.corpus.sources.values()].map(publicSource),
     })),
   );
 
@@ -330,65 +329,6 @@ export function createApp(
       .filter((entity): entity is StudyEntity => entity !== undefined)
       .map((entity) => ({ id: entity.id, title: entity.title, url: entityUrl(entity) }));
     return c.json({ entityId: id, neighbors });
-  });
-
-  if (!options.publicOrigin) app.post("/api/feedback", async (c) => {
-    let body: unknown;
-    try {
-      body = await c.req.json();
-    } catch {
-      return c.json(error("invalid_body", "Feedback must be valid JSON."), 400);
-    }
-    const parsed = FeedbackSchema.safeParse(body);
-    if (!parsed.success) {
-      return c.json(error("invalid_body", "Feedback did not match the schema."), 400);
-    }
-    if (!entities.has(parsed.data.entityId)) {
-      return c.json(error("not_found", "Feedback entity not found."), 404);
-    }
-    const event = await appendFeedback(context.root, parsed.data);
-    return c.json({ feedback: event }, 201);
-  });
-
-  if (!options.publicOrigin) app.get("/api/study-state/:entityId", async (c) => {
-    const entityId = c.req.param("entityId");
-    if (!entities.has(entityId)) return c.json(error("not_found", "Study entity not found."), 404);
-    return c.json(await getStudyState(context.root, entityId));
-  });
-
-  if (!options.publicOrigin) app.put("/api/study-state/:entityId", async (c) => {
-    const entityId = c.req.param("entityId");
-    if (!entities.has(entityId)) return c.json(error("not_found", "Study entity not found."), 404);
-    const parsed = StudyStatusSchema.safeParse((await c.req.json().catch(() => ({})) as { status?: unknown }).status);
-    if (!parsed.success) return c.json(error("invalid_body", "Unknown study status."), 400);
-    return c.json(await setStudyStatus(context.root, entityId, parsed.data));
-  });
-
-  if (!options.publicOrigin) app.post("/api/study-state/:entityId/undo", async (c) => {
-    const entityId = c.req.param("entityId");
-    const body = await c.req.json().catch(() => ({})) as { eventId?: unknown };
-    if (typeof body.eventId !== "string") return c.json(error("invalid_body", "Undo requires an event ID."), 400);
-    try {
-      return c.json(await undoStudyStatus(context.root, entityId, body.eventId));
-    } catch (cause) {
-      return c.json(error("invalid_transition", cause instanceof Error ? cause.message : "Undo failed."), 409);
-    }
-  });
-
-  if (!options.publicOrigin) app.get("/api/asks", async (c) => {
-    return c.json({ asks: await listPendingAsks(context.root, c.req.query("entityId")) });
-  });
-
-  if (!options.publicOrigin) app.post("/api/asks", async (c) => {
-    const body = await c.req.json().catch(() => ({})) as Record<string, unknown>;
-    if (typeof body.entityId !== "string" || !entities.has(body.entityId)) return c.json(error("not_found", "Ask entity not found."), 404);
-    if (typeof body.question !== "string" || !body.question.trim() || typeof body.sourceUrl !== "string") return c.json(error("invalid_body", "A question and source URL are required."), 400);
-    return c.json({ ask: await createAsk(context.root, { entityId: body.entityId, question: body.question, sourceUrl: body.sourceUrl }) }, 201);
-  });
-
-  if (!options.publicOrigin) app.post("/api/asks/:askId/cancel", async (c) => {
-    try { return c.json(await cancelAsk(context.root, c.req.param("askId"))); }
-    catch { return c.json(error("not_found", "Pending ask not found."), 404); }
   });
 
   app.get("/.well-known/openai-apps-challenge", (c) =>

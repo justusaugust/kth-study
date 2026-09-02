@@ -286,7 +286,7 @@ export function recentCorpus(
 
 export function searchCorpus(
   index: MiniSearch<SearchDocument>,
-  _corpus: Corpus,
+  corpus: Corpus,
   query: string,
   filters: SearchFilters = {},
 ): SearchHit[] {
@@ -296,6 +296,9 @@ export function searchCorpus(
     .split(" ")
     .filter((term) => term && !["a", "an", "the", "what", "is", "are", "how", "do", "does", "work", "works", "show", "me", "explain"].includes(term))
     .join(" ") || query;
+  const exactCourseId = [...corpus.courses.values()].find(
+    (course) => course.code.toLowerCase() === normalizedQuery.replaceAll(" ", ""),
+  )?.id;
   const typeBoost: Record<SearchEntityType, number> = {
     course: 1.4,
     outcome: 0.8,
@@ -342,6 +345,18 @@ export function searchCorpus(
         !filters.outcomeIds.some((id) => result.outcomeIds?.includes(id))
       ) return false;
       return true;
+    })
+    .sort((a, b) => {
+      if (!exactCourseId) return 0;
+      const priority = (result: typeof a) =>
+        result.courseId !== exactCourseId
+          ? 0
+          : result.entityType === "course"
+            ? 2
+            : result.entityType === "lecture"
+              ? 1
+              : 0;
+      return priority(b) - priority(a);
     })
     .map((result) => ({
       id: result.id,

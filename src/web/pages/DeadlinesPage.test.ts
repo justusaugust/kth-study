@@ -17,6 +17,9 @@ const data = {
       date: "2026-10-19",
       compulsory: true,
       description: "Written examination.",
+      sourceIds: ["source:ie1204:canvas"],
+      lastChecked: "2026-09-01",
+      confidence: "verified",
     },
     {
       id: "assessment:sf1690:ten1",
@@ -26,6 +29,9 @@ const data = {
       title: "Written examination",
       compulsory: true,
       description: "Written examination with no confirmed date.",
+      sourceIds: [],
+      lastChecked: "2026-09-01",
+      confidence: "supported",
     },
   ],
   coursework: [
@@ -39,6 +45,9 @@ const data = {
       requirement: "recommended",
       description: "Upload the solutions.",
       materials: [{ title: "Submit in Canvas", url: "https://canvas.example/1" }],
+      sourceIds: ["source:ie1204:canvas"],
+      lastChecked: "2026-09-01",
+      confidence: "verified",
     },
     {
       id: "coursework:ie1204:quiz-a",
@@ -48,8 +57,21 @@ const data = {
       requirement: "required",
       description: "Complete the quiz.",
       materials: [],
+      sourceIds: [],
+      lastChecked: "2026-09-01",
+      confidence: "verified",
     },
   ],
+  sessions: [],
+  sources: [{
+    id: "source:ie1204:canvas",
+    courseId: "course:ie1204",
+    title: "Canvas course room",
+    kind: "fixture",
+    url: "https://canvas.example/course",
+    lastChecked: "2026-09-01",
+    confidence: "fixture",
+  }],
 } as unknown as DeadlinesResponse;
 
 describe("deadline schedule", () => {
@@ -60,7 +82,11 @@ describe("deadline schedule", () => {
     expect(schedule.groups[0][1][0]).toMatchObject({
       title: "Exercise set 1",
       time: "10:00",
-      links: [{ title: "Submit in Canvas" }],
+      links: [
+        { title: "Submit in Canvas" },
+        { title: "Canvas course room" },
+      ],
+      lastChecked: "2026-09-01",
     });
     expect(schedule.undated.map((item) => item.title)).toEqual([
       "Required quiz",

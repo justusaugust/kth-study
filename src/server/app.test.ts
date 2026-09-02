@@ -81,7 +81,12 @@ describe("study API", () => {
     await expect(response.json()).resolves.toMatchObject({
       courses: [{ code: "SF1690" }],
       assessments: [{ id: "assessment:sf1690:ten1" }],
+      sessions: [
+        { id: "session:sf1690:lecture-01" },
+        { id: "session:sf1690:exercise-01" },
+      ],
       coursework: [{ id: "coursework:sf1690:exercise-01" }],
+      sources: [{ id: "source:sf1690:fixture-curriculum" }],
     });
   });
 
