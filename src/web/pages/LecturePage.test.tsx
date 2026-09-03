@@ -86,7 +86,23 @@ describe("LecturePage", () => {
               body: "",
               sourceIds: [], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
             }],
-            explainers: [],
+            explainers: [{
+              id: "explainer:sf1690:lab-only",
+              atlasOrder: 99,
+              kind: "systems-diagram",
+              variant: "lab-workflow",
+              courseId: "course:sf1690",
+              slug: "lab-only",
+              conceptIds: ["concept:sf1690:function-composition"],
+              sessionIds: ["session:sf1690:lab-only"],
+              title: "Lab-only explainer",
+              caption: "This belongs to a lab session.",
+              accessibleSummary: "A lab-only workflow.",
+              sourceIds: [],
+              relationships: [],
+              lastChecked: "2026-08-28",
+              confidence: "fixture",
+            }],
             definitions: [{
               id: "definition:sf1690:composite-function",
               courseId: "course:sf1690",
@@ -180,6 +196,7 @@ describe("LecturePage", () => {
     expect(concept.open).toBe(true);
     expect(document.querySelectorAll("details.lecture-concept")[1]).not.toHaveAttribute("open");
     expect(screen.queryByText("Question from the previous lecture")).not.toBeInTheDocument();
+    expect(screen.queryByText("Lab-only explainer")).not.toBeInTheDocument();
     fireEvent.click(screen.getByText("Function composition").closest("summary")!);
     expect(concept.open).toBe(false);
     fireEvent.click(screen.getByText("Function composition").closest("summary")!);

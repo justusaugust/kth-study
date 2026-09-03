@@ -51,6 +51,8 @@ export function LecturePage() {
     const scopedSourceIds = item.sourceIds.filter((id) => knownLectureSourceIds.has(id));
     return !scopedSourceIds.length || scopedSourceIds.some((id) => lectureSourceIds.has(id));
   };
+  const belongsToLectureSession = (item: { sessionIds?: string[] }) =>
+    !item.sessionIds?.length || item.sessionIds.includes(lecture.sessionId ?? "");
   const coursework = data.coursework.filter((item) =>
     item.lectureIds.includes(lecture.id),
   );
@@ -62,7 +64,10 @@ export function LecturePage() {
     ...lecture.sourceIds,
     ...concepts.flatMap((concept) => concept.sourceIds),
     ...data.explainers
-      .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
+      .filter((item) =>
+        belongsToLectureSession(item) &&
+        item.conceptIds.some((id) => lecture.conceptIds.includes(id)),
+      )
       .flatMap((item) => item.sourceIds),
     ...data.definitions
       .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
@@ -122,7 +127,7 @@ export function LecturePage() {
         <ol className="lecture-spine__list">
           {concepts.map((concept, index) => {
             const explainer = data.explainers.find((item) =>
-              item.conceptIds.includes(concept.id),
+              belongsToLectureSession(item) && item.conceptIds.includes(concept.id),
             );
             const definitions = data.definitions.filter((item) =>
               item.conceptIds.includes(concept.id),

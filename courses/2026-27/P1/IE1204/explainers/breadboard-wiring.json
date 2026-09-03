@@ -1,0 +1,22 @@
+{
+  "id": "explainer:ie1204:breadboard-wiring",
+  "atlasOrder": 23,
+  "courseId": "course:ie1204",
+  "slug": "breadboard-wiring",
+  "conceptIds": ["concept:ie1204:breadboard-and-safe-wiring"],
+  "sessionIds": ["session:ie1204:lab-2026-09-03"],
+  "title": "Probe a breadboard",
+  "caption": "Probe two holes and bridge the split power rail to test which points share an electrical node.",
+  "accessibleSummary": "An interactive breadboard continuity tester showing five-hole terminal groups and an interrupted power rail.",
+  "sourceIds": ["source:ie1204:lecture-4-lab-introduction"],
+  "evidenceStatus": "lecture",
+  "relationships": [{
+    "type": "visualises",
+    "from": "explainer:ie1204:breadboard-wiring",
+    "to": "session:ie1204:lab-2026-09-03"
+  }],
+  "lastChecked": "2026-09-03",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "breadboard-wiring"
+}

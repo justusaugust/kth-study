@@ -140,8 +140,8 @@ test("visual atlas filters preserve figure identity and semantic focus labels", 
   await expect(page.locator(".atlas-register > li")).toHaveCount(10);
   await page.getByRole("button", { name: "Show 10 more" }).click();
   await page.getByRole("button", { name: "Show 10 more" }).click();
-  await expect(page.locator(".atlas-register > li")).toHaveCount(22);
-  await expect(page.locator(".atlas-count")).toHaveText("22 visuals");
+  await expect(page.locator(".atlas-register > li")).toHaveCount(24);
+  await expect(page.locator(".atlas-count")).toHaveText("24 visuals");
   const toolbar = await page.locator(".atlas-toolbar").boundingBox();
   expect(toolbar).not.toBeNull();
   expect(Math.round(toolbar!.height)).toBeLessThanOrEqual(104);

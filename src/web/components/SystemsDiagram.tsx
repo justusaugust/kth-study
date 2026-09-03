@@ -10,6 +10,7 @@ import {
   type FunctionConceptVariant,
 } from "./diagrams/FunctionConceptDiagram";
 import { CmosDiagram, type CmosVariant } from "./diagrams/CmosDiagram";
+import { LabDiagram, type LabVariant } from "./diagrams/LabDiagram";
 
 type DiagramMode = "preview" | "full";
 
@@ -419,6 +420,9 @@ export function SystemsDiagram({ variant, mode }: Props) {
   }
   if (variant === "cmos-gates" || variant === "cmos-power") {
     return <CmosDiagram mode={mode} variant={variant as CmosVariant} />;
+  }
+  if (variant === "breadboard-wiring" || variant === "lab-workflow") {
+    return <LabDiagram mode={mode} variant={variant as LabVariant} />;
   }
   return (
     <FunctionConceptDiagram

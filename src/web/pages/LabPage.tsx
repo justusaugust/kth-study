@@ -5,6 +5,7 @@ import { getCourse, MissingEntityError } from "../api";
 import { PageError } from "../components/PageError";
 import { SourceLinks } from "../components/SourceLinks";
 import { StudyMark } from "../components/StudyMark";
+import { ExplainerRenderer } from "../components/ExplainerRenderer";
 import { formatStudyDateLong } from "../format";
 
 export function LabPage() {
@@ -35,6 +36,7 @@ export function LabPage() {
 
   const assessment = data.assessments.find((item) => item.kind === "laboratory");
   const sources = data.sources.filter((source) => lab.sourceIds.includes(source.id));
+  const explainers = data.explainers.filter((explainer) => explainer.sessionIds?.includes(lab.id));
   const schedule = [lab.date ? formatStudyDateLong(lab.date) : undefined, lab.time && lab.endTime ? `${lab.time}–${lab.endTime}` : lab.time, lab.location].filter(Boolean).join(" · ");
 
   return (
@@ -61,6 +63,21 @@ export function LabPage() {
         <section className="lecture-note lab-section" aria-labelledby="lab-plan-title">
           <h2 id="lab-plan-title">Session plan</h2>
           <ol>{lab.agenda.map((item) => <li key={item}>{item}</li>)}</ol>
+        </section>
+      ) : null}
+
+      {explainers.length ? (
+        <section className="lab-visuals" aria-labelledby="lab-visuals-title">
+          <header className="course-section-heading">
+            <p>Prepare for this session</p>
+            <h2 id="lab-visuals-title">Lab explainers</h2>
+          </header>
+          {explainers.map((explainer) => (
+            <div key={explainer.id} className="lab-visual">
+              <h3>{explainer.title}</h3>
+              <ExplainerRenderer spec={explainer} mode="full" />
+            </div>
+          ))}
         </section>
       ) : null}
 

@@ -84,6 +84,24 @@ const ellipseSpec = {
   confidence: "fixture",
 };
 
+const breadboardSpec = {
+  id: "explainer:ie1204:breadboard-wiring",
+  atlasOrder: 23,
+  kind: "systems-diagram",
+  variant: "breadboard-wiring",
+  courseId: "course:ie1204",
+  slug: "breadboard-wiring",
+  conceptIds: ["concept:ie1204:breadboard-and-safe-wiring"],
+  sessionIds: ["session:ie1204:lab-2026-09-03"],
+  title: "Probe a breadboard",
+  caption: "Probe two holes.",
+  accessibleSummary: "An interactive breadboard continuity tester.",
+  sourceIds: [],
+  relationships: [],
+  lastChecked: "2026-09-03",
+  confidence: "fixture",
+};
+
 describe("ExplainerRenderer", () => {
   it("renders a keyboard-adjustable quadratic plot with a text fallback", () => {
     const { container } = render(
@@ -156,6 +174,14 @@ describe("ExplainerRenderer", () => {
     expect(screen.getAllByText("PF₁ = 5").length).toBeGreaterThan(0);
     expect(screen.getAllByText("PF₂ = 5").length).toBeGreaterThan(0);
     expect(screen.getByText("PF₁ + PF₂ = 10 = 2a")).toBeVisible();
+  });
+
+  it("shows that a split breadboard rail needs a bridge", () => {
+    render(<ExplainerRenderer spec={breadboardSpec as never} mode="full" />);
+
+    expect(screen.getByText("Open circuit")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Bridge the power rail" }));
+    expect(screen.getByText("Same electrical node")).toBeVisible();
   });
 
   it("falls back safely for an unsupported kind", () => {

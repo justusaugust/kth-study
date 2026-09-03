@@ -1,0 +1,22 @@
+{
+  "id": "explainer:ie1204:lab-workflow",
+  "atlasOrder": 24,
+  "courseId": "course:ie1204",
+  "slug": "lab-workflow",
+  "conceptIds": ["concept:ie1204:lab-workflow-and-evidence"],
+  "sessionIds": ["session:ie1204:lab-2026-09-03"],
+  "title": "Trace a lab result",
+  "caption": "Move from the required behaviour to a tested circuit and a reproducible record.",
+  "accessibleSummary": "An interactive six-step laboratory workflow linking specification, schematic, simulation, wiring, testing, and recorded evidence.",
+  "sourceIds": ["source:ie1204:lecture-4-lab-introduction"],
+  "evidenceStatus": "lecture",
+  "relationships": [{
+    "type": "visualises",
+    "from": "explainer:ie1204:lab-workflow",
+    "to": "session:ie1204:lab-2026-09-03"
+  }],
+  "lastChecked": "2026-09-03",
+  "confidence": "verified",
+  "kind": "systems-diagram",
+  "variant": "lab-workflow"
+}
