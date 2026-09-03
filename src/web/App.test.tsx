@@ -108,6 +108,35 @@ describe("App", () => {
     expect(await screen.findAllByRole("option")).toHaveLength(3);
   });
 
+  it("keeps touch filter taps available when blur has no next focus target", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(
+        new Response(JSON.stringify({ query: "", results: [] }), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        }),
+      ),
+    );
+
+    render(
+      <MemoryRouter>
+        <Routes>
+          <Route element={<AppShell />}>
+            <Route index element={<p>Home</p>} />
+          </Route>
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    const input = openGlobalSearch();
+    fireEvent.focus(input);
+    fireEvent.blur(input, { relatedTarget: null });
+    fireEvent.click(screen.getByRole("button", { name: "Concepts" }));
+
+    expect(screen.getByRole("button", { name: "Concepts" })).toHaveAttribute("aria-pressed", "true");
+  });
+
   it("shows only the available recent items before a query is entered", async () => {
     vi.stubGlobal(
       "fetch",

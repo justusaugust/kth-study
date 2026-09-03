@@ -50,6 +50,8 @@
     "concept:ie1204:fixed-width-arithmetic-and-overflow",
     "concept:ie1204:logic-gates-and-truth-tables",
     "concept:ie1204:boolean-equations-and-algebra",
+    "concept:ie1204:breadboard-and-safe-wiring",
+    "concept:ie1204:lab-workflow-and-evidence",
     "concept:ie1204:cmos-transistor-networks",
     "concept:ie1204:cmos-power-consumption"
   ],
@@ -59,6 +61,7 @@
     "source:ie1204:lecture-1-digital-design",
     "source:ie1204:lecture-2-signed-arithmetic",
     "source:ie1204:lecture-3-cmos-logic",
+    "source:ie1204:lecture-4-lab-introduction",
     "source:ie1204:lecture-5-boolean-algebra",
     "source:ie1204:lecture-1-recordings",
     "source:ie1204:lecture-2-recordings",
@@ -67,7 +70,7 @@
     "source:ie1204:weekly-planner-2026",
     "source:ie1204:exercise-sets-2026"
   ],
-  "lastChecked": "2026-09-01",
+  "lastChecked": "2026-09-03",
   "confidence": "verified",
   "relationships": [
     {
@@ -104,6 +107,16 @@
       "type": "teaches",
       "from": "course:ie1204",
       "to": "concept:ie1204:boolean-equations-and-algebra"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:breadboard-and-safe-wiring"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:lab-workflow-and-evidence"
     },
     {
       "type": "teaches",

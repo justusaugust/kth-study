@@ -12,9 +12,10 @@
       "endTime": "15:00",
       "location": "E2",
       "week": 36,
+      "lectureId": "lecture:ie1204:2026-09-03-04",
       "courseworkIds": [],
-      "sourceIds": ["source:ie1204:canvas-2026-material-map", "source:ie1204:weekly-planner-2026", "source:ie1204:timeedit-schedule"],
-      "lastChecked": "2026-09-02",
+      "sourceIds": ["source:ie1204:lecture-4-lab-introduction", "source:ie1204:canvas-2026-material-map", "source:ie1204:weekly-planner-2026", "source:ie1204:timeedit-schedule"],
+      "lastChecked": "2026-09-03",
       "confidence": "verified",
       "relationships": []
     },
@@ -31,8 +32,13 @@
       "location": "Q15",
       "week": 36,
       "courseworkIds": [],
-      "sourceIds": ["source:ie1204:timeedit-schedule"],
-      "lastChecked": "2026-09-02",
+      "agenda": [
+        "Collect and inventory the digital-design lab kit.",
+        "Assemble and check the 5 V supply and breadboard rails.",
+        "Prepare safe, defined logic inputs before wiring gate experiments."
+      ],
+      "sourceIds": ["source:ie1204:lecture-4-lab-introduction", "source:ie1204:timeedit-schedule"],
+      "lastChecked": "2026-09-03",
       "confidence": "verified",
       "relationships": []
     },

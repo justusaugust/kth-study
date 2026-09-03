@@ -35,6 +35,12 @@ export function entityUrl(entity: StudyEntity): string {
     return `/courses/${courseCodeFromId(entity.courseId)}#assessment-${entity.slug}`;
   }
   if (type === "session" && "slug" in entity && "courseId" in entity) {
+    if ("kind" in entity && entity.kind === "laboratory") {
+      return `/courses/${courseCodeFromId(entity.courseId)}/labs/${entity.slug}`;
+    }
+    if ("lectureId" in entity && entity.lectureId) {
+      return `/courses/${courseCodeFromId(entity.courseId)}/lectures/${entity.lectureId.split(":").at(-1)}`;
+    }
     return `/courses/${courseCodeFromId(entity.courseId)}#session-${entity.slug}`;
   }
   if (type === "coursework" && "slug" in entity && "courseId" in entity) {

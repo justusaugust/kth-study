@@ -1,0 +1,13 @@
+{
+  "id": "definition:ie1204:breadboard-connectivity",
+  "courseId": "course:ie1204",
+  "slug": "breadboard-connectivity",
+  "term": "Breadboard connectivity",
+  "statement": "A solderless breadboard joins holes in fixed internal groups rather than according to their visual proximity.",
+  "interpretation": "Verify five-hole groups and any split power buses before treating a rail or row as one electrical node.",
+  "conceptIds": ["concept:ie1204:breadboard-and-safe-wiring"],
+  "sourceIds": ["source:ie1204:lecture-4-lab-introduction"],
+  "lastChecked": "2026-09-03",
+  "confidence": "verified",
+  "relationships": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "definition:ie1204:defined-logic-input",
+  "courseId": "course:ie1204",
+  "slug": "defined-logic-input",
+  "term": "Defined logic input",
+  "statement": "A digital input deliberately connected to a valid low or high voltage instead of being left electrically floating.",
+  "interpretation": "Every used and unused CMOS input needs a known logic level for predictable behaviour.",
+  "conceptIds": ["concept:ie1204:breadboard-and-safe-wiring"],
+  "sourceIds": ["source:ie1204:lecture-4-lab-introduction"],
+  "lastChecked": "2026-09-03",
+  "confidence": "verified",
+  "relationships": []
+}

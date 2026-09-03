@@ -1,0 +1,29 @@
+{
+  "id": "lecture:ie1204:2026-09-03-04",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-03-04",
+  "title": "Lecture 4 — laboratory and lab-kit introduction",
+  "date": "2026-09-03",
+  "summary": "The lab kit turns logic diagrams into physical circuits. Reliable work starts with known breadboard connections, correct power and IC orientation, defined inputs, and a repeatable path from schematic to tested evidence.",
+  "conceptIds": [
+    "concept:ie1204:breadboard-and-safe-wiring",
+    "concept:ie1204:lab-workflow-and-evidence"
+  ],
+  "sessionId": "session:ie1204:lecture-04",
+  "body": "This lecture introduces the IE1204 lab kit and the practical discipline needed to build digital circuits without damaging components or hiding wiring errors. The central sequence is simple: understand the breadboard, establish safe power and definite input levels, build from a complete schematic, test the circuit, and retain enough evidence to explain what it did.\n\nThe scheduled lab workshops support this work. The assessed **LABA laboratory work** is compulsory and includes demonstrations and an individually written report; a timetable entry alone is not evidence that a lab was completed.",
+  "sourceIds": ["source:ie1204:lecture-4-lab-introduction"],
+  "lastChecked": "2026-09-03",
+  "confidence": "verified",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-03-04",
+      "to": "concept:ie1204:breadboard-and-safe-wiring"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-03-04",
+      "to": "concept:ie1204:lab-workflow-and-evidence"
+    }
+  ]
+}

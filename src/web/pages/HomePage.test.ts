@@ -54,7 +54,7 @@ describe("current week", () => {
       time: "15:00",
       endTime: "17:00",
       location: "Q15",
-      url: "/courses/ie1204#session-lab-01",
+      url: "/courses/ie1204/labs/lab-01",
     });
     expect(days.flatMap((day) => day.entries).some((item) => item.title === "Exercise set 1")).toBe(false);
   });

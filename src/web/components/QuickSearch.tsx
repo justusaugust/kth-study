@@ -93,7 +93,7 @@ export function QuickSearch({ id, label, placeholder, variant, autoFocus, onDism
     <div
       className={`quick-search quick-search--${variant} ${variant === "header" ? "header-search" : "home-search"}`}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
     >
       <form className="search-field" onSubmit={submit} role="search">

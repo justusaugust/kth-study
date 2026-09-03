@@ -222,6 +222,8 @@ export const CourseSessionSchema = z
     week: z.number().int().min(1).max(53).optional(),
     lectureId: EntityIdSchema.optional(),
     courseworkIds: z.array(EntityIdSchema).default([]),
+    agenda: z.array(z.string().min(1)).optional(),
+    recap: z.string().min(1).optional(),
   })
   .extend(TraceabilitySchema.shape)
   .extend(RelationalSchema.shape);

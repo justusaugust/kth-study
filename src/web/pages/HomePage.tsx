@@ -51,9 +51,7 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
       time: session.time,
       endTime: session.endTime,
       location: session.location,
-      url: session.lectureId
-        ? `/courses/${course.code.toLowerCase()}/lectures/${session.lectureId.split(":").at(-1)}`
-        : entityUrl(session),
+      url: entityUrl(session),
     });
   }
   for (const item of data.coursework) {

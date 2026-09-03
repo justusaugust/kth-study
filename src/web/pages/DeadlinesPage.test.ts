@@ -93,4 +93,28 @@ describe("deadline schedule", () => {
       "TEN1 · Written examination",
     ]);
   });
+
+  it("includes dated mini-exams with links to their covered lectures", () => {
+    const miniExamData = {
+      ...data,
+      coursework: [{
+        id: "coursework:sf1690:mini-exam-01", courseId: "course:sf1690", slug: "mini-exam-01",
+        title: "Mini-exam · Lectures 1–4", date: "2026-09-11", time: "15:00",
+        requirement: "scheduled", description: "First half of Exercise session 7.", materials: [],
+        sessionIds: ["session:sf1690:checkpoint-01", "session:sf1690:lecture-01"], sourceIds: [],
+        lastChecked: "2026-09-03", confidence: "verified",
+      }],
+      sessions: [{
+        id: "session:sf1690:lecture-01", courseId: "course:sf1690", slug: "lecture-01", kind: "lecture",
+        title: "Lecture 1 · Real numbers", lectureId: "lecture:sf1690:2026-08-24-01",
+      }],
+    } as unknown as DeadlinesResponse;
+
+    const schedule = buildDeadlineSchedule(miniExamData, "2026-09-01");
+
+    expect(schedule.groups[0]).toMatchObject(["2026-09-11", [{
+      title: "Mini-exam · Lectures 1–4",
+      studyLinks: [{ title: "Lecture 1 · Real numbers", url: "/courses/sf1690/lectures/2026-08-24-01" }],
+    }]]);
+  });
 });

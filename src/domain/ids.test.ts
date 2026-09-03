@@ -51,6 +51,23 @@ describe("entityUrl", () => {
     ).toBe("/courses/sf1690#session-lecture-01");
     expect(
       entityUrl({
+        id: "session:sf1690:lecture-01",
+        courseId: "course:sf1690",
+        slug: "lecture-01",
+        kind: "lecture",
+        lectureId: "lecture:sf1690:2026-08-24-01",
+      } as never),
+    ).toBe("/courses/sf1690/lectures/2026-08-24-01");
+    expect(
+      entityUrl({
+        id: "session:ie1204:lab-2026-09-03",
+        courseId: "course:ie1204",
+        slug: "lab-2026-09-03",
+        kind: "laboratory",
+      } as never),
+    ).toBe("/courses/ie1204/labs/lab-2026-09-03");
+    expect(
+      entityUrl({
         id: "coursework:sf1690:exercise-01",
         courseId: "course:sf1690",
         slug: "exercise-01",

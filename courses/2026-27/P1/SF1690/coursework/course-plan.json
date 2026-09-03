@@ -49,9 +49,9 @@
     },
     {
       "id": "coursework:sf1690:mini-exam-01", "courseId": "course:sf1690", "slug": "mini-exam-01", "kind": "mini-exam", "sequence": 14,
-      "title": "Mini-exam · Lectures 1–4", "week": 37, "requirement": "scheduled", "description": "Course-plan checkpoint during the first half of Exercise session 7, covering Lectures 1–4.",
-      "materials": [], "sessionIds": ["session:sf1690:checkpoint-01"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
-      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+      "title": "Mini-exam · Lectures 1–4", "date": "2026-09-11", "time": "15:00", "week": 37, "requirement": "scheduled", "description": "Mini-exam during the first half of Exercise session 7, 15:00–16:00, covering Lectures 1–4.",
+      "materials": [], "sessionIds": ["session:sf1690:checkpoint-01", "session:sf1690:lecture-01", "session:sf1690:lecture-02", "session:sf1690:lecture-03", "session:sf1690:lecture-04"], "lectureIds": ["lecture:sf1690:2026-08-24-01", "lecture:sf1690:2026-08-26-02", "lecture:sf1690:2026-08-27-03", "lecture:sf1690:2026-08-28-04"], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26", "source:sf1690:timeedit-schedule"], "lastChecked": "2026-09-03", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-07", "courseId": "course:sf1690", "slug": "exercise-07", "kind": "exercise", "sequence": 15,
@@ -94,9 +94,9 @@
     },
     {
       "id": "coursework:sf1690:mini-exam-02", "courseId": "course:sf1690", "slug": "mini-exam-02", "kind": "mini-exam", "sequence": 25,
-      "title": "Mini-exam · Lectures 5–10", "week": 39, "requirement": "scheduled", "description": "Course-plan checkpoint during the first half of Exercise session 12, covering Lectures 5–10.",
-      "materials": [], "sessionIds": ["session:sf1690:checkpoint-02"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
-      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+      "title": "Mini-exam · Lectures 5–10", "date": "2026-09-23", "time": "13:00", "week": 39, "requirement": "scheduled", "description": "Mini-exam during the first half of Exercise session 12, 13:00–14:00, covering Lectures 5–10.",
+      "materials": [], "sessionIds": ["session:sf1690:checkpoint-02", "session:sf1690:lecture-05", "session:sf1690:lecture-06", "session:sf1690:lecture-07", "session:sf1690:lecture-08", "session:sf1690:lecture-09", "session:sf1690:lecture-10"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26", "source:sf1690:timeedit-schedule"], "lastChecked": "2026-09-03", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-12", "courseId": "course:sf1690", "slug": "exercise-12", "kind": "exercise", "sequence": 26,
@@ -128,9 +128,9 @@
     },
     {
       "id": "coursework:sf1690:mini-exam-03", "courseId": "course:sf1690", "slug": "mini-exam-03", "kind": "mini-exam", "sequence": 34,
-      "title": "Mini-exam · Lectures 11–14", "week": 41, "requirement": "scheduled", "description": "Course-plan checkpoint during the first half of Exercise session 16, covering Lectures 11–14.",
-      "materials": [], "sessionIds": ["session:sf1690:checkpoint-03"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
-      "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
+      "title": "Mini-exam · Lectures 11–14", "date": "2026-10-08", "time": "15:00", "week": 41, "requirement": "scheduled", "description": "Mini-exam during the first half of Exercise session 16, 15:00–16:00, covering Lectures 11–14.",
+      "materials": [], "sessionIds": ["session:sf1690:checkpoint-03", "session:sf1690:lecture-11", "session:sf1690:lecture-12", "session:sf1690:lecture-13", "session:sf1690:lecture-14"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sourceIds": ["source:sf1690:canvas-course-plan-26", "source:sf1690:timeedit-schedule"], "lastChecked": "2026-09-03", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-16", "courseId": "course:sf1690", "slug": "exercise-16", "kind": "exercise", "sequence": 35,

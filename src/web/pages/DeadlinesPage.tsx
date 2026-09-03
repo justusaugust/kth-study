@@ -20,6 +20,7 @@ type DeadlineItem = {
   confidence: string;
   url: string;
   links: Array<{ title: string; url: string }>;
+  studyLinks: Array<{ title: string; url: string }>;
 };
 
 const requirementLabels: Record<string, string> = {
@@ -52,10 +53,16 @@ export function buildDeadlineItems(data: DeadlinesResponse) {
       confidence: assessment.confidence,
       url: entityUrl(assessment),
       links: sourceLinks(assessment.sourceIds),
+      studyLinks: [],
     };
   });
   const coursework: DeadlineItem[] = data.coursework.map((item) => {
     const course = courses.get(item.courseId)!;
+    const studyLinks = (item.sessionIds ?? []).flatMap((id) => {
+      const session = data.sessions.find((candidate) => candidate.id === id);
+      if (!session || session.kind !== "lecture") return [];
+      return [{ title: session.title, url: entityUrl(session) }];
+    });
     return {
       id: item.id,
       entityType: "coursework",
@@ -75,6 +82,7 @@ export function buildDeadlineItems(data: DeadlinesResponse) {
         ),
         ...sourceLinks(item.sourceIds).map((link) => [link.url, link] as const),
       ]).values()],
+      studyLinks,
     };
   });
   return [...assessments, ...coursework];
@@ -191,6 +199,12 @@ function DeadlineEntry({ item, compact = false }: { item: DeadlineItem; compact?
           {item.confidence === "verified" ? "Verified" : "Supported"} · Checked {formatStudyDateLong(item.lastChecked)}
         </p>
         <Link className="deadline-item__open" to={item.url}>Open in course</Link>
+        {item.studyLinks.length ? (
+          <div className="deadline-item__study" aria-label="Study covered lectures">
+            <strong>Study covered lectures</strong>
+            <div>{item.studyLinks.map((link) => <Link to={link.url} key={link.url}>{link.title}</Link>)}</div>
+          </div>
+        ) : null}
         {item.links.length ? (
           <div className="deadline-item__links" aria-label="Sources">
             {item.links.map((link) => (
