@@ -2,6 +2,8 @@
 id: 'question:ie1204:xor-or-xnor'
 courseId: 'course:ie1204'
 slug: xor-or-xnor
+hints:
+  - 'For two inputs, XOR tests whether they differ; XNOR is its complement. Compare the inputs in each of the two requested rows.'
 title: Distinguish XOR from XNOR
 conceptIds:
   - 'concept:ie1204:logic-gates-and-truth-tables'

@@ -171,7 +171,7 @@ describe("ConceptPage", () => {
       "question-quadratic-shape",
     );
     expect(
-      screen.getByRole("link", { name: "KTH official SF1690 course page" }),
+      screen.getByRole("link", { name: /^KTH official SF1690 course page/ }),
     ).toHaveAttribute(
       "href",
       "https://www.kth.se/student/kurser/kurs/SF1690?l=en",

@@ -37,7 +37,7 @@ The repository contains authored study material and links to its sources. Downlo
 
 Dates and course status can change. Verify consequential deadlines, examinations, registrations, and room information in the current KTH source before relying on them.
 
-Content validation also fails when a past session marked as a lecture has no authored `lectureId`, preventing published lecture coverage from silently falling behind the schedule.
+Content validation fails when a past session marked as a lecture has no authored `lectureId`. It separately reports undated lectures as warnings: passing validation does not prove completeness against the official timetable. The comparison uses the current Stockholm date. During development, `pnpm dev:api` restarts and validates the API when course JSON or Markdown changes; invalid edits fail visibly instead of silently serving an old corpus.
 
 ## Verification
 

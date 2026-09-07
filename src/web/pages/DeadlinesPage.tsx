@@ -63,6 +63,7 @@ export function buildDeadlineItems(data: DeadlinesResponse) {
       if (!session || session.kind !== "lecture") return [];
       return [{ title: session.title, url: entityUrl(session) }];
     });
+    if (item.kind === "mini-exam") studyLinks.push({ title: "Practise the covered lectures", url: `/practice?course=${course.code.toLowerCase()}&work=${item.slug}` });
     return {
       id: item.id,
       entityType: "coursework",

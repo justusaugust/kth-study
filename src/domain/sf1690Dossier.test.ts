@@ -3,6 +3,23 @@ import { describe, expect, it } from "vitest";
 import { buildCourseJourney, loadCorpus, validateCorpus } from ".";
 
 describe("SF1690 course dossier", () => {
+  it("connects Lecture 5 to its guide, visual and assigned P6 work", async () => {
+    const corpus = await loadCorpus(path.resolve("."));
+    const id = "lecture:sf1690:2026-09-07-05";
+    const lecture = corpus.lectures.get(id)!;
+    expect(lecture.date).toBe("2026-09-07");
+    expect(lecture.conceptIds).toHaveLength(2);
+    expect(corpus.sessions.get("session:sf1690:lecture-05")?.lectureId).toBe(id);
+    expect(corpus.coursework.get("coursework:sf1690:exercise-05")?.lectureIds).toContain(id);
+    for (const conceptId of lecture.conceptIds) {
+      expect(corpus.concepts.get(conceptId)?.lectureIds).toContain(id);
+      expect([...corpus.questions.values()].some((item) => item.conceptIds.includes(conceptId))).toBe(true);
+      expect([...corpus.examples.values()].some((item) => item.conceptIds.includes(conceptId))).toBe(true);
+    }
+    expect(corpus.explainers.get("explainer:sf1690:quadratic-coefficients")?.conceptIds).toContain(lecture.conceptIds[0]);
+    expect(validateCorpus(corpus)).toEqual([]);
+  });
+
   it("preserves the complete verified course-plan structure", async () => {
     const corpus = await loadCorpus(path.resolve("."));
     const courseId = "course:sf1690";

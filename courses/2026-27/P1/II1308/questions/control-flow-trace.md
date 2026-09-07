@@ -2,6 +2,9 @@
 id: 'question:ii1308:control-flow-trace'
 courseId: 'course:ii1308'
 slug: control-flow-trace
+hints:
+  - 'List the values supplied by range(3), remembering that its stop is excluded.'
+  - 'For each value, evaluate the remainder test before deciding whether print runs. Which statement chooses whether to enter its indented block?'
 title: 'Trace a branch inside a loop'
 conceptIds:
   - 'concept:ii1308:sequence-selection-iteration'

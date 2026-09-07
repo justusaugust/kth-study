@@ -15,6 +15,8 @@ export function VisualPage() {
 
   useEffect(() => {
     let active = true;
+    setData(undefined);
+    setError(undefined);
     getExplainer(visualSlug)
       .then((result) => active && setData(result))
       .catch((cause) => active && setError(cause));

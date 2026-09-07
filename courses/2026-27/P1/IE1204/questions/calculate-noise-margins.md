@@ -3,6 +3,9 @@ id: 'question:ie1204:calculate-noise-margins'
 courseId: 'course:ie1204'
 slug: calculate-noise-margins
 title: Calculate both noise margins
+hints:
+  - 'For HIGH, compare the lowest guaranteed driver HIGH with the receiver HIGH threshold.'
+  - 'For LOW, subtract the highest driver LOW from the receiver LOW threshold. Each margin is a voltage difference.'
 conceptIds:
   - 'concept:ie1204:digital-abstraction'
 answer: >-

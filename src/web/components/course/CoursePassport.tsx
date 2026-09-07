@@ -23,6 +23,9 @@ export function CoursePassport({
       <div className="course-passport__identity">
         <p className="course-code">{course.code}</p>
         <h1>{course.title}</h1>
+      </div>
+      <details className="course-facts">
+        <summary>{course.credits} ECTS · {course.period} · Course details</summary>
         <p className="lead">{course.summary}</p>
         {course.links.length ? (
           <nav className="course-source-links" aria-label="Course sources">
@@ -41,7 +44,6 @@ export function CoursePassport({
             ))}
           </nav>
         ) : null}
-      </div>
       <dl className="course-margin-data">
         <div>
           <dt>Credits</dt>
@@ -68,6 +70,7 @@ export function CoursePassport({
           <dd>{formatStudyDate(course.lastChecked)}</dd>
         </div>
       </dl>
+      </details>
     </header>
   );
 }

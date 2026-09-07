@@ -2,6 +2,9 @@
 id: 'question:sf1690:parallel-line'
 courseId: 'course:sf1690'
 slug: parallel-line
+hints:
+  - 'Parallel nonvertical lines have equal slopes. Keep that coefficient in a new equation $y=mx+b$.'
+  - 'Substitute the required point into the new equation to determine b, then verify the point lies on your line.'
 title: Construct a parallel line
 conceptIds:
   - 'concept:sf1690:lines-and-slopes'

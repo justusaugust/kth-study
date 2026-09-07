@@ -2,6 +2,9 @@
 id: 'question:ie1204:diagnose-unsafe-wiring'
 courseId: 'course:ie1204'
 slug: diagnose-unsafe-wiring
+hints:
+  - 'Keep power disconnected. Check each reported problem against three rules: defined inputs, no output contention, and the documented IC pinout.'
+  - 'Before power-up, trace VCC and ground through the actual breadboard groups and split rails, and check for an unintended supply short.'
 title: Diagnose the wiring before power-up
 conceptIds:
   - 'concept:ie1204:breadboard-and-safe-wiring'

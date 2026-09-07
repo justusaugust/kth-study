@@ -34,6 +34,8 @@ export function ConceptPage() {
 
   useEffect(() => {
     let active = true;
+    setData(undefined);
+    setError(undefined);
     getConcept(courseCode, conceptSlug)
       .then((result) => active && setData(result))
       .catch((cause) => active && setError(cause));
@@ -174,7 +176,6 @@ export function ConceptPage() {
                 <PracticePrompt
                   key={question.id}
                   question={question}
-                  hints={[concept.centralInsight, concept.commonMistake]}
                 />
               ))}
             </div>

@@ -2,6 +2,9 @@
 id: 'question:sf1690:function-quotient-domain'
 courseId: 'course:sf1690'
 slug: function-quotient-domain
+hints:
+  - 'Start by finding the inputs accepted by both f and g. The expression under the real square root must be nonnegative.'
+  - 'A quotient adds one more restriction: its denominator must not vanish. Remove that input from the shared domain.'
 title: Track every quotient restriction
 conceptIds:
   - 'concept:sf1690:function-arithmetic-and-domains'

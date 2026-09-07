@@ -40,13 +40,13 @@ For canonical sum-of-products (SOP), write the minterm that is true on each row 
 
 For the output vector $0,1,1,1$ in row order $00,01,10,11$:
 
-$$F=\bar A B+A\bar B+AB=\prod M(0).$$
+$$F=\overline{A}B+A\overline{B}+AB=\prod M(0).$$
 
 ## Simplify without changing the function
 
 Boolean algebra has identity, null, idempotent, complement, distributive, covering, combining, and consensus laws. Apply them to remove terms or literals; the reduced equation is valid only if every truth-table output remains unchanged.
 
-For example, $A\bar B+AB=A(\bar B+B)=A$. The combining step replaces two terms that differ only in $B$ with the part they share.
+For example, $A\overline{B}+AB=A(\overline{B}+B)=A$. The combining step replaces two terms that differ only in $B$ with the part they share.
 
 ## Duality
 

@@ -42,6 +42,10 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
   for (const session of data.sessions) {
     if (!session.date) continue;
     const course = courses.get(session.courseId)!;
+    const sameEvent = data.coursework.find((item) =>
+      item.date === session.date && item.kind === "mini-exam" &&
+      (session.courseworkIds.includes(item.id) || item.sessionIds.includes(session.id)),
+    );
     add({
       id: session.id,
       date: session.date,
@@ -51,11 +55,15 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
       time: session.time,
       endTime: session.endTime,
       location: session.location,
-      url: entityUrl(session),
+      url: entityUrl(sameEvent ?? session),
     });
   }
   for (const item of data.coursework) {
     if (!item.date) continue;
+    if (item.kind === "mini-exam" && data.sessions.some((session) =>
+      session.date === item.date &&
+      (session.courseworkIds.includes(item.id) || item.sessionIds.includes(session.id)),
+    )) continue;
     add({
       id: item.id,
       date: item.date,
@@ -175,10 +183,10 @@ export function HomePage() {
                 </ol>
               ) : (
                 <div className="week-empty">
-                  <strong>Nothing today</strong>
+                  <strong>No dated events recorded</strong>
                   {next
                     ? <Link to={next.url}>Next: {next.title}</Link>
-                    : <span>No more scheduled items this week.</span>}
+                    : <span>Check the official timetable for changes.</span>}
                 </div>
               )}
             </section>;

@@ -21,10 +21,12 @@ export interface ValidationIssue {
     | "invalid-course-date-range"
     | "duplicate-atlas-order"
     | "missing-past-lecture"
+    | "undated-lecture"
     | "dangling-coursework-reference"
     | "dangling-session-reference"
     | "dangling-assessment-reference";
   entityId?: string;
+  severity?: "warning";
   message: string;
 }
 
@@ -32,15 +34,18 @@ export function validateLectureCoverage(corpus: Corpus, today: string): Validati
   return [...corpus.sessions.values()]
     .filter((session) =>
       session.kind === "lecture" &&
-      session.date !== undefined &&
-      session.date < today &&
-      session.lectureId === undefined
+      (session.date === undefined || (session.date < today && session.lectureId === undefined))
     )
-    .map((session) => ({
-      code: "missing-past-lecture" as const,
+    .map((session): ValidationIssue => session.date === undefined ? {
+      code: "undated-lecture",
+      severity: "warning",
+      entityId: session.id,
+      message: `${session.id} has no recorded date; lecture coverage cannot be established against the timetable`,
+    } : {
+      code: "missing-past-lecture",
       entityId: session.id,
       message: `${session.id} happened on ${session.date} but has no lecture record; add lectureId or correct the session kind`,
-    }));
+    });
 }
 
 function allEntities(corpus: Corpus): Map<string, StudyEntity> {

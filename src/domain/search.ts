@@ -7,6 +7,9 @@ export type SearchEntityType =
   | "course"
   | "outcome"
   | "lecture"
+  | "session"
+  | "coursework"
+  | "assessment"
   | "concept"
   | "definition"
   | "explainer"
@@ -60,6 +63,9 @@ function entities(corpus: Corpus): StudyEntity[] {
     ...corpus.courses.values(),
     ...corpus.outcomes.values(),
     ...corpus.lectures.values(),
+    ...corpus.sessions.values(),
+    ...corpus.coursework.values(),
+    ...corpus.assessments.values(),
     ...corpus.concepts.values(),
     ...corpus.definitions.values(),
     ...corpus.explainers.values(),
@@ -133,6 +139,10 @@ function excerptMarkdown(markdown: string, maxLength = 180): string {
 }
 
 function summaryOf(entity: StudyEntity): string {
+  if ("courseworkIds" in entity) {
+    return [entity.kind, entity.date ?? "Date not recorded", entity.location, entity.agenda?.join("; ")]
+      .filter(Boolean).join(" · ");
+  }
   if ("summary" in entity) return entity.summary;
   if ("description" in entity) return entity.description;
   if ("caption" in entity) return entity.caption;
@@ -164,13 +174,14 @@ function toDocument(
     .map((edge) => (edge.from === entity.id ? edge.to : edge.from));
   const sourceIds = "sourceIds" in entity ? entity.sourceIds : [];
   const outcomeIds = "outcomeIds" in entity ? entity.outcomeIds : [];
-  const lectureIds = "lectureIds" in entity ? entity.lectureIds : [];
+  const lectureIds = "lectureIds" in entity ? entity.lectureIds
+    : "lectureId" in entity && entity.lectureId ? [entity.lectureId] : [];
 
   return {
     id: entity.id,
     entityType,
     title: "term" in entity ? entity.term : entity.title,
-    aliases: [],
+    aliases: ["kind" in entity ? entity.kind : "", "code" in entity ? entity.code : "", "date" in entity ? entity.date ?? "" : ""],
     summary: summaryOf(entity),
     body:
       ("body" in entity ? entity.body : "") ||
@@ -243,7 +254,10 @@ function matchesFilters(entity: StudyEntity, filters: SearchFilters): boolean {
   ) return false;
   if (
     filters.lectureIds &&
-    (!("lectureIds" in entity) || !filters.lectureIds.some((id) => entity.lectureIds.includes(id)))
+    !filters.lectureIds.some((id) =>
+      ("lectureIds" in entity && entity.lectureIds.includes(id)) ||
+      ("lectureId" in entity && entity.lectureId === id)
+    )
   ) return false;
   if (
     filters.outcomeIds &&
@@ -303,6 +317,9 @@ export function searchCorpus(
     course: 1.4,
     outcome: 0.8,
     lecture: 1,
+    session: 1,
+    coursework: 1.5,
+    assessment: 1.5,
     concept: 2,
     definition: 1.6,
     explainer: 1.5,

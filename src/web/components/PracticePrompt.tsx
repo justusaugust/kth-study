@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import type { Question } from "../../domain";
+import { useLocalNotes } from "../useLocalNotes";
+import "../styles/practice.css";
 
 function Markdown({ children }: { children: string }) {
   return (
@@ -14,21 +16,19 @@ function Markdown({ children }: { children: string }) {
 
 export function PracticePrompt({
   question,
-  hints = [],
 }: {
   question: Question;
-  hints?: Array<string | undefined>;
 }) {
   const attemptId = useId();
-  const [attempt, setAttempt] = useState("");
+  const { notes, update, saved } = useLocalNotes(`kth-study:practice:${question.id}`);
+  const attempt = notes.attempt ?? "";
   const [writing, setWriting] = useState(false);
   const [hintCount, setHintCount] = useState(0);
   const [solutionOpen, setSolutionOpen] = useState(false);
-  const availableHints = [...new Set(hints.filter((hint): hint is string => Boolean(hint)))];
+  const availableHints = question.hints ?? [];
   const changed = writing || attempt.length > 0 || hintCount > 0 || solutionOpen;
 
   function reset() {
-    setAttempt("");
     setWriting(false);
     setHintCount(0);
     setSolutionOpen(false);
@@ -43,13 +43,14 @@ export function PracticePrompt({
       <div className="practice-prompt__question">
         <Markdown>{question.body}</Markdown>
       </div>
+      <p className="practice-guidance">Try it on paper first. Compare your method with the solution when you are ready.</p>
       {writing ? (
         <>
           <label htmlFor={attemptId}>Work it out</label>
           <textarea
             id={attemptId}
             value={attempt}
-            onChange={(event) => setAttempt(event.target.value)}
+            onChange={(event) => update("attempt", event.target.value)}
             placeholder="Write your reasoning here before revealing the solution."
             rows={4}
             autoFocus
@@ -66,13 +67,14 @@ export function PracticePrompt({
         {question.answer ? (
           <button
             type="button"
+            className="practice-prompt__lead-action"
             aria-expanded={solutionOpen}
             onClick={() => setSolutionOpen((open) => !open)}
           >
             {solutionOpen ? "Hide solution" : "Reveal solution"}
           </button>
         ) : null}
-        {changed ? <button type="button" onClick={reset}>Reset</button> : null}
+        {changed ? <button type="button" className="practice-prompt__reset" onClick={reset}>Hide help</button> : null}
       </div>
       {hintCount ? (
         <div className="practice-prompt__hints" aria-live="polite">
@@ -88,8 +90,21 @@ export function PracticePrompt({
         <div className="practice-prompt__solution">
           <strong>Solution</strong>
           <Markdown>{question.answer}</Markdown>
+          <p>Check each step, not just the final answer. This is a self-check, not an automatic grade.</p>
         </div>
       ) : null}
+      <footer className="practice-prompt__notes">
+        <label className="practice-revisit">
+          <input type="checkbox" checked={notes.revisit === "yes"} onChange={(event) => update("revisit", event.target.checked ? "yes" : "no")} />
+          Revisit this question
+        </label>
+        <details className="practice-reflection">
+          <summary>Optional mistake note</summary>
+          <label htmlFor={`${attemptId}-mistake`}>What would you do differently next time?</label>
+          <textarea id={`${attemptId}-mistake`} value={notes.mistake ?? ""} onChange={(event) => update("mistake", event.target.value)} rows={2} />
+        </details>
+        <small className="local-notes-status" role="status">{saved ? "Notes and revisit choices stay in this browser only; they are not synced or submitted." : "Browser storage is unavailable. Copy your notes before leaving this page."}</small>
+      </footer>
     </article>
   );
 }

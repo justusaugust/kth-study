@@ -104,5 +104,9 @@ describe("validateCorpus", () => {
       expect.objectContaining({ code: "missing-past-lecture", entityId: session.id }),
     );
     expect(validateLectureCoverage(corpus, "2026-08-24")).toEqual([]);
+    session.date = undefined;
+    expect(validateLectureCoverage(corpus, "2026-08-24")).toContainEqual(
+      expect.objectContaining({ code: "undated-lecture", severity: "warning", entityId: session.id }),
+    );
   });
 });

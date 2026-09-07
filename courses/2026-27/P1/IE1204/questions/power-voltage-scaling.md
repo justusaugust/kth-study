@@ -2,6 +2,9 @@
 id: 'question:ie1204:power-voltage-scaling'
 courseId: 'course:ie1204'
 slug: power-voltage-scaling
+hints:
+  - 'Write dynamic power before and after the voltage change, then form the ratio. The fixed capacitance and frequency cancel.'
+  - 'The voltage enters the formula squared. Apply that exponent to the voltage ratio before converting to a percentage.'
 title: Predict the effect of voltage scaling
 conceptIds:
   - 'concept:ie1204:cmos-power-consumption'

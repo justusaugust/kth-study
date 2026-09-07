@@ -2,6 +2,9 @@
 id: 'question:ie1204:identify-signed-overflow'
 courseId: 'course:ie1204'
 slug: identify-signed-overflow
+hints:
+  - 'Add column by column, but keep only the four low bits in the stored result.'
+  - 'Compare the signs of both operands and the stored result. Independently check whether the exact signed sum fits the four-bit signed range.'
 title: Identify signed overflow
 conceptIds:
   - 'concept:ie1204:fixed-width-arithmetic-and-overflow'

@@ -2,6 +2,9 @@
 id: 'question:ie1204:logic-level-range'
 courseId: 'course:ie1204'
 slug: logic-level-range
+hints:
+  - 'Work out the disturbed voltage, then compare it with both ends of the accepted HIGH interval.'
+  - 'If the noise direction is unspecified, check both $0.90+0.02$ and $0.90-0.02$ rather than assuming one direction.'
 title: 'Read a voltage through the digital abstraction'
 conceptIds:
   - 'concept:ie1204:digital-abstraction'

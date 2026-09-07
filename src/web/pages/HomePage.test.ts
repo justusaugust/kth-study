@@ -37,6 +37,14 @@ const data = {
 } as unknown as DeadlinesResponse;
 
 describe("current week", () => {
+  it("shows a linked mini-exam once without hiding a separate submission", () => {
+    const exam = { ...data.coursework[0], id: "coursework:ie1204:mini", slug: "mini", kind: "mini-exam", date: "2026-09-07", sessionIds: ["session:ie1204:mini"] };
+    const session = { ...data.sessions[0], id: "session:ie1204:mini", slug: "mini", lectureId: undefined, kind: "checkpoint", date: "2026-09-07", courseworkIds: [exam.id, data.coursework[0].id] };
+    const result = buildWeekView({ ...data, sessions: [session], coursework: [exam, { ...data.coursework[0], sessionIds: [session.id] }] } as DeadlinesResponse, "2026-09-07");
+    expect(result[0].entries).toHaveLength(2);
+    expect(result[0].entries[0].url).toContain("#coursework-mini");
+    expect(result[0].entries.some((item) => item.id === data.coursework[0].id)).toBe(true);
+  });
   it("builds weekdays and includes both lectures and labs", () => {
     const days = buildWeekView(data, "2026-09-02");
 

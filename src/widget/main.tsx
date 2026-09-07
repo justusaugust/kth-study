@@ -39,7 +39,7 @@ function currentContent(): WidgetContent | undefined {
 function Widget() {
   const [content, setContent] = useState(currentContent);
   const { app, error } = useApp({
-    appInfo: { name: "KTH Study explainer", version: "0.2.1" },
+    appInfo: { name: "KTH Study explainer", version: "0.2.2" },
     capabilities: {},
     strict: true,
     onAppCreated: (createdApp) => {
@@ -53,7 +53,8 @@ function Widget() {
 
   useEffect(() => {
     function refresh() {
-      setContent(currentContent());
+      const next = currentContent();
+      if (next) setContent(next);
     }
     window.addEventListener("openai:set_globals", refresh);
     return () => window.removeEventListener("openai:set_globals", refresh);
@@ -76,7 +77,7 @@ function Widget() {
       </p>
       <h1>{content.explainer.title}</h1>
       <p className="widget-summary">{content.explainer.accessibleSummary}</p>
-      <ExplainerRenderer spec={content.explainer} mode="full" />
+      <ExplainerRenderer key={content.id} spec={content.explainer} mode="full" />
       <footer>
         {content.concepts?.map((concept) => (
           <span key={concept.id}>{concept.title}</span>

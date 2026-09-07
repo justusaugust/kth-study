@@ -2,6 +2,9 @@
 id: 'question:sf1690:distance-formula-proof'
 courseId: 'course:sf1690'
 slug: distance-formula-proof
+hints:
+  - 'Draw a horizontal segment and a vertical segment joining the points through a right-angle corner. Express their lengths using coordinate differences.'
+  - 'Apply Pythagoras to those legs, then choose the nonnegative square root because a distance cannot be negative.'
 title: Reconstruct the distance proof
 conceptIds:
   - 'concept:sf1690:cartesian-distance-circles'

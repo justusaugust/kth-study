@@ -8,6 +8,9 @@ export type UserSearchType =
   | "definition"
   | "example"
   | "question"
+  | "session"
+  | "coursework"
+  | "assessment"
   | "explainer";
 
 export const SEARCH_FILTERS: ReadonlyArray<{
@@ -17,6 +20,9 @@ export const SEARCH_FILTERS: ReadonlyArray<{
   { label: "All", type: null },
   { label: "Courses", type: "course" },
   { label: "Lectures", type: "lecture" },
+  { label: "Sessions", type: "session" },
+  { label: "Assignments", type: "coursework" },
+  { label: "Assessments", type: "assessment" },
   { label: "Concepts", type: "concept" },
   { label: "Definitions", type: "definition" },
   { label: "Worked examples", type: "example" },
@@ -52,6 +58,9 @@ export function searchTypeLabel(type: SearchHit["entityType"]): string {
     case "example": return "Worked example";
     case "question": return "Question";
     case "explainer": return "Visual";
+    case "session": return "Session";
+    case "coursework": return "Assignment";
+    case "assessment": return "Assessment";
     default: return type;
   }
 }

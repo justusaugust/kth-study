@@ -29,6 +29,9 @@ export type StudyIconKind =
   | "all"
   | "course"
   | "lecture"
+  | "session"
+  | "coursework"
+  | "assessment"
   | "concept"
   | "definition"
   | "example"
@@ -53,6 +56,9 @@ const icons = {
   all: WidgetLinearIcon,
   course: SquareAcademicCapLinearIcon,
   lecture: NotebookLinearIcon,
+  session: CalendarLinearIcon,
+  coursework: PenNewSquareLinearIcon,
+  assessment: DiplomaLinearIcon,
   concept: LightbulbLinearIcon,
   definition: BookLinearIcon,
   example: PenNewSquareLinearIcon,

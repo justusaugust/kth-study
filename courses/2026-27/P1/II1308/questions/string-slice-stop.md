@@ -2,6 +2,9 @@
 id: 'question:ii1308:string-slice-stop'
 courseId: 'course:ii1308'
 slug: string-slice-stop
+hints:
+  - 'Write an index below each character of programming, starting at 0.'
+  - 'A slice includes its start and excludes its stop. Mark the selected indices before copying the characters.'
 title: 'Predict a string slice'
 conceptIds:
   - 'concept:ii1308:characters-and-strings'

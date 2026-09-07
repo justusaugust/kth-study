@@ -2,6 +2,9 @@
 id: 'question:ie1204:decode-four-bit-twos-complement'
 courseId: 'course:ie1204'
 slug: decode-four-bit-twos-complement
+hints:
+  - 'In four-bit two''s complement the leftmost bit has weight $-2^3$; the other weights remain positive.'
+  - 'Multiply each bit by its signed place weight and add the four contributions.'
 title: Decode a negative four-bit word
 conceptIds:
   - 'concept:ie1204:signed-integer-encodings'

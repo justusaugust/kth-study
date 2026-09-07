@@ -1,86 +1,54 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { ReadingPosition } from "./ReadingPosition";
 
-afterEach(cleanup);
+beforeEach(() => { vi.stubGlobal("ResizeObserver", class { observe() {} disconnect() {} }); });
+afterEach(() => { cleanup(); document.body.innerHTML = ""; history.replaceState(null, "", "/"); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+const sections = [{ id: "concept-one", label: "First concept" }, { id: "sources", label: "Sources" }];
 
-const sections = [
-  { id: "course-passport", label: "Course passport" },
-  { id: "week-ledger", label: "Week ledger" },
-  { id: "course-sources", label: "Sources" },
-];
-
-function mountAnchors() {
-  for (const id of [...sections.map((section) => section.id), "ledger-week-35"]) {
-    const element = document.createElement("section");
-    element.id = id;
-    if (id === "ledger-week-35") {
-      element.append(document.createElement("h3"));
-    }
-    document.body.append(element);
-  }
-}
-
-beforeEach(() => {
-  document.body.innerHTML = "";
-  mountAnchors();
-  Element.prototype.scrollIntoView = vi.fn();
+it("offers stable section links and a custom mobile section picker", () => {
+  render(<ReadingPosition sections={sections} />);
+  expect(screen.getByRole("navigation", { name: "Lesson contents" })).toBeVisible();
+  expect(screen.getByRole("link", { name: "Sources" })).toHaveAttribute("href", "#sources");
+  expect(screen.getByRole("combobox", { name: /In this lesson/ })).toHaveTextContent("Jump to a section");
+  expect(document.querySelector("select")).toBeNull();
 });
 
-describe("ReadingPosition", () => {
-  it("collapses to a borderless active-section label", () => {
-    render(<ReadingPosition sections={sections} currentWeek={35} />);
+it("moves focus and the reading anchor when choosing a section", () => {
+  const section = document.createElement("section");
+  section.id = "sources";
+  section.scrollIntoView = vi.fn();
+  document.body.append(section);
+  render(<ReadingPosition sections={sections} />);
+  const picker = screen.getByRole("combobox");
+  fireEvent.keyDown(picker, { key: "ArrowDown" });
+  fireEvent.keyDown(picker, { key: "End" });
+  fireEvent.keyDown(picker, { key: "Enter" });
+  expect(section.scrollIntoView).toHaveBeenCalledWith({ block: "start" });
+  expect(section).toHaveFocus();
+  expect(location.hash).toBe("#sources");
+});
 
-    const toggle = document.querySelector(
-      ".reading-position__toggle",
-    ) as HTMLButtonElement;
-    expect(toggle).toHaveAttribute("aria-expanded", "false");
-    expect(toggle).toHaveTextContent("Course passport");
-    expect(document.querySelector(".reading-position__track")).toBeNull();
-  });
-
-  it("expands into section navigation with the current week as one destination", () => {
-    render(<ReadingPosition sections={sections} currentWeek={35} />);
-
-    fireEvent.click(
-      document.querySelector(".reading-position__toggle") as HTMLButtonElement,
-    );
-    expect(
-      document.querySelector(".reading-position__panel[data-open]"),
-    ).not.toBeNull();
-
-    fireEvent.click(screen.getByRole("button", { name: "This week · 35" }));
-    expect(Element.prototype.scrollIntoView).toHaveBeenCalled();
-    expect(
-      document.querySelector(".reading-position__panel[data-open]"),
-    ).toBeNull();
-  });
-
-  it("closes on Escape and returns focus to the toggle", () => {
-    render(<ReadingPosition sections={sections} />);
-
-    const toggle = document.querySelector(
-      ".reading-position__toggle",
-    ) as HTMLButtonElement;
-    fireEvent.click(toggle);
-    expect(toggle).toHaveAttribute("aria-expanded", "true");
-    expect(
-      screen.queryByRole("button", { name: /This week/ }),
-    ).not.toBeInTheDocument();
-
-    fireEvent.keyDown(document, { key: "Escape" });
-    expect(toggle).toHaveAttribute("aria-expanded", "false");
-    expect(toggle).toHaveFocus();
-  });
-
-  it("closes when pointing outside the instrument", () => {
-    render(<ReadingPosition sections={sections} />);
-
-    const toggle = document.querySelector(
-      ".reading-position__toggle",
-    ) as HTMLButtonElement;
-    fireEvent.click(toggle);
-    fireEvent.pointerDown(document.body);
-    expect(toggle).toHaveAttribute("aria-expanded", "false");
-  });
+it("tracks scrolling forward and back, reaching the last section at the lesson end", () => {
+  let scroll = 0;
+  for (const [index, { id }] of sections.entries()) {
+    const section = document.createElement("section");
+    section.id = id;
+    section.getBoundingClientRect = () => ({ top: 100 + index * 1000 - scroll, bottom: 1100 + index * 1000 - scroll } as DOMRect);
+    document.body.append(section);
+  }
+  render(<ReadingPosition sections={sections} />);
+  expect(screen.getByRole("progressbar")).toHaveAttribute("value", "0");
+  scroll = 200;
+  fireEvent.scroll(window);
+  expect(screen.getByRole("link", { name: "First concept" })).toHaveAttribute("aria-current", "location");
+  expect(screen.getByRole("combobox")).toHaveTextContent("First concept");
+  scroll = 1500;
+  fireEvent.scroll(window);
+  expect(screen.getByRole("link", { name: "Sources" })).toHaveAttribute("aria-current", "location");
+  expect(screen.getByRole("progressbar")).toHaveAttribute("value", "100");
+  scroll = 0;
+  fireEvent.scroll(window);
+  expect(screen.getByRole("link", { name: "Sources" })).not.toHaveAttribute("aria-current");
+  expect(screen.getByRole("progressbar")).toHaveAttribute("value", "0");
 });

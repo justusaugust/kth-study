@@ -70,7 +70,7 @@ function quadraticFacts(a: number, b: number, c: number) {
       rootLabel:
         roots.length === 1
           ? `Linear root x = ${formatNumber(roots[0])}`
-          : "No isolated root",
+          : Math.abs(c) <= EPSILON ? "Every real x is a root" : "No real roots",
     };
   }
 
@@ -102,9 +102,8 @@ function quadraticFacts(a: number, b: number, c: number) {
 }
 
 function plotHeight(width: number, mode: "preview" | "full") {
-  const minimum = mode === "full" && width >= 480 ? 360 : 280;
   const maximum = mode === "full" ? 520 : 420;
-  return Math.round(Math.min(maximum, Math.max(minimum, width * 0.62)));
+  return Math.round(Math.min(maximum, Math.max(280, width * 0.62)));
 }
 
 function labelStep(pxPerUnit: number): number {
@@ -216,10 +215,11 @@ export function FunctionPlot({
       <div
         ref={frameRef}
         className="plot-frame"
+        style={{ position: "relative", width: "100%", minWidth: 0, aspectRatio: "100 / 62", minHeight: 280, maxHeight: mode === "full" ? 520 : 420 }}
         role="img"
         aria-label={spec.accessibleSummary}
       >
-        <Mafs
+        <div style={{ position: "absolute", inset: 0 }}><Mafs
           width={testMode ? resolvedFrameWidth : "auto"}
           height={height}
           pan={mode === "full"}
@@ -275,7 +275,7 @@ export function FunctionPlot({
               />
             ))}
           </g>
-        </Mafs>
+        </Mafs></div>
       </div>
 
       <output className="function-readout" aria-live="polite">
@@ -285,7 +285,7 @@ export function FunctionPlot({
             Vertex ({formatNumber(facts.vertex[0])}, {formatNumber(facts.vertex[1])})
           </span>
         ) : (
-          <span>Linear case</span>
+          <span>{Math.abs(coefficients.b) > EPSILON ? "Linear function" : "Constant function"}</span>
         )}
         {facts.axis !== undefined ? (
           <span>Axis x = {formatNumber(facts.axis)}</span>
@@ -298,6 +298,15 @@ export function FunctionPlot({
         ) : null}
       </output>
 
+      <p>Start with the given curve. Find where it meets the x-axis and where it turns, then explore how changing one coefficient moves those points.</p>
+      <details className="visual-explore">
+        <summary>Explore coefficients</summary>
+        <div className="diagram-choice-row" aria-label="Quadratic examples">
+          <button type="button" onClick={() => setCoefficients(initial)}>Reset example</button>
+          <button type="button" onClick={() => setCoefficients({ a: 1, b: 0, c: -1 })}>Two roots</button>
+          <button type="button" onClick={() => setCoefficients({ a: 1, b: 0, c: 0 })}>One double root</button>
+          <button type="button" onClick={() => setCoefficients({ a: 1, b: 0, c: 1 })}>No real roots</button>
+        </div>
       <div className={`coefficient-controls coefficient-controls--${mode}`}>
         {spec.controls.map((control) => (
           <label key={control.coefficient}>
@@ -329,6 +338,7 @@ export function FunctionPlot({
           </label>
         ))}
       </div>
+      </details>
       <figcaption>{spec.caption}</figcaption>
     </figure>
   );

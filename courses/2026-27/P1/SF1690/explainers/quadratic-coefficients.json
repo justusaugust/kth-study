@@ -4,7 +4,7 @@
   "kind": "function-plot",
   "courseId": "course:sf1690",
   "slug": "quadratic-coefficients",
-  "conceptIds": ["concept:sf1690:quadratic-functions"],
+  "conceptIds": ["concept:sf1690:quadratic-functions", "concept:sf1690:polynomial-roots-and-factors"],
   "title": "How coefficients move a parabola",
   "caption": "Adjust a, b, and c to connect the algebraic coefficients with the graph's shape and position.",
   "accessibleSummary": "An interactive coordinate plot of a quadratic function with controls for coefficients a, b, and c.",

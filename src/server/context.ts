@@ -39,13 +39,3 @@ export async function createStudyContext(
     refreshedAt: new Date().toISOString(),
   };
 }
-
-export async function refreshStudyContext(
-  previous: StudyContext,
-): Promise<StudyContext> {
-  try {
-    return await createStudyContext(previous.root);
-  } catch {
-    return previous;
-  }
-}

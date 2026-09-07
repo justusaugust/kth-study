@@ -2,6 +2,9 @@
 id: 'question:ie1204:sign-extend-negative-five'
 courseId: 'course:ie1204'
 slug: sign-extend-negative-five
+hints:
+  - 'Keep the original four low bits. Fill the four new high positions by repeating the original sign bit.'
+  - 'Verify using a negative weight for the new sign position and positive weights for every other position.'
 title: Sign-extend a negative value
 conceptIds:
   - 'concept:ie1204:fixed-width-arithmetic-and-overflow'

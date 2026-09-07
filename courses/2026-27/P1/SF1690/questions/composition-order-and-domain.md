@@ -2,6 +2,9 @@
 id: 'question:sf1690:composition-order-and-domain'
 courseId: 'course:sf1690'
 slug: composition-order-and-domain
+hints:
+  - 'Write the two orders as $f(g(x))$ and $g(f(x))$. Substitute the whole inner expression wherever the outer rule takes its input.'
+  - 'For each order, check that the inner function accepts x and the outer function accepts the intermediate value. Where would a denominator become zero?'
 title: Build both composition orders
 conceptIds:
   - 'concept:sf1690:function-composition'

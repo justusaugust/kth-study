@@ -35,7 +35,7 @@ describe("CoursePage", () => {
     );
   });
 
-  it("presents a progressively complete course dossier in the intended order", async () => {
+  it("makes authored lectures directly accessible even when linked in the weekly outline", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(
@@ -131,6 +131,7 @@ describe("CoursePage", () => {
               slug: "lecture-01",
               kind: "lecture",
               sequence: 1,
+              lectureId: "lecture:sf1690:2026-08-24-01",
               title: "Lecture 1",
               date: "2026-08-24",
               week: 35,
@@ -194,7 +195,7 @@ describe("CoursePage", () => {
     expect(screen.getAllByText("6 ECTS").length).toBeGreaterThan(0);
     expect(screen.getAllByText(/24 Aug 2026/).length).toBeGreaterThan(0);
     expect(screen.queryByText("2026-08-24")).not.toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: "Lecture 1" })[0]).toHaveAttribute(
+    expect(screen.getAllByRole("link", { name: /Lecture 1/ }).find((link) => link.getAttribute("href")?.includes("/lectures/"))).toHaveAttribute(
       "href",
       "/courses/sf1690/lectures/2026-08-24-01",
     );
@@ -202,14 +203,13 @@ describe("CoursePage", () => {
       (heading) => heading.textContent?.trim(),
     );
     expect(sectionNames).toEqual([
-      "Next up",
-      "Lecture archive",
-      "Week ledger",
+      "Lectures",
+      "Study outline",
       "Assessment",
-      "Course map",
-      "Concept register",
       "Sources",
     ]);
     expect(document.querySelectorAll('input[type="checkbox"]')).toHaveLength(0);
+    expect(document.querySelector("details.course-reference")).not.toHaveAttribute("open");
+    expect(screen.queryByRole("heading", { name: "Course map" })).not.toBeInTheDocument();
   });
 });

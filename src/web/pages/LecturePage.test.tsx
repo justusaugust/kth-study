@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 describe("LecturePage", () => {
-  it("expands a lecture into concept content, practice, and assigned exercises", async () => {
+  it("keeps the core lesson visible with authored hints, practice and assigned exercises", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(
@@ -79,7 +79,7 @@ describe("LecturePage", () => {
               courseId: "course:sf1690",
               slug: "second",
               title: "A second concept",
-              summary: "This concept starts collapsed.",
+              summary: "This concept is visible in the reader.",
               outcomeIds: [],
               lectureIds: ["lecture:sf1690:2026-08-28-04"],
               evidenceStatus: "curriculum",
@@ -131,6 +131,7 @@ describe("LecturePage", () => {
               conceptIds: ["concept:sf1690:function-composition"],
               body: "In $(f\\circ g)(x)$, which function is evaluated first?",
               answer: "$g$ is evaluated first.",
+              hints: ["Read the nested expression from the inside out."],
               sourceIds: ["source:sf1690:lecture-04"], relationships: [], lastChecked: "2026-08-28", confidence: "fixture",
             }, {
               id: "question:sf1690:previous-lecture",
@@ -192,15 +193,11 @@ describe("LecturePage", () => {
     expect(screen.getByRole("heading", { name: "Worked examples" })).toBeVisible();
     expect(screen.queryByRole("textbox", { name: "Work it out" })).not.toBeInTheDocument();
 
-    const concept = document.querySelector("details.lecture-concept") as HTMLDetailsElement;
-    expect(concept.open).toBe(true);
-    expect(document.querySelectorAll("details.lecture-concept")[1]).not.toHaveAttribute("open");
+    expect(document.querySelectorAll("section.lecture-concept")).toHaveLength(2);
+    expect(document.querySelector("details.lecture-concept")).toBeNull();
+    expect(screen.getByRole("heading", { name: "A second concept" })).toBeVisible();
     expect(screen.queryByText("Question from the previous lecture")).not.toBeInTheDocument();
     expect(screen.queryByText("Lab-only explainer")).not.toBeInTheDocument();
-    fireEvent.click(screen.getByText("Function composition").closest("summary")!);
-    expect(concept.open).toBe(false);
-    fireEvent.click(screen.getByText("Function composition").closest("summary")!);
-    expect(concept.open).toBe(true);
 
     fireEvent.click(screen.getByRole("button", { name: "Write your reasoning" }));
     fireEvent.change(screen.getByRole("textbox", { name: "Work it out" }), {

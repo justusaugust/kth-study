@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { liquidRangeStyle } from "../../rangeStyle";
+import { CoordinateGrid, GridLabels, unitRange } from "../ConceptDiagram";
 import { SvgTooltip, type SvgTooltipData } from "./SvgTooltip";
 
 type DiagramMode = "preview" | "full";
@@ -129,12 +130,12 @@ const verticalLineEquations: Record<VerticalLineChoice, string> = {
 };
 
 const verticalPlot = {
-  width: 720,
-  height: 340,
-  originX: 360,
-  originY: 176,
-  xScale: 190,
-  yScale: 76,
+  width: 440,
+  height: 360,
+  originX: 220,
+  originY: 190,
+  xScale: 100,
+  yScale: 100,
 };
 
 function verticalPoint(x: number, y: number) {
@@ -143,6 +144,19 @@ function verticalPoint(x: number, y: number) {
     verticalPlot.originY - y * verticalPlot.yScale,
   ] as const;
 }
+
+const verticalAxes = {
+  x: {
+    values: unitRange(-1.5, 1.5, 0.5),
+    labels: [-1, 1],
+    project: (value: number) => verticalPoint(value, 0)[0],
+  },
+  y: {
+    values: unitRange(-1, 1.5, 0.5),
+    labels: [-1, 1],
+    project: (value: number) => verticalPoint(0, value)[1],
+  },
+};
 
 function linePath(points: ReadonlyArray<readonly [number, number]>, close = false) {
   const path = points
@@ -165,7 +179,7 @@ function verticalCurvePath(choice: VerticalLineChoice) {
   if (choice === "Sideways parabola") {
     return linePath(
       Array.from({ length: 81 }, (_, index) => {
-        const y = -1.6 + index * 0.04;
+        const y = -1.5 + index * 0.0375;
         return verticalPoint((y * y) / 1.7, y);
       }),
     );
@@ -179,7 +193,7 @@ function verticalCurvePath(choice: VerticalLineChoice) {
 
   return linePath(
     Array.from({ length: 81 }, (_, index) => {
-      const x = -1.45 + index * 0.03625;
+      const x = -1.2 + index * 0.03;
       return verticalPoint(x, x * x);
     }),
   );
@@ -212,12 +226,13 @@ function VerticalLineTest({ mode }: { mode: DiagramMode }) {
   const path = useMemo(() => verticalCurvePath(choice), [choice]);
   const intersections = verticalIntersections(choice, x);
   const testX = verticalPoint(x, 0)[0];
-  const result =
+  const observation =
     intersections.length === 0
       ? "No intersection at this input"
       : intersections.length === 1
-        ? "One intersection — this is a function of x"
-        : "Two intersections — not a function of x";
+        ? "One intersection at this input"
+        : "Two intersections at this input";
+  const isFunction = choice === "Parabola" || choice === "Upper semicircle";
 
   return (
     <figure
@@ -231,7 +246,7 @@ function VerticalLineTest({ mode }: { mode: DiagramMode }) {
             role="tab"
             aria-selected={choice === name}
             key={name}
-            onClick={() => setChoice(name)}
+            onClick={() => { setChoice(name); setTooltip(undefined); }}
           >
             {name}
           </button>
@@ -243,13 +258,18 @@ function VerticalLineTest({ mode }: { mode: DiagramMode }) {
       </output>
       <div
         className="function-vertical-stage"
-        role="img"
+        role="group"
         aria-label={`${choice} crossed by the vertical line x equals ${formatValue(x)} at ${intersections.length} points`}
       >
-        <svg viewBox={`0 0 ${verticalPlot.width} ${verticalPlot.height}`} aria-hidden="true">
-          <path className="function-axis" d={`M36 ${verticalPlot.originY} H684 M${verticalPlot.originX} 24 V316`} />
+        <svg viewBox={`0 0 ${verticalPlot.width} ${verticalPlot.height}`}>
+          <CoordinateGrid {...verticalAxes} />
+          <path className="function-axis" d={`M36 ${verticalPlot.originY} H404 M${verticalPlot.originX} 24 V336`} />
+          <g fill="currentColor" fontSize="14" aria-hidden="true">
+            <text x="405" y="182">x</text><text x="230" y="28">y</text>
+          </g>
           <path className="function-curve" d={path} />
-          <path className="vertical-test-line" d={`M${testX} 28 V312`} />
+          <path className="vertical-test-line" d={`M${testX} 28 V332`} />
+          <GridLabels {...verticalAxes} gap={24} />
           {intersections.map(([pointX, pointY], index) => {
             const [cx, cy] = verticalPoint(pointX, pointY);
             const showTooltip = () => setTooltip({
@@ -280,9 +300,12 @@ function VerticalLineTest({ mode }: { mode: DiagramMode }) {
         </svg>
       </div>
       <output className="function-symmetry-readout" aria-live="polite">
-        <strong>{result}</strong>
+        <strong>{observation}</strong>
         <span>x = {formatValue(x)}</span>
       </output>
+      <p>{isFunction
+        ? "This curve is a function of x: every vertical line meets it at most once."
+        : "This curve is not a function of x: some vertical lines meet it twice, even when the selected line does not."}</p>
       <label className="function-input-control">
         <span>Sweep the test line</span>
         <output>{formatValue(x)}</output>
@@ -341,6 +364,19 @@ function point(x: number, y: number) {
   return [plot.originX + x * plot.xScale, plot.originY - y * plot.yScale] as const;
 }
 
+const symmetryAxes = {
+  x: {
+    values: unitRange(-2.5, 2.5, 0.5),
+    labels: [-2, -1, 1, 2],
+    project: (value: number) => point(value, 0)[0],
+  },
+  y: {
+    values: unitRange(-15, 15, 5),
+    labels: [-10, -5, 5, 10],
+    project: (value: number) => point(0, value)[1],
+  },
+};
+
 function SymmetryExplorer({ mode }: { mode: DiagramMode }) {
   const [choice, setChoice] = useState<SymmetryChoice>("Even · x²");
   const [x, setX] = useState(1.5);
@@ -378,10 +414,12 @@ function SymmetryExplorer({ mode }: { mode: DiagramMode }) {
           </button>
         ))}
       </div>
-      <div className="function-symmetry-stage" role="img" aria-label={`Graph of ${choice} with paired inputs x and negative x`}>
-        <svg viewBox={`0 0 ${plot.width} ${plot.height}`} aria-hidden="true">
+      <div className="function-symmetry-stage" role="group" aria-label={`Graph of ${choice} with paired inputs x and negative x`}>
+        <svg viewBox={`0 0 ${plot.width} ${plot.height}`}>
+          <CoordinateGrid {...symmetryAxes} />
           <path className="function-axis" d={`M36 ${plot.originY} H684 M${plot.originX} 24 V316`} />
           <path className="function-curve" d={path} />
+          <GridLabels {...symmetryAxes} gap={34} />
           {[[x1, y1, `x = ${formatValue(x)}`, `f(x) = ${formatValue(y)}`], [x2, y2, `−x = ${formatValue(-x)}`, `f(−x) = ${formatValue(mirroredY)}`]].map(([cx, cy, label, value]) => {
             const showTooltip = () => setTooltip({
               x: Math.max(4, Math.min(plot.width - 144, Number(cx) - 70)),

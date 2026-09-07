@@ -4,6 +4,7 @@ import { AppShell } from "./components/AppShell";
 import { PageError } from "./components/PageError";
 
 const HomePage = lazy(() => import("./pages/HomePage").then((module) => ({ default: module.HomePage })));
+const PracticePage = lazy(() => import("./pages/PracticePage").then((module) => ({ default: module.PracticePage })));
 const SearchPage = lazy(() => import("./pages/SearchPage").then((module) => ({ default: module.SearchPage })));
 const CoursePage = lazy(() => import("./pages/CoursePage").then((module) => ({ default: module.CoursePage })));
 const LecturePage = lazy(() => import("./pages/LecturePage").then((module) => ({ default: module.LecturePage })));
@@ -20,6 +21,7 @@ export function App() {
         <Route element={<Suspense fallback={<p className="loading">Loading…</p>}><OutletRoutes /></Suspense>}>
           <Route index element={<HomePage />} />
           <Route path="search" element={<SearchPage />} />
+          <Route path="practice" element={<PracticePage />} />
           <Route path="courses/:courseCode" element={<CoursePage />} />
           <Route path="courses/:courseCode/lectures/:lectureSlug" element={<LecturePage />} />
           <Route path="courses/:courseCode/labs/:labSlug" element={<LabPage />} />

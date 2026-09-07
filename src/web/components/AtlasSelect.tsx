@@ -52,6 +52,10 @@ export function AtlasSelect({ label, value, options, onChange }: AtlasSelectProp
   const selected = options[selectedIndex];
 
   useEffect(() => {
+    if (open) rootRef.current?.querySelector('[data-active]')?.scrollIntoView?.({ block: "nearest" });
+  }, [open, activeIndex]);
+
+  useEffect(() => {
     if (!open) return;
     function onPointerDown(event: MouseEvent) {
       if (rootRef.current?.contains(event.target as Node)) return;
@@ -74,8 +78,8 @@ export function AtlasSelect({ label, value, options, onChange }: AtlasSelectProp
 
   function commit(index: number) {
     const option = options[index];
-    if (option) onChange(option.value);
     close();
+    if (option) onChange(option.value);
   }
 
   function moveTo(index: number) {

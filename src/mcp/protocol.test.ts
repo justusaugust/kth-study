@@ -135,6 +135,17 @@ describe("KTH Study MCP protocol", () => {
     expect(result.structuredContent).toMatchObject({
       url: "https://kth-study.vercel.app/visuals/quadratic-coefficients",
     });
+    const work = [...context.corpus.coursework.values()][0];
+    work.date = "2099-01-01";
+    const dates = await client.callTool({ name: "get_course_dates", arguments: { courseCode: "SF1690" } });
+    expect(dates.isError).not.toBe(true);
+    expect(dates.structuredContent).toMatchObject({ courses: [expect.objectContaining({
+      upcomingCoursework: [expect.objectContaining({
+        practiceUrl: "https://kth-study.vercel.app/practice?course=sf1690&work=exercise-01",
+        lectures: [],
+        missingLectureNotes: [],
+      })],
+    })] });
 
     await client.close();
     await server.close();

@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
@@ -98,14 +98,14 @@ describe("App", () => {
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
 
-    expect(await screen.findAllByRole("option")).toHaveLength(5);
+    expect(within(await screen.findByRole("listbox")).getAllByRole("option")).toHaveLength(5);
     expect(screen.queryByText("Hidden outcome")).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "Concepts" }));
     await waitFor(() =>
       expect(fetchMock.mock.calls.some(([url]) => String(url).includes("type=concept"))).toBe(true),
     );
-    expect(await screen.findAllByRole("option")).toHaveLength(3);
+    await waitFor(() => expect(within(screen.getByRole("listbox")).getAllByRole("option")).toHaveLength(3));
   });
 
   it("keeps touch filter taps available when blur has no next focus target", async () => {
@@ -166,7 +166,7 @@ describe("App", () => {
     );
 
     fireEvent.focus(openGlobalSearch());
-    expect(await screen.findAllByRole("option")).toHaveLength(3);
+    expect(within(await screen.findByRole("listbox")).getAllByRole("option")).toHaveLength(3);
     const recentLabel = screen.getByText("Recently added");
     expect(recentLabel).toBeVisible();
     expect(recentLabel.closest(".search-popover-kicker")?.querySelector("svg")).not.toBeInTheDocument();
@@ -202,7 +202,7 @@ describe("App", () => {
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
 
-    const option = await screen.findByRole("option");
+    const option = within(await screen.findByRole("listbox")).getByRole("option");
     expect(option).toHaveAttribute("href", "/target");
     expect(option.querySelector(".suggestion-kind")).toHaveTextContent("Concept");
     expect(option.querySelector(".suggestion-kind svg")).not.toBeInTheDocument();
@@ -236,7 +236,7 @@ describe("App", () => {
     const input = openGlobalSearch();
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
-    await screen.findByRole("option");
+    await screen.findByRole("listbox");
     fireEvent.keyDown(input, { key: "ArrowDown" });
     fireEvent.keyDown(input, { key: "Enter" });
 
@@ -275,7 +275,7 @@ describe("App", () => {
     const input = openGlobalSearch();
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "absolute" } });
-    await screen.findAllByRole("option");
+    await screen.findByRole("listbox");
     fireEvent.keyDown(input, { key: "ArrowUp" });
     fireEvent.keyDown(input, { key: "Enter" });
 

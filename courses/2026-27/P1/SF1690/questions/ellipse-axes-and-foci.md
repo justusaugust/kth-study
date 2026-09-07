@@ -2,6 +2,9 @@
 id: 'question:sf1690:ellipse-axes-and-foci'
 courseId: 'course:sf1690'
 slug: ellipse-axes-and-foci
+hints:
+  - 'The denominators are squared semiaxis lengths. The larger one determines the direction of the major axis.'
+  - 'Use $c^2=a^2-b^2$ for the focal distance. Distinguish a semiaxis length from the full axis length when reporting your answer.'
 title: Read axes and foci from an ellipse
 conceptIds:
   - 'concept:sf1690:ellipses-and-hyperbolas'

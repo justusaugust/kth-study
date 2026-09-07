@@ -2,6 +2,9 @@
 id: 'question:ie1204:plan-lab-evidence'
 courseId: 'course:ie1204'
 slug: plan-lab-evidence
+hints:
+  - 'Separate what the circuit was supposed to do from what you built and what you actually observed.'
+  - 'Could someone trace an observed output back through the physical pins to the intended logic? Decide what records would let them do that.'
 title: Plan the evidence for a gate experiment
 conceptIds:
   - 'concept:ie1204:lab-workflow-and-evidence'

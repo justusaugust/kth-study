@@ -148,6 +148,7 @@ export const QuestionSchema = z
   .object({
     ...ContentItemShape,
     answer: z.string().optional(),
+    hints: z.array(z.string().min(1)).default([]),
   })
   .extend(TraceabilitySchema.shape)
   .extend(RelationalSchema.shape);

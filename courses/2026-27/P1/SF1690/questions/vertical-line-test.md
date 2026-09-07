@@ -2,6 +2,9 @@
 id: 'question:sf1690:vertical-line-test'
 courseId: 'course:sf1690'
 slug: vertical-line-test
+hints:
+  - 'Fix one positive x and solve $y^2=x$ for y. Keep every real solution, not only the nonnegative one.'
+  - 'The solutions share the same x-coordinate. What does that mean for intersections with a vertical line and for uniqueness of the output?'
 title: Apply the vertical-line test
 conceptIds:
   - 'concept:sf1690:function-graphs-and-vertical-line-test'

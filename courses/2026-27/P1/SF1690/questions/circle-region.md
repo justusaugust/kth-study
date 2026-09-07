@@ -2,6 +2,9 @@
 id: 'question:sf1690:circle-region'
 courseId: 'course:sf1690'
 slug: circle-region
+hints:
+  - 'Compare the left-hand side with squared distance from $(h,k)$, written $(x-h)^2+(y-k)^2$.'
+  - 'Use the inequality to decide whether points inside, outside, and on the circular boundary are included.'
 title: Classify a circle inequality
 conceptIds:
   - 'concept:sf1690:cartesian-distance-circles'

@@ -11,8 +11,8 @@ lastChecked: '2026-09-01'
 confidence: verified
 relationships: []
 ---
-Simplify $F=A\bar B+AB$:
+Simplify $F=A\overline{B}+AB$:
 
-$$F=A(\bar B+B)=A(1)=A.$$
+$$F=A(\overline{B}+B)=A(1)=A.$$
 
 The two original minterms cover both possible values of $B$. Because the output no longer depends on $B$, the simplified circuit needs only the input $A$.

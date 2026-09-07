@@ -2,6 +2,9 @@
 id: 'question:sf1690:slope-point-order'
 courseId: 'course:sf1690'
 slug: slope-point-order
+hints:
+  - 'Use the same point order in the vertical and horizontal differences: $m=(y_A-y_B)/(x_A-x_B)$.'
+  - 'Reversing a subtraction changes its sign. What happens to a quotient when both its numerator and denominator change sign?'
 title: Reverse the point order
 conceptIds:
   - 'concept:sf1690:lines-and-slopes'

@@ -52,6 +52,6 @@ describe("LabPage", () => {
     expect(screen.getByText("Compulsory · 3.5 ECTS")).toBeVisible();
     expect(screen.getByText("Collect the lab kit.")).toBeVisible();
     expect(screen.getByText(/No post-lab record yet/)).toBeVisible();
-    expect(screen.getByRole("link", { name: "Lecture 4" })).toHaveAttribute("href", "https://example.com/lecture-4");
+    expect(screen.getByRole("link", { name: /^Lecture 4/ })).toHaveAttribute("href", "https://example.com/lecture-4");
   });
 });

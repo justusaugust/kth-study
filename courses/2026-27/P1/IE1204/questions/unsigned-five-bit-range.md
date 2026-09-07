@@ -2,6 +2,9 @@
 id: 'question:ie1204:unsigned-five-bit-range'
 courseId: 'course:ie1204'
 slug: unsigned-five-bit-range
+hints:
+  - 'Each of the five positions has two independent choices. Multiply those choices to count the bit patterns.'
+  - 'The smallest unsigned value uses all zeros. For the largest, sum the five place weights; do not confuse the number of values with the largest value.'
 title: 'Find the range of an unsigned word'
 conceptIds:
   - 'concept:ie1204:base-conversion-and-range'

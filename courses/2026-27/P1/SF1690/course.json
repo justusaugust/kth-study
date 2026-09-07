@@ -41,7 +41,9 @@
     "concept:sf1690:even-odd-function-symmetry",
     "concept:sf1690:function-arithmetic-and-domains",
     "concept:sf1690:function-composition",
-    "concept:sf1690:piecewise-defined-functions"
+    "concept:sf1690:piecewise-defined-functions",
+    "concept:sf1690:polynomial-roots-and-factors",
+    "concept:sf1690:rational-functions-and-cancellation"
   ],
   "sourceIds": [
     "source:sf1690:official-course-page",

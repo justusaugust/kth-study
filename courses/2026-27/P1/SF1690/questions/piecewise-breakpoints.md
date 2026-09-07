@@ -2,6 +2,9 @@
 id: 'question:sf1690:piecewise-breakpoints'
 courseId: 'course:sf1690'
 slug: piecewise-breakpoints
+hints:
+  - 'For each input, choose the branch from its condition before doing any arithmetic.'
+  - 'At zero, inspect which inequality contains equality. Use only that branch, not an average of the two formulas.'
 title: Read the breakpoint conditions
 conceptIds:
   - 'concept:sf1690:piecewise-defined-functions'

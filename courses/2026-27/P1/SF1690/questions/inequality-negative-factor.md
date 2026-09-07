@@ -2,6 +2,8 @@
 id: 'question:sf1690:inequality-negative-factor'
 courseId: 'course:sf1690'
 slug: inequality-negative-factor
+hints:
+  - 'To isolate x, consider dividing both sides by its coefficient. How does the sign of that coefficient affect the direction of an inequality?'
 title: Reverse the inequality
 conceptIds:
   - 'concept:sf1690:real-numbers-and-lines'

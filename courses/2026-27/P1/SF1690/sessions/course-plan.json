@@ -157,13 +157,15 @@
       "kind": "lecture",
       "sequence": 9,
       "title": "Lecture 5 · Polynomials and rational functions",
+      "date": "2026-09-07",
+      "lectureId": "lecture:sf1690:2026-09-07-05",
       "week": 37,
       "courseworkIds": [],
       "sourceIds": [
         "source:sf1690:canvas-course-plan-26"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-07",
+      "confidence": "supported",
       "relationships": []
     },
     {

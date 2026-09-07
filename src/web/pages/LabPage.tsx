@@ -7,6 +7,28 @@ import { SourceLinks } from "../components/SourceLinks";
 import { StudyMark } from "../components/StudyMark";
 import { ExplainerRenderer } from "../components/ExplainerRenderer";
 import { formatStudyDateLong } from "../format";
+import { useLocalNotes } from "../useLocalNotes";
+import "../styles/practice.css";
+
+export function LabNotes({ labId }: { labId: string }) {
+  const { notes, update, saved } = useLocalNotes(`kth-study:lab:${labId}`);
+  const fields = [
+    ["built", "What you built", "Circuit, configuration or task attempted"],
+    ["tested", "What you tested", "Inputs, expected results and observed results"],
+    ["failed", "What failed or surprised you", "Fault, possible cause and what you changed"],
+    ["evidence", "Evidence references", "Measurement values, filenames or links to your own records; no upload"],
+    ["next", "Next action", "What you still need to check or ask"],
+  ];
+  return <section className="lab-section lab-notes" aria-labelledby="lab-notes-title">
+    <h2 id="lab-notes-title">Your lab notes</h2>
+    <p>A few lines are enough. These notes do not record attendance, submit work or confirm a pass.</p>
+    {fields.map(([field, label, placeholder]) => <div key={field}>
+      <label htmlFor={`lab-note-${field}`}>{label}</label>
+      <textarea id={`lab-note-${field}`} value={notes[field] ?? ""} onChange={(event) => update(field, event.target.value)} placeholder={placeholder} rows={2} />
+    </div>)}
+    <p className="local-notes-status" role="status">{saved ? "Notes stay in this browser only. Not synced, uploaded or visible to other students. Copy important notes to your own files." : "Browser storage is unavailable. Copy your notes before leaving this page."}</p>
+  </section>;
+}
 
 export function LabPage() {
   const { courseCode = "", labSlug = "" } = useParams();
@@ -15,6 +37,8 @@ export function LabPage() {
 
   useEffect(() => {
     let active = true;
+    setData(undefined);
+    setError(undefined);
     getCourse(courseCode)
       .then((result) => active && setData(result))
       .catch((cause) => active && setError(cause));
@@ -87,6 +111,8 @@ export function LabPage() {
           <p className="lab-empty">No post-lab record yet. After the session, share what you built, tested, and anything that failed; that short recap can live here.</p>
         )}
       </section>
+
+      <LabNotes key={lab.id} labId={lab.id} />
 
       <section className="lecture-sources" aria-labelledby="lab-sources-title">
         <header className="course-section-heading">

@@ -8,6 +8,7 @@ import {
 import { ingestLecture, type IngestLectureInput } from "../ingest/ingestLecture";
 import type { StudyContext } from "../server/context";
 import { EXPLAINER_WIDGET_META } from "./resources";
+import { currentStudyDate } from "../web/format";
 
 function entityMap(context: StudyContext): Map<string, StudyEntity> {
   const entities = new Map<string, StudyEntity>();
@@ -53,13 +54,16 @@ function sourceSummary(context: StudyContext, sourceIds: string[]): string {
   const sources = sourceIds
     .map((id) => context.corpus.sources.get(id))
     .filter((source) => source !== undefined)
-    .map((source) => `${source.title}${source.url ? ` (${source.url})` : ""}`);
+    .map((source) => `${source.title}${source.url ? ` (${source.url})` : ""}, source last checked ${source.lastChecked}`);
   return sources.length ? ` Sources: ${sources.join("; ")}.` : "";
 }
 
 function nextAction(result: { id: string; entityType: SearchEntityType }): string {
   if (result.entityType === "concept") return `Next: call explain_concept with ${result.id}.`;
   if (result.entityType === "explainer") return `Next: call show_visual with ${result.id}.`;
+  if (["coursework", "assessment", "session"].includes(result.entityType)) {
+    return `Stable ID: ${result.id}. For dates and source checks, call get_course_dates with courseCode ${result.id.split(":")[1].toUpperCase()}.`;
+  }
   return `Stable ID: ${result.id}.`;
 }
 
@@ -71,6 +75,10 @@ export async function callTool(
 ) {
   const entities = entityMap(context);
   const url = (path: string) => publicOrigin ? new URL(path, publicOrigin).href : path;
+  const linkedLectures = (ids: string[]) => [...context.corpus.lectures.values()]
+    .filter((lecture) => ids.includes(lecture.id))
+    .sort((a, b) => a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug))
+    .map((lecture) => ({ id: lecture.id, title: lecture.title, url: url(entityUrl(lecture)) }));
 
   if (name === "search_study_hub") {
     const query = stringArgument(args, "query");
@@ -105,7 +113,7 @@ export async function callTool(
     if (requestedCode && courses.length === 0) {
       throw new Error(`Unknown course code: ${requestedCode}`);
     }
-    const today = context.refreshedAt.slice(0, 10);
+    const today = currentStudyDate();
     const result = courses.map((course) => ({
       course,
       assessments: [...context.corpus.assessments.values()].filter(
@@ -118,7 +126,24 @@ export async function callTool(
       upcomingCoursework: [...context.corpus.coursework.values()]
         .filter((item) => item.courseId === course.id && item.date && item.date >= today)
         .sort((left, right) => left.date!.localeCompare(right.date!))
-        .slice(0, 12),
+        .slice(0, 12)
+        .map((item) => {
+          const sessions = item.sessionIds.map((id) => context.corpus.sessions.get(id))
+            .filter((session) => session?.kind === "lecture");
+          const lectureIds = [...new Set([...item.lectureIds, ...sessions.flatMap((session) => session?.lectureId ? [session.lectureId] : [])])];
+          return {
+            ...item,
+            url: url(entityUrl(item)),
+            practiceUrl: url(`/practice?course=${course.code.toLowerCase()}&work=${item.slug}`),
+            lectures: linkedLectures(lectureIds),
+            missingLectureNotes: [
+              ...sessions.filter((session) => !session?.lectureId).map((session) => session!.title),
+              ...lectureIds.filter((id) => !context.corpus.lectures.has(id)),
+            ],
+          };
+        }),
+      undatedSessions: [...context.corpus.sessions.values()].filter((session) => session.courseId === course.id && !session.date),
+      undatedCoursework: [...context.corpus.coursework.values()].filter((item) => item.courseId === course.id && !item.date),
     }));
     const assessmentSummary = result.flatMap(({ course, assessments }) =>
       assessments.map((assessment) =>
@@ -130,6 +155,9 @@ export async function callTool(
         const links = item.materials
           .filter((material) => material.url)
           .map((material) => `${material.title}: ${material.url}`);
+        links.push(`Study pack (topic-matched practice, not guaranteed exam coverage): ${item.practiceUrl}`);
+        links.push(...item.lectures.map((lecture) => `${lecture.title}: ${lecture.url}`));
+        if (item.missingLectureNotes.length) links.push(`Lecture notes not available: ${item.missingLectureNotes.join(", ")}`);
         return `${course.code} — ${item.title}: ${item.date}${item.time ? ` at ${item.time}` : ""} (${item.requirement}). ${item.description}${links.length ? ` Links: ${links.join("; ")}.` : ""} Evidence: ${item.confidence}, last checked ${item.lastChecked}.${sourceSummary(context, item.sourceIds)}`;
       }),
     );
@@ -142,10 +170,11 @@ export async function callTool(
       assessmentSummary.length ? `Assessments:\n${assessmentSummary.join("\n")}` : "No assessments are stored for the selected course(s).",
       courseworkSummary.length ? `Upcoming coursework:\n${courseworkSummary.join("\n")}` : "No dated upcoming coursework is stored for the selected course(s).",
       sessionSummary.length ? `Upcoming sessions:\n${sessionSummary.join("\n")}` : "No dated upcoming sessions are stored for the selected course(s).",
+      ...result.filter(({ undatedSessions, undatedCoursework }) => undatedSessions.length || undatedCoursework.length).map(({ course, undatedSessions, undatedCoursework }) => `${course.code}: ${undatedSessions.length} sessions and ${undatedCoursework.length} coursework items have no recorded date. The upcoming list is not a complete timetable.`),
     ];
     return textResult(
-      `KTH Study date evidence refreshed ${context.refreshedAt}.\n\n${sections.join("\n\n")}`,
-      { refreshedAt: context.refreshedAt, courses: result },
+      `Stored KTH Study dates as of ${today} (Europe/Stockholm). Corpus loaded ${context.refreshedAt}; this is not an official-source verification time. Check each item's last-checked date.\n\n${sections.join("\n\n")}`,
+      { corpusLoadedAt: context.refreshedAt, asOfDate: today, courses: result },
     );
   }
 
@@ -178,6 +207,10 @@ export async function callTool(
       concept,
       course: context.corpus.courses.get(concept.courseId),
       visuals,
+      lectures: linkedLectures([...new Set([
+        ...concept.lectureIds,
+        ...[...context.corpus.lectures.values()].filter((lecture) => lecture.conceptIds.includes(id)).map((lecture) => lecture.id),
+      ])]),
     });
   }
 
@@ -219,6 +252,7 @@ export async function callTool(
 
   if (name === "quiz_me") {
     const conceptId = stringArgument(args, "conceptId");
+    if (!context.corpus.concepts.has(conceptId)) throw new Error(`Unknown concept ID: ${conceptId}`);
     const limit = Math.min(Math.max(Number(args.limit ?? 5), 1), 20);
     const questions = [...context.corpus.questions.values()]
       .filter((question) => question.conceptIds.includes(conceptId))

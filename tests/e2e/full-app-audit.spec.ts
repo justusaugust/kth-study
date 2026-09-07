@@ -6,7 +6,7 @@ test("every current Study Hub route renders without runtime or layout failures",
 }) => {
   test.setTimeout(120_000);
 
-  const routeSet = new Set(["/", "/search", "/visuals", "/deadlines"]);
+  const routeSet = new Set(["/", "/search", "/visuals", "/deadlines", "/practice", "/practice?course=sf1690&work=mini-exam-01"]);
   for (const code of ["sf1690", "ie1204", "ii1308"]) {
     const response = await request.get(`/api/courses/${code}`);
     expect(response.ok()).toBe(true);
@@ -34,6 +34,9 @@ test("every current Study Hub route renders without runtime or layout failures",
     "definition",
     "example",
     "question",
+    "session",
+    "coursework",
+    "assessment",
   ]) {
     routeSet.add(`/search?q=domain&type=${type}`);
   }

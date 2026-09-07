@@ -6,6 +6,7 @@ import type {
   Coursework,
 } from "../../../domain";
 import { WeekLedger } from "./WeekLedger";
+import { MemoryRouter } from "react-router-dom";
 
 afterEach(cleanup);
 
@@ -186,10 +187,10 @@ describe("WeekLedger", () => {
         courseStart="2026-08-24"
         courseEnd="2026-10-23"
         today={new Date(Date.UTC(2026, 7, 26))}
-      />,
+      />, { wrapper: MemoryRouter },
     );
 
-    expect(screen.getByRole("heading", { name: "Week ledger" })).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Study outline" })).toBeVisible();
     expect(screen.getByText("35")).toBeVisible();
     expect(screen.getByText("Not yet scheduled")).toBeVisible();
 
@@ -201,11 +202,11 @@ describe("WeekLedger", () => {
       }),
     ).toHaveAttribute("href", "/courses/sf1690/lectures/2026-08-24-01");
     expect(lecture).toHaveAttribute("data-availability", "available");
-    expect(within(lecture as HTMLElement).getByText("In archive")).toBeVisible();
+    expect(within(lecture as HTMLElement).getByText("Lecture · Read lesson")).toBeVisible();
 
     const upcomingLecture = document.querySelector("#session-lecture-02");
     expect(upcomingLecture).toHaveAttribute("data-availability", "upcoming");
-    expect(within(upcomingLecture as HTMLElement).getByText("Upcoming")).toBeVisible();
+    expect(within(upcomingLecture as HTMLElement).getByText(/Upcoming/)).toBeVisible();
 
     const exercise = document.querySelector("#session-exercise-session-01");
     expect(exercise).not.toBeNull();
@@ -245,7 +246,7 @@ describe("WeekLedger", () => {
         courseStart="2026-08-24"
         courseEnd="2026-10-23"
         today={new Date(Date.UTC(2026, 7, 26))}
-      />,
+      />, { wrapper: MemoryRouter },
     );
 
     expect(document.querySelector("#ledger-week-35")).toHaveAttribute(
@@ -267,7 +268,7 @@ describe("WeekLedger", () => {
         courseStart="2026-08-24"
         courseEnd="2026-10-23"
         today={new Date(Date.UTC(2026, 11, 1))}
-      />,
+      />, { wrapper: MemoryRouter },
     );
 
     expect(document.querySelector("[data-current]")).toBeNull();

@@ -2,6 +2,9 @@
 id: 'question:ii1308:rebinding-types'
 courseId: 'course:ii1308'
 slug: rebinding-types
+hints:
+  - 'Trace the assignments in order: each one replaces the previous binding of the name.'
+  - 'Inspect the literal on the final right-hand side. Its quotation marks matter more than whether its contents look numeric.'
 title: 'Follow a name through three bindings'
 conceptIds:
   - 'concept:ii1308:variables-values-and-types'

@@ -2,6 +2,9 @@
 id: 'question:sf1690:even-odd-neither'
 courseId: 'course:sf1690'
 slug: even-odd-neither
+hints:
+  - 'First check whether the domain contains -x whenever it contains x. Then substitute -x into every occurrence of x.'
+  - 'Simplify $f(-x)$ and compare the entire expression with both $f(x)$ and $-f(x)$, not just one term.'
 title: Prove a parity classification
 conceptIds:
   - 'concept:sf1690:even-odd-function-symmetry'

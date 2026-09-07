@@ -2,6 +2,9 @@
 id: 'question:sf1690:function-machine-uniqueness'
 courseId: 'course:sf1690'
 slug: function-machine-uniqueness
+hints:
+  - 'Test a positive input rather than only zero. How many distinct outputs does the stated rule assign to that one input?'
+  - 'Compare that count with the requirement that a function assign exactly one output to every input in its domain.'
 title: Check whether a rule defines a function
 conceptIds:
   - 'concept:sf1690:functions-domain-and-range'

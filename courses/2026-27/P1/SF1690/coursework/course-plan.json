@@ -37,7 +37,7 @@
       "id": "coursework:sf1690:exercise-05", "courseId": "course:sf1690", "slug": "exercise-05", "kind": "exercise", "sequence": 10,
       "title": "Exercise session 5", "week": 37, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 5.",
       "materials": [{ "title": "Calculus", "section": "P6", "page": "45", "exercises": "2, 5, 6, 10, 12, 14, 18, 20, 22, 23" }],
-      "sessionIds": ["session:sf1690:exercise-05"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-05"], "lectureIds": ["lecture:sf1690:2026-09-07-05"], "conceptIds": ["concept:sf1690:polynomial-roots-and-factors", "concept:sf1690:rational-functions-and-cancellation"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {

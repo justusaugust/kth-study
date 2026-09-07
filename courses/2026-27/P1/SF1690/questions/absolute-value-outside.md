@@ -2,6 +2,9 @@
 id: 'question:sf1690:absolute-value-outside'
 courseId: 'course:sf1690'
 slug: absolute-value-outside
+hints:
+  - 'A distance at least 3 from zero lies in two outside regions, not the interval between them.'
+  - 'Let $u=2x+1$. Use $u\le-3$ or $u\ge3$, then solve each branch for x.'
 title: Solve an outside-distance inequality
 conceptIds:
   - 'concept:sf1690:absolute-value'

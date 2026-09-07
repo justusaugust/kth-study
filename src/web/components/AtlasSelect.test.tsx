@@ -1,6 +1,7 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { AtlasSelect } from "./AtlasSelect";
+import { SearchFilters } from "./SearchFilters";
 
 const options = [
   { value: "", label: "All courses" },
@@ -18,6 +19,14 @@ function setup(value = "") {
 }
 
 describe("AtlasSelect", () => {
+  it("uses the custom picker for mobile search and applies its filter", () => {
+    const onSelect = vi.fn();
+    render(<SearchFilters activeType={null} onSelect={onSelect} />);
+    expect(document.querySelector("select")).toBeNull();
+    fireEvent.click(screen.getByRole("combobox", { name: /Search in/ }));
+    fireEvent.click(screen.getByRole("option", { name: "Lectures" }));
+    expect(onSelect).toHaveBeenCalledWith("lecture");
+  });
   it("shows the option matching the current value without opening", () => {
     const { trigger } = setup("SF1690");
 

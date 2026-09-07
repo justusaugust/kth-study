@@ -1,6 +1,11 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { ConceptDiagram } from "./ConceptDiagram";
+import {
+  ConceptDiagram,
+  CoordinateGrid,
+  GridLabels,
+  unitRange,
+} from "./ConceptDiagram";
 
 afterEach(cleanup);
 
@@ -73,6 +78,60 @@ describe("ConceptDiagram", () => {
     expect(screen.getAllByText("Δx = 4")).not.toHaveLength(0);
     expect(screen.getAllByText("Δy = 4")).not.toHaveLength(0);
     expect(screen.getByText("d = √32 ≈ 5.66")).toBeVisible();
+  });
+
+  it("places gridlines and labels at the coordinates they name", () => {
+    const axes = {
+      x: {
+        values: unitRange(-1, 1, 0.5),
+        labels: [1],
+        project: (value: number) => 100 + value * 40,
+      },
+      y: {
+        values: unitRange(-1, 1, 0.5),
+        labels: [1],
+        project: (value: number) => 60 - value * 20,
+      },
+    };
+
+    const { container } = render(
+      <svg>
+        <CoordinateGrid {...axes} />
+        <GridLabels {...axes} gap={20} />
+      </svg>,
+    );
+
+    // Half-unit steps land on their mapped x, and the zero lines are left to
+    // the figure's own axes.
+    const verticals = [
+      ...container.querySelectorAll("line.diagram-grid"),
+    ].filter((line) => line.getAttribute("x1") === line.getAttribute("x2"));
+    expect(verticals.map((line) => line.getAttribute("x1"))).toEqual([
+      "60",
+      "80",
+      "120",
+      "140",
+    ]);
+    expect(verticals[0]).toHaveAttribute("y1", "40");
+    expect(verticals[0]).toHaveAttribute("y2", "80");
+    expect(container.querySelector(".diagram-grid.diagram-axis")).toBeNull();
+
+    const [xLabel, yLabel] = [
+      ...container.querySelectorAll("text.diagram-grid-label"),
+    ];
+    expect(xLabel).toHaveAttribute("x", "140");
+    expect(xLabel).toHaveAttribute("y", "80");
+    expect(yLabel).toHaveAttribute("x", "88");
+    expect(yLabel).toHaveAttribute("y", "45");
+
+    const cartesian = render(
+      <ConceptDiagram slug="cartesian-distance-circles" />,
+    ).container;
+    const atTwo = [...cartesian.querySelectorAll("line.diagram-grid")].find(
+      (line) => line.getAttribute("x1") === "380",
+    );
+    expect(atTwo).toHaveAttribute("y1", "40");
+    expect(atTwo).toHaveAttribute("y2", "340");
   });
 
   it("explains that a vertical line has undefined slope", () => {

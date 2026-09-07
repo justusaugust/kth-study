@@ -2,6 +2,9 @@
 id: 'question:sf1690:interval-translation'
 courseId: 'course:sf1690'
 slug: interval-translation
+hints:
+  - 'Check each endpoint separately: can x equal the left endpoint, and can it equal the right one?'
+  - 'Use a parenthesis for an excluded endpoint and a square bracket for an included endpoint.'
 title: Translate an interval
 conceptIds:
   - 'concept:sf1690:real-numbers-and-lines'

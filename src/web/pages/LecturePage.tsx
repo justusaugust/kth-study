@@ -10,6 +10,7 @@ import { ExplainerRenderer } from "../components/ExplainerRenderer";
 import { MathText } from "../components/MathText";
 import { PracticePrompt } from "../components/PracticePrompt";
 import { SourceLinks } from "../components/SourceLinks";
+import { ReadingPosition } from "../components/course/ReadingPosition";
 import { StudyMark } from "../components/StudyMark";
 import { BooleanFormsDiagram, StringIndexDiagram } from "../components/SystemsDiagram";
 import { formatStudyDate, formatStudyDateLong } from "../format";
@@ -21,6 +22,8 @@ export function LecturePage() {
 
   useEffect(() => {
     let active = true;
+    setData(undefined);
+    setError(undefined);
     getCourse(courseCode)
       .then((result) => active && setData(result))
       .catch((cause) => active && setError(cause));
@@ -93,7 +96,7 @@ export function LecturePage() {
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <Link to={`/courses/${data.course.code.toLowerCase()}`}>{data.course.code}</Link>
         <span aria-hidden="true">/</span>
-        <span>Lecture archive</span>
+        <span>Lesson</span>
       </nav>
 
       <header className="lecture-heading">
@@ -102,16 +105,17 @@ export function LecturePage() {
         </StudyMark>
         <h1>{lecture.title}</h1>
         <p className="lead">{lecture.summary}</p>
-        <div className="lecture-heading__meta">
-          <span>{concepts.length} {concepts.length === 1 ? "concept" : "concepts"}</span>
-          <span>{sources.length} {sources.length === 1 ? "source" : "sources"}</span>
-          <span>{questions.length} {questions.length === 1 ? "self-check" : "self-checks"}</span>
-          {coursework.length ? <span>{coursework.length} assigned set{coursework.length === 1 ? "" : "s"}</span> : null}
-        </div>
       </header>
-
+      <div className="lesson-reader">
+      <ReadingPosition sections={[
+        ...(lecture.body ? [{ id: "lecture-overview", label: "Overview" }] : []),
+        ...concepts.map((concept) => ({ id: `concept-${concept.slug}`, label: concept.title })),
+        ...(coursework.length ? [{ id: "assigned-exercises", label: "Assigned exercises" }] : []),
+        { id: "lecture-sources", label: "Sources" },
+      ]} />
+      <div className="lesson-reader__content">
       {lecture.body ? (
-        <section className="lecture-note markdown-body" aria-labelledby="lecture-note-title">
+        <section id="lecture-overview" className="lecture-note markdown-body" aria-labelledby="lecture-note-title">
           <h2 id="lecture-note-title">Lecture overview</h2>
           <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
             {lecture.body}
@@ -119,11 +123,7 @@ export function LecturePage() {
         </section>
       ) : null}
 
-      <section className="lecture-spine" aria-labelledby="lecture-spine-title">
-        <header className="course-section-heading">
-          <p>Move through the ideas in lecture order</p>
-          <h2 id="lecture-spine-title">Lecture guide</h2>
-        </header>
+      <section className="lecture-spine" aria-label="Lesson concepts">
         <ol className="lecture-spine__list">
           {concepts.map((concept, index) => {
             const explainer = data.explainers.find((item) =>
@@ -138,8 +138,8 @@ export function LecturePage() {
             const conceptQuestions = questions.filter((item) => item.conceptIds.includes(concept.id));
             return (
               <li key={concept.id}>
-                <details className="lecture-concept" open={index === 0}>
-                  <summary className="lecture-concept__summary">
+                <section id={`concept-${concept.slug}`} className="lecture-concept">
+                  <header className="lecture-concept__summary">
                     <span className="lecture-concept__index" aria-hidden="true">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -147,9 +147,7 @@ export function LecturePage() {
                       <span role="heading" aria-level={3}>{concept.title}</span>
                       <MathText as="span">{concept.summary}</MathText>
                     </span>
-                    <span className="lecture-concept__disclosure" aria-hidden="true">
-                    </span>
-                  </summary>
+                  </header>
                   <div className="lecture-concept__body">
                     <div className="lecture-concept__explanation">
                       <MathText as="p" className="lecture-concept__insight">
@@ -192,7 +190,7 @@ export function LecturePage() {
                     {examples.length ? (
                       <div className="lecture-concept__examples">
                         <h4>Worked examples</h4>
-                        {examples.map((example) => (
+                        {examples.slice(0, 1).map((example) => (
                           <article key={example.id} id={`example-${example.slug}`}>
                             <h5>{example.title}</h5>
                             <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
@@ -200,6 +198,13 @@ export function LecturePage() {
                             </ReactMarkdown>
                           </article>
                         ))}
+                        {examples.length > 1 ? <details className="lesson-depth">
+                          <summary>More worked examples ({examples.length - 1})</summary>
+                          {examples.slice(1).map((example) => <article key={example.id} id={`example-${example.slug}`}>
+                            <h5>{example.title}</h5>
+                            <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>{example.body}</ReactMarkdown>
+                          </article>)}
+                        </details> : null}
                       </div>
                     ) : null}
                     {conceptQuestions.length ? (
@@ -209,7 +214,6 @@ export function LecturePage() {
                           <PracticePrompt
                             key={question.id}
                             question={question}
-                            hints={[concept.centralInsight, concept.commonMistake]}
                           />
                         ))}
                       </div>
@@ -218,10 +222,10 @@ export function LecturePage() {
                       className="lecture-concept__link"
                       to={`/courses/${data.course.code.toLowerCase()}/concepts/${concept.slug}`}
                     >
-                      Open the standalone concept guide
+                      Topic reference and related lessons
                     </Link>
                   </div>
-                </details>
+                </section>
               </li>
             );
           })}
@@ -229,7 +233,7 @@ export function LecturePage() {
       </section>
 
       {coursework.length ? (
-        <section className="lecture-practice" aria-labelledby="lecture-practice-title">
+        <section id="assigned-exercises" className="lecture-practice" aria-labelledby="lecture-practice-title">
           <header className="course-section-heading">
             <p>Continue with the official course-plan work</p>
             <h2 id="lecture-practice-title">Assigned exercises</h2>
@@ -275,7 +279,7 @@ export function LecturePage() {
         </section>
       ) : null}
 
-      <section className="lecture-sources" aria-labelledby="lecture-sources-title">
+      <section id="lecture-sources" className="lecture-sources" aria-labelledby="lecture-sources-title">
         <header className="course-section-heading">
           <p>References for the concepts and examples</p>
           <h2 id="lecture-sources-title">Sources</h2>
@@ -299,6 +303,8 @@ export function LecturePage() {
           ) : null}
         </nav>
       ) : null}
+      </div>
+      </div>
     </article>
   );
 }

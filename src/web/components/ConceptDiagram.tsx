@@ -109,6 +109,103 @@ function cartesianValue(event: ReactPointerEvent<SVGSVGElement>): Point {
   ];
 }
 
+export interface GridAxis {
+  values: number[];
+  labels?: number[];
+  /** Maps a plot unit to its viewBox coordinate. */
+  project: (value: number) => number;
+}
+
+interface GridProps {
+  x: GridAxis;
+  y: GridAxis;
+  /** Draw the zero lines here. Leave false when the figure draws its own axes. */
+  drawAxes?: boolean;
+}
+
+export function unitRange(min: number, max: number, step = 1) {
+  const count = Math.round((max - min) / step) + 1;
+  return Array.from({ length: count }, (_, index) =>
+    Number((min + index * step).toFixed(4)),
+  );
+}
+
+// Every gridline is placed through the figure's own projection, so a line at
+// x = 2 is exactly where the value 2 lives — the grid can be read, not just seen.
+export function CoordinateGrid({ x, y, drawAxes = false }: GridProps) {
+  const xs = x.values.map(x.project);
+  const ys = y.values.map(y.project);
+  const left = Math.min(...xs);
+  const right = Math.max(...xs);
+  const top = Math.min(...ys);
+  const bottom = Math.max(...ys);
+  const gridClass = (value: number) =>
+    value === 0 ? "diagram-grid diagram-axis" : "diagram-grid";
+  const drawn = (value: number) => drawAxes || value !== 0;
+
+  return (
+    <g aria-hidden="true">
+      {x.values.filter(drawn).map((value) => (
+        <line
+          key={`x-${value}`}
+          className={gridClass(value)}
+          x1={x.project(value)}
+          x2={x.project(value)}
+          y1={top}
+          y2={bottom}
+        />
+      ))}
+      {y.values.filter(drawn).map((value) => (
+        <line
+          key={`y-${value}`}
+          className={gridClass(value)}
+          x1={left}
+          x2={right}
+          y1={y.project(value)}
+          y2={y.project(value)}
+        />
+      ))}
+    </g>
+  );
+}
+
+// Rendered after the curves so the halo in .diagram-grid-label can keep the
+// numbers legible where a curve or gridline runs underneath them.
+export function GridLabels({
+  x,
+  y,
+  gap,
+}: {
+  x: GridAxis;
+  y: GridAxis;
+  gap: number;
+}) {
+  return (
+    <g aria-hidden="true">
+      {(x.labels ?? []).filter((value) => value !== 0).map((value) => (
+        <text
+          key={`xl-${value}`}
+          className="diagram-grid-label"
+          x={x.project(value)}
+          y={y.project(0) + gap}
+        >
+          {pretty(value)}
+        </text>
+      ))}
+      {(y.labels ?? []).filter((value) => value !== 0).map((value) => (
+        <text
+          key={`yl-${value}`}
+          className="diagram-grid-label diagram-grid-label--y"
+          x={x.project(0) - gap * 0.6}
+          y={y.project(value) + gap * 0.25}
+        >
+          {pretty(value)}
+        </text>
+      ))}
+    </g>
+  );
+}
+
 function RangeControl({
   label,
   value,
@@ -362,38 +459,18 @@ function AbsoluteValueDiagram({ mode }: { mode: DiagramMode }) {
   );
 }
 
-function CartesianGrid() {
-  return (
-    <g aria-hidden="true">
-      {Array.from({ length: 17 }, (_, index) => index - 8).map((value) => (
-        <line
-          key={`x-${value}`}
-          className={value === 0 ? "diagram-grid diagram-axis" : "diagram-grid"}
-          x1={graphX(value)}
-          x2={graphX(value)}
-          y1={graphY(CARTESIAN_Y_MIN)}
-          y2={graphY(CARTESIAN_Y_MAX)}
-        />
-      ))}
-      {Array.from({ length: 11 }, (_, index) => index - 5).map((value) => (
-        <line
-          key={`y-${value}`}
-          className={value === 0 ? "diagram-grid diagram-axis" : "diagram-grid"}
-          x1={graphX(CARTESIAN_X_MIN)}
-          x2={graphX(CARTESIAN_X_MAX)}
-          y1={graphY(value)}
-          y2={graphY(value)}
-        />
-      ))}
-      {[-6, -4, -2, 2, 4, 6].map((value) => (
-        <text key={`xl-${value}`} className="diagram-grid-label" x={graphX(value)} y={graphY(0) + 20}>{pretty(value)}</text>
-      ))}
-      {[-4, -2, 2, 4].map((value) => (
-        <text key={`yl-${value}`} className="diagram-grid-label" x={graphX(0) - 12} y={graphY(value) + 4}>{pretty(value)}</text>
-      ))}
-    </g>
-  );
-}
+const cartesianAxes = {
+  x: {
+    values: unitRange(CARTESIAN_X_MIN, CARTESIAN_X_MAX),
+    labels: [-6, -4, -2, 2, 4, 6],
+    project: graphX,
+  },
+  y: {
+    values: unitRange(CARTESIAN_Y_MIN, CARTESIAN_Y_MAX),
+    labels: [-4, -2, 2, 4],
+    project: graphY,
+  },
+};
 
 function PointHandle({
   point,
@@ -489,7 +566,7 @@ function CoordinateDiagram({ mode, slope }: { mode: DiagramMode; slope: boolean 
         <desc id={`${id}-desc`}>
           Drag P and Q or use the coordinate sliders below. The triangle and all measurements update immediately.
         </desc>
-        <CartesianGrid />
+        <CoordinateGrid drawAxes {...cartesianAxes} />
         {!slope ? (
           <circle className="diagram-circle" cx={graphX(p[0])} cy={graphY(p[1])} r={distance * CARTESIAN_SCALE} />
         ) : (
@@ -514,6 +591,7 @@ function CoordinateDiagram({ mode, slope }: { mode: DiagramMode; slope: boolean 
         <text className="diagram-segment-label" x={graphX(q[0]) + 12} y={(graphY(p[1]) + graphY(q[1])) / 2}>
           {slope ? "rise" : "Δy"} = {pretty(dy)}
         </text>
+        <GridLabels {...cartesianAxes} gap={22} />
         <PointHandle point={p} label="P" onPointerDown={(event) => { event.currentTarget.setPointerCapture?.(event.pointerId); setActive("p"); }} />
         <PointHandle point={q} label="Q" onPointerDown={(event) => { event.currentTarget.setPointerCapture?.(event.pointerId); setActive("q"); }} />
       </svg>

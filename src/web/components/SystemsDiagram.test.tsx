@@ -99,7 +99,9 @@ describe("SystemsDiagram", () => {
     expect(screen.getByRole("img", { name: /VDD: positive supply rail/i })).toBeVisible();
     fireEvent.focus(pmosA);
     expect(screen.getByText("off now · on when A = 0")).toBeVisible();
-    expect(document.querySelector(".diagram-hover-label.is-visible")).toBeInTheDocument();
+    const tooltip = document.querySelector(".diagram-hover-label.is-visible");
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip?.parentElement?.lastElementChild).toBe(tooltip);
     fireEvent.click(screen.getByRole("button", { name: "Input B is 0" }));
     expect(screen.getByText("NAND: Y = 0")).toBeVisible();
     expect(screen.getByText("Pull-down network conducts")).toBeVisible();
@@ -139,9 +141,23 @@ describe("SystemsDiagram", () => {
   it("counts intersections while sweeping the vertical-line test", () => {
     render(<SystemsDiagram variant="vertical-line-test" mode="full" />);
 
-    expect(screen.getByText("One intersection — this is a function of x")).toBeVisible();
+    expect(screen.getByText("One intersection at this input")).toBeVisible();
     fireEvent.click(screen.getByRole("tab", { name: "Circle" }));
-    expect(screen.getByText("Two intersections — not a function of x")).toBeVisible();
+    expect(screen.getByText("Two intersections at this input")).toBeVisible();
+    const circlePath = document.querySelector(".function-curve")!.getAttribute("d")!;
+    const coordinates = [...circlePath.matchAll(/[ML]([\d.]+) ([\d.]+)/g)].map((match) => [Number(match[1]), Number(match[2])]);
+    const extent = (axis: number) => Math.max(...coordinates.map((point) => point[axis])) - Math.min(...coordinates.map((point) => point[axis]));
+    expect(extent(0)).toBe(200);
+    expect(extent(1)).toBe(200);
+    fireEvent.focus(screen.getByRole("img", { name: /Intersection 1 at/ }));
+    const tooltip = document.querySelector(".diagram-hover-label.is-visible");
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip?.parentElement?.lastElementChild).toBe(tooltip);
+    for (const value of ["-1", "1"]) {
+      fireEvent.change(screen.getByRole("slider", { name: "Test line x" }), { target: { value } });
+      expect(screen.getByText("One intersection at this input")).toBeVisible();
+      expect(screen.getByText(/This curve is not a function of x/)).toBeVisible();
+    }
     fireEvent.change(screen.getByRole("slider", { name: "Test line x" }), {
       target: { value: "1.2" },
     });
@@ -149,7 +165,12 @@ describe("SystemsDiagram", () => {
 
     fireEvent.click(screen.getByRole("tab", { name: "Upper semicircle" }));
     expect(screen.getByText("y = √(1 − x²), −1 ≤ x ≤ 1")).toBeVisible();
-    expect(document.querySelector(".function-curve")?.getAttribute("d")).toContain(" A190 76 ");
+    expect(document.querySelector(".function-curve")?.getAttribute("d")).toContain(" A100 100 ");
+    expect(screen.getByText(/This curve is a function of x/)).toBeVisible();
+    fireEvent.click(screen.getByRole("tab", { name: "Sideways parabola" }));
+    fireEvent.change(screen.getByRole("slider", { name: "Test line x" }), { target: { value: "0" } });
+    expect(screen.getByText("One intersection at this input")).toBeVisible();
+    expect(screen.getByText(/This curve is not a function of x/)).toBeVisible();
   });
 
   it("restricts a quotient when its denominator function is zero", () => {

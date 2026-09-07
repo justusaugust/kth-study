@@ -72,7 +72,7 @@ describe("VisualPage", () => {
     );
     expect(screen.getByRole("link", { name: "Back to SF1690" })).toBeVisible();
     expect(
-      screen.getByRole("link", { name: "KTH official SF1690 course page" }),
+      screen.getByRole("link", { name: /^KTH official SF1690 course page/ }),
     ).toHaveAttribute(
       "href",
       "https://www.kth.se/student/kurser/kurs/SF1690?l=en",

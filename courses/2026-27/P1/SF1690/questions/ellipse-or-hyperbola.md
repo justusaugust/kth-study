@@ -2,6 +2,9 @@
 id: 'question:sf1690:ellipse-or-hyperbola'
 courseId: 'course:sf1690'
 slug: ellipse-or-hyperbola
+hints:
+  - 'Compare the sign between the squared terms with the standard ellipse and hyperbola equations. Which variable has the positive term?'
+  - 'Find the vertices by setting the other coordinate to zero. For asymptotes, replace the right-hand side by zero and solve the resulting homogeneous equation for y.'
 title: Classify a conic from its signs
 conceptIds:
   - 'concept:sf1690:ellipses-and-hyperbolas'

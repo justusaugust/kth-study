@@ -2,6 +2,9 @@
 id: 'question:ie1204:trace-cmos-nand'
 courseId: 'course:ie1204'
 slug: trace-cmos-nand
+hints:
+  - 'Apply the switching rule separately: nMOS conducts at input 1; pMOS conducts at input 0.'
+  - 'Trace a complete path from Y to a supply rail. A series network needs every switch closed; a parallel network needs one complete branch.'
 title: Trace a CMOS NAND row
 conceptIds:
   - 'concept:ie1204:cmos-transistor-networks'

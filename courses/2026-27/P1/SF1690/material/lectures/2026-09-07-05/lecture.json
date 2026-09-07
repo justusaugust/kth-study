@@ -1,0 +1,18 @@
+{
+  "id": "lecture:sf1690:2026-09-07-05",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-07-05",
+  "title": "Lecture 5 — polynomials and rational functions",
+  "date": "2026-09-07",
+  "sessionId": "session:sf1690:lecture-05",
+  "summary": "Factor a polynomial to find its roots and read how its graph meets the axis. For rational functions, keep track of excluded inputs even after cancelling common factors.",
+  "conceptIds": ["concept:sf1690:polynomial-roots-and-factors", "concept:sf1690:rational-functions-and-cancellation"],
+  "body": "The saved HT26 course plan assigns Calculus P6 to Lecture 5: polynomials, rational functions, roots and factorisation. This is a study reconstruction for the lecture reported on 7 September, not a transcript; updated Canvas material has not yet been checked.\n\nStart with the degree and leading coefficient of a polynomial. The factor theorem turns a root into a factor, and polynomial division reduces the remaining problem. Multiplicity explains whether the graph crosses or touches the axis. A rational function is a quotient of polynomials: first exclude zeros of its original denominator, then simplify. Cancellation changes the formula, not the original domain.\n\nContinue with Exercise session 5: P6, page 45, exercises 2, 5, 6, 10, 12, 14, 18, 20, 22 and 23. The course plan uses the ninth edition's exercise numbering.",
+  "sourceIds": ["source:sf1690:canvas-course-plan-26"],
+  "lastChecked": "2026-09-07",
+  "confidence": "supported",
+  "relationships": [
+    {"type": "teaches", "from": "lecture:sf1690:2026-09-07-05", "to": "concept:sf1690:polynomial-roots-and-factors"},
+    {"type": "teaches", "from": "lecture:sf1690:2026-09-07-05", "to": "concept:sf1690:rational-functions-and-cancellation"}
+  ]
+}

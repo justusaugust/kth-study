@@ -4,6 +4,7 @@ import type {
   CourseSession,
   Coursework,
 } from "../../../domain";
+import { Link } from "react-router-dom";
 import { currentStudyDate, formatStudyDate } from "../../format";
 
 const requirementLabels: Record<Coursework["requirement"], string> = {
@@ -82,11 +83,12 @@ function CourseworkDetail({
         <ul className="ledger-work__materials">
           {coursework.materials.map((material, index) => (
             <li key={`${coursework.id}:material:${index}`}>
-              {materialLine(material)}
+              {material.url ? <a href={material.url} target="_blank" rel="noreferrer">{materialLine(material)}</a> : materialLine(material)}
             </li>
           ))}
         </ul>
       ) : null}
+      {coursework.kind === "mini-exam" ? <Link to={`/practice?course=${slugOf(coursework.courseId)}&work=${coursework.slug}`}>Study and practise the covered lectures</Link> : null}
     </div>
   );
 }
@@ -137,10 +139,10 @@ function LedgerEntry({
       <div className="ledger-entry__body">
         <div className="ledger-entry__head">
           <h4>
-            {lectureSlug ? (
-              <a href={`/courses/${courseCode}/lectures/${lectureSlug}`}>
+            {lectureSlug || item.kind === "laboratory" ? (
+              <Link to={lectureSlug ? `/courses/${courseCode}/lectures/${lectureSlug}` : item.url}>
                 {item.title}
-              </a>
+              </Link>
             ) : item.entityType === "assessment" ? (
               <a href={`#assessment-${slug}`}>{item.title}</a>
             ) : (
@@ -149,16 +151,16 @@ function LedgerEntry({
           </h4>
           <span className="ledger-entry__kind">
             {lectureAvailability === "available"
-              ? "In archive"
+              ? "Lecture · Read lesson"
               : lectureAvailability === "upcoming"
                 ? "Upcoming"
                 : lectureAvailability === "unavailable"
-                  ? "Not in archive"
+                  ? "Lecture · Notes not available"
                   : kindLabel(item.kind)}
           </span>
           {item.date ? (
             <time dateTime={item.date}>{formatStudyDate(item.date)}</time>
-          ) : null}
+          ) : <span className="ledger-entry__date-note">Date not confirmed</span>}
         </div>
         {linkedWork.map((work) => (
           <CourseworkDetail key={work.id} coursework={work} anchored />
@@ -201,7 +203,7 @@ export function WeekLedger({
     >
       <header className="course-section-heading">
         <p>Teaching, practice and assessment, week by week</p>
-        <h2 id="week-ledger-title">Week ledger</h2>
+        <h2 id="week-ledger-title">Study outline</h2>
       </header>
       <ol className="week-ledger__weeks">
         {groups.map((group) => (
@@ -232,7 +234,8 @@ export function WeekLedger({
                   Not yet scheduled
                 </span>
               )}
-              <span className="week-ledger__count">{group.items.length}</span>
+              <span className="week-ledger__preview">{group.items.slice(0, 2).map((item) => item.title).join(" · ")}</span>
+              <span className="week-ledger__count">{group.items.length} {group.items.length === 1 ? "item" : "items"}</span>
             </summary>
             <ol className="week-ledger__entries">
               {group.items.map((item) => (

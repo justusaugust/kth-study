@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import type { CourseResponse } from "../../../domain";
 import { CourseSources } from "./CourseSources";
@@ -28,36 +28,24 @@ const sources: CourseResponse["sources"] = [
 ];
 
 describe("CourseSources", () => {
-  it("keeps honest provenance visible on the closed folder shelf", () => {
+  it("shows source-specific provenance in a simple visible reference list", () => {
     render(<CourseSources sources={sources} />);
 
     expect(screen.getByRole("heading", { name: "Sources" })).toBeVisible();
-    const curriculumFolder = screen.getByRole("button", {
-      name: /Official curriculum/,
-    });
-    expect(curriculumFolder).toHaveAttribute("aria-expanded", "false");
-    expect(curriculumFolder).toHaveTextContent("1 source");
-    expect(curriculumFolder).toHaveTextContent("checked 24 Aug 2026");
-    expect(document.querySelectorAll(".course-sources svg")).toHaveLength(1);
+    expect(screen.getAllByText(/Checked 24 Aug 2026/)).toHaveLength(2);
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(document.body).not.toHaveTextContent("material/lectures");
   });
 
-  it("opens a folder into an ordinary inline source list", () => {
+  it("groups title, context and action inside one link, without fake local links", () => {
     render(<CourseSources sources={sources} />);
 
-    const curriculumFolder = screen.getByRole("button", {
-      name: /Official curriculum/,
-    });
-    fireEvent.click(curriculumFolder);
-    expect(curriculumFolder).toHaveAttribute("aria-expanded", "true");
-    expect(
-      screen.getByRole("link", { name: /KTH official SF1690/ }),
-    ).toHaveAttribute("href", "https://www.kth.se/student/kurser/kurs/SF1690?l=en");
-
-    fireEvent.click(screen.getByRole("button", { name: /Canvas/ }));
+    const link = screen.getByRole("link", { name: /KTH official SF1690/ });
+    expect(link).toHaveAccessibleName("KTH official SF1690 course page and syllabus Content and learning outcomes Open source · Checked 24 Aug 2026");
+    expect(link).toHaveAttribute("href", "https://www.kth.se/student/kurser/kurs/SF1690?l=en");
+    expect(within(link).getByText("Content and learning outcomes")).toBeVisible();
     expect(screen.getByText("Page 1, Week 35")).toBeVisible();
-
-    fireEvent.keyDown(curriculumFolder, { key: "Escape" });
-    expect(curriculumFolder).toHaveAttribute("aria-expanded", "false");
+    expect(screen.getByText(/No public document link/)).toBeVisible();
+    expect(screen.queryByRole("link", { name: /Course plan 26/ })).not.toBeInTheDocument();
   });
 });

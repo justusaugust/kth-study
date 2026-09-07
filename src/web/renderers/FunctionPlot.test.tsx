@@ -84,6 +84,7 @@ describe("FunctionPlot axis labels", () => {
 
   it("updates roots, vertex, and axis as the coefficients move", () => {
     render(<FunctionPlot spec={spec} mode="full" />);
+    fireEvent.click(screen.getByText("Explore coefficients"));
 
     fireEvent.change(screen.getByRole("slider", { name: "Coefficient b" }), {
       target: { value: "-2" },
@@ -96,5 +97,19 @@ describe("FunctionPlot axis labels", () => {
     expect(screen.getByText("Vertex (1, −4)")).toBeVisible();
     expect(screen.getByText("Axis x = 1")).toBeVisible();
     expect(screen.getByText("Roots x = −1, 3")).toBeVisible();
+  });
+
+  it("keeps exploration optional and handles constant and zero functions", () => {
+    const { container } = render(<FunctionPlot spec={spec} mode="full" />);
+    expect(container.querySelector("details")).not.toHaveAttribute("open");
+    expect(container.querySelector(".plot-frame")).toHaveStyle({ width: "100%", minWidth: "0", aspectRatio: "100 / 62", minHeight: "280px" });
+    fireEvent.click(screen.getByText("Explore coefficients"));
+    fireEvent.click(screen.getByRole("button", { name: "No real roots" }));
+    expect(screen.getByText("f(x) = x² + 1")).toBeVisible();
+    fireEvent.change(screen.getByRole("slider", { name: "Coefficient a" }), { target: { value: "0" } });
+    expect(screen.getByText("Constant function")).toBeVisible();
+    expect(screen.getByText("No real roots", { selector: "span" })).toBeVisible();
+    fireEvent.change(screen.getByRole("slider", { name: "Coefficient c" }), { target: { value: "0" } });
+    expect(screen.getByText("Every real x is a root")).toBeVisible();
   });
 });

@@ -1,6 +1,7 @@
 import { useId, useMemo, useState } from "react";
 import type { ConicSectionExplainer } from "../../domain/schemas";
 import { liquidRangeStyle } from "../rangeStyle";
+import { CoordinateGrid, GridLabels, unitRange } from "./ConceptDiagram";
 import { SvgTooltip, type SvgTooltipData } from "./diagrams/SvgTooltip";
 
 type DiagramMode = "preview" | "full";
@@ -116,6 +117,10 @@ function ParabolaDiagram({ mode }: { mode: DiagramMode }) {
   const directrixDistance = pointY + p;
   const graphX = (x: number) => 320 + x * 48;
   const graphY = (y: number) => 236 - y * 38;
+  const axes = {
+    x: { values: unitRange(-5, 5), labels: [-4, -2, 2, 4], project: graphX },
+    y: { values: unitRange(-2, 5), labels: [-2, 2, 4], project: graphY },
+  };
   const curve = useMemo(() => {
     const points: string[] = [];
     for (let x = -5; x <= 5.001; x += 0.1) {
@@ -145,6 +150,7 @@ function ParabolaDiagram({ mode }: { mode: DiagramMode }) {
         <desc id={`${id}-desc`}>
           Point P lies on the parabola. Its distance to focus F equals its perpendicular distance to the directrix at Q.
         </desc>
+        <CoordinateGrid {...axes} />
         <line className="diagram-grid diagram-axis" x1="44" x2="596" y1={graphY(0)} y2={graphY(0)} />
         <line className="diagram-grid diagram-axis" x1={graphX(0)} x2={graphX(0)} y1="24" y2="326" />
         <line className="conic-directrix" x1="58" x2="582" y1={graphY(-p)} y2={graphY(-p)} />
@@ -199,11 +205,12 @@ function ParabolaDiagram({ mode }: { mode: DiagramMode }) {
           onShow={setTooltip}
           onClear={() => setTooltip(undefined)}
         />
-        <text className="conic-axis-label" x="66" y={graphY(-p) - 10}>directrix y = −p</text>
+        <GridLabels {...axes} gap={28} />
         {tooltip ? <SvgTooltip {...tooltip} /> : null}
       </svg>
       <output className="diagram-readout diagram-readout--conic" aria-live="polite">
         <strong>x² = 4py</strong>
+        <span>Directrix y = {clean(-p)}</span>
         <span>P = ({clean(pointX)}, {clean(pointY)})</span>
         <span>PF = {clean(focusDistance)}</span>
         <span>PQ = {clean(directrixDistance)}</span>
@@ -235,6 +242,10 @@ function EllipseDiagram({ mode }: { mode: DiagramMode }) {
   const distanceTwo = Math.hypot(point.x - c, point.y);
   const graphX = (x: number) => 320 + x * 47;
   const graphY = (y: number) => 180 - y * 45;
+  const axes = {
+    x: { values: unitRange(-5, 5), labels: [-4, -2, 2, 4], project: graphX },
+    y: { values: unitRange(-3, 3), labels: [-2, 2], project: graphY },
+  };
   const ellipsePath = useMemo(() => {
     const points = Array.from({ length: 121 }, (_, index) => {
       const t = (index / 120) * Math.PI * 2;
@@ -273,6 +284,7 @@ function EllipseDiagram({ mode }: { mode: DiagramMode }) {
         <desc id={`${id}-desc`}>
           Point P moves around an ellipse with semiaxes a and b. Its distances to foci F1 and F2 always add to 2a.
         </desc>
+        <CoordinateGrid {...axes} />
         <line className="diagram-grid diagram-axis" x1="44" x2="596" y1={graphY(0)} y2={graphY(0)} />
         <line className="diagram-grid diagram-axis" x1={graphX(0)} x2={graphX(0)} y1="24" y2="336" />
         <path className="conic-region" d={ellipsePath} />
@@ -322,6 +334,7 @@ function EllipseDiagram({ mode }: { mode: DiagramMode }) {
         />
         <text className="conic-axis-label" x={graphX(a) - 18} y={graphY(0) - 12}>a</text>
         <text className="conic-axis-label" x={graphX(0) + 12} y={graphY(b) + 8}>b</text>
+        <GridLabels {...axes} gap={28} />
         {tooltip ? <SvgTooltip {...tooltip} /> : null}
       </svg>
       <output className="diagram-readout diagram-readout--conic" aria-live="polite">

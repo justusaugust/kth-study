@@ -18,17 +18,14 @@ test("the home search icon is optically centred inside its input", async ({
   }
 });
 
-test("the full search taxonomy stays on one desktop row", async ({ page }) => {
+test("the full search taxonomy stays reachable without desktop overflow", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/search?type=example");
 
   const filters = page.locator(".search-page .search-filter-row button");
-  await expect(filters).toHaveCount(8);
-  const tops = await filters.evaluateAll((buttons) =>
-    buttons.map((button) => Math.round(button.getBoundingClientRect().top)),
-  );
-
-  expect(new Set(tops).size).toBe(1);
+  await expect(filters).toHaveCount(11);
+  for (const filter of await filters.all()) await expect(filter).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
 });
 
 test("numbered section markers stay vertically centred with their headings", async ({
@@ -69,6 +66,7 @@ test("Fig. 09 is adjustable directly in the visual atlas", async ({ page }) => {
     .getByRole("link", { name: "How coefficients move a parabola" })
     .locator("xpath=ancestor::li");
   await expect(result.getByText("Fig. 09")).toBeVisible();
+  await result.getByText("Explore coefficients", { exact: true }).click();
   const coefficientA = result.getByRole("slider", { name: "Coefficient a" });
 
   await expect(coefficientA).toHaveValue("1");
@@ -119,6 +117,7 @@ test("visual search reaches the explainer, concept, and course", async ({
     page.getByRole("heading", { name: "How coefficients move a parabola" }),
   ).toBeVisible();
 
+  await page.getByText("Explore coefficients", { exact: true }).click();
   const coefficientA = page.getByRole("slider", { name: "Coefficient a" });
   await expect(coefficientA).toHaveValue("1");
   await coefficientA.focus();
@@ -136,12 +135,14 @@ test("visual search reaches the explainer, concept, and course", async ({
 test("visual atlas filters preserve figure identity and semantic focus labels", async ({
   page,
 }) => {
+  const atlas = await (await page.request.get("/api/visuals")).json();
+  const total = atlas.items.length;
+  const mathTotal = atlas.items.filter((item: { courseCode: string }) => item.courseCode === "SF1690").length;
   await page.goto("/visuals");
   await expect(page.locator(".atlas-register > li")).toHaveCount(10);
-  await page.getByRole("button", { name: "Show 10 more" }).click();
-  await page.getByRole("button", { name: "Show 10 more" }).click();
-  await expect(page.locator(".atlas-register > li")).toHaveCount(24);
-  await expect(page.locator(".atlas-count")).toHaveText("24 visuals");
+  for (let shown = 10; shown < total; shown += 10) await page.getByRole("button", { name: "Show 10 more" }).click();
+  await expect(page.locator(".atlas-register > li")).toHaveCount(total);
+  await expect(page.locator(".atlas-count")).toHaveText(`${total} visuals`);
   const toolbar = await page.locator(".atlas-toolbar").boundingBox();
   expect(toolbar).not.toBeNull();
   expect(Math.round(toolbar!.height)).toBeLessThanOrEqual(104);
@@ -164,8 +165,8 @@ test("visual atlas filters preserve figure identity and semantic focus labels", 
     .getByRole("option", { name: /SF1690.*Basic Course in Mathematics/ })
     .click();
   await expect(page.locator(".atlas-register > li")).toHaveCount(10);
-  await page.getByRole("button", { name: "Show 10 more" }).click();
-  await expect(page.locator(".atlas-register > li")).toHaveCount(13);
+  for (let shown = 10; shown < mathTotal; shown += 10) await page.getByRole("button", { name: "Show 10 more" }).click();
+  await expect(page.locator(".atlas-register > li")).toHaveCount(mathTotal);
   await expect(page.locator(".atlas-register > li").first()).toContainText("Fig. 05");
 
   const focus = page.getByRole("img", { name: /Focus F₁ at/ }).first();
@@ -203,7 +204,7 @@ test("today's IE1204 lecture connects Boolean forms to the assigned work", async
       name: "Lecture 5 — truth tables and Boolean algebra",
     }),
   ).toBeVisible();
-  await expect(page.locator("details.lecture-concept")).toHaveCount(2);
+  await expect(page.locator("section.lecture-concept")).toHaveCount(2);
   await expect(
     page.getByRole("link", { name: "Open Exercise 2 submission in Canvas" }),
   ).toBeVisible();
@@ -211,10 +212,9 @@ test("today's IE1204 lecture connects Boolean forms to the assigned work", async
     page.getByRole("link", { name: "Download Exercise 2 worksheet" }),
   ).toBeVisible();
 
-  const booleanSection = page.locator("details.lecture-concept").filter({
+  const booleanSection = page.locator("section.lecture-concept").filter({
     hasText: "Boolean equations and algebra",
   });
-  await booleanSection.locator("summary").click();
   await booleanSection.getByRole("button", { name: /A 1, B 1, output 1/i }).click();
   await expect(page.locator(".boolean-equations__result strong")).toHaveText("A ⊕ B");
 
@@ -234,7 +234,7 @@ test("mobile navigation stays available without horizontal overflow", async ({
   await page.goto("/visuals/quadratic-coefficients");
 
   await expect(page.getByRole("navigation", { name: "Primary" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Visual atlas" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Practice" })).toBeVisible();
   await expect(page.getByRole("link", { name: "SF1690" }).first()).toBeVisible();
 
   const search = page.getByRole("button", { name: "Search" });
@@ -358,12 +358,12 @@ test("Lecture 2 conic constructions remain mathematically interactive", async ({
   ).toBe(0);
 });
 
-test("lecture archive entries open a dedicated interactive lecture page", async ({ page }) => {
+test("course outline entries open the core lesson with in-context practice", async ({ page }) => {
   await page.goto("/courses/sf1690");
 
-  const lectureLink = page.getByRole("link", {
-    name: "Lecture 2 — lines, circles, and conic sections",
-  }).first();
+  const week = page.locator("#ledger-week-35 details");
+  if (await week.getAttribute("open") === null) await week.locator(":scope > summary").click();
+  const lectureLink = page.locator('a[href="/courses/sf1690/lectures/2026-08-26-02"]').first();
   await expect(lectureLink).toHaveAttribute(
     "href",
     "/courses/sf1690/lectures/2026-08-26-02",
@@ -377,28 +377,25 @@ test("lecture archive entries open a dedicated interactive lecture page", async 
       name: "Lecture 2 — lines, circles, and conic sections",
     }),
   ).toBeVisible();
-  const conceptSections = page.locator("details.lecture-concept");
+  const conceptSections = page.locator("section.lecture-concept");
   await expect(conceptSections).toHaveCount(4);
-  await expect(conceptSections.first()).toHaveAttribute("open", "");
+  await expect(conceptSections.first()).toBeVisible();
 
   const linesSection = conceptSections.filter({ hasText: "Lines and slope" });
-  await linesSection.locator("summary").click();
-  await expect(linesSection).not.toHaveAttribute("open", "");
-  await linesSection.locator("summary").click();
-  await expect(linesSection).toHaveAttribute("open", "");
+  await expect(linesSection.locator(".lecture-concept__body")).toBeVisible();
 
   const parabolaSection = conceptSections.filter({ hasText: "Parabolas and graph shifts" });
-  await parabolaSection.locator("summary").click();
   await expect(page.getByRole("slider", { name: "Focus distance p" })).toBeVisible();
   await expect(
-    parabolaSection.getByRole("link", { name: "Open the standalone concept guide" }),
+    parabolaSection.getByRole("link", { name: "Topic reference and related lessons" }),
   ).toHaveAttribute("href", "/courses/sf1690/concepts/parabolas-and-shifts");
 
   const firstPractice = page.locator(".practice-prompt").first();
   await firstPractice.getByRole("button", { name: "Write your reasoning" }).click();
   await firstPractice.getByRole("textbox", { name: "Work it out" }).fill("My attempt");
   await firstPractice.getByRole("button", { name: "Show a hint" }).click();
-  await expect(firstPractice.getByText("Hint 01")).toBeVisible();
+  await expect(firstPractice.locator(".practice-prompt__hints")).toBeVisible();
+  await firstPractice.getByLabel("Revisit this question").check();
   await firstPractice.getByRole("button", { name: "Reveal solution" }).click();
   await expect(firstPractice.locator(".practice-prompt__solution")).toBeVisible();
 
@@ -407,7 +404,7 @@ test("lecture archive entries open a dedicated interactive lecture page", async 
 
   await page.setViewportSize({ width: 375, height: 812 });
   await page.reload();
-  await page.locator("details.lecture-concept").filter({ hasText: "Parabolas and graph shifts" }).locator("summary").click();
+  await expect(page.locator(".practice-prompt").first().getByLabel("Revisit this question")).toBeChecked();
   await expect(page.getByRole("slider", { name: "Focus distance p" })).toBeVisible();
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -420,7 +417,8 @@ test("the SF1690 course spine and Lecture 1 study material stay complete", async
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/courses/sf1690");
 
-  await expect(page.locator(".course-page .entity-list a")).toHaveText([
+  await page.locator("details.course-reference > summary").click();
+  await expect(page.locator(".course-topic-index a")).toContainText([
     "Real numbers, inequalities, and intervals",
     "Absolute value",
     "Cartesian coordinates, distance, and circles",
@@ -490,7 +488,7 @@ test("the 27 August lectures expose their source-bounded interactive visuals", a
   await expect(page.getByRole("heading", { name: "Lecture overview" })).toBeVisible();
   await page.getByRole("button", { name: "Bit 1 with weight 4 is 0" }).click();
   await expect(page.getByText("−3₁₀")).toBeVisible();
-  await page.locator("details.lecture-concept").filter({ hasText: "Logic gates and truth tables" }).locator("summary").click();
+  await expect(page.locator("section.lecture-concept").filter({ hasText: "Logic gates and truth tables" })).toBeVisible();
   await page.getByRole("tab", { name: "XOR" }).click();
   await page.getByRole("button", { name: "Input B is 0" }).click();
   await expect(page.getByText("Y = 0", { exact: true })).toBeVisible();
@@ -504,10 +502,10 @@ test("the 27 August lectures expose their source-bounded interactive visuals", a
   await expect(page.getByRole("heading", { name: "Lecture overview" })).toBeVisible();
   await expect(page.getByText(/reconstruct/i)).toHaveCount(0);
   await expect(page.getByText(/authenticated Canvas/i)).toHaveCount(0);
-  await page.locator("details.lecture-concept").filter({ hasText: "Function graphs and the vertical-line test" }).locator("summary").click();
+  await expect(page.locator("section.lecture-concept").filter({ hasText: "Function graphs and the vertical-line test" })).toBeVisible();
   await page.getByRole("tab", { name: "Circle", exact: true }).click();
   await expect(
-    page.getByText("Two intersections — not a function of x"),
+    page.getByText("Two intersections at this input"),
   ).toBeVisible();
   const testLine = page.getByRole("slider", { name: "Test line x" });
   await testLine.press("End");
@@ -524,9 +522,9 @@ test("the SF1690 dossier stays honest and composed across breakpoints and themes
     await expect(
       page.getByRole("heading", { name: "Basic Course in Mathematics" }),
     ).toBeVisible();
-    await expect(page.getByText("6 ECTS").first()).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Course map" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Week ledger" })).toBeVisible();
+    await expect(page.locator(".course-facts > summary")).toContainText("6 ECTS");
+    await expect(page.getByRole("heading", { name: "Course map" })).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: "Study outline" })).toBeVisible();
     await page.locator("#ledger-week-35 summary").click();
     await expect(page.getByText("29, 40, 42, 44, 45")).toBeVisible();
     await expect(page.locator('input[type="checkbox"]')).toHaveCount(0);
@@ -566,28 +564,19 @@ test("the two new course dossiers and lecture-one apparatus work across breakpoi
 
     await page.goto("/courses/ie1204");
     await expect(page.getByRole("heading", { name: "Digital Design" })).toBeVisible();
-    await expect(page.getByText("7.5 ECTS").first()).toBeVisible();
-    await expect(
-      page.getByRole("heading", {
-        name: "Lecture 1 — digital abstraction and number systems",
-      }),
-    ).toBeVisible();
-    if (width === 375) {
-      await expect(page.getByRole("img", { name: /eight ceramic bit tiles/i })).toHaveCount(0);
-    } else {
-      await expect(page.getByRole("img", { name: /eight ceramic bit tiles/i })).toBeVisible();
-    }
+    await expect(page.locator(".course-facts > summary")).toContainText("7.5 ECTS");
+    await expect(page.getByRole("heading", { name: "Study outline" })).toBeVisible();
+    const firstWeek = page.locator("#ledger-week-35 details");
+    if (await firstWeek.getAttribute("open") === null) await firstWeek.locator(":scope > summary").click();
+    await expect(page.locator('a[href="/courses/ie1204/lectures/2026-08-25-01"]').first()).toBeVisible();
+    await expect(page.locator(".course-artifact")).toHaveCount(0);
 
     await page.goto("/courses/ii1308");
     await expect(page.getByRole("heading", { name: "Introduction to Programming" })).toBeVisible();
-    await expect(page.getByText("1.5 ECTS").first()).toBeVisible();
+    await expect(page.locator(".course-facts > summary")).toContainText("1.5 ECTS");
     await page.locator(".week-ledger__week").filter({ hasText: "Module A quiz" }).locator("summary").click();
-    await expect(page.getByText("Module A quiz")).toBeVisible();
-    if (width === 375) {
-      await expect(page.getByRole("img", { name: /blank name tag/i })).toHaveCount(0);
-    } else {
-      await expect(page.getByRole("img", { name: /blank name tag/i })).toBeVisible();
-    }
+    await expect(page.getByRole("heading", { name: "Module A quiz", exact: true })).toBeVisible();
+    await expect(page.locator(".course-artifact")).toHaveCount(0);
 
     expect(
       await page.evaluate(
@@ -618,4 +607,30 @@ test("the two new course dossiers and lecture-one apparatus work across breakpoi
   await page.goto("/courses/ii1308/concepts/variables-values-and-types");
   await page.getByRole("button", { name: 'x = "KTH"' }).click();
   await expect(page.locator(".binding-map__value strong")).toHaveText('"KTH"');
+});
+
+test("mini-exam study packs connect mapped lectures without mobile overflow", async ({ page }) => {
+  await page.goto("/courses/sf1690");
+  const week = page.locator("#ledger-week-37 details");
+  if (await week.getAttribute("open") === null) await week.locator(":scope > summary").click();
+  await page.locator('a[href="/practice?course=sf1690&work=mini-exam-01"]').click();
+  await expect(page.getByRole("heading", { name: "Mini-exam · Lectures 1–4", exact: true })).toBeVisible();
+  await expect(page.locator('main a[href*="/lectures/"]')).toHaveCount(4);
+  await expect(page.locator(".practice-prompt")).toHaveCount(5);
+  for (const width of [375, 427, 768]) {
+    await page.setViewportSize({ width, height: 812 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
+  }
+});
+
+test("source rows include context and action in one restrained interaction", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/courses/sf1690/lectures/2026-09-07-05");
+  const source = page.locator('.source-link-list a[href="https://canvas.kth.se/courses/65013"]');
+  await expect(source).toContainText("Saved HT26 course timeline");
+  await expect(source).toContainText("Sign-in required");
+  await expect(source).toContainText("Checked");
+  await source.focus();
+  await expect(source).toBeFocused();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
 });

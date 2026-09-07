@@ -1,5 +1,6 @@
 import { SEARCH_FILTERS, type UserSearchType } from "../searchModel";
 import { StudyIcon, type StudyIconKind } from "./StudyMark";
+import { AtlasSelect } from "./AtlasSelect";
 
 interface SearchFiltersProps {
   activeType: UserSearchType | null;
@@ -13,6 +14,12 @@ export function SearchFilters({
   className = "",
 }: SearchFiltersProps) {
   return (
+    <>
+    <div className="search-filter-picker">
+      <AtlasSelect label="Search in" value={activeType ?? ""}
+        options={SEARCH_FILTERS.map(({ label, type }) => ({ label, value: type ?? "" }))}
+        onChange={(value) => onSelect((value || null) as UserSearchType | null)} />
+    </div>
     <div className={`search-filter-row ${className}`.trim()} aria-label="Search filters">
       {SEARCH_FILTERS.map(({ label, type }) => (
         <button
@@ -26,5 +33,6 @@ export function SearchFilters({
         </button>
       ))}
     </div>
+    </>
   );
 }

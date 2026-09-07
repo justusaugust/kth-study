@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import type { Course } from "../../../domain";
 import { CourseArtifactFigure, CoursePassport } from "./CoursePassport";
@@ -39,6 +39,8 @@ describe("CoursePassport", () => {
     expect(
       screen.getByRole("heading", { name: "Basic Course in Mathematics" }),
     ).toBeVisible();
+    expect(screen.getByText("English")).not.toBeVisible();
+    fireEvent.click(screen.getByText("6 ECTS · P1 · Course details"));
     expect(
       screen.getByText(
         (_, element) =>

@@ -2,6 +2,9 @@
 id: 'question:sf1690:absolute-value-distance'
 courseId: 'course:sf1690'
 slug: absolute-value-distance
+hints:
+  - 'Read $|x-3|$ as the distance from a centre on the number line. Which centre and distance bound are given?'
+  - 'Rewrite the condition as a double inequality before isolating x. Does the strict inequality include either endpoint?'
 title: Read absolute value as distance
 conceptIds:
   - 'concept:sf1690:absolute-value'

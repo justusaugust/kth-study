@@ -4,6 +4,19 @@ import { loadCorpus } from "./repository";
 import { buildSearchIndex, recentCorpus, searchCorpus } from "./search";
 
 describe("searchCorpus", () => {
+  it("finds dated work, assessments and lab sessions with their existing destinations", async () => {
+    const corpus = await loadCorpus(path.resolve("."));
+    const index = buildSearchIndex(corpus);
+    const miniExams = searchCorpus(index, corpus, "mini exam", { entityTypes: ["coursework"] });
+    expect(searchCorpus(index, corpus, "mini exam")[0]?.entityType).toBe("coursework");
+    expect(miniExams[0]?.title).toMatch(/mini.exam/i);
+    expect(miniExams[0]?.url).toMatch(/\/courses\/sf1690#coursework-/);
+    const labs = searchCorpus(index, corpus, "laboratory", { entityTypes: ["session"] });
+    expect(labs.some((hit) => hit.url.includes("/labs/"))).toBe(true);
+    const assessments = searchCorpus(index, corpus, "TEN1", { entityTypes: ["assessment"] });
+    expect(assessments.some((hit) => hit.url.endsWith("#assessment-ten1"))).toBe(true);
+    expect(searchCorpus(index, corpus, "quadratic", { entityTypes: ["explainer"] }).every((hit) => hit.entityType === "explainer")).toBe(true);
+  });
   it("keeps recent example summaries complete and safe for math rendering", async () => {
     const corpus = await loadCorpus(path.resolve("."));
     const hits = recentCorpus(corpus, { entityTypes: ["example"] }, 5);

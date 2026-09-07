@@ -3,6 +3,9 @@ id: 'question:sf1690:square-root-domain'
 courseId: 'course:sf1690'
 slug: square-root-domain
 title: Find a square-root domain
+hints:
+  - 'A real square root needs a nonnegative radicand. Solve $4-x^2\ge0$ first.'
+  - 'For the range, find the smallest and largest values of $4-x^2$ on that domain, then take their square roots.'
 conceptIds:
   - 'concept:sf1690:functions-domain-and-range'
 answer: >-

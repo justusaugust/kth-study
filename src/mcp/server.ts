@@ -32,6 +32,9 @@ const entityTypes = z.enum([
   "course",
   "outcome",
   "lecture",
+  "session",
+  "coursework",
+  "assessment",
   "concept",
   "definition",
   "explainer",
@@ -55,7 +58,14 @@ const courseDates = z.object({
   course: CourseSchema,
   assessments: z.array(AssessmentSchema),
   upcomingSessions: z.array(CourseSessionSchema),
-  upcomingCoursework: z.array(CourseworkSchema),
+  upcomingCoursework: z.array(CourseworkSchema.extend({
+    url: z.string(),
+    practiceUrl: z.string(),
+    lectures: z.array(linkedEntity),
+    missingLectureNotes: z.array(z.string()),
+  })),
+  undatedSessions: z.array(CourseSessionSchema),
+  undatedCoursework: z.array(CourseworkSchema),
 });
 const readOnly = {
   readOnlyHint: true,
@@ -82,7 +92,7 @@ export function createKthStudyServer(
     {
       name: "kth-study",
       title: "KTH Study",
-      version: "0.2.1",
+      version: "0.2.2",
       icons: KTH_STUDY_ICONS,
     },
     {
@@ -152,12 +162,13 @@ export function createKthStudyServer(
     "get_course_dates",
     {
       title: "Get KTH course dates",
-      description: "Use this first for questions about KTH exams, deadlines, labs, lectures, or what happens next. It returns stored course evidence and its last-checked status; use web search only when the requested date is missing or needs a live recheck.",
+      description: "Use this first for KTH exams, deadlines, labs, lecture dates, or what happens next. Returns stored evidence, last-checked dates, and upcoming coursework study-pack links with covered lectures and missing-note warnings. Practice is topic-matched, not guaranteed exam coverage. Use official sources for missing dates or live rechecks.",
       inputSchema: z.object({
         courseCode: z.string().regex(/^[A-Za-z]{2}\d{4}$/).optional(),
       }),
       outputSchema: z.object({
-        refreshedAt: z.string().datetime(),
+        corpusLoadedAt: z.string().datetime(),
+        asOfDate: z.string().date(),
         courses: z.array(courseDates),
       }),
       annotations: readOnly,
@@ -166,7 +177,7 @@ export function createKthStudyServer(
   );
 
   for (const [name, title, description] of [
-    ["explain_concept", "Explain concept", "Retrieve a concept, its course context, and linked interactive visuals. Return a text explanation by default; render a visual only when the user asks to see or interact with one, or when a visual is clearly useful."],
+    ["explain_concept", "Explain concept", "Retrieve a concept, its course context, lecture-note links, and available interactive visuals. Use returned lecture links when the user wants to study further. Return a text explanation by default; render a visual only when requested or clearly useful."],
     ["show_prerequisites", "Show prerequisites", "Use this to retrieve explicit prerequisite relationships for a stable entity ID."],
     ["open_in_study_hub", "Open in Study Hub", "Use this to retrieve the Study Hub URL for a stable entity ID."],
   ] as const) {
@@ -177,6 +188,7 @@ export function createKthStudyServer(
           concept: ConceptSchema,
           course: CourseSchema.optional(),
           visuals: z.array(linkedEntity),
+          lectures: z.array(linkedEntity),
         })
       : name === "show_prerequisites"
         ? z.object({ id: z.string(), prerequisites: z.array(linkedEntity) })
