@@ -229,7 +229,7 @@ function CmosGates() {
             <text className="cmos-output-label" x="496" y="186">Y={output}</text>
             <rect className="diagram-hotspot-hit" x="478" y="160" width="70" height="36" rx="10" />
           </g>
-          {tooltip ? <SvgTooltip {...tooltip} /> : null}
+          <SvgTooltip data={tooltip} />
         </svg>
       </div>
       <div className="cmos-legend" aria-label="CMOS network legend">

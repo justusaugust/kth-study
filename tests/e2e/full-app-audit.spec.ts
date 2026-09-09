@@ -65,11 +65,15 @@ test("every current Study Hub route renders without runtime or layout failures",
       failedImages: [...document.images]
         .filter((image) => image.complete && image.naturalWidth === 0)
         .map((image) => image.currentSrc || image.src),
+      unstyledSliders: [...document.querySelectorAll<HTMLInputElement>('input[type="range"]')]
+        .filter((input) => !input.classList.contains("liquid-range") || !input.style.getPropertyValue("--range-progress") || getComputedStyle(input).appearance !== "none")
+        .map((input) => input.getAttribute("aria-label") || input.id || input.outerHTML),
     }));
 
     expect(layout.overflow, route).toBe(0);
     expect(layout.emptyLinks, route).toEqual([]);
     expect(layout.failedImages, route).toEqual([]);
+    expect(layout.unstyledSliders, `Liquid slider styling missing on ${route}`).toEqual([]);
   }
 
   expect(pageErrors).toEqual([]);

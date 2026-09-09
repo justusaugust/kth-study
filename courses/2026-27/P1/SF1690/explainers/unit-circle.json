@@ -1,0 +1,27 @@
+{
+  "id": "explainer:sf1690:unit-circle",
+  "atlasOrder": 26,
+  "kind": "systems-diagram",
+  "variant": "unit-circle",
+  "courseId": "course:sf1690",
+  "slug": "unit-circle",
+  "title": "From the unit circle to sine and cosine",
+  "caption": "Move the angle and follow its horizontal and vertical projections onto the trigonometric graphs.",
+  "accessibleSummary": "An angle control links a point on a gridded unit circle to sine and cosine curves, with degrees, radians, and a tangent readout that marks undefined values.",
+  "conceptIds": [
+    "concept:sf1690:radians-and-unit-circle"
+  ],
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26"
+  ],
+  "evidenceStatus": "curriculum",
+  "lastChecked": "2026-09-09",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:sf1690:unit-circle",
+      "to": "concept:sf1690:radians-and-unit-circle"
+    }
+  ]
+}

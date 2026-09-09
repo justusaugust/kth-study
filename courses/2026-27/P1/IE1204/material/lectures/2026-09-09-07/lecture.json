@@ -1,0 +1,31 @@
+{
+  "courseId": "course:ie1204",
+  "sourceIds": [
+    "source:ie1204:lecture-7-karnaugh-maps"
+  ],
+  "lastChecked": "2026-09-09",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-09-07",
+      "to": "concept:ie1204:karnaugh-grouping"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-09-07",
+      "to": "concept:ie1204:karnaugh-pos-and-dont-cares"
+    }
+  ],
+  "id": "lecture:ie1204:2026-09-09-07",
+  "slug": "2026-09-09-07",
+  "title": "Lecture 7 — Karnaugh maps",
+  "date": "2026-09-09",
+  "summary": "Use Gray-code adjacency to remove changing variables, cover a function with valid groups, and choose SOP, POS or useful don't-care assignments.",
+  "conceptIds": [
+    "concept:ie1204:karnaugh-grouping",
+    "concept:ie1204:karnaugh-pos-and-dont-cares"
+  ],
+  "sessionId": "session:ie1204:lecture-07",
+  "body": "This is a saved-deck reconstruction for the scheduled 9 September lecture. The retained Lecture 7 deck was retrieved on 30 August; newer Canvas material and actual classroom coverage have not been verified. No attendance or completed work is inferred.\n\nA Karnaugh map is the same truth table rearranged so that neighbouring cells differ in one input. The gain is visual: a pair removes one variable; a four-cell group removes two. Start with the exact input order, place each output in its matching cell, then simplify without changing any specified output.\n\nThe map below checks one selected group. To obtain the whole function, cover every required 1, remove redundant groups only when coverage survives, and verify the resulting expression against every specified truth-table row. Four-variable maps use the same method with Gray code on both axes."
+}

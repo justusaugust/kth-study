@@ -206,7 +206,7 @@ function ParabolaDiagram({ mode }: { mode: DiagramMode }) {
           onClear={() => setTooltip(undefined)}
         />
         <GridLabels {...axes} gap={28} />
-        {tooltip ? <SvgTooltip {...tooltip} /> : null}
+        <SvgTooltip data={tooltip} />
       </svg>
       <output className="diagram-readout diagram-readout--conic" aria-live="polite">
         <strong>x² = 4py</strong>
@@ -335,7 +335,7 @@ function EllipseDiagram({ mode }: { mode: DiagramMode }) {
         <text className="conic-axis-label" x={graphX(a) - 18} y={graphY(0) - 12}>a</text>
         <text className="conic-axis-label" x={graphX(0) + 12} y={graphY(b) + 8}>b</text>
         <GridLabels {...axes} gap={28} />
-        {tooltip ? <SvgTooltip {...tooltip} /> : null}
+        <SvgTooltip data={tooltip} />
       </svg>
       <output className="diagram-readout diagram-readout--conic" aria-live="polite">
         <strong>PF₁ + PF₂ = {clean(distanceOne + distanceTwo)} = 2a</strong>

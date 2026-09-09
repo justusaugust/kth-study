@@ -134,10 +134,10 @@ describe("KTH Study MCP tools", () => {
     });
     expect(result._meta).toMatchObject({
       ui: {
-        resourceUri: "ui://widget/kth-study-explainer-0.2.2.html",
+        resourceUri: "ui://widget/kth-study-explainer-0.2.3.html",
         visibility: ["model"],
       },
-      "openai/outputTemplate": "ui://widget/kth-study-explainer-0.2.2.html",
+      "openai/outputTemplate": "ui://widget/kth-study-explainer-0.2.3.html",
     });
   });
 

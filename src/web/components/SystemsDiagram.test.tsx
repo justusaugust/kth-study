@@ -102,6 +102,10 @@ describe("SystemsDiagram", () => {
     const tooltip = document.querySelector(".diagram-hover-label.is-visible");
     expect(tooltip).toBeInTheDocument();
     expect(tooltip?.parentElement?.lastElementChild).toBe(tooltip);
+    fireEvent.blur(pmosA);
+    expect(document.querySelector(".diagram-hover-label")).toBe(tooltip);
+    expect(tooltip).not.toHaveClass("is-visible");
+    expect(tooltip).toHaveTextContent("off now · on when A = 0");
     fireEvent.click(screen.getByRole("button", { name: "Input B is 0" }));
     expect(screen.getByText("NAND: Y = 0")).toBeVisible();
     expect(screen.getByText("Pull-down network conducts")).toBeVisible();

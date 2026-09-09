@@ -1,0 +1,10 @@
+{
+  "id": "source:sf1690:september-9-timetable",
+  "courseId": "course:sf1690",
+  "title": "SF1690 — 9 September timetable snapshot",
+  "kind": "schedule",
+  "url": "https://cloud.timeedit.net/kth/web/public01/s.html?enddate=20261023&object=SF1690-12382%20%28HT26%29&p=0.m%2C2.w&sid=10&startdate=20260824",
+  "locator": "TCOMK1 subscribed TimeEdit calendar read 9 September: SF1690 lecture 08:00–10:00 Q26 and exercise 10:00–12:00 Q15. Subscription is not an attendance record or a direct TimeEdit refresh; topic mapping uses the saved course plan.",
+  "lastChecked": "2026-09-09",
+  "confidence": "supported"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "lecture:sf1690:2026-09-09-06",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-09-06",
+  "title": "Lecture 6 — trigonometric functions",
+  "date": "2026-09-09",
+  "sessionId": "session:sf1690:lecture-06",
+  "summary": "Define sine and cosine using the unit circle, work in radians, read periodic graphs, and find every solution of a trigonometric equation.",
+  "conceptIds": [
+    "concept:sf1690:radians-and-unit-circle",
+    "concept:sf1690:trigonometric-graphs-and-equations"
+  ],
+  "body": "The subscribed TCOMK timetable lists today's SF1690 lecture, and the saved HT26 plan assigns Calculus P7 to Lecture 6. This guide reconstructs that planned topic; classroom coverage and newer Canvas material have not been verified.\n\nStart with an angle on the unit circle. Its point has coordinates $(\\cos\\theta,\\sin\\theta)$, so geometry gives signs, special values and identities. Following the point through a full turn produces the periodic sine and cosine graphs.\n\nRadian measure is the default in formulas and graphs below. The interactive angle control also shows degrees to make the conversion explicit. Always check your calculator's angle mode.\n\nContinue with Exercise session 6: Calculus P7, page 57, exercises 7, 9, 11, 12, 15, 16, 18, 22, 24, 28, 30, 51, 52 and 53. These are the saved plan's ninth-edition references, not reproduced textbook questions.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:september-9-timetable"
+  ],
+  "lastChecked": "2026-09-09",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-09-06",
+      "to": "concept:sf1690:radians-and-unit-circle"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-09-06",
+      "to": "concept:sf1690:trigonometric-graphs-and-equations"
+    }
+  ]
+}

@@ -296,7 +296,7 @@ function VerticalLineTest({ mode }: { mode: DiagramMode }) {
               </g>
             );
           })}
-          {tooltip ? <SvgTooltip {...tooltip} /> : null}
+          <SvgTooltip data={tooltip} />
         </svg>
       </div>
       <output className="function-symmetry-readout" aria-live="polite">
@@ -445,7 +445,7 @@ function SymmetryExplorer({ mode }: { mode: DiagramMode }) {
             </g>
             );
           })}
-          {tooltip ? <SvgTooltip {...tooltip} /> : null}
+          <SvgTooltip data={tooltip} />
         </svg>
       </div>
       <output className="function-symmetry-readout" aria-live="polite">

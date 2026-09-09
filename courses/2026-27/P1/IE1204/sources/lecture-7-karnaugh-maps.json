@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:lecture-7-karnaugh-maps",
+  "courseId": "course:ie1204",
+  "title": "Lecture 7 — Karnaugh maps",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63848/files/10564149",
+  "locator": "Saved Le7-en fixed.pdf deck, retrieved 30 August: slides 12–37 Gray code, adjacency and grouping; 44–69 four-variable maps and SOP/POS; 70–75 don't cares. Authored reconstruction checked 9 September; newer Canvas or classroom coverage unverified.",
+  "lastChecked": "2026-08-30",
+  "confidence": "supported"
+}

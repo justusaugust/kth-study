@@ -44,7 +44,7 @@
       "id": "coursework:sf1690:exercise-06", "courseId": "course:sf1690", "slug": "exercise-06", "kind": "exercise", "sequence": 12,
       "title": "Exercise session 6", "week": 37, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 6.",
       "materials": [{ "title": "Calculus", "section": "P7", "page": "57", "exercises": "7, 9, 11, 12, 15, 16, 18, 22, 24, 28, 30, 51, 52, 53" }],
-      "sessionIds": ["session:sf1690:exercise-06"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-06"], "lectureIds": ["lecture:sf1690:2026-09-09-06"], "conceptIds": ["concept:sf1690:radians-and-unit-circle", "concept:sf1690:trigonometric-graphs-and-equations"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {

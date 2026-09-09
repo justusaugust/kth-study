@@ -1,0 +1,27 @@
+{
+  "courseId": "course:ie1204",
+  "sourceIds": [
+    "source:ie1204:lecture-7-karnaugh-maps"
+  ],
+  "lastChecked": "2026-09-09",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "visualises",
+      "from": "explainer:ie1204:karnaugh-map",
+      "to": "concept:ie1204:karnaugh-grouping"
+    }
+  ],
+  "id": "explainer:ie1204:karnaugh-map",
+  "atlasOrder": 25,
+  "slug": "karnaugh-map",
+  "conceptIds": [
+    "concept:ie1204:karnaugh-grouping"
+  ],
+  "title": "Find a Karnaugh group",
+  "caption": "Select cells, test a rectangle, and see which literals survive. The map wraps at its edges.",
+  "accessibleSummary": "A three-variable Karnaugh map with Gray-code column headings, eight selectable cells, group feedback, a wrap-around example and a clear button.",
+  "evidenceStatus": "lecture",
+  "kind": "systems-diagram",
+  "variant": "karnaugh-map"
+}

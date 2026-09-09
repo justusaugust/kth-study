@@ -1,0 +1,7 @@
+.trig-plots { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.trig-stage { min-width: 0; padding: 1rem; border-radius: var(--radius-control-soft); background: var(--sheet-inset); }
+.trig-stage svg { display: block; width: 100%; height: auto; }
+.trig-stage:first-child svg { max-width: 20rem; margin-inline: auto; }
+.trig-stage p { margin: .5rem 0 0; color: var(--ink-secondary); font-size: .8rem; }
+.trig-readout { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-block: 1rem; font-variant-numeric: tabular-nums; }
+.trig-diagram figcaption { color: var(--ink-secondary); font-size: .875rem; }

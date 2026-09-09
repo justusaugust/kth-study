@@ -43,6 +43,10 @@
     "outcome:ie1204:design-digital-systems"
   ],
   "conceptIds": [
+    "concept:ie1204:karnaugh-grouping",
+    "concept:ie1204:karnaugh-pos-and-dont-cares",
+    "concept:ie1204:demorgan-and-universal-gates",
+    "concept:ie1204:unknown-and-high-impedance",
     "concept:ie1204:digital-abstraction",
     "concept:ie1204:positional-number-systems",
     "concept:ie1204:base-conversion-and-range",
@@ -56,6 +60,8 @@
     "concept:ie1204:cmos-power-consumption"
   ],
   "sourceIds": [
+    "source:ie1204:lecture-7-karnaugh-maps",
+    "source:ie1204:lecture-6-gate-implementations",
     "source:ie1204:official-course-page",
     "source:ie1204:lecture-1-introduction",
     "source:ie1204:lecture-1-digital-design",

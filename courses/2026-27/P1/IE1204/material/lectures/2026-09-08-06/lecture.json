@@ -1,0 +1,38 @@
+{
+  "id": "lecture:ie1204:2026-09-08-06",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-08-06",
+  "title": "Lecture 6 — De Morgan, universal gates, and CMOS",
+  "date": "2026-09-08",
+  "summary": "Turn Boolean equations into equivalent NAND/NOR circuits, connect logic to CMOS conduction paths, and distinguish unknown values from high impedance.",
+  "conceptIds": [
+    "concept:ie1204:demorgan-and-universal-gates",
+    "concept:ie1204:cmos-transistor-networks",
+    "concept:ie1204:unknown-and-high-impedance"
+  ],
+  "sessionId": "session:ie1204:lecture-06",
+  "body": "This study guide follows the saved Lecture 6 deck and its scheduled date, not a transcript of today's classroom coverage. Canvas requires sign-in, so newer material has not been verified.\n\nStart with a Boolean function, preserve its truth table while simplifying, and choose an implementation. De Morgan's laws turn output inversion into input inversions plus a change of gate. NAND and NOR are each sufficient to build any Boolean function.\n\n## From equations to a schematic\n\nRead inputs on the left and outputs on the right. A T-junction or crossing with a dot connects wires; crossing wires without a dot do not. Shared intermediate expressions can reduce gate count, but adding logic levels can increase delay: fewer written literals alone does not prove a faster circuit.\n\n## Lab 1 preparation, not a lab attendance record\n\nSlides 47–53 introduce a workflow from an assigned output word to a truth table, Boolean equation, simplified circuit, and CMOS implementation. Preserve the assignment's bit order: in the deck's example, row 000 uses the least significant bit. Verify every input combination, not just the cases that produce one. Inverted input signals may require additional inverters, so include them when counting hardware.\n\nThis lecture explains the method. Actual lab sessions and your observations remain separate lab records; no attendance or completed work is inferred.",
+  "sourceIds": [
+    "source:ie1204:lecture-6-gate-implementations",
+    "source:ie1204:weekly-planner-2026"
+  ],
+  "lastChecked": "2026-09-08",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-08-06",
+      "to": "concept:ie1204:demorgan-and-universal-gates"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-08-06",
+      "to": "concept:ie1204:cmos-transistor-networks"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-08-06",
+      "to": "concept:ie1204:unknown-and-high-impedance"
+    }
+  ]
+}

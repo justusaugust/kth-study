@@ -29,6 +29,8 @@
     "outcome:sf1690:read-mathematics"
   ],
   "conceptIds": [
+    "concept:sf1690:radians-and-unit-circle",
+    "concept:sf1690:trigonometric-graphs-and-equations",
     "concept:sf1690:real-numbers-and-lines",
     "concept:sf1690:absolute-value",
     "concept:sf1690:cartesian-distance-circles",

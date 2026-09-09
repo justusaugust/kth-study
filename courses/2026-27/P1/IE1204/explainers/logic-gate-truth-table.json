@@ -4,6 +4,7 @@
   "courseId": "course:ie1204",
   "slug": "logic-gate-truth-table",
   "conceptIds": [
+    "concept:ie1204:demorgan-and-universal-gates",
     "concept:ie1204:logic-gates-and-truth-tables"
   ],
   "title": "Drive a logic gate",

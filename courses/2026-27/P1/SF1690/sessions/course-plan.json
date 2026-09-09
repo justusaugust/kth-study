@@ -188,6 +188,8 @@
     },
     {
       "id": "session:sf1690:lecture-06",
+      "date": "2026-09-09",
+      "lectureId": "lecture:sf1690:2026-09-09-06",
       "courseId": "course:sf1690",
       "slug": "lecture-06",
       "kind": "lecture",
@@ -196,10 +198,11 @@
       "week": 37,
       "courseworkIds": [],
       "sourceIds": [
+        "source:sf1690:september-9-timetable",
         "source:sf1690:canvas-course-plan-26"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-09",
+      "confidence": "supported",
       "relationships": []
     },
     {

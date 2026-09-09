@@ -2538,16 +2538,14 @@ h4 {
   overflow: visible;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(4px) scale(0.98);
-  transform-box: fill-box;
-  transform-origin: center bottom;
   visibility: hidden;
+  transition: opacity 100ms ease-out, visibility 0s linear 100ms;
 }
 
 .diagram-hover-label.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
   visibility: visible;
+  transition: opacity 150ms ease-out 180ms, visibility 0s linear 180ms;
 }
 
 .diagram-tooltip {
@@ -2557,21 +2555,21 @@ h4 {
   gap: 3px;
   padding: 9px 11px;
   border-radius: 12px;
-  background: var(--ink);
-  color: var(--surface);
-  box-shadow: 0 7px 22px color-mix(in oklch, var(--ink) 16%, transparent);
+  background: var(--sheet-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow-contact);
   font-family: var(--font-ui);
   font-size: 11px;
   line-height: 1.25;
 }
 
 .diagram-tooltip strong {
-  font-weight: 650;
+  font-weight: 550;
   white-space: nowrap;
 }
 
 .diagram-tooltip span {
-  opacity: 0.72;
+  color: var(--ink-secondary);
   font-variant-numeric: tabular-nums;
   white-space: normal;
 }
@@ -2593,9 +2591,9 @@ h4 {
   max-width: min(190px, 70vw);
   padding: 8px 10px;
   border-radius: 10px;
-  background: var(--ink);
-  box-shadow: var(--shadow-float);
-  color: var(--surface);
+  background: var(--sheet-raised);
+  box-shadow: var(--shadow-contact);
+  color: var(--ink);
   content: attr(data-tooltip);
   font-family: var(--font-ui);
   font-size: 11px;
@@ -2604,8 +2602,9 @@ h4 {
   opacity: 0;
   pointer-events: none;
   text-align: center;
-  transform: translate(-50%, 4px);
+  transform: translate(-50%, 0);
   visibility: hidden;
+  transition: opacity 100ms ease-out, visibility 0s linear 100ms;
   white-space: normal;
 }
 
@@ -2614,13 +2613,12 @@ h4 {
   opacity: 1;
   transform: translate(-50%, 0);
   visibility: visible;
+  transition: opacity 150ms ease-out 180ms, visibility 0s linear 180ms;
 }
 
-.diagram-hotspot:hover .diagram-hover-label,
-.diagram-hotspot:focus-within .diagram-hover-label {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  visibility: visible;
+svg:focus-within > .diagram-hover-label.is-visible,
+.visual-term:focus-visible::after {
+  transition-delay: 0s;
 }
 
 .diagram-hotspot:hover > circle:not(.diagram-hotspot-hit),
@@ -2633,13 +2631,17 @@ h4 {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .diagram-hover-label,
   .diagram-hotspot > circle:not(.diagram-hotspot-hit) {
     transition:
       opacity var(--motion-micro) ease-out,
       transform var(--motion-micro) ease-out,
       visibility var(--motion-micro) step-start;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagram-hover-label,
+  .visual-term::after { transition: none; }
 }
 
 .concept-diagram .conic-label,

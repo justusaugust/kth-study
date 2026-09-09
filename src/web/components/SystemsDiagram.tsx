@@ -11,6 +11,8 @@ import {
 } from "./diagrams/FunctionConceptDiagram";
 import { CmosDiagram, type CmosVariant } from "./diagrams/CmosDiagram";
 import { LabDiagram, type LabVariant } from "./diagrams/LabDiagram";
+import { TrigonometryDiagram } from "./diagrams/TrigonometryDiagram";
+import { KarnaughDiagram } from "./diagrams/KarnaughDiagram";
 
 type DiagramMode = "preview" | "full";
 
@@ -402,6 +404,8 @@ export function BooleanFormsDiagram({ mode }: { mode: DiagramMode }) {
 }
 
 export function SystemsDiagram({ variant, mode }: Props) {
+  if (variant === "unit-circle") return <TrigonometryDiagram mode={mode} />;
+  if (variant === "karnaugh-map") return <KarnaughDiagram mode={mode} />;
   if (variant === "binary-place-value") return <BinaryPlaceValue mode={mode} />;
   if (variant === "logic-levels") return <LogicLevels mode={mode} />;
   if (variant === "control-structures") return <ControlStructures mode={mode} />;

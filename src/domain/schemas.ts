@@ -358,6 +358,8 @@ export const SystemsDiagramExplainerSchema = z.object({
     "function-arithmetic",
     "function-composition",
     "piecewise-function",
+    "unit-circle",
+    "karnaugh-map",
   ]),
 });
 
