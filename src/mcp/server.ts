@@ -101,41 +101,44 @@ export function createKthStudyServer(
     },
   );
 
-  registerAppResource(
-    server,
-    "kth-study-explainer",
-    EXPLAINER_WIDGET_URI,
-    {
-      title: "KTH Study explainer",
-      description: "Self-contained local visual explainer widget.",
-      mimeType: EXPLAINER_WIDGET_MIME,
-      _meta: {
-        ui: {
-          csp: { connectDomains: [], resourceDomains: [] },
-          domain: widgetDomain,
-          prefersBorder: false,
-        },
-      },
-    },
-    async () => ({
-      contents: [
-        {
-          uri: EXPLAINER_WIDGET_URI,
-          mimeType: EXPLAINER_WIDGET_MIME,
-          text: widgetHtml,
-          _meta: {
-            ui: {
-              csp: { connectDomains: [], resourceDomains: [] },
-              domain: widgetDomain,
-              prefersBorder: false,
-            },
-            "openai/widgetDescription":
-              "An interactive KTH course visual with its explanation and related concepts.",
+  // Published hosts retain template URIs. Keep these until old connections are retired.
+  for (const uri of [EXPLAINER_WIDGET_URI, ...["0.2.1", "0.2.2", "0.2.3"].map(version => `ui://widget/kth-study-explainer-${version}.html`)]) {
+    registerAppResource(
+      server,
+      uri,
+      uri,
+      {
+        title: "KTH Study explainer",
+        description: "Self-contained local visual explainer widget.",
+        mimeType: EXPLAINER_WIDGET_MIME,
+        _meta: {
+          ui: {
+            csp: { connectDomains: [], resourceDomains: [] },
+            domain: widgetDomain,
+            prefersBorder: false,
           },
         },
-      ],
-    }),
-  );
+      },
+      async () => ({
+        contents: [
+          {
+            uri,
+            mimeType: EXPLAINER_WIDGET_MIME,
+            text: widgetHtml,
+            _meta: {
+              ui: {
+                csp: { connectDomains: [], resourceDomains: [] },
+                domain: widgetDomain,
+                prefersBorder: false,
+              },
+              "openai/widgetDescription":
+                "An interactive KTH course visual with its explanation and related concepts.",
+            },
+          },
+        ],
+      }),
+    );
+  }
 
   server.registerTool(
     "search_study_hub",

@@ -54,6 +54,12 @@ describe("KTH Study MCP protocol", () => {
       expect.objectContaining({ uri: EXPLAINER_WIDGET_URI }),
     );
     const resource = await client.readResource({ uri: EXPLAINER_WIDGET_URI });
+    for (const version of ["0.2.1", "0.2.2", "0.2.3"]) {
+      const uri = `ui://widget/kth-study-explainer-${version}.html`;
+      const cached = await client.readResource({ uri });
+      expect(cached.contents[0]).toEqual({ ...resource.contents[0], uri });
+    }
+    await expect(client.readResource({ uri: "ui://widget/unknown.html" })).rejects.toThrow("not found");
     expect(resource.contents[0]).toMatchObject({
       uri: EXPLAINER_WIDGET_URI,
       mimeType: EXPLAINER_WIDGET_MIME,
