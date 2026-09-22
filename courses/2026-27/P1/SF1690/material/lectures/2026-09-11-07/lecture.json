@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-09-11-07",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-11-07",
+  "title": "Lecture 7 — inverse functions",
+  "date": "2026-09-11",
+  "sessionId": "session:sf1690:lecture-07",
+  "summary": "Decide when a function can be undone, find an inverse with the correct domain, and connect the algebra to reflection across y = x.",
+  "conceptIds": [
+    "concept:sf1690:inverse-functions"
+  ],
+  "body": "The subscribed timetable records an SF1690 lecture on 11 September, and the saved HT26 plan assigns inverse functions (Calculus 3.1) to Lecture 7. The Canvas course plan was checked on 21 September and matches the retained plan. This authored guide follows that plan; it is not a classroom transcript, and actual classroom coverage remains unverified.\n\nAn inverse reverses a function's input-output correspondence. The key question is not merely whether you can rearrange an equation, but whether each output identifies exactly one original input. Track the domain and range throughout.\n\nThe saved plan's Exercise 7 uses Calculus 3.1, page 171, exercises 4, 5, 6, 7, 10, 12, 20, 22, 23, 25, 34 and 35 (ninth-edition numbering). The mini-exam in the first half covers Lectures 1–4, not this new inverse-functions material. No completion or result is recorded here.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:september-11-timetable"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-11-07",
+      "to": "concept:sf1690:inverse-functions"
+    }
+  ]
+}

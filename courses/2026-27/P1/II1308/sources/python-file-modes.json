@@ -1,0 +1,10 @@
+{
+  "id": "source:ii1308:python-file-modes",
+  "courseId": "course:ii1308",
+  "title": "Python documentation — text and file modes",
+  "kind": "curriculum",
+  "url": "https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files",
+  "locator": "Official Python documentation checked 21 September: a appends; w truncates; text encoding and binary bytes.",
+  "lastChecked": "2026-09-21",
+  "confidence": "verified"
+}

@@ -24,7 +24,8 @@ lectureIds:
 evidenceStatus: lecture
 sourceIds:
   - 'source:ie1204:lecture-4-lab-introduction'
-lastChecked: '2026-09-03'
+  - 'source:ie1204:lab-instructions-current'
+lastChecked: '2026-09-21'
 confidence: verified
 relationships:
   - type: requires
@@ -44,4 +45,10 @@ Translate the schematic one connection at a time. Use switches to create defined
 
 ## Preserve evidence
 
-The individual lab report uses truth tables, Karnaugh maps, circuit diagrams, and breadboard photographs. One completed lab per module is demonstrated to a lab assistant. A short session recap should therefore record what was built, what was tested, and any failure or correction worth remembering.
+The individual lab report uses truth tables, Karnaugh maps, circuit diagrams, and breadboard photographs. Working circuits are demonstrated to a lab assistant or through the course's recording process. A short session recap should record what was built, what was tested, and any failure or correction worth remembering; it is not a submitted report or proof of a pass.
+
+## Lab work versus scheduled sessions
+
+The current instructions say you may attend none, any or several of the scheduled help sessions. Completing the laboratory work is different from attending every session. You must build and test your own circuits, even when collaborating with another student. Work through the modules in order because later tasks build on earlier ones.
+
+Document each module as you finish it. The report contains the indicated blue-text task from each of the four modules, not every experiment. Consult the linked current instructions and submission page for the bonus cutoff and demonstration requirements.

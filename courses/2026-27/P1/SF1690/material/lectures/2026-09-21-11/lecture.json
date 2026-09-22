@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-09-21-11",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-21-11",
+  "title": "Lecture 11 — De Moivre’s theorem and complex roots",
+  "date": "2026-09-21",
+  "sessionId": "session:sf1690:lecture-11",
+  "summary": "Use polar form for integer powers and find every complex root with the correct modulus, angle and branch count.",
+  "conceptIds": [
+    "concept:sf1690:de-moivre-and-complex-roots"
+  ],
+  "body": "The subscribed timetable schedules an SF1690 lecture on 21 September, 13:00–15:00 in E53. The Canvas HT26 course plan, checked on 21 September, assigns Calculus Appendix A7–A10 to Lecture 11: De Moivre’s theorem and roots of complex numbers. This is an authored guide to the planned coverage, not a classroom transcript; actual delivery and attendance are unverified.\n\nBuild on Lecture 10’s modulus and argument. Work through an integer power and a complete root set, then try the two self-checks. Exercise 11 links Calculus Appendix, page A10, exercises 37, 39, 42, 43, 44, 46, 48, 49, 52, 54, 55 and 56 (ninth-edition numbering).\n\nThe confirmed plan places this material in the Lectures 11–14 coverage of Mini-exam 3. Mini-exam 2 covers Lectures 5–10. These are coverage statements, not completion or result records.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:september-21-timetable"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-21-11",
+      "to": "concept:sf1690:de-moivre-and-complex-roots"
+    }
+  ]
+}

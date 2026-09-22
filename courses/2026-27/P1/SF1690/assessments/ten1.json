@@ -11,15 +11,15 @@
       "compulsory": true,
       "date": "2026-10-20",
       "time": "14:00",
-      "description": "Written examination on Tuesday, 20 October 2026 from 14:00 to 17:00.",
+      "description": "Written examination on Tuesday, 20 October 2026 from 14:00 to 17:00 (subscribed timetable rechecked 21 September). Grading rules checked 21 September: three hours, maximum 30 examination points; calculators and books are not allowed. Three optional mini-exams can each award up to two bonus points, with at most six bonus points added to the exam. Grade thresholds for the resulting total: A at least 25; B 22 to below 25; C 20 to below 22; D 17 to below 20; E 15 to below 17. No personal bonus, score or result is recorded.",
       "outcomeIds": [
         "outcome:sf1690:solve-and-present",
         "outcome:sf1690:read-mathematics"
       ],
       "conceptIds": [],
-      "sourceIds": ["source:sf1690:official-course-page", "source:sf1690:timeedit-schedule"],
-      "lastChecked": "2026-09-01",
-      "confidence": "verified",
+      "sourceIds": ["source:sf1690:exam-snapshot-september-21", "source:sf1690:official-course-page", "source:sf1690:timeedit-schedule", "source:sf1690:grading-details-2026"],
+      "lastChecked": "2026-09-21",
+      "confidence": "supported",
       "relationships": [
         {
           "type": "assesses",

@@ -180,7 +180,7 @@ test("visual atlas filters preserve figure identity and semantic focus labels", 
 test("quick search suggestions open their lecture routes", async ({ page }) => {
   await page.goto("/courses/ie1204");
   await page.getByRole("button", { name: "Search" }).click();
-  await page.getByRole("searchbox", { name: "Search all courses" }).fill("IE1204");
+  await page.getByRole("searchbox", { name: "Search all courses" }).fill("logic levels CMOS");
   const lecture = page.getByRole("option", {
     name: /Lecture 3 — logic levels, CMOS gates, and power/i,
   });
@@ -626,8 +626,8 @@ test("mini-exam study packs connect mapped lectures without mobile overflow", as
 test("source rows include context and action in one restrained interaction", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/courses/sf1690/lectures/2026-09-07-05");
-  const source = page.locator('.source-link-list a[href="https://canvas.kth.se/courses/65013"]');
-  await expect(source).toContainText("Saved HT26 course timeline");
+  const source = page.locator('.source-link-list a[href="https://canvas.kth.se/courses/65013/files/10519954"]');
+  await expect(source).toContainText("SF1690 HT26 Course plan 26");
   await expect(source).toContainText("Sign-in required");
   await expect(source).toContainText("Checked");
   await source.focus();

@@ -92,7 +92,7 @@ export function createKthStudyServer(
     {
       name: "kth-study",
       title: "KTH Study",
-      version: "0.2.3",
+      version: "0.2.4",
       icons: KTH_STUDY_ICONS,
     },
     {

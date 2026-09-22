@@ -1,0 +1,21 @@
+{
+  "id": "explainer:sf1690:inverse-functions",
+  "courseId": "course:sf1690",
+  "slug": "inverse-functions",
+  "atlasOrder": 27,
+  "kind": "systems-diagram",
+  "variant": "inverse-functions",
+  "title": "Reflect a function into its inverse",
+  "caption": "Restrict the square function, swap a point's coordinates, and compare its inverse branch.",
+  "accessibleSummary": "A square gridded plot shows paired points on a restricted square and its inverse reflected across y equals x.",
+  "conceptIds": [
+    "concept:sf1690:inverse-functions"
+  ],
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26"
+  ],
+  "lastChecked": "2026-09-20",
+  "confidence": "supported",
+  "evidenceStatus": "curriculum",
+  "relationships": []
+}

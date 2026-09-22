@@ -34,6 +34,12 @@
       "label": "Autumn 2026 timetable",
       "url": "https://cloud.timeedit.net/kth/web/public01/s.html?enddate=20261023&object=IE1204-10786%20%28HT26%29&p=0.m%2C2.w&sid=10&startdate=20260824",
       "sourceId": "source:ie1204:timeedit-schedule"
+    },
+    {
+      "kind": "canvas",
+      "label": "Course AI-use rules",
+      "url": "https://canvas.kth.se/courses/63848/pages/generative-ai-policy-for-ie1204",
+      "sourceId": "source:ie1204:ai-policy"
     }
   ],
   "outcomeIds": [
@@ -43,6 +49,12 @@
     "outcome:ie1204:design-digital-systems"
   ],
   "conceptIds": [
+    "concept:ie1204:moore-and-mealy-machines",
+    "concept:ie1204:fsm-design-and-state-encoding",
+    "concept:ie1204:feedback-and-latches",
+    "concept:ie1204:edge-triggered-storage",
+    "concept:ie1204:multiplexers-and-decoders",
+    "concept:ie1204:combinational-delay-and-hazards",
     "concept:ie1204:karnaugh-grouping",
     "concept:ie1204:karnaugh-pos-and-dont-cares",
     "concept:ie1204:demorgan-and-universal-gates",
@@ -60,6 +72,8 @@
     "concept:ie1204:cmos-power-consumption"
   ],
   "sourceIds": [
+    "source:ie1204:lecture-10-finite-state-machines",
+    "source:ie1204:lecture-9-latches-and-flip-flops",
     "source:ie1204:lecture-7-karnaugh-maps",
     "source:ie1204:lecture-6-gate-implementations",
     "source:ie1204:official-course-page",
@@ -74,7 +88,8 @@
     "source:ie1204:canvas-2026-material-map",
     "source:ie1204:timeedit-schedule",
     "source:ie1204:weekly-planner-2026",
-    "source:ie1204:exercise-sets-2026"
+    "source:ie1204:exercise-sets-2026",
+    "source:ie1204:ai-policy"
   ],
   "lastChecked": "2026-09-03",
   "confidence": "verified",

@@ -83,7 +83,7 @@ Each entity must include every field required by its domain schema. `entityType`
 
 ## Codex plugin
 
-Plugin source is under `plugins/kth-study/`. From a local checkout:
+Plugin source is under `plugins/kth-study/`. The installed plugin reads the production MCP endpoint so course updates do not depend on a local checkout or cached corpus. Local development can still run the built server with `node plugins/kth-study/mcp/server.mjs --stdio --root .`. From a local checkout:
 
 ```bash
 pnpm build:plugin

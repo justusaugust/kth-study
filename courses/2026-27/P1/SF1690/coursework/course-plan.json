@@ -49,22 +49,22 @@
     },
     {
       "id": "coursework:sf1690:mini-exam-01", "courseId": "course:sf1690", "slug": "mini-exam-01", "kind": "mini-exam", "sequence": 14,
-      "title": "Mini-exam · Lectures 1–4", "date": "2026-09-11", "time": "15:00", "week": 37, "requirement": "scheduled", "description": "Mini-exam during the first half of Exercise session 7, 15:00–16:00, covering Lectures 1–4.",
+      "title": "Mini-exam · Lectures 1–4", "date": "2026-09-11", "time": "15:15", "week": 37, "requirement": "scheduled", "description": "Mini-exam covering Lectures 1–4: ordinary writing 15:15–15:45 in U31 or U51. The announcement allows Funka extended time until 16:00; this does not establish personal eligibility. Photo ID required; no calculators, books or red ink. Regular exercise follows 16:15–17:00 in U31. No attendance, completion or score recorded.",
       "materials": [], "sessionIds": ["session:sf1690:checkpoint-01", "session:sf1690:lecture-01", "session:sf1690:lecture-02", "session:sf1690:lecture-03", "session:sf1690:lecture-04"], "lectureIds": ["lecture:sf1690:2026-08-24-01", "lecture:sf1690:2026-08-26-02", "lecture:sf1690:2026-08-27-03", "lecture:sf1690:2026-08-28-04"], "conceptIds": [], "assessmentIds": [],
-      "sourceIds": ["source:sf1690:canvas-course-plan-26", "source:sf1690:timeedit-schedule"], "lastChecked": "2026-09-03", "confidence": "verified", "relationships": []
+      "sourceIds": ["source:sf1690:canvas-course-plan-26", "source:sf1690:timeedit-schedule", "source:sf1690:mini-exam-1-announcement"], "lastChecked": "2026-09-21", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-07", "courseId": "course:sf1690", "slug": "exercise-07", "kind": "exercise", "sequence": 15,
       "title": "Exercise session 7", "week": 37, "requirement": "recommended", "description": "Recommended exercises for the second half of Exercise session 7.",
       "materials": [{ "title": "Calculus", "section": "3.1", "page": "171", "exercises": "4, 5, 6, 7, 10, 12, 20, 22, 23, 25, 34, 35" }],
-      "sessionIds": ["session:sf1690:exercise-07"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-07"], "lectureIds": ["lecture:sf1690:2026-09-11-07"], "conceptIds": ["concept:sf1690:inverse-functions"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-08", "courseId": "course:sf1690", "slug": "exercise-08", "kind": "exercise", "sequence": 17,
       "title": "Exercise session 8", "week": 38, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 8.",
       "materials": [{ "title": "Calculus", "section": "3.5", "page": "199", "exercises": "1-10, 13, 14, 16, 18, 39" }],
-      "sessionIds": ["session:sf1690:exercise-08"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-08"], "lectureIds": ["lecture:sf1690:2026-09-14-08"], "conceptIds": ["concept:sf1690:inverse-trigonometric-functions"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
@@ -75,21 +75,21 @@
         { "title": "Calculus", "section": "3.3", "page": "183", "exercises": "4, 6, 10, 12, 14, 15, 18" },
         { "title": "Calculus", "section": "3.6", "page": "205", "exercises": "2, 3, 7" }
       ],
-      "sessionIds": ["session:sf1690:exercise-09"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-09"], "lectureIds": ["lecture:sf1690:2026-09-16-09"], "conceptIds": ["concept:sf1690:exponential-logarithmic-hyperbolic-functions"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-10", "courseId": "course:sf1690", "slug": "exercise-10", "kind": "exercise", "sequence": 21,
       "title": "Exercise session 10", "week": 38, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 10.",
       "materials": [{ "title": "Calculus", "section": "Appendix", "page": "A10", "exercises": "15, 16, 19, 21, 25, 29, 30, 31, 32, 33" }],
-      "sessionIds": ["session:sf1690:exercise-10"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-10"], "lectureIds": ["lecture:sf1690:2026-09-17-10"], "conceptIds": ["concept:sf1690:complex-number-basics"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-11", "courseId": "course:sf1690", "slug": "exercise-11", "kind": "exercise", "sequence": 23,
       "title": "Exercise session 11", "week": 39, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 11.",
       "materials": [{ "title": "Calculus", "section": "Appendix", "page": "A10", "exercises": "37, 39, 42, 43, 44, 46, 48, 49, 52, 54, 55, 56" }],
-      "sessionIds": ["session:sf1690:exercise-11"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-11"], "lectureIds": ["lecture:sf1690:2026-09-21-11"], "conceptIds": ["concept:sf1690:de-moivre-and-complex-roots"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
@@ -102,7 +102,7 @@
       "id": "coursework:sf1690:exercise-12", "courseId": "course:sf1690", "slug": "exercise-12", "kind": "exercise", "sequence": 26,
       "title": "Exercise session 12", "week": 39, "requirement": "recommended", "description": "Recommended exercises for the second half of Exercise session 12.",
       "materials": [{ "title": "Algebra", "section": "1.1", "page": "13", "exercises": "3, 5, 10, 11, 13, 16, 17, 20, D1, D5, P1, P2" }],
-      "sessionIds": ["session:sf1690:exercise-12"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-12"], "lectureIds": ["lecture:sf1690:2026-09-23-12"], "conceptIds": ["concept:sf1690:vectors-and-components"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {

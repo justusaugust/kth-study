@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:lecture-10-finite-state-machines",
+  "courseId": "course:ie1204",
+  "title": "Lecture 10 — finite-state machines",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63848/files/10564152",
+  "locator": "Retained Le10-en New Traffic Light new Lab 3.pdf retrieved 30 August 2026; extracted text checked 23 September. Slides 7–46 cover synchronous FSMs, Moore/Mealy outputs, state diagrams/tables, encodings and equations; slides 47–54 show a lab-preparation design workflow; 55–69 illustrate pedestrian traffic control and timing. Live Canvas listing checked 21 September confirms Lecture 10 on 22 September and this deck; full PDF has not been redownloaded. Exact classroom coverage is not established; attendance and completion are not inferred. Guide and practice are original, not classroom transcription or assigned lab answers.",
+  "lastChecked": "2026-09-21",
+  "confidence": "supported"
+}

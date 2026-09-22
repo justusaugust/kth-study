@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-09-14-08",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-14-08",
+  "title": "Lecture 8 — inverse trigonometric functions",
+  "date": "2026-09-14",
+  "sessionId": "session:sf1690:lecture-08",
+  "summary": "Recover principal angles, handle inverse-trigonometric compositions, and find every solution of a trigonometric equation.",
+  "conceptIds": [
+    "concept:sf1690:inverse-trigonometric-functions"
+  ],
+  "body": "The subscribed timetable records an SF1690 lecture on 14 September, 08:00–10:00 in E35. The saved HT26 plan assigns Calculus 3.5, inverse trigonometric functions without derivatives, to Lecture 8. The Canvas course plan was checked on 21 September and matches the retained plan. This authored guide follows that plan; it is not a classroom transcript, and actual classroom coverage remains unverified.\n\nStart with the inverse-function idea from Lecture 7: an output must identify exactly one input. For trigonometric functions this requires a principal interval. Learn those intervals before using cancellation rules or solving equations.\n\nExercise session 8 in the saved plan uses Calculus 3.5, page 199, exercises 1–10, 13, 14, 16, 18 and 39 (ninth-edition numbering). The assigned-exercises section links this work; no attendance or completion is recorded.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:september-14-timetable"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-14-08",
+      "to": "concept:sf1690:inverse-trigonometric-functions"
+    }
+  ]
+}

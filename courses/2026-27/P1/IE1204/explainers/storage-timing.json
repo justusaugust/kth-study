@@ -1,0 +1,17 @@
+{
+  "id": "explainer:ie1204:storage-timing",
+  "courseId": "course:ie1204",
+  "slug": "storage-timing",
+  "atlasOrder": 29,
+  "kind": "systems-diagram",
+  "variant": "storage-timing",
+  "title": "A level follows; an edge captures",
+  "caption": "Send the same D and clock inputs to a latch and a rising-edge flip-flop. Compare what each remembers.",
+  "accessibleSummary": "Toggle D and the clock to compare a high-level-transparent D latch with a rising-edge D flip-flop. Four traces retain the last eight input states, with a text equivalent and live output values.",
+  "conceptIds": ["concept:ie1204:feedback-and-latches", "concept:ie1204:edge-triggered-storage"],
+  "sourceIds": ["source:ie1204:lecture-9-latches-and-flip-flops"],
+  "lastChecked": "2026-09-20",
+  "confidence": "supported",
+  "evidenceStatus": "lecture",
+  "relationships": []
+}

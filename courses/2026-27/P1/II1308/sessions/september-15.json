@@ -1,0 +1,26 @@
+{
+  "sessions": [
+    {
+      "id": "session:ii1308:2026-09-15",
+      "courseId": "course:ii1308",
+      "slug": "2026-09-15",
+      "kind": "lecture",
+      "sequence": 2,
+      "title": "Functions and collections — reconstructed seminar guide",
+      "lectureId": "lecture:ii1308:2026-09-15-reconstructed",
+      "date": "2026-09-15",
+      "time": "10:00",
+      "endTime": "12:00",
+      "location": "E51",
+      "week": 38,
+      "courseworkIds": [],
+      "sourceIds": [
+        "source:ii1308:september-15-timetable",
+        "source:ii1308:september-15-reconstruction"
+      ],
+      "lastChecked": "2026-09-21",
+      "confidence": "inferred",
+      "relationships": []
+    }
+  ]
+}

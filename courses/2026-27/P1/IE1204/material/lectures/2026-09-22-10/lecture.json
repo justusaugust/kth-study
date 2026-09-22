@@ -1,0 +1,33 @@
+{
+  "id": "lecture:ie1204:2026-09-22-10",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-22-10",
+  "title": "Lecture 10 — finite-state machines",
+  "date": "2026-09-22",
+  "sessionId": "session:ie1204:lecture-10",
+  "summary": "Design and trace synchronous state machines: Moore/Mealy outputs, reset, state encoding, next-state equations and complete transition tables.",
+  "conceptIds": [
+    "concept:ie1204:moore-and-mealy-machines",
+    "concept:ie1204:fsm-design-and-state-encoding"
+  ],
+  "body": "Lecture 9 supplied the state register. Now connect it to combinational next-state and output logic. Begin with what the circuit must remember, distinguish the output dependencies of Moore and Mealy machines, and turn the behaviour into a complete encoded table before deriving gates or mux connections.\n\nTrace a parity machine to see how state preserves history, then encode a ready-busy-done controller and check every transition, including recovery from an unused code. For traffic-light reasoning, distinguish a remembered request from a timed phase and check which outputs can safely be active together.",
+  "sourceIds": [
+    "source:ie1204:lecture-10-finite-state-machines",
+    "source:ie1204:canvas-materials-september-21",
+    "source:ie1204:september-22-timetable"
+  ],
+  "lastChecked": "2026-09-23",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-22-10",
+      "to": "concept:ie1204:moore-and-mealy-machines"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-22-10",
+      "to": "concept:ie1204:fsm-design-and-state-encoding"
+    }
+  ]
+}

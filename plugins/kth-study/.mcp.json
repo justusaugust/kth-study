@@ -2,15 +2,9 @@
   "mcpServers": {
     "kthStudy": {
       "title": "KTH Study",
-      "description": "Search and maintain the local curriculum study engine.",
-      "command": "node",
-      "args": [
-        "./mcp/server.mjs",
-        "--stdio",
-        "--root",
-        "../.."
-      ],
-      "cwd": ".",
+      "description": "Search the published study guides, stored course dates and interactive visuals.",
+      "type": "http",
+      "url": "https://kth-study.vercel.app/mcp",
       "tool_timeout_sec": 120
     }
   }

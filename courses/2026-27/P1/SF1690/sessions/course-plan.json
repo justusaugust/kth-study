@@ -225,6 +225,8 @@
     },
     {
       "id": "session:sf1690:lecture-07",
+      "date": "2026-09-11",
+      "lectureId": "lecture:sf1690:2026-09-11-07",
       "courseId": "course:sf1690",
       "slug": "lecture-07",
       "kind": "lecture",
@@ -233,10 +235,11 @@
       "week": 37,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:september-11-timetable"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-13",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -247,22 +250,29 @@
       "sequence": 14,
       "title": "Mini-exam · Lectures 1–4",
       "date": "2026-09-11",
-      "time": "15:00",
-      "endTime": "16:00",
+      "time": "15:15",
+      "endTime": "15:45",
+      "location": "U31 or U51",
+      "agenda": ["Ordinary writing window 15:15–15:45; Funka extended time until 16:00 is conditional, not a personal entitlement record.", "Photo ID required; no calculators, books or red ink."],
       "week": 37,
       "courseworkIds": [
         "coursework:sf1690:mini-exam-01"
       ],
       "sourceIds": [
         "source:sf1690:canvas-course-plan-26",
-        "source:sf1690:timeedit-schedule"
+        "source:sf1690:timeedit-schedule",
+        "source:sf1690:mini-exam-1-announcement"
       ],
-      "lastChecked": "2026-09-03",
+      "lastChecked": "2026-09-21",
       "confidence": "verified",
       "relationships": []
     },
     {
       "id": "session:sf1690:exercise-07",
+      "date": "2026-09-11",
+      "time": "16:15",
+      "endTime": "17:00",
+      "location": "U31",
       "courseId": "course:sf1690",
       "slug": "exercise-07",
       "kind": "exercise",
@@ -273,14 +283,17 @@
         "coursework:sf1690:exercise-07"
       ],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:mini-exam-1-announcement"
       ],
-      "lastChecked": "2026-08-24",
+      "lastChecked": "2026-09-21",
       "confidence": "verified",
       "relationships": []
     },
     {
       "id": "session:sf1690:lecture-08",
+      "date": "2026-09-14",
+      "lectureId": "lecture:sf1690:2026-09-14-08",
       "courseId": "course:sf1690",
       "slug": "lecture-08",
       "kind": "lecture",
@@ -289,10 +302,11 @@
       "week": 38,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:september-14-timetable"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-14",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -315,6 +329,11 @@
     },
     {
       "id": "session:sf1690:lecture-09",
+      "date": "2026-09-16",
+      "location": "W37",
+      "time": "08:00",
+      "endTime": "10:00",
+      "lectureId": "lecture:sf1690:2026-09-16-09",
       "courseId": "course:sf1690",
       "slug": "lecture-09",
       "kind": "lecture",
@@ -323,10 +342,11 @@
       "week": 38,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:september-16-17-timetable"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-20",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -349,6 +369,11 @@
     },
     {
       "id": "session:sf1690:lecture-10",
+      "date": "2026-09-17",
+      "location": "V3",
+      "time": "10:00",
+      "endTime": "12:00",
+      "lectureId": "lecture:sf1690:2026-09-17-10",
       "courseId": "course:sf1690",
       "slug": "lecture-10",
       "kind": "lecture",
@@ -357,10 +382,11 @@
       "week": 38,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:september-16-17-timetable"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-20",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -383,6 +409,11 @@
     },
     {
       "id": "session:sf1690:lecture-11",
+      "date": "2026-09-21",
+      "time": "13:00",
+      "endTime": "15:00",
+      "location": "E53",
+      "lectureId": "lecture:sf1690:2026-09-21-11",
       "courseId": "course:sf1690",
       "slug": "lecture-11",
       "kind": "lecture",
@@ -391,10 +422,11 @@
       "week": 39,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:september-21-timetable"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-21",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -417,6 +449,11 @@
     },
     {
       "id": "session:sf1690:lecture-12",
+      "date": "2026-09-23",
+      "time": "08:00",
+      "endTime": "10:00",
+      "location": "V01",
+      "lectureId": "lecture:sf1690:2026-09-23-12",
       "courseId": "course:sf1690",
       "slug": "lecture-12",
       "kind": "lecture",
@@ -425,10 +462,11 @@
       "week": 39,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:september-23-timetable"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-09-23",
+      "confidence": "supported",
       "relationships": []
     },
     {

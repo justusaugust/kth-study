@@ -9,7 +9,8 @@
   "caption": "Move the angle and follow its horizontal and vertical projections onto the trigonometric graphs.",
   "accessibleSummary": "An angle control links a point on a gridded unit circle to sine and cosine curves, with degrees, radians, and a tangent readout that marks undefined values.",
   "conceptIds": [
-    "concept:sf1690:radians-and-unit-circle"
+    "concept:sf1690:radians-and-unit-circle",
+    "concept:sf1690:inverse-trigonometric-functions"
   ],
   "sourceIds": [
     "source:sf1690:canvas-course-plan-26"

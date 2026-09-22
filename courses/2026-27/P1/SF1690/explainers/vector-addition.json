@@ -1,0 +1,17 @@
+{
+  "id": "explainer:sf1690:vector-addition",
+  "atlasOrder": 32,
+  "kind": "systems-diagram",
+  "variant": "vector-addition",
+  "courseId": "course:sf1690",
+  "slug": "vector-addition",
+  "title": "Add vectors tip to tail",
+  "caption": "Change the components of b and follow the resultant from the origin to the final tip.",
+  "accessibleSummary": "An equal-scale coordinate plane shows a fixed vector a = (2, 1), a dashed vector b translated to its tip, and their thick solid sum. Two keyboard-operable component sliders update coordinate readouts. Zero vectors appear as points.",
+  "conceptIds": ["concept:sf1690:vectors-and-components"],
+  "sourceIds": ["source:sf1690:canvas-course-plan-26"],
+  "evidenceStatus": "curriculum",
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [{ "type": "visualises", "from": "explainer:sf1690:vector-addition", "to": "concept:sf1690:vectors-and-components" }]
+}

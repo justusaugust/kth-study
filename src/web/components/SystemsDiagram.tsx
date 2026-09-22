@@ -13,6 +13,12 @@ import { CmosDiagram, type CmosVariant } from "./diagrams/CmosDiagram";
 import { LabDiagram, type LabVariant } from "./diagrams/LabDiagram";
 import { TrigonometryDiagram } from "./diagrams/TrigonometryDiagram";
 import { KarnaughDiagram } from "./diagrams/KarnaughDiagram";
+import { MultiplexerDiagram } from "./diagrams/MultiplexerDiagram";
+import { InverseFunctionDiagram } from "./diagrams/InverseFunctionDiagram";
+import { StorageDiagram } from "./diagrams/StorageDiagram";
+import { ComplexPlaneDiagram } from "./diagrams/ComplexPlaneDiagram";
+import { StateMachineDiagram } from "./diagrams/StateMachineDiagram";
+import { VectorAdditionDiagram } from "./diagrams/VectorAdditionDiagram";
 
 type DiagramMode = "preview" | "full";
 
@@ -404,6 +410,12 @@ export function BooleanFormsDiagram({ mode }: { mode: DiagramMode }) {
 }
 
 export function SystemsDiagram({ variant, mode }: Props) {
+  if (variant === "state-machine") return <StateMachineDiagram mode={mode} />;
+  if (variant === "vector-addition") return <VectorAdditionDiagram mode={mode} />;
+  if (variant === "complex-plane") return <ComplexPlaneDiagram mode={mode} />;
+  if (variant === "storage-timing") return <StorageDiagram mode={mode} />;
+  if (variant === "inverse-functions") return <InverseFunctionDiagram mode={mode} />;
+  if (variant === "multiplexer") return <MultiplexerDiagram mode={mode} />;
   if (variant === "unit-circle") return <TrigonometryDiagram mode={mode} />;
   if (variant === "karnaugh-map") return <KarnaughDiagram mode={mode} />;
   if (variant === "binary-place-value") return <BinaryPlaceValue mode={mode} />;

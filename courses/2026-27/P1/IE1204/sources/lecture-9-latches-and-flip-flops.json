@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:lecture-9-latches-and-flip-flops",
+  "courseId": "course:ie1204",
+  "title": "Lecture 9 — latches and flip-flops",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63848/files/10564151",
+  "locator": "Retained Le9-en-new-CLK.pdf, retrieved 30 August 2026; slides 4–29 feedback/SR/D latches, 30–57 clock edges/registers/enables/resets/toggle, 62–67 lab clock guidance. Original study guide checked against extracted slide text 20 September. Newer Canvas versions and actual classroom coverage unverified.",
+  "lastChecked": "2026-08-30",
+  "confidence": "supported"
+}

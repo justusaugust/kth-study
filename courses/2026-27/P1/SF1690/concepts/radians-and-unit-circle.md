@@ -23,13 +23,11 @@ Positive angles turn counterclockwise from the positive horizontal axis. Negativ
 
 On the unit circle, $P=(\cos\theta,\sin\theta)$. This definition extends beyond acute angles: coordinates supply the signs in every quadrant.
 
-| Angle | Radians | cos θ | sin θ |
-| --- | --- | --- | --- |
-| 0° | $0$ | $1$ | $0$ |
-| 30° | $\pi/6$ | $\sqrt{3}/2$ | $1/2$ |
-| 45° | $\pi/4$ | $\sqrt{2}/2$ | $\sqrt{2}/2$ |
-| 60° | $\pi/3$ | $1/2$ | $\sqrt{3}/2$ |
-| 90° | $\pi/2$ | $0$ | $1$ |
+- $0^\circ=0$ radians: $(\cos\theta,\sin\theta)=(1,0)$.
+- $30^\circ=\pi/6$: $(\cos\theta,\sin\theta)=(\sqrt3/2,1/2)$.
+- $45^\circ=\pi/4$: $(\cos\theta,\sin\theta)=(\sqrt2/2,\sqrt2/2)$.
+- $60^\circ=\pi/3$: $(\cos\theta,\sin\theta)=(1/2,\sqrt3/2)$.
+- $90^\circ=\pi/2$: $(\cos\theta,\sin\theta)=(0,1)$.
 
 Use symmetry to get other quadrants. For example, $150^\circ$ has reference angle $30^\circ$, but its cosine is negative and sine positive.
 

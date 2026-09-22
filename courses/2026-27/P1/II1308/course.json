@@ -32,7 +32,13 @@
   "conceptIds": [
     "concept:ii1308:sequence-selection-iteration",
     "concept:ii1308:variables-values-and-types",
-    "concept:ii1308:characters-and-strings"
+    "concept:ii1308:characters-and-strings",
+    "concept:ii1308:functions-and-return-values",
+    "concept:ii1308:lists-tuples-and-slices",
+    "concept:ii1308:sets-and-dictionaries",
+    "concept:ii1308:sequence-processing",
+    "concept:ii1308:filesystem-paths-and-shell",
+    "concept:ii1308:text-files-and-standard-streams"
   ],
   "sourceIds": [
     "source:ii1308:official-course-page",
@@ -42,7 +48,16 @@
     "source:ii1308:python-control",
     "source:ii1308:python-variables",
     "source:ii1308:characters-and-text",
-    "source:ii1308:ai-policy"
+    "source:ii1308:ai-policy",
+    "source:ii1308:module-b-functions",
+    "source:ii1308:module-b-lists-tuples",
+    "source:ii1308:python-sets-and-dictionaries",
+    "source:ii1308:python-working-with-sequences",
+    "source:ii1308:filesystems-2026",
+    "source:ii1308:python-files-2026",
+    "source:ii1308:python-standard-io-2026",
+    "source:ii1308:python-file-modes",
+    "source:ii1308:canvas-modules-september-21"
   ],
   "lastChecked": "2026-08-26",
   "confidence": "verified",
@@ -61,6 +76,36 @@
       "type": "teaches",
       "from": "course:ii1308",
       "to": "concept:ii1308:characters-and-strings"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:functions-and-return-values"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:lists-tuples-and-slices"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:sets-and-dictionaries"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:sequence-processing"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:filesystem-paths-and-shell"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ii1308",
+      "to": "concept:ii1308:text-files-and-standard-streams"
     }
   ]
 }

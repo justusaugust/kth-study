@@ -1,0 +1,21 @@
+{
+  "id": "explainer:ie1204:multiplexer",
+  "courseId": "course:ie1204",
+  "slug": "multiplexer",
+  "atlasOrder": 28,
+  "kind": "systems-diagram",
+  "variant": "multiplexer",
+  "title": "Follow the selected input",
+  "caption": "Toggle the two data inputs and the select bit. Only the selected input reaches the output.",
+  "accessibleSummary": "An interactive 2-to-1 multiplexer highlights the selected wire and reports the output bit.",
+  "conceptIds": [
+    "concept:ie1204:multiplexers-and-decoders"
+  ],
+  "sourceIds": [
+    "source:ie1204:lecture-8-building-blocks"
+  ],
+  "lastChecked": "2026-09-15",
+  "confidence": "supported",
+  "evidenceStatus": "lecture",
+  "relationships": []
+}

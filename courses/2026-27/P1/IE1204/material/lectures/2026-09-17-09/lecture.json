@@ -1,0 +1,33 @@
+{
+  "id": "lecture:ie1204:2026-09-17-09",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-17-09",
+  "title": "Lecture 9 — latches and flip-flops",
+  "date": "2026-09-17",
+  "sessionId": "session:ie1204:lecture-09",
+  "summary": "Move from combinational logic to stored state: feedback, latch polarity, transparent intervals, clock edges and clean clock signals.",
+  "conceptIds": [
+    "concept:ie1204:feedback-and-latches",
+    "concept:ie1204:edge-triggered-storage"
+  ],
+  "body": "This guide uses the retained lecture deck. The current Canvas lecture listing and weekly planner were checked on 21 September and confirm this lecture's scheduled date and topic; the full PDF has not been redownloaded and actual classroom coverage is not a transcript. No attendance or completion is inferred.\n\nThe central question is when a circuit is allowed to change its remembered value. First trace an SR latch with feedback, then distinguish a D latch's transparent interval from a flip-flop's sampling edge. Use the examples to follow the same input history through both devices. Finally connect the storage rule to registers, enables, reset and a clock divider.\n\nThe saved deck also explains why switch bounce matters in the lab and recommends a two-button latch clock for Labs 3 and 4. Read the current lab instructions before building; conceptual preparation is separate from completed laboratory work. The worked examples and self-checks below are newly authored practice.",
+  "sourceIds": [
+    "source:ie1204:lecture-9-latches-and-flip-flops",
+    "source:ie1204:weekly-planner-2026",
+    "source:ie1204:canvas-materials-september-21"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-17-09",
+      "to": "concept:ie1204:feedback-and-latches"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-17-09",
+      "to": "concept:ie1204:edge-triggered-storage"
+    }
+  ]
+}

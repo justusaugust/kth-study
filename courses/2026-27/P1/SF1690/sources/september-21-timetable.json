@@ -1,0 +1,10 @@
+{
+  "id": "source:sf1690:september-21-timetable",
+  "courseId": "course:sf1690",
+  "title": "SF1690 — 21 September timetable snapshot",
+  "kind": "schedule",
+  "url": "https://cloud.timeedit.net/kth/web/public01/s.html?enddate=20261023&object=SF1690-12382%20%28HT26%29&p=0.m%2C2.w&sid=10&startdate=20260824",
+  "locator": "Subscribed TCOMK1 TimeEdit calendar inspected 21 September: SF1690 lecture 21 September 13:00–15:00 in E53. Topic and lecture number mapped from the current Canvas course plan, not a classroom transcript or attendance record.",
+  "lastChecked": "2026-09-21",
+  "confidence": "supported"
+}

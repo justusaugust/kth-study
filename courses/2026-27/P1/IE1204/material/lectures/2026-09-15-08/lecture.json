@@ -1,0 +1,33 @@
+{
+  "id": "lecture:ie1204:2026-09-15-08",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-15-08",
+  "title": "Lecture 8 — building blocks and timing",
+  "date": "2026-09-15",
+  "sessionId": "session:ie1204:lecture-08",
+  "summary": "Build combinational functions from multiplexers and decoders, then reason about delay bounds and transient glitches.",
+  "conceptIds": [
+    "concept:ie1204:multiplexers-and-decoders",
+    "concept:ie1204:combinational-delay-and-hazards"
+  ],
+  "body": "This guide uses the retained lecture deck. The current Canvas lecture listing and weekly planner were checked on 21 September and confirm this lecture's scheduled date and topic; the full PDF has not been redownloaded and actual classroom coverage is not a transcript. No attendance or completion is inferred.\n\nFirst treat the mux as a controlled choice and the decoder as an address-to-minterm mapping. Then move beyond the truth table: outputs need time to settle, and different internal paths may temporarily disagree. The examples and self-checks below are original practice, not submitted course work.",
+  "sourceIds": [
+    "source:ie1204:lecture-8-building-blocks",
+    "source:ie1204:september-15-timetable",
+    "source:ie1204:canvas-materials-september-21"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-15-08",
+      "to": "concept:ie1204:multiplexers-and-decoders"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-15-08",
+      "to": "concept:ie1204:combinational-delay-and-hazards"
+    }
+  ]
+}

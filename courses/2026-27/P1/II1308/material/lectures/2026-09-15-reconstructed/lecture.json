@@ -1,0 +1,48 @@
+{
+  "id": "lecture:ii1308:2026-09-15-reconstructed",
+  "courseId": "course:ii1308",
+  "slug": "2026-09-15-reconstructed",
+  "title": "Functions and collections — reconstructed seminar guide",
+  "date": "2026-09-15",
+  "sessionId": "session:ii1308:2026-09-15",
+  "summary": "Reconstructed coverage, not confirmed classroom content: a guided follow-up through functions, collections and sequence processing from Modules B–C.",
+  "conceptIds": [
+    "concept:ii1308:functions-and-return-values",
+    "concept:ii1308:lists-tuples-and-slices",
+    "concept:ii1308:sets-and-dictionaries",
+    "concept:ii1308:sequence-processing"
+  ],
+  "body": "## Reconstructed coverage — not a classroom record\n\nThe timetable confirms an II1308 session on 15 September, 10:00–12:00 in E51. Its topic is not documented in the material we found. Searches of the public KTH course pages and the current Canvas modules and announcements did not identify a dated agenda or an additional seminar deck.\n\nThis guide is an editorial reconstruction, requested on 21 September. It follows the documented Module A introduction with Modules B and C: functions, collections and sequence processing. Those topics are genuine course material; assigning them to this particular session is an inference, not evidence that the lecturer taught them that day. Module D remains available separately.\n\n## A useful route through the material\n\n1. Trace a function call: arguments become parameter values, local variables support the calculation, and return passes a result back to the caller. Contrast return with print and implicit None.\n2. Store ordered data in lists and tuples. Follow indexing and slicing, then distinguish changing an existing list from constructing a new one. Watch for aliases and mutable values nested inside tuples.\n3. Choose a set for distinct members and a dictionary for key-to-value lookup. Separate membership from position; dictionary membership checks keys.\n4. Process a collection with a loop, comprehension or suitable built-in. Check empty input, tied maxima and the end of a sequence instead of assuming the example is the only case.\n\n## Connect the ideas\n\nA small data-processing program can accept a sequence, call a helper function for each value, retain selected results in a list, and use a dictionary for labelled lookup. Before running it, predict the function's return type, whether the input will change, and the result for an empty sequence. Then compare your prediction with the actual output.\n\nThe worked examples and self-checks below are original study practice, not reconstructed questions from the session or answers to a course quiz. Use the linked Canvas PDFs to check the concepts and your own notes to correct the session attribution if you recover them.",
+  "sourceIds": [
+    "source:ii1308:september-15-timetable",
+    "source:ii1308:september-15-reconstruction",
+    "source:ii1308:module-b-functions",
+    "source:ii1308:module-b-lists-tuples",
+    "source:ii1308:python-sets-and-dictionaries",
+    "source:ii1308:python-working-with-sequences"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "inferred",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-09-15-reconstructed",
+      "to": "concept:ii1308:functions-and-return-values"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-09-15-reconstructed",
+      "to": "concept:ii1308:lists-tuples-and-slices"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-09-15-reconstructed",
+      "to": "concept:ii1308:sets-and-dictionaries"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ii1308:2026-09-15-reconstructed",
+      "to": "concept:ii1308:sequence-processing"
+    }
+  ]
+}

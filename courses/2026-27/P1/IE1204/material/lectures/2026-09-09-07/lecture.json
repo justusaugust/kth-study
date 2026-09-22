@@ -1,9 +1,10 @@
 {
   "courseId": "course:ie1204",
   "sourceIds": [
-    "source:ie1204:lecture-7-karnaugh-maps"
+    "source:ie1204:lecture-7-karnaugh-maps",
+    "source:ie1204:canvas-materials-september-21"
   ],
-  "lastChecked": "2026-09-09",
+  "lastChecked": "2026-09-21",
   "confidence": "supported",
   "relationships": [
     {
@@ -27,5 +28,5 @@
     "concept:ie1204:karnaugh-pos-and-dont-cares"
   ],
   "sessionId": "session:ie1204:lecture-07",
-  "body": "This is a saved-deck reconstruction for the scheduled 9 September lecture. The retained Lecture 7 deck was retrieved on 30 August; newer Canvas material and actual classroom coverage have not been verified. No attendance or completed work is inferred.\n\nA Karnaugh map is the same truth table rearranged so that neighbouring cells differ in one input. The gain is visual: a pair removes one variable; a four-cell group removes two. Start with the exact input order, place each output in its matching cell, then simplify without changing any specified output.\n\nThe map below checks one selected group. To obtain the whole function, cover every required 1, remove redundant groups only when coverage survives, and verify the resulting expression against every specified truth-table row. Four-variable maps use the same method with Gray code on both axes."
+  "body": "This guide uses the retained lecture deck. The current Canvas lecture listing and weekly planner were checked on 21 September and confirm this lecture's scheduled date and topic; the full PDF has not been redownloaded and actual classroom coverage is not a transcript. No attendance or completion is inferred.\n\nA Karnaugh map is the same truth table rearranged so that neighbouring cells differ in one input. The gain is visual: a pair removes one variable; a four-cell group removes two. Start with the exact input order, place each output in its matching cell, then simplify without changing any specified output.\n\nThe map below checks one selected group. To obtain the whole function, cover every required 1, remove redundant groups only when coverage survives, and verify the resulting expression against every specified truth-table row. Four-variable maps use the same method with Gray code on both axes."
 }

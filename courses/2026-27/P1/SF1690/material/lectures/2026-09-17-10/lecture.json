@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-09-17-10",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-17-10",
+  "title": "Lecture 10 — basics of complex numbers",
+  "date": "2026-09-17",
+  "sessionId": "session:sf1690:lecture-10",
+  "summary": "Calculate with complex numbers, use conjugates for division, and connect rectangular form with modulus and argument.",
+  "conceptIds": [
+    "concept:sf1690:complex-number-basics"
+  ],
+  "body": "The subscribed timetable records an SF1690 lecture on 17 September, 10:00–12:00 in V3. The saved HT26 plan assigns Calculus Appendix, pages A1–A6 to Lecture 10. The Canvas course plan was checked on 21 September and matches the retained plan. This authored guide follows that plan; it is not a classroom transcript, and actual classroom coverage remains unverified.\n\nRead the explanation, work through the two examples, then attempt the two self-checks before opening their answers. Exercise 10 links Calculus Appendix, page A10, exercises 15, 16, 19, 21, 25 and 29–33. Exercise numbering follows the ninth edition. The linked tasks are recommended practice, not evidence of attendance or completion.",
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26",
+    "source:sf1690:september-16-17-timetable"
+  ],
+  "lastChecked": "2026-09-21",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-17-10",
+      "to": "concept:sf1690:complex-number-basics"
+    }
+  ]
+}

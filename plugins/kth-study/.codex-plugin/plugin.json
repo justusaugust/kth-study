@@ -1,7 +1,7 @@
 {
   "name": "kth-study",
-  "version": "0.2.1+codex.20260902104237",
-  "description": "Search, explain, visualise, and maintain a file-backed KTH curriculum study engine.",
+  "version": "0.2.1+codex.20260922230528",
+  "description": "Search independent course guides, stored dates and interactive study visuals.",
   "author": {
     "name": "Justus"
   },
@@ -9,13 +9,12 @@
   "interface": {
     "displayName": "KTH Study",
     "shortDescription": "Search and explain the KTH curriculum.",
-    "longDescription": "KTH Study connects Codex to a file-backed curriculum graph with course pages, visual explainers, quizzes, and validated lecture ingestion.",
+    "longDescription": "An independent student-built study aid with course guides, visual explainers and self-checks. Reads the published corpus; does not access student accounts or submit coursework. Not affiliated with or endorsed by KTH.",
     "developerName": "Justus",
     "category": "Education",
     "capabilities": [
       "Interactive",
-      "Read",
-      "Write"
+      "Read"
     ],
     "defaultPrompt": "Use KTH Study to help me understand my current course material.",
     "brandColor": "#1E5DB3",

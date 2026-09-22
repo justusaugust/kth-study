@@ -94,6 +94,7 @@
     },
     {
       "id": "session:ie1204:lecture-08",
+      "lectureId": "lecture:ie1204:2026-09-15-08",
       "courseId": "course:ie1204",
       "slug": "lecture-08",
       "kind": "lecture",
@@ -109,6 +110,7 @@
     },
     {
       "id": "session:ie1204:lecture-09",
+      "lectureId": "lecture:ie1204:2026-09-17-09",
       "courseId": "course:ie1204",
       "slug": "lecture-09",
       "kind": "lecture",
@@ -124,17 +126,21 @@
     },
     {
       "id": "session:ie1204:lecture-10",
+      "lectureId": "lecture:ie1204:2026-09-22-10",
       "courseId": "course:ie1204",
       "slug": "lecture-10",
       "kind": "lecture",
       "sequence": 10,
       "title": "Lecture 10 · Finite-state machines",
       "date": "2026-09-22",
+      "time": "13:00",
+      "endTime": "15:00",
+      "location": "E2",
       "week": 39,
       "courseworkIds": [],
-      "sourceIds": ["source:ie1204:canvas-2026-material-map", "source:ie1204:weekly-planner-2026"],
-      "lastChecked": "2026-08-30",
-      "confidence": "verified",
+      "sourceIds": ["source:ie1204:canvas-materials-september-21", "source:ie1204:weekly-planner-2026", "source:ie1204:september-22-timetable"],
+      "lastChecked": "2026-09-23",
+      "confidence": "supported",
       "relationships": []
     },
     {

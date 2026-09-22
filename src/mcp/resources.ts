@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 
 export const EXPLAINER_WIDGET_URI =
-  "ui://widget/kth-study-explainer-0.2.3.html";
+  "ui://widget/kth-study-explainer-0.2.4.html";
 export const EXPLAINER_WIDGET_MIME = RESOURCE_MIME_TYPE;
 
 const logoPath = [

@@ -360,6 +360,12 @@ export const SystemsDiagramExplainerSchema = z.object({
     "piecewise-function",
     "unit-circle",
     "karnaugh-map",
+    "multiplexer",
+    "inverse-functions",
+    "storage-timing",
+    "complex-plane",
+    "state-machine",
+    "vector-addition",
   ]),
 });
 

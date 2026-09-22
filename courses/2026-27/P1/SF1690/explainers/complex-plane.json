@@ -1,0 +1,21 @@
+{
+  "id": "explainer:sf1690:complex-plane",
+  "courseId": "course:sf1690",
+  "slug": "complex-plane",
+  "atlasOrder": 30,
+  "kind": "systems-diagram",
+  "variant": "complex-plane",
+  "title": "Read a complex number as a point",
+  "caption": "Change real and imaginary parts; compare the conjugate, modulus and principal argument.",
+  "accessibleSummary": "A square gridded complex plane with labelled real and imaginary controls, a reflected conjugate and numerical readouts. Zero's argument is undefined.",
+  "conceptIds": [
+    "concept:sf1690:complex-number-basics"
+  ],
+  "sourceIds": [
+    "source:sf1690:canvas-course-plan-26"
+  ],
+  "lastChecked": "2026-09-20",
+  "confidence": "supported",
+  "evidenceStatus": "curriculum",
+  "relationships": []
+}

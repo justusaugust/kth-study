@@ -9,7 +9,7 @@
       "title": "Module A quiz",
       "week": 35,
       "requirement": "required",
-      "description": "Individual Canvas quiz after studying Module A and completing its embedded exercises. A score of at least 80 percent is required; attempts are separated by a delay.",
+      "description": "Individual Canvas quiz after studying Module A and completing its embedded exercises. A score of at least 80 percent is required; attempts are separated by a delay. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
       "materials": [
         {
           "title": "Module A",
@@ -17,15 +17,23 @@
         }
       ],
       "sessionIds": [],
-      "lectureIds": ["lecture:ii1308:2026-08-25-01"],
+      "lectureIds": [
+        "lecture:ii1308:2026-08-25-01"
+      ],
       "conceptIds": [
         "concept:ii1308:sequence-selection-iteration",
         "concept:ii1308:variables-values-and-types",
         "concept:ii1308:characters-and-strings"
       ],
-      "assessmentIds": ["assessment:ii1308:lab1"],
-      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:ai-policy"],
-      "lastChecked": "2026-08-26",
+      "assessmentIds": [
+        "assessment:ii1308:lab1"
+      ],
+      "sourceIds": [
+        "source:ii1308:course-memo",
+        "source:ii1308:ai-policy",
+        "source:ii1308:canvas-modules-september-21"
+      ],
+      "lastChecked": "2026-09-21",
       "confidence": "verified",
       "relationships": []
     },
@@ -37,14 +45,32 @@
       "sequence": 3,
       "title": "Module B quiz",
       "requirement": "required",
-      "description": "Individual Canvas quiz for Module B. A score of at least 80 percent is required.",
-      "materials": [{ "title": "Module B" }],
+      "description": "Individual Canvas quiz for Module B. A score of at least 80 percent is required. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "materials": [
+        {
+          "title": "Module B — functions",
+          "url": "https://canvas.kth.se/courses/63863/files/10519942"
+        },
+        {
+          "title": "Module B — lists and tuples",
+          "url": "https://canvas.kth.se/courses/63863/files/10519959"
+        }
+      ],
       "sessionIds": [],
       "lectureIds": [],
-      "conceptIds": [],
-      "assessmentIds": ["assessment:ii1308:lab1"],
-      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:ai-policy"],
-      "lastChecked": "2026-08-26",
+      "conceptIds": [
+        "concept:ii1308:functions-and-return-values",
+        "concept:ii1308:lists-tuples-and-slices"
+      ],
+      "assessmentIds": [
+        "assessment:ii1308:lab1"
+      ],
+      "sourceIds": [
+        "source:ii1308:course-memo",
+        "source:ii1308:ai-policy",
+        "source:ii1308:canvas-modules-september-21"
+      ],
+      "lastChecked": "2026-09-21",
       "confidence": "verified",
       "relationships": []
     },
@@ -56,14 +82,29 @@
       "sequence": 4,
       "title": "Module C quiz",
       "requirement": "required",
-      "description": "Individual Canvas quiz for Module C. A score of at least 80 percent is required.",
-      "materials": [{ "title": "Module C" }],
+      "description": "Individual Canvas quiz for Module C. A score of at least 80 percent is required. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "materials": [
+        {
+          "title": "Module C materials in Canvas",
+          "url": "https://canvas.kth.se/courses/63863/modules",
+          "section": "Set, Dict and Sequences"
+        }
+      ],
       "sessionIds": [],
       "lectureIds": [],
-      "conceptIds": [],
-      "assessmentIds": ["assessment:ii1308:lab1"],
-      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:ai-policy"],
-      "lastChecked": "2026-08-26",
+      "conceptIds": [
+        "concept:ii1308:sets-and-dictionaries",
+        "concept:ii1308:sequence-processing"
+      ],
+      "assessmentIds": [
+        "assessment:ii1308:lab1"
+      ],
+      "sourceIds": [
+        "source:ii1308:course-memo",
+        "source:ii1308:ai-policy",
+        "source:ii1308:canvas-modules-september-21"
+      ],
+      "lastChecked": "2026-09-21",
       "confidence": "verified",
       "relationships": []
     },
@@ -77,14 +118,30 @@
       "date": "2026-10-26",
       "week": 44,
       "requirement": "required",
-      "description": "Final individual module quiz. All four quizzes must be passed by the end of period 1; each requires at least 80 percent.",
-      "materials": [{ "title": "Module D" }],
+      "description": "Final individual module quiz. All four quizzes must be passed by the end of period 1; each requires at least 80 percent. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "materials": [
+        {
+          "title": "Module D materials in Canvas",
+          "url": "https://canvas.kth.se/courses/63863/modules",
+          "section": "Command shell, Python files and IO"
+        }
+      ],
       "sessionIds": [],
       "lectureIds": [],
-      "conceptIds": [],
-      "assessmentIds": ["assessment:ii1308:lab1"],
-      "sourceIds": ["source:ii1308:course-memo", "source:ii1308:seminar-1", "source:ii1308:ai-policy"],
-      "lastChecked": "2026-08-26",
+      "conceptIds": [
+        "concept:ii1308:filesystem-paths-and-shell",
+        "concept:ii1308:text-files-and-standard-streams"
+      ],
+      "assessmentIds": [
+        "assessment:ii1308:lab1"
+      ],
+      "sourceIds": [
+        "source:ii1308:course-memo",
+        "source:ii1308:seminar-1",
+        "source:ii1308:ai-policy",
+        "source:ii1308:canvas-modules-september-21"
+      ],
+      "lastChecked": "2026-09-21",
       "confidence": "verified",
       "relationships": []
     }

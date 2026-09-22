@@ -22,6 +22,12 @@
       "label": "Canvas course room",
       "url": "https://canvas.kth.se/courses/65013",
       "sourceId": "source:sf1690:canvas-course-plan-26"
+    },
+    {
+      "kind": "canvas",
+      "label": "Course AI-use rules",
+      "url": "https://canvas.kth.se/courses/65013/pages/no-use-of-generative-ai-tools-allowed",
+      "sourceId": "source:sf1690:ai-policy"
     }
   ],
   "outcomeIds": [
@@ -29,6 +35,12 @@
     "outcome:sf1690:read-mathematics"
   ],
   "conceptIds": [
+    "concept:sf1690:vectors-and-components",
+    "concept:sf1690:de-moivre-and-complex-roots",
+    "concept:sf1690:exponential-logarithmic-hyperbolic-functions",
+    "concept:sf1690:complex-number-basics",
+    "concept:sf1690:inverse-functions",
+    "concept:sf1690:inverse-trigonometric-functions",
     "concept:sf1690:radians-and-unit-circle",
     "concept:sf1690:trigonometric-graphs-and-equations",
     "concept:sf1690:real-numbers-and-lines",
@@ -54,7 +66,8 @@
     "source:sf1690:lecture-1-board-photos",
     "source:sf1690:lecture-2-board-photos",
     "source:sf1690:adams-essex-calculus",
-    "source:sf1690:anton-busby-linear-algebra"
+    "source:sf1690:anton-busby-linear-algebra",
+    "source:sf1690:ai-policy"
   ],
   "lastChecked": "2026-08-28",
   "confidence": "verified",

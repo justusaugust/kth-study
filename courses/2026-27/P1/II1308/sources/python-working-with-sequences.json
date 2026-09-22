@@ -1,0 +1,10 @@
+{
+  "id": "source:ii1308:python-working-with-sequences",
+  "courseId": "course:ii1308",
+  "title": "Module C — working with sequences",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63863/files/10519979",
+  "locator": "Part6 WorkingSequences, 21 pages. Live Canvas file read 21 September 2026: len/min/max/sum, comparison keys, means, neighbouring pairs with zip(seq, seq[1:]), shortest-input truncation. Original examples and checks explain ties and empty/mixed-type input limits. No dated lecture association or classroom coverage claim.",
+  "lastChecked": "2026-09-21",
+  "confidence": "verified"
+}
