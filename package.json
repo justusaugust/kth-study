@@ -27,7 +27,7 @@
     "@solar-icons/react": "^2.1.0",
     "gray-matter": "^4.0.3",
     "hono": "^4.13.4",
-    "katex": "^0.18.4",
+    "katex": "0.16.47",
     "mafs": "^0.21.0",
     "minisearch": "^7.2.0",
     "react": "^18.3.1",

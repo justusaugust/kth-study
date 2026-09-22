@@ -3,6 +3,14 @@ import { cleanup, render } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
 import { MathText } from "./MathText";
 import matter from "gray-matter";
+import { createRequire } from "node:module";
+
+it("uses the same KaTeX version for Markdown rendering and CSS", () => {
+  const require = createRequire(import.meta.url);
+  const rendererRequire = createRequire(require.resolve("rehype-katex"));
+  expect(require("katex/package.json").version).toBe(rendererRequire("katex/package.json").version);
+  expect(JSON.parse(readFileSync("package.json", "utf8")).dependencies.katex).toBe(rendererRequire("katex/package.json").version);
+});
 
 afterEach(cleanup);
 

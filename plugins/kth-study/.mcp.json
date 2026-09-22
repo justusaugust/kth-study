@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "kthStudy": {
-      "title": "KTH Study",
+      "title": "TCOMK Study Atlas",
       "description": "Search the published study guides, stored course dates and interactive visuals.",
       "type": "http",
       "url": "https://kth-study.vercel.app/mcp",

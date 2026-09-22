@@ -1,5 +1,23 @@
 import { expect, test } from "@playwright/test";
 
+test("formula scripts retain KaTeX geometry on desktop and mobile", async ({ page }) => {
+  for (const width of [375, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of ["/courses/sf1690/lectures/2026-09-23-12", "/courses/ie1204/lectures/2026-09-01-05"]) {
+      await page.goto(route);
+      await expect(page.locator(".katex").first()).toBeVisible();
+      await page.evaluate(() => document.fonts.ready);
+      const sizes = await page.locator(".katex .sizing.reset-size6.size3").evaluateAll(nodes => nodes.map(node => ({
+        script: parseFloat(getComputedStyle(node).fontSize),
+        parent: parseFloat(getComputedStyle(node.parentElement!).fontSize),
+      })));
+      expect(sizes.length, route).toBeGreaterThan(0);
+      for (const size of sizes) expect(size.script / size.parent, route).toBeCloseTo(0.7, 2);
+      await expect(page.locator(".katex-error")).toHaveCount(0);
+    }
+  }
+});
+
 test("the home search icon is optically centred inside its input", async ({
   page,
 }) => {

@@ -1,14 +1,14 @@
 {
   "name": "kth-study",
-  "version": "0.2.1+codex.20260922230528",
+  "version": "0.2.1+codex.20260922232317",
   "description": "Search independent course guides, stored dates and interactive study visuals.",
   "author": {
     "name": "Justus"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "KTH Study",
-    "shortDescription": "Search and explain the KTH curriculum.",
+    "displayName": "TCOMK Study Atlas",
+    "shortDescription": "Independent study guides.",
     "longDescription": "An independent student-built study aid with course guides, visual explainers and self-checks. Reads the published corpus; does not access student accounts or submit coursework. Not affiliated with or endorsed by KTH.",
     "developerName": "Justus",
     "category": "Education",
@@ -16,7 +16,7 @@
       "Interactive",
       "Read"
     ],
-    "defaultPrompt": "Use KTH Study to help me understand my current course material.",
+    "defaultPrompt": "Use TCOMK Study Atlas to help me understand my current course material.",
     "brandColor": "#1E5DB3",
     "composerIcon": "./assets/kth-study.png",
     "logo": "./assets/kth-study.png"
