@@ -49,6 +49,7 @@ describe("KTH Study MCP tools", () => {
       const result = await callTool(context, "get_course_dates", { courseCode: "SF1690" });
       expect(result.structuredContent).toMatchObject({ asOfDate: "2026-09-08", corpusLoadedAt: context.refreshedAt, courses: [{ upcomingSessions: [expect.objectContaining({ id: session.id })] }] });
       expect(result.content[0].text).toContain("not an official-source verification time");
+      expect(result.content[0].text).toContain("Tuesday, 8 September 2026");
       vi.setSystemTime(new Date("2026-09-08T22:30:00Z"));
       const nextDay = await callTool(context, "get_course_dates", { courseCode: "SF1690" });
       expect(nextDay.structuredContent).toMatchObject({ asOfDate: "2026-09-09", courses: [{ upcomingSessions: [] }] });
@@ -113,7 +114,7 @@ describe("KTH Study MCP tools", () => {
       text: expect.stringContaining("call explain_concept with concept:ie1204:logic-gates-and-truth-tables"),
     });
     expect(dates.content[0]).toMatchObject({
-      text: expect.stringMatching(/SF1690 TEN1[\s\S]*2026-10-20 at 14:00[\s\S]*last checked 2026-09-21/),
+      text: expect.stringMatching(/SF1690 TEN1[\s\S]*Tuesday, 20 October 2026 at 14:00[\s\S]*last checked 2026-09-21/),
     });
     expect(concept.content[0]).toMatchObject({
       text: expect.stringMatching(/Key definitions:[\s\S]*Logic gate/),

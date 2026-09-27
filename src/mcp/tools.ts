@@ -8,7 +8,7 @@ import {
 import { ingestLecture, type IngestLectureInput } from "../ingest/ingestLecture";
 import type { StudyContext } from "../server/context";
 import { EXPLAINER_WIDGET_META } from "./resources";
-import { currentStudyDate } from "../web/format";
+import { currentStudyDate, formatStudyDateLong } from "../web/format";
 
 function entityMap(context: StudyContext): Map<string, StudyEntity> {
   const entities = new Map<string, StudyEntity>();
@@ -152,7 +152,7 @@ export async function callTool(
     }));
     const assessmentSummary = result.flatMap(({ course, assessments }) =>
       assessments.map((assessment) =>
-        `${course.code} ${assessment.code} — ${assessment.title}: ${assessment.date ?? "date not stored"}${assessment.time ? ` at ${assessment.time}` : ""}. ${assessment.description} Evidence: ${assessment.confidence}, last checked ${assessment.lastChecked}.${sourceSummary(context, assessment.sourceIds)}`,
+        `${course.code} ${assessment.code} — ${assessment.title}: ${assessment.date ? formatStudyDateLong(assessment.date) : "date not stored"}${assessment.time ? ` at ${assessment.time}` : ""}. ${assessment.description} Evidence: ${assessment.confidence}, last checked ${assessment.lastChecked}.${sourceSummary(context, assessment.sourceIds)}`,
       ),
     );
     const courseworkSummary = result.flatMap(({ course, upcomingCoursework }) =>
@@ -163,12 +163,12 @@ export async function callTool(
         links.push(`Study pack (topic-matched practice, not guaranteed exam coverage): ${item.practiceUrl}`);
         links.push(...item.lectures.map((lecture) => `${lecture.title}: ${lecture.url}`));
         if (item.missingLectureNotes.length) links.push(`Lecture notes not available: ${item.missingLectureNotes.join(", ")}`);
-        return `${course.code} — ${item.title}: ${item.date}${item.time ? ` at ${item.time}` : ""} (${item.requirement}). ${item.description}${links.length ? ` Links: ${links.join("; ")}.` : ""} Evidence: ${item.confidence}, last checked ${item.lastChecked}.${sourceSummary(context, item.sourceIds)}`;
+        return `${course.code} — ${item.title}: ${formatStudyDateLong(item.date!)}${item.time ? ` at ${item.time}` : ""} (${item.requirement}). ${item.description}${links.length ? ` Links: ${links.join("; ")}.` : ""} Evidence: ${item.confidence}, last checked ${item.lastChecked}.${sourceSummary(context, item.sourceIds)}`;
       }),
     );
     const sessionSummary = result.flatMap(({ course, upcomingSessions }) =>
       upcomingSessions.map((session) =>
-        `${course.code} — ${session.title}: ${session.date} (${session.kind}). Evidence: ${session.confidence}, last checked ${session.lastChecked}.${sourceSummary(context, session.sourceIds)}`,
+        `${course.code} — ${session.title}: ${formatStudyDateLong(session.date!)} (${session.kind}). Evidence: ${session.confidence}, last checked ${session.lastChecked}.${sourceSummary(context, session.sourceIds)}`,
       ),
     );
     const sections = [
@@ -178,7 +178,7 @@ export async function callTool(
       ...result.filter(({ undatedSessions, undatedCoursework }) => undatedSessions.length || undatedCoursework.length).map(({ course, undatedSessions, undatedCoursework }) => `${course.code}: ${undatedSessions.length} sessions and ${undatedCoursework.length} coursework items have no recorded date. The upcoming list is not a complete timetable.`),
     ];
     return textResult(
-      `Stored KTH Study dates as of ${today} (Europe/Stockholm). Corpus loaded ${context.refreshedAt}; this is not an official-source verification time. Check each item's last-checked date.\n\n${sections.join("\n\n")}`,
+      `Stored KTH Study dates as of ${formatStudyDateLong(today)} (Europe/Stockholm). Corpus loaded ${context.refreshedAt}; this is not an official-source verification time. Include last-checked dates and preserve the supplied calendar weekdays.\n\n${sections.join("\n\n")}`,
       { corpusLoadedAt: context.refreshedAt, asOfDate: today, courses: result },
     );
   }
