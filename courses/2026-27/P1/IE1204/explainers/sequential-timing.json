@@ -1,0 +1,17 @@
+{
+  "id": "explainer:ie1204:sequential-timing",
+  "courseId": "course:ie1204",
+  "slug": "sequential-timing",
+  "atlasOrder": 33,
+  "kind": "systems-diagram",
+  "variant": "sequential-timing",
+  "title": "Balance setup and hold margins",
+  "caption": "Change clock period and signed capture skew to compare the latest-data setup limit with the earliest-data hold limit.",
+  "accessibleSummary": "Labeled bars share a picosecond timeline for data arrival, the same-cycle hold window and the next-cycle setup window. Keyboard-operable clock-period and signed-skew sliders update setup and hold slack, distinguishing violations and zero-margin boundaries.",
+  "conceptIds": ["concept:ie1204:sequential-setup-hold-and-skew"],
+  "sourceIds": ["source:ie1204:lecture-11-fsm-analysis-and-timing"],
+  "lastChecked": "2026-09-27",
+  "confidence": "supported",
+  "evidenceStatus": "lecture",
+  "relationships": []
+}

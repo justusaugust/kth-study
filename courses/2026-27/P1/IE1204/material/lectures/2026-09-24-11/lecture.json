@@ -1,0 +1,33 @@
+{
+  "id": "lecture:ie1204:2026-09-24-11",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-24-11",
+  "title": "Lecture 11 — circuit analysis and sequential timing",
+  "date": "2026-09-24",
+  "sessionId": "session:ie1204:lecture-11",
+  "summary": "Recover an FSM from its gates, inspect unused states, and check setup, hold and skew constraints on register-to-register paths.",
+  "conceptIds": [
+    "concept:ie1204:fsm-circuit-analysis",
+    "concept:ie1204:sequential-setup-hold-and-skew"
+  ],
+  "body": "Lecture 10 turned a behavioural specification into a circuit. Now reverse the process: identify what the registers store, derive their next-state expressions and trace the encoded transitions until the circuit's behaviour becomes clear. Inspect every physical state code, including those the intended operation never visits.\n\nThen ask whether the circuit can realise that behaviour at the chosen clock rate. Setup checks the latest data arrival before the next edge; hold checks the earliest new arrival after the current edge. Work through both constraints before calling a path valid, and state the skew sign convention before adjusting either bound.\n\nUse the two-sample history example to practise simultaneous state updates. The timing example shows why repairing a short path can fix hold while breaking setup. Recommended textbook reading: pages 141–151 of Digital Design and Computer Architecture: ARM Edition.",
+  "sourceIds": [
+    "source:ie1204:lecture-11-fsm-analysis-and-timing",
+    "source:ie1204:september-24-timetable",
+    "source:ie1204:weekly-planner-2026"
+  ],
+  "lastChecked": "2026-09-27",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-24-11",
+      "to": "concept:ie1204:fsm-circuit-analysis"
+    },
+    {
+      "type": "teaches",
+      "from": "lecture:ie1204:2026-09-24-11",
+      "to": "concept:ie1204:sequential-setup-hold-and-skew"
+    }
+  ]
+}

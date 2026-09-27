@@ -39,7 +39,7 @@ function currentContent(): WidgetContent | undefined {
 function Widget() {
   const [content, setContent] = useState(currentContent);
   const { app, error } = useApp({
-    appInfo: { name: "KTH Study explainer", version: "0.2.4" },
+    appInfo: { name: "KTH Study explainer", version: "0.2.5" },
     capabilities: {},
     strict: true,
     onAppCreated: (createdApp) => {

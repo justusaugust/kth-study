@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:lecture-11-fsm-analysis-and-timing",
+  "courseId": "course:ie1204",
+  "title": "Lecture 11 — FSM analysis and sequential timing",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63848/files/10564153",
+  "locator": "Retained Le11-en.pdf retrieved 30 August 2026; full 47-slide extracted text read 27 September. Slides 3–20 cover Moore/Mealy recap and reverse circuit analysis; 21–25 unused-state behaviour; 26–40 setup/hold and path-delay bounds; 41–47 clock skew. Retained weekly planner assigns Lecture 11 to 24 September and textbook pages 141–151. Canvas authentication expired at the 27 September check, so no fresh Canvas listing, PDF revision or actual classroom coverage is verified. Original explanations/examples are not assigned lab solutions; attendance and completion are not inferred.",
+  "lastChecked": "2026-08-30",
+  "confidence": "supported"
+}
