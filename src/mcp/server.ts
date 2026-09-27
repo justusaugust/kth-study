@@ -92,7 +92,7 @@ export function createKthStudyServer(
     {
       name: "kth-study",
       title: "KTH Study",
-      version: "0.2.6",
+      version: "0.2.7",
       icons: KTH_STUDY_ICONS,
     },
     {
@@ -149,7 +149,7 @@ export function createKthStudyServer(
       description: "Use this first for course concepts, definitions, examples, lectures, visuals, or quiz practice. For quiz requests, find the concept ID then call quiz_me for authored questions instead of generating a quiz. Otherwise pass the returned stable ID to the matching study tool. This plugin cannot access Canvas/Ladok accounts, submit work, or register for exams.",
       inputSchema: z.object({
         query: z.string().min(1),
-        courseId: z.string().optional(),
+        courseId: z.string().optional().describe("Course ID (course:sf1690) or course code (SF1690). Omit to search all courses."),
         entityTypes: z.array(entityTypes).optional(),
         visualKinds: z.array(visualKinds).optional(),
         limit: z.number().int().min(1).max(50).optional(),

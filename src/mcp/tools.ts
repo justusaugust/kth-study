@@ -83,8 +83,13 @@ export async function callTool(
   if (name === "search_study_hub") {
     const query = stringArgument(args, "query");
     const limit = Math.min(Math.max(Number(args.limit ?? 20), 1), 50);
+    const requestedCourse = typeof args.courseId === "string" ? args.courseId.trim().toLowerCase() : "";
+    const course = requestedCourse ? [...context.corpus.courses.values()].find(
+      (entry) => entry.id === requestedCourse || entry.code.toLowerCase() === requestedCourse,
+    ) : undefined;
+    if (requestedCourse && !course) throw new Error(`Unknown course: ${args.courseId}. Omit courseId to search all courses.`);
     const results = searchCorpus(context.search, context.corpus, query, {
-      courseId: typeof args.courseId === "string" ? args.courseId : undefined,
+      courseId: course?.id,
       entityTypes: Array.isArray(args.entityTypes)
         ? (args.entityTypes as SearchEntityType[])
         : undefined,

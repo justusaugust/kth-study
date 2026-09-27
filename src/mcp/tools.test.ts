@@ -233,6 +233,13 @@ describe("KTH Study MCP tools", () => {
       expect(search.structuredContent).toMatchObject({ results: expect.arrayContaining([
         expect.objectContaining({ id: conceptId }),
       ]) });
+      for (const courseId of ["SF1690", "sf1690", "course:sf1690"]) {
+        const filtered = await callTool(context, "search_study_hub", { query: "functions domain range", courseId, entityTypes: ["concept"] });
+        expect(filtered.structuredContent).toMatchObject({ results: expect.arrayContaining([
+          expect.objectContaining({ id: conceptId }),
+        ]) });
+      }
+      await expect(callTool(context, "search_study_hub", { query: "functions", courseId: "SF0000" })).rejects.toThrow("Unknown course");
       const result = await callTool(context, "quiz_me", { conceptId, limit: 5 });
       const questions = result.structuredContent.questions as Array<{ id: string; body: string }>;
       expect(questions).toHaveLength(2);
