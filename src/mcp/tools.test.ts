@@ -233,13 +233,16 @@ describe("KTH Study MCP tools", () => {
       expect(search.structuredContent).toMatchObject({ results: expect.arrayContaining([
         expect.objectContaining({ id: conceptId }),
       ]) });
-      const result = await callTool(context, "quiz_me", { conceptId, limit: 2 });
+      const result = await callTool(context, "quiz_me", { conceptId, limit: 5 });
       const questions = result.structuredContent.questions as Array<{ id: string; body: string }>;
       expect(questions).toHaveLength(2);
+      expect(result.content[0].text).toContain("Returned 2 authored self-check");
+      expect(result.content[0].text).toContain("without adding or rewriting");
       for (const question of questions) {
         expect(question.body).toBeTruthy();
         expect(question).not.toHaveProperty("answer");
         const stored = context.corpus.questions.get(question.id)!;
+        expect(question.body).toBe(stored.body);
         expect(stored.conceptIds).toContain(conceptId);
         expect(stored.answer).toBeTruthy();
         expect(JSON.stringify(result)).not.toContain(JSON.stringify(stored.answer));

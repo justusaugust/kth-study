@@ -258,7 +258,7 @@ export async function callTool(
       .filter((question) => question.conceptIds.includes(conceptId))
       .slice(0, limit)
       .map(({ answer: _answer, ...question }) => question);
-    return textResult(`Prepared ${questions.length} question(s).`, {
+    return textResult(`Returned ${questions.length} authored self-check question(s). Present only these questions without adding or rewriting them into a generated quiz. Keep solutions hidden until an attempt or explicit request; if none are returned, explain that no authored questions are available for this concept.`, {
       conceptId,
       questions,
     });

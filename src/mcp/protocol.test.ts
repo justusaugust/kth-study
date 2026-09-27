@@ -134,6 +134,10 @@ describe("KTH Study MCP protocol", () => {
     const tools = await client.listTools();
     expect(tools.tools).toHaveLength(7);
     expect(tools.tools.every((tool) => tool.annotations?.readOnlyHint)).toBe(true);
+    expect(client.getInstructions()).toContain("cannot log in to Canvas or Ladok");
+    expect(client.getInstructions()).not.toContain("call ingest_lecture");
+    expect(tools.tools.find((tool) => tool.name === "quiz_me")?.description).toContain("do not substitute a built-in generated quiz");
+    expect((await client.callTool({ name: "ingest_lecture", arguments: { inputPath: "/tmp/not-a-transaction" } })).isError).toBe(true);
     const result = await client.callTool({
       name: "show_visual",
       arguments: { id: "explainer:sf1690:quadratic-coefficients" },

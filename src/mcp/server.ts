@@ -92,12 +92,14 @@ export function createKthStudyServer(
     {
       name: "kth-study",
       title: "KTH Study",
-      version: "0.2.5",
+      version: "0.2.6",
       icons: KTH_STUDY_ICONS,
     },
     {
       instructions:
-        "When KTH Study is selected, use its tools before built-in search or generated interactive visuals. For concepts, definitions, examples, or visuals, start with search_study_hub and do not use web search. Use explain_concept for text-first explanations. Call show_visual only when the user asks to see, demonstrate, or interact with a concept, or when a visual is clearly useful; do not force a visual into every explanation. For exams, deadlines, labs, lectures, or schedules, start with get_course_dates; use web search only when that result says the requested date is missing or stale, or when the user explicitly asks for a live recheck. Search before using stable IDs. Use show_visual only with explainer IDs. Keep explanations concise, define notation, and distinguish course evidence from general clarification. All tools operate on the local KTH curriculum corpus. Only call ingest_lecture with an already-prepared transaction explicitly authorized by the user.",
+        "This study plugin cannot log in to Canvas or Ladok, collect credentials, submit assignments, or register for exams. Explain that limitation for account-action requests; offer study guidance instead. For course quizzes, use search_study_hub then quiz_me, not a generated quiz. Present only returned authored questions, preserving their wording and count; withhold solutions until an attempt or explicit request. If fewer questions exist, say so rather than inventing extras. " +
+        "For concepts, definitions, examples, or visuals, start with search_study_hub and do not use web search. Use explain_concept for text-first explanations. Call show_visual with a returned explainer ID when the user asks to see, demonstrate, or interact with a concept; prefer the authored visual over a generated replacement, but do not force visuals into every explanation. For exams, deadlines, labs, lectures, or schedules, start with get_course_dates; use web search only for missing or stale dates or an explicit live recheck. Search before using stable IDs. Keep explanations concise, define notation, and distinguish stored course evidence from general clarification. Unrelated requests are outside this plugin's scope." +
+        (publicOrigin ? " All available tools are read-only." : " Only call ingest_lecture with an already-prepared local transaction explicitly authorized by the user."),
     },
   );
 
@@ -144,7 +146,7 @@ export function createKthStudyServer(
     "search_study_hub",
     {
       title: "Search KTH Study Hub",
-      description: "Primary first call for KTH concepts, definitions, examples, lectures, or visuals. When KTH Study is selected, always use this before answering or generating a visual, then pass the returned stable ID to the matching tool.",
+      description: "Use this first for course concepts, definitions, examples, lectures, visuals, or quiz practice. For quiz requests, find the concept ID then call quiz_me for authored questions instead of generating a quiz. Otherwise pass the returned stable ID to the matching study tool. This plugin cannot access Canvas/Ladok accounts, submit work, or register for exams.",
       inputSchema: z.object({
         query: z.string().min(1),
         courseId: z.string().optional(),
@@ -233,10 +235,10 @@ export function createKthStudyServer(
     "quiz_me",
     {
       title: "Quiz me",
-      description: "Use this to retrieve bounded local self-check questions for a stable concept ID.",
+      description: "Use this when the user asks to be quizzed or practise a course topic. Search for the concept ID first. Returns authored self-check questions, not generated questions. Present only those returned, preserving wording and count; do not substitute a built-in generated quiz or add questions to reach the limit. Keep solutions hidden until an attempt or explicit request. If none are returned, explain the gap.",
       inputSchema: z.object({
         conceptId: ids,
-        limit: z.number().int().min(1).max(20).optional(),
+        limit: z.number().int().min(1).max(20).optional().describe("Maximum authored questions to return, not a target count; fewer may exist."),
       }),
       outputSchema: z.object({
         conceptId: z.string(),
