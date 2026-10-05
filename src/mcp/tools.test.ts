@@ -2,6 +2,7 @@ import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { createStudyContext } from "../server/context";
 import { callTool } from "./tools";
+import { EXPLAINER_WIDGET_URI } from "./resources";
 
 describe("KTH Study MCP tools", () => {
   it("links mini-exams to their covered lectures and scoped practice without claiming full coverage", async () => {
@@ -135,10 +136,10 @@ describe("KTH Study MCP tools", () => {
     });
     expect(result._meta).toMatchObject({
       ui: {
-        resourceUri: "ui://widget/kth-study-explainer-0.2.5.html",
+        resourceUri: EXPLAINER_WIDGET_URI,
         visibility: ["model"],
       },
-      "openai/outputTemplate": "ui://widget/kth-study-explainer-0.2.5.html",
+      "openai/outputTemplate": EXPLAINER_WIDGET_URI,
     });
   });
 
