@@ -109,21 +109,21 @@
       "id": "coursework:sf1690:exercise-13", "courseId": "course:sf1690", "slug": "exercise-13", "kind": "exercise", "sequence": 28,
       "title": "Exercise session 13", "week": 40, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 13.",
       "materials": [{ "title": "Algebra", "section": "1.2", "page": "25", "exercises": "4, 5, 9, 15, 17, 18, 20, 26, 28, D3, D4, P4, P5" }],
-      "sessionIds": ["session:sf1690:exercise-13"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-13"], "lectureIds": ["lecture:sf1690:2026-09-29-13"], "conceptIds": ["concept:sf1690:dot-products-and-orthogonality"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-14", "courseId": "course:sf1690", "slug": "exercise-14", "kind": "exercise", "sequence": 30,
       "title": "Exercise session 14", "week": 40, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 14.",
       "materials": [{ "title": "Algebra", "section": "1.3", "page": "35", "exercises": "1, 2, 5, 9, 13, 15, 21, 22, 25, 31, 32, 40, 45, D3, D4" }],
-      "sessionIds": ["session:sf1690:exercise-14"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-14"], "lectureIds": ["lecture:sf1690:2026-09-30-14"], "conceptIds": ["concept:sf1690:vector-lines-and-planes"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {
       "id": "coursework:sf1690:exercise-15", "courseId": "course:sf1690", "slug": "exercise-15", "kind": "exercise", "sequence": 32,
       "title": "Exercise session 15", "week": 41, "requirement": "recommended", "description": "Recommended exercises for the material from Lecture 15.",
       "materials": [{ "title": "Algebra", "section": "4.3", "page": "207", "exercises": "23, 27, 33, 34, 35, 38, 48, 49, D3, D4, P1, P2" }],
-      "sessionIds": ["session:sf1690:exercise-15"], "lectureIds": [], "conceptIds": [], "assessmentIds": [],
+      "sessionIds": ["session:sf1690:exercise-15"], "lectureIds": ["lecture:sf1690:2026-10-05-15"], "conceptIds": ["concept:sf1690:cross-products-and-area"], "assessmentIds": [],
       "sourceIds": ["source:sf1690:canvas-course-plan-26"], "lastChecked": "2026-08-24", "confidence": "verified", "relationships": []
     },
     {

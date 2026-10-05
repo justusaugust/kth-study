@@ -10,7 +10,8 @@
   "accessibleSummary": "Two states remember whether the number of clocked ones is even or odd. Input one switches states and zero holds; the Moore output reports the current state.",
   "conceptIds": [
     "concept:ie1204:moore-and-mealy-machines",
-    "concept:ie1204:fsm-circuit-analysis"
+    "concept:ie1204:fsm-circuit-analysis",
+    "concept:ie1204:counter-sequence-synthesis"
   ],
   "sourceIds": [
     "source:ie1204:lecture-10-finite-state-machines"

@@ -19,6 +19,7 @@ import { StorageDiagram } from "./diagrams/StorageDiagram";
 import { ComplexPlaneDiagram } from "./diagrams/ComplexPlaneDiagram";
 import { StateMachineDiagram } from "./diagrams/StateMachineDiagram";
 import { VectorAdditionDiagram } from "./diagrams/VectorAdditionDiagram";
+import { VectorProductsDiagram } from "./diagrams/VectorProductsDiagram";
 import { SequentialTimingDiagram } from "./diagrams/SequentialTimingDiagram";
 
 type DiagramMode = "preview" | "full";
@@ -414,6 +415,7 @@ export function SystemsDiagram({ variant, mode }: Props) {
   if (variant === "sequential-timing") return <SequentialTimingDiagram mode={mode} />;
   if (variant === "state-machine") return <StateMachineDiagram mode={mode} />;
   if (variant === "vector-addition") return <VectorAdditionDiagram mode={mode} />;
+  if (variant === "vector-products") return <VectorProductsDiagram mode={mode} />;
   if (variant === "complex-plane") return <ComplexPlaneDiagram mode={mode} />;
   if (variant === "storage-timing") return <StorageDiagram mode={mode} />;
   if (variant === "inverse-functions") return <InverseFunctionDiagram mode={mode} />;

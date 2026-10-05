@@ -9,7 +9,8 @@
   "caption": "Toggle the two data inputs and the select bit. Only the selected input reaches the output.",
   "accessibleSummary": "An interactive 2-to-1 multiplexer highlights the selected wire and reports the output bit.",
   "conceptIds": [
-    "concept:ie1204:multiplexers-and-decoders"
+    "concept:ie1204:multiplexers-and-decoders",
+    "concept:ie1204:synchronous-counters"
   ],
   "sourceIds": [
     "source:ie1204:lecture-8-building-blocks"

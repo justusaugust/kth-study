@@ -92,7 +92,7 @@ export function createKthStudyServer(
     {
       name: "kth-study",
       title: "KTH Study",
-      version: "0.2.7",
+      version: "0.2.8",
       icons: KTH_STUDY_ICONS,
     },
     {
@@ -104,7 +104,7 @@ export function createKthStudyServer(
   );
 
   // Published hosts retain template URIs. Keep these until old connections are retired.
-  for (const uri of [EXPLAINER_WIDGET_URI, ...["0.2.1", "0.2.2", "0.2.3", "0.2.4"].map(version => `ui://widget/kth-study-explainer-${version}.html`)]) {
+  for (const uri of [EXPLAINER_WIDGET_URI, ...["0.2.1", "0.2.2", "0.2.3", "0.2.4", "0.2.5"].map(version => `ui://widget/kth-study-explainer-${version}.html`)]) {
     registerAppResource(
       server,
       uri,

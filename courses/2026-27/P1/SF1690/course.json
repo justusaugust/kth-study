@@ -35,6 +35,9 @@
     "outcome:sf1690:read-mathematics"
   ],
   "conceptIds": [
+    "concept:sf1690:dot-products-and-orthogonality",
+    "concept:sf1690:vector-lines-and-planes",
+    "concept:sf1690:cross-products-and-area",
     "concept:sf1690:vectors-and-components",
     "concept:sf1690:de-moivre-and-complex-roots",
     "concept:sf1690:exponential-logarithmic-hyperbolic-functions",
@@ -60,6 +63,9 @@
     "concept:sf1690:rational-functions-and-cancellation"
   ],
   "sourceIds": [
+    "source:sf1690:lecture-13-notes",
+    "source:sf1690:lecture-14-notes",
+    "source:sf1690:lecture-15-notes",
     "source:sf1690:official-course-page",
     "source:sf1690:timeedit-schedule",
     "source:sf1690:canvas-course-plan-26",

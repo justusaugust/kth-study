@@ -1,0 +1,30 @@
+import { fireEvent, render, screen } from "@testing-library/react";
+import { expect, test } from "vitest";
+import { SystemsDiagram } from "../SystemsDiagram";
+
+test("distinguishes scalar dot product, signed vector cross product and unsigned area", () => {
+  const { container } = render(<SystemsDiagram variant="vector-products" mode="full" />);
+  const x = screen.getByRole("slider", { name: "Vector b x component" });
+  const y = screen.getByRole("slider", { name: "Vector b y component" });
+  const result = screen.getByRole("status");
+  expect(x).toHaveClass("liquid-range");
+  expect(x).toHaveAttribute("min", "-3");
+  expect(y).toHaveAttribute("max", "3");
+  expect(result).toHaveTextContent("Scalar: a · b = 2bₓ = 2");
+  expect(result).toHaveTextContent("Vector: a × b = (0, 0, 4)");
+  fireEvent.change(x, { target: { value: "0" } });
+  expect(result).toHaveTextContent("a · b = 2bₓ = 0");
+  expect(result).toHaveTextContent("Parallelogram area = |2bᵧ| = 4");
+  fireEvent.change(y, { target: { value: "-3" } });
+  expect(result).toHaveTextContent("a × b = (0, 0, -6) · signed z = -6");
+  expect(container.querySelector("polygon")).toHaveAttribute("data-area", "6");
+  expect(container.querySelector('[data-vector="b"]')).toHaveAttribute("d", "M220 220 L220 328");
+  fireEvent.change(x, { target: { value: "-3" } });
+  fireEvent.change(y, { target: { value: "0" } });
+  expect(result).toHaveTextContent("a · b = 2bₓ = -6");
+  expect(result).toHaveTextContent("a × b = (0, 0, 0)");
+  expect(container.querySelector("polygon")).toHaveAttribute("data-area", "0");
+  fireEvent.change(x, { target: { value: "0" } });
+  expect(result).toHaveTextContent("a · b = 2bₓ = 0");
+  expect(container.querySelector('circle[data-vector="b"]')).toBeInTheDocument();
+});

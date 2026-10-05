@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-09-30-14",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-30-14",
+  "title": "Lecture 14 — Vector equations of lines and planes",
+  "date": "2026-09-30",
+  "sessionId": "session:sf1690:lecture-14",
+  "summary": "Describe a line using one direction and a plane using two independent directions or a normal, and move between vector and coordinate equations.",
+  "conceptIds": [
+    "concept:sf1690:vector-lines-and-planes"
+  ],
+  "body": "A parameterized line starts at a chosen point and moves along one fixed direction. Every coordinate must use the same parameter; restricting its range selects a segment. A plane adds a second independent direction, or equivalently imposes a dot-product constraint with a nonzero normal. These descriptions let you check membership, construct a plane through three noncollinear points, and convert between vector and scalar equations. The examples emphasize checking all coordinates and recovering a normal through orthogonality. In higher dimensions, distinguish a two-parameter plane from the hyperplane defined by one scalar equation. Exercise 14 follows Algebra section 1.3.",
+  "sourceIds": [
+    "source:sf1690:lecture-14-notes",
+    "source:sf1690:canvas-course-plan-26"
+  ],
+  "lastChecked": "2026-10-05",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-30-14",
+      "to": "concept:sf1690:vector-lines-and-planes"
+    }
+  ]
+}

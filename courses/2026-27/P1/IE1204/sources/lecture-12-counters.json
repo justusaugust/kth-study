@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:lecture-12-counters",
+  "courseId": "course:ie1204",
+  "title": "Lecture 12 — counters and FSM examples",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63848/pages/slides-and-recordings-module-3-p1-2026?module_item_id=1550035",
+  "locator": "Authenticated Canvas listing checked 5 October 2026: Lecture 12 dated 29 September links Le12-en-NEW P2.pdf (file 10564155) and Le12 HC161.pdf (file 10564154). Teaching content uses the previously retained full extracted text, read 5 October: main deck slides 3–21 binary/ripple counters, HC161 and modulus/cascading; 22–27 arbitrary sequences; 28–44 FSM synthesis/analysis; HC161 supplement explains mux/enable/toggle logic. The current listing and dates were verified, but PDF bytes were not freshly downloaded or compared. Diagram-only slide details are not reconstructed as verified wiring. Examples are original practice, not assigned lab solutions; no attendance or completion inferred.",
+  "lastChecked": "2026-10-05",
+  "confidence": "supported"
+}

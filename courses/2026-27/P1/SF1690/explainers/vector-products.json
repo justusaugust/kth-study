@@ -1,0 +1,23 @@
+{
+  "id": "explainer:sf1690:vector-products",
+  "atlasOrder": 35,
+  "kind": "systems-diagram",
+  "variant": "vector-products",
+  "courseId": "course:sf1690",
+  "slug": "vector-products",
+  "title": "Compare dot product and oriented area",
+  "caption": "Move b while a stays on the horizontal axis. Compare alignment, the signed cross-product component, and the nonnegative area.",
+  "accessibleSummary": "An equal-scale coordinate plane shows a = (2, 0) and an adjustable b. Component controls update the dot product 2bx, the perpendicular cross product (0, 0, 2by), and parallelogram area |2by|. Zero input has no angle.",
+  "conceptIds": [
+    "concept:sf1690:dot-products-and-orthogonality",
+    "concept:sf1690:cross-products-and-area"
+  ],
+  "sourceIds": [
+    "source:sf1690:lecture-13-notes",
+    "source:sf1690:lecture-15-notes"
+  ],
+  "evidenceStatus": "lecture",
+  "lastChecked": "2026-10-05",
+  "confidence": "supported",
+  "relationships": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:lecture-15-memory",
+  "courseId": "course:ie1204",
+  "title": "Module 4 revised order and Lecture 15 — memory",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63848/modules/items/1550036",
+  "locator": "Authenticated Canvas Module 4 listing checked 5 October 2026 explicitly moves Lecture 15 before Lectures 13 and 14 for Lab 4: Lecture 15 on 1 October, Lecture 13 on 6 October, Lecture 14 on 8 October. Lecture 15 links Le15-en-NEW2.pdf, file 10564158. Teaching content uses previously retained full extracted text, read 5 October: slides 3–16 ROM/RAM and counter-decoder-diode-display architecture; 17–33 arrays/addressing; 34–53 SRAM/DRAM; 54–77 ROM/flash and hierarchy; 78–79 multiport memory. Listing/date verification does not establish unchanged PDF bytes; no fresh PDF download or personal lab completion claimed. Examples use invented values, not the student's assigned lab data.",
+  "lastChecked": "2026-10-05",
+  "confidence": "supported"
+}

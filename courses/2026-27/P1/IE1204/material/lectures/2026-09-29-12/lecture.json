@@ -1,0 +1,15 @@
+{
+  "id": "lecture:ie1204:2026-09-29-12",
+  "courseId": "course:ie1204",
+  "slug": "2026-09-29-12",
+  "title": "Lecture 12 — counters and sequence design",
+  "date": "2026-09-29",
+  "sessionId": "session:ie1204:lecture-12",
+  "summary": "Trace synchronous counter controls, build a chosen modulus, and turn an arbitrary sequence into next-state equations.",
+  "conceptIds": ["concept:ie1204:synchronous-counters", "concept:ie1204:counter-sequence-synthesis"],
+  "body": "A counter is a finite-state machine whose state usually doubles as its output. Start by separating ripple counting from a shared-clock design. Then trace reset, parallel load, count enable and hold as distinct operations; a changing load input is not itself a clock edge.\n\nFor a shortened counting cycle, decide which state is the last visible state and which value the following edge must load. That decision prevents the common off-by-one modulus error. Cascaded synchronous stages share the clock and use a carry condition to enable the upper stage.\n\nNext remove the assumption that the sequence is numerical. Write every present-to-next transition, derive one D equation per state bit and verify all physical codes. The original examples practise a five-state counting interval and a three-state arbitrary cycle, without supplying an assigned lab circuit. Use the existing mux visual to review load selection and the parity machine to practise predicting before clocking.",
+  "sourceIds": ["source:ie1204:lecture-12-counters"],
+  "lastChecked": "2026-10-05",
+  "confidence": "supported",
+  "relationships": []
+}

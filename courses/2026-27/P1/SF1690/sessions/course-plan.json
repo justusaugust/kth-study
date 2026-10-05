@@ -511,6 +511,8 @@
     },
     {
       "id": "session:sf1690:lecture-13",
+      "date": "2026-09-29",
+      "lectureId": "lecture:sf1690:2026-09-29-13",
       "courseId": "course:sf1690",
       "slug": "lecture-13",
       "kind": "lecture",
@@ -519,10 +521,11 @@
       "week": 40,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:lecture-13-notes"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-10-05",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -545,6 +548,8 @@
     },
     {
       "id": "session:sf1690:lecture-14",
+      "date": "2026-09-30",
+      "lectureId": "lecture:sf1690:2026-09-30-14",
       "courseId": "course:sf1690",
       "slug": "lecture-14",
       "kind": "lecture",
@@ -553,10 +558,11 @@
       "week": 40,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:lecture-14-notes"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-10-05",
+      "confidence": "supported",
       "relationships": []
     },
     {
@@ -579,6 +585,8 @@
     },
     {
       "id": "session:sf1690:lecture-15",
+      "date": "2026-10-05",
+      "lectureId": "lecture:sf1690:2026-10-05-15",
       "courseId": "course:sf1690",
       "slug": "lecture-15",
       "kind": "lecture",
@@ -587,10 +595,11 @@
       "week": 41,
       "courseworkIds": [],
       "sourceIds": [
-        "source:sf1690:canvas-course-plan-26"
+        "source:sf1690:canvas-course-plan-26",
+        "source:sf1690:lecture-15-notes"
       ],
-      "lastChecked": "2026-08-24",
-      "confidence": "verified",
+      "lastChecked": "2026-10-05",
+      "confidence": "supported",
       "relationships": []
     },
     {

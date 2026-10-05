@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-09-29-13",
+  "courseId": "course:sf1690",
+  "slug": "2026-09-29-13",
+  "title": "Lecture 13 — Dot products and orthogonality",
+  "date": "2026-09-29",
+  "sessionId": "session:sf1690:lecture-13",
+  "summary": "Turn component arithmetic into lengths, angles and perpendicularity, then use Cauchy–Schwarz and the triangle inequality.",
+  "conceptIds": [
+    "concept:sf1690:dot-products-and-orthogonality"
+  ],
+  "body": "Component calculations become geometric tests once you connect the dot product with squared length. Expanding the squared norm of a sum exposes a mixed term: it vanishes for perpendicular vectors, giving Pythagoras, and otherwise records their alignment. Dividing a dot product by both lengths isolates the cosine of the angle, provided neither vector is zero. Cauchy–Schwarz explains why that quotient stays within the domain of inverse cosine and leads to the triangle inequality. The worked examples compare angle and distance calculations, then use an orthonormal pair to simplify a norm. Exercise 13 develops these ideas in Algebra section 1.2.",
+  "sourceIds": [
+    "source:sf1690:lecture-13-notes",
+    "source:sf1690:canvas-course-plan-26"
+  ],
+  "lastChecked": "2026-10-05",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-09-29-13",
+      "to": "concept:sf1690:dot-products-and-orthogonality"
+    }
+  ]
+}

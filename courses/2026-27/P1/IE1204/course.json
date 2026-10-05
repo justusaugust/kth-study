@@ -49,6 +49,10 @@
     "outcome:ie1204:design-digital-systems"
   ],
   "conceptIds": [
+    "concept:ie1204:synchronous-counters",
+    "concept:ie1204:counter-sequence-synthesis",
+    "concept:ie1204:memory-addressing-and-rom",
+    "concept:ie1204:memory-cell-technologies",
     "concept:ie1204:fsm-circuit-analysis",
     "concept:ie1204:sequential-setup-hold-and-skew",
     "concept:ie1204:moore-and-mealy-machines",
@@ -74,6 +78,8 @@
     "concept:ie1204:cmos-power-consumption"
   ],
   "sourceIds": [
+    "source:ie1204:lecture-12-counters",
+    "source:ie1204:lecture-15-memory",
     "source:ie1204:lecture-11-fsm-analysis-and-timing",
     "source:ie1204:lecture-10-finite-state-machines",
     "source:ie1204:lecture-9-latches-and-flip-flops",

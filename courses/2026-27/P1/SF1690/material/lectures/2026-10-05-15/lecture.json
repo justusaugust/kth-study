@@ -1,0 +1,26 @@
+{
+  "id": "lecture:sf1690:2026-10-05-15",
+  "courseId": "course:sf1690",
+  "slug": "2026-10-05-15",
+  "title": "Lecture 15 — Cross products and area",
+  "date": "2026-10-05",
+  "sessionId": "session:sf1690:lecture-15",
+  "summary": "Calculate an oriented normal in three dimensions, check its sign and orthogonality, and use its length to measure parallelogram and triangle areas.",
+  "conceptIds": [
+    "concept:sf1690:cross-products-and-area"
+  ],
+  "body": "The cross product provides a normal vector directly from two directions in three dimensions. Its component formula determines both size and orientation, so the order of the inputs matters. Dotting the result with each input checks perpendicularity; its norm measures the area of the parallelogram they span. For a triangle, form two sides from a common vertex and halve that area. Parallel inputs make the cross product zero, so they cannot supply a unit normal. The examples check a calculated normal and verify triangle area geometrically. Keep parentheses in repeated cross products: unlike ordinary multiplication, the operation is not associative.",
+  "sourceIds": [
+    "source:sf1690:lecture-15-notes",
+    "source:sf1690:canvas-course-plan-26"
+  ],
+  "lastChecked": "2026-10-05",
+  "confidence": "supported",
+  "relationships": [
+    {
+      "type": "teaches",
+      "from": "lecture:sf1690:2026-10-05-15",
+      "to": "concept:sf1690:cross-products-and-area"
+    }
+  ]
+}

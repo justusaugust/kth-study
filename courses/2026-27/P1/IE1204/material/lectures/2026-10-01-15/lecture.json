@@ -1,0 +1,15 @@
+{
+  "id": "lecture:ie1204:2026-10-01-15",
+  "courseId": "course:ie1204",
+  "slug": "2026-10-01-15",
+  "title": "Lecture 15 — memory arrays and stored outputs",
+  "date": "2026-10-01",
+  "sessionId": "session:ie1204:lecture-15",
+  "summary": "Decode addresses into stored words, connect ROM to combinational logic, and compare SRAM, DRAM, flash and multiport memories.",
+  "conceptIds": ["concept:ie1204:memory-addressing-and-rom", "concept:ie1204:memory-cell-technologies"],
+  "body": "An address selects a word; it is not the word itself. Begin with depth, width and total capacity, keeping bits and bytes separate. A decoder selects one row, while the stored connections or cells determine the output bits. This makes a ROM a physical truth table.\n\nThe counter-decoder-memory-display chain connects Lecture 12 to memory: the counter chooses the position, the decoder selects that row, and the stored word specifies what to display. Track active-low signals and any output inversion before deciding what a diode connection means. Practise with invented words before applying the method to your own work.\n\nThen compare the storage mechanisms. SRAM maintains a powered feedback state; DRAM stores charge and needs refresh and read restoration; ROM and flash retain data without power but have different programming constraints. Finally distinguish capacity from ports: additional read ports permit more simultaneous accesses without multiplying the stored words. Canvas places this lecture before Lectures 13 and 14 to prepare for Lab 4.",
+  "sourceIds": ["source:ie1204:lecture-15-memory"],
+  "lastChecked": "2026-10-05",
+  "confidence": "supported",
+  "relationships": []
+}

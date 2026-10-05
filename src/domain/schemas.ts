@@ -366,6 +366,7 @@ export const SystemsDiagramExplainerSchema = z.object({
     "complex-plane",
     "state-machine",
     "vector-addition",
+    "vector-products",
     "sequential-timing",
   ]),
 });
