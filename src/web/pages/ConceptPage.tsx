@@ -53,7 +53,6 @@ export function ConceptPage() {
   if (!data) return <p className="loading">Loading concept…</p>;
 
   const { concept, course } = data;
-  const chatgptAppUrl = import.meta.env.VITE_CHATGPT_APP_URL?.trim();
   let sectionCount = 0;
   const nextRegister = () => String(++sectionCount).padStart(2, "0");
 
@@ -184,14 +183,6 @@ export function ConceptPage() {
       </section>
 
       <footer className="source-footer">
-        <p className="chatgpt-handoff">
-          <strong>Ask ChatGPT</strong>
-          {chatgptAppUrl ? (
-            <a href={chatgptAppUrl} rel="noreferrer" target="_blank">Open KTH Study in ChatGPT</a>
-          ) : (
-            <span>The official KTH Study app link will appear here after launch.</span>
-          )}
-        </p>
         <div className="source-summary">
           <StudyMark kind="date">Checked {formatStudyDate(concept.lastChecked)}</StudyMark>
         </div>

@@ -178,6 +178,17 @@ const groups: CourseJourneyGroup[] = [
 ];
 
 describe("WeekLedger", () => {
+  it("links an undated authored review without presenting it as a missing lesson", () => {
+    const review: CourseSession = { ...sessions[0], id: "session:sf1690:lecture-16", slug: "lecture-16", title: "Lecture 16 · Course review", date: undefined, lectureId: undefined, relationships: [{ type: "supports", from: "session:sf1690:lecture-16", to: "concept:sf1690:course-review" }] };
+    render(<WeekLedger sessions={[review]} coursework={[]} groups={[{ key: "week-41", label: "Week 41", week: 41, items: [{ entityId: review.id, entityType: "session", kind: "lecture", title: review.title, url: "/courses/sf1690/concepts/course-review", sequence: 33 }] }]} />, { wrapper: MemoryRouter });
+    const disclosure = document.querySelector(".week-ledger__week details:not([open]) summary");
+    if (disclosure) fireEvent.click(disclosure);
+    expect(screen.getByRole("link", { name: review.title })).toHaveAttribute("href", "/courses/sf1690/concepts/course-review");
+    expect(screen.getByText("Authored review")).toBeVisible();
+    expect(screen.queryByText("Not in archive")).not.toBeInTheDocument();
+    expect(document.querySelector("time")).toBeNull();
+  });
+
   it("merges sessions, coursework, and assessments into one chronological ledger", () => {
     render(
       <WeekLedger

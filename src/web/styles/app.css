@@ -100,9 +100,8 @@
 .course-link.active::after,
 .atlas-link.active::after {
   position: absolute;
-  right: var(--space-2);
+  inset-inline: var(--space-2);
   bottom: 3px;
-  left: var(--space-2);
   height: 2px;
   background: currentColor;
   content: "";
@@ -194,8 +193,14 @@
   margin-inline: auto;
 }
 
+.study-app-link { width: min(100%, 62rem); margin: var(--space-16) auto 0; color: var(--ink-secondary); font-size: var(--text-label); }
+.study-app-link a { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; }
+
+/* Every page opens on the same heading block: kicker, title, lead. */
 .concept-heading,
-.home-intro {
+.home-intro,
+.deadlines-intro,
+.atlas-intro {
   max-width: 46rem;
 }
 
@@ -208,7 +213,10 @@ h4 {
 
 .page-column > h1,
 .concept-heading h1,
-.home-intro h1 {
+.home-intro h1,
+.deadlines-intro h1,
+.atlas-intro h1,
+.course-passport__identity h1 {
   margin: var(--space-3) 0 0;
   font-size: var(--text-display);
   font-weight: 540;
@@ -235,7 +243,7 @@ h4 {
 
 .lead {
   max-width: var(--measure);
-  margin: var(--space-5) 0 0;
+  margin: var(--space-4) 0 0;
   color: var(--ink-secondary);
   font-family: var(--font-prose);
   font-size: 1.1rem;
@@ -339,6 +347,35 @@ h4 {
   margin-top: var(--space-8);
 }
 
+/* Subheadings stay tight to their paragraph and well clear of the last one. */
+.markdown-body h3 {
+  margin: var(--space-8) 0 var(--space-2);
+  font-size: 1rem;
+  font-weight: 580;
+  letter-spacing: -0.006em;
+  line-height: 1.3;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0 0 var(--space-6);
+  padding-inline-start: var(--space-6);
+}
+
+.markdown-body li {
+  padding-inline-start: var(--space-1);
+  text-wrap: pretty;
+}
+
+.markdown-body li + li {
+  margin-top: var(--space-2);
+}
+
+.markdown-body li::marker {
+  color: var(--ink-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Display mathematics: left-set on a consistent indent, with air. */
 .markdown-body .katex-display {
   margin: var(--space-8) 0;
@@ -421,14 +458,14 @@ h4 {
   position: absolute;
   z-index: 1;
   top: 50%;
-  left: var(--space-4);
+  inset-inline-start: var(--space-4);
   color: var(--ink-tertiary);
   pointer-events: none;
   translate: 0 -50%;
 }
 
 .search-input-shell .global-search {
-  padding-left: 44px;
+  padding-inline-start: 44px;
 }
 
 .global-search::placeholder {
@@ -481,6 +518,7 @@ h4 {
   .search-filter-row, .search-popover .search-filter-row { display: none; }
   .search-filter-picker { display: flex; align-items: center; gap: var(--space-3); margin-block: var(--space-3); color: var(--ink-secondary); font-size: var(--text-label); }
   .search-filter-picker .atlas-select { width: 100%; }
+  .search-page .search-filter-picker { margin-bottom: var(--gap-controls); }
 }
 
 .search-filter-row button {
@@ -651,10 +689,6 @@ h4 {
   width: min(100%, 74rem);
 }
 
-.home-intro h1 {
-  margin: var(--space-3) 0 0;
-}
-
 .week-scroll {
   margin-top: var(--space-12);
   overflow-x: auto;
@@ -756,9 +790,11 @@ h4 {
 }
 
 .week-empty {
-  display: block;
+  display: grid;
+  gap: var(--space-2);
   margin-top: var(--space-8);
   color: var(--ink-muted);
+  font-size: var(--text-label);
 }
 
 .home-search-section {
@@ -767,7 +803,7 @@ h4 {
 }
 
 .home-search-section h2 {
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--gap-heading);
   font-size: var(--text-section);
   font-weight: 580;
 }
@@ -822,7 +858,7 @@ h4 {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-8);
   color: var(--ink-muted);
 }
 
@@ -3327,36 +3363,11 @@ svg:focus-within > .diagram-hover-label.is-visible,
   margin: var(--space-1) 0 0;
 }
 
+/* Search page uses the shared filter chips at full touch size. */
 .filter-row button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
   min-height: 44px;
-  padding: 0 var(--space-4);
-  border: 0;
-  border-radius: var(--radius-control);
-  background: var(--surface-inset);
-  color: var(--ink-secondary);
-  font-family: var(--font-ui);
+  padding-inline: var(--space-4);
   font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 120ms ease, background-color 120ms ease, scale 100ms ease;
-}
-
-.filter-row button:active {
-  scale: 0.96;
-}
-
-.filter-row button:hover {
-  background: var(--surface-inset-deep);
-  color: var(--ink);
-}
-
-.filter-row button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--canvas);
 }
 
 /* Source footer ----------------------------------------------------------- */
@@ -3364,31 +3375,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
 .source-footer {
   margin-top: var(--space-20);
   color: var(--ink-muted);
-}
-
-.chatgpt-handoff {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  max-width: 62ch;
-  margin: 0 0 var(--space-8);
-  padding-block: var(--space-4);
-  border-block: 1px solid var(--rule);
-  color: var(--ink-secondary);
-  font-family: var(--font-prose);
-  line-height: 1.5;
-}
-
-.chatgpt-handoff strong {
-  color: var(--ink);
-  font-family: var(--font-ui);
-}
-
-.chatgpt-handoff a {
-  color: var(--accent);
-  font-family: var(--font-ui);
-  font-weight: 560;
-  text-underline-offset: 4px;
 }
 
 .source-summary,
@@ -3490,7 +3476,7 @@ svg:focus-within > .diagram-hover-label.is-visible,
 }
 
 .ruled-section > h2 {
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--gap-heading);
   font-size: var(--text-section);
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -3659,16 +3645,17 @@ svg:focus-within > .diagram-hover-label.is-visible,
 }
 
 .search-page > h1 {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--gap-controls);
 }
 
+/* Field and filters read as one control group, held apart from results. */
 .search-form {
   max-width: 560px;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 
 .filter-row {
-  margin-bottom: var(--space-14);
+  margin-bottom: var(--gap-controls);
 }
 
 .search-status {
@@ -3742,7 +3729,7 @@ svg:focus-within > .diagram-hover-label.is-visible,
   margin-top: var(--space-12);
 }
 .lesson-reader__content { grid-area: 1 / 1; min-width: 0; }
-.lesson-outline { grid-area: 1 / 2; position: sticky; top: calc(var(--header-height, 7rem) + 1.5rem); }
+.lesson-outline { grid-area: 1 / 2; position: sticky; top: calc(var(--header-height) + var(--space-6)); }
 .lesson-outline__links p { margin: 0 0 var(--space-2); color: var(--ink-tertiary); font-size: var(--text-label); }
 .lesson-outline__links ol { list-style: none; padding: 0; margin: 0; }
 .lesson-outline__links a { display: block; padding: .5rem var(--space-3); color: var(--ink-secondary); font-size: var(--text-label); text-decoration: none; line-height: 1.45; }
@@ -3797,7 +3784,7 @@ svg:focus-within > .diagram-hover-label.is-visible,
 }
 
 .lecture-note h2 {
-  margin: 0 0 var(--space-5);
+  margin: 0 0 var(--gap-heading);
   font-size: var(--text-section);
   font-weight: 540;
   letter-spacing: -0.01em;
@@ -3839,7 +3826,7 @@ svg:focus-within > .diagram-hover-label.is-visible,
 .lecture-spine__list {
   display: grid;
   gap: var(--space-8);
-  margin: var(--space-10) 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -3848,29 +3835,17 @@ svg:focus-within > .diagram-hover-label.is-visible,
   min-width: 0;
 }
 
+/* Concepts are ruled sections in the reading column, not cards. */
 .lecture-concept {
-  overflow: clip;
-  border-radius: calc(var(--radius-figure) + var(--space-2));
-  background: var(--surface-inset);
+  border-top: 1px solid var(--rule);
 }
 
 .lecture-concept__summary {
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  grid-template-columns: 2rem minmax(0, 1fr);
   gap: var(--space-5) var(--space-6);
   align-items: start;
-  padding: var(--space-6);
-  cursor: pointer;
-  list-style: none;
-}
-
-.lecture-concept__summary::-webkit-details-marker {
-  display: none;
-}
-
-.lecture-concept__summary:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--accent-soft) inset;
+  padding: var(--space-6) 0;
 }
 
 .lecture-concept__summary-copy {
@@ -3906,40 +3881,9 @@ svg:focus-within > .diagram-hover-label.is-visible,
   line-height: 1.6;
 }
 
-.lecture-concept__disclosure {
-  display: inline-flex;
-  gap: var(--space-2);
-  align-items: center;
-  min-height: 44px;
-  color: var(--ink-secondary);
-  font-size: var(--text-label);
-  font-weight: 550;
-}
-
-.lecture-concept__disclosure::after {
-  display: grid;
-  width: 1.75rem;
-  height: 1.75rem;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--sheet-raised);
-  color: var(--ink);
-  content: "−";
-  font-size: 1rem;
-}
-
-.lecture-concept:not([open]) .lecture-concept__collapse-label,
-.lecture-concept[open] .lecture-concept__expand-label {
-  display: none;
-}
-
-.lecture-concept:not([open]) .lecture-concept__disclosure::after {
-  content: "+";
-}
-
 .lecture-concept__body {
   min-width: 0;
-  padding: 0 var(--space-6) var(--space-8) calc(3.5rem + var(--space-12));
+  padding: 0 0 var(--space-12);
 }
 
 .lecture-concept__explanation,
@@ -3974,14 +3918,11 @@ svg:focus-within > .diagram-hover-label.is-visible,
 
 .lecture-concept__definitions > div {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
 }
 
 .lecture-concept__definitions article {
-  padding: var(--space-5);
-  border-radius: var(--radius-figure);
-  background: var(--sheet-raised);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--rule-soft);
 }
 
 .lecture-concept__definitions h5,
@@ -4030,7 +3971,7 @@ svg:focus-within > .diagram-hover-label.is-visible,
   gap: var(--space-6);
   margin-top: var(--space-16);
   padding-top: var(--space-6);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--rule);
 }
 
 .lecture-pagination a {
@@ -4279,10 +4220,8 @@ svg:focus-within > .diagram-hover-label.is-visible,
 }
 
 .practice-prompt {
-  padding: var(--space-6);
-  border-radius: calc(var(--radius-figure) + var(--space-2));
-  background: var(--sheet);
-  box-shadow: inset 0 0 0 1px var(--stage-hairline);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--rule);
 }
 
 .practice-prompt header > span {
@@ -4416,26 +4355,10 @@ svg:focus-within > .diagram-hover-label.is-visible,
   font-weight: 650;
 }
 
-.lecture-concept__practice .practice-prompt + .practice-prompt {
-  margin-top: var(--space-4);
-}
-
 /* Deadlines --------------------------------------------------------------- */
 
 .deadlines-page {
   width: min(100%, 68rem);
-}
-
-.deadlines-intro {
-  max-width: 48rem;
-}
-
-.deadlines-intro h1 {
-  margin: var(--space-3) 0 0;
-  font-size: var(--text-display);
-  font-weight: 570;
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
 }
 
 .deadline-list,
@@ -4451,13 +4374,12 @@ svg:focus-within > .diagram-hover-label.is-visible,
   display: grid;
   grid-template-columns: minmax(7rem, 0.24fr) minmax(0, 1fr);
   gap: var(--space-8);
-  padding: var(--space-6);
-  border-radius: calc(var(--radius-figure) + var(--space-2));
-  background: var(--surface-inset);
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--rule);
 }
 
 .deadline-group[data-next="true"] {
-  background: var(--accent-soft);
+  border-top: 2px solid var(--accent);
 }
 
 .deadline-date {
@@ -4562,17 +4484,11 @@ svg:focus-within > .diagram-hover-label.is-visible,
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.deadline-undated-list .deadline-item {
-  padding: var(--space-5);
-  border-radius: var(--radius-figure);
-  background: var(--surface-inset);
-}
-
 @media (max-width: 640px) {
   .deadline-group {
     grid-template-columns: 1fr;
     gap: var(--space-5);
-    padding: var(--space-5);
+    padding-block: var(--space-6);
   }
 
   .deadline-undated-list {
@@ -4583,7 +4499,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
 .lecture-practice__list {
   display: grid;
   gap: var(--space-4);
-  margin-top: var(--space-10);
 }
 
 .lecture-practice__list > article {
@@ -4662,31 +4577,16 @@ svg:focus-within > .diagram-hover-label.is-visible,
 
 @media (max-width: 640px) {
   .lecture-concept__summary {
-    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-columns: 2.25rem minmax(0, 1fr);
     gap: var(--space-3);
-    padding: var(--space-5) var(--space-4);
-  }
-
-  .lecture-concept__disclosure {
-    grid-column: 2;
-    justify-self: start;
   }
 
   .lecture-concept__body {
-    padding: 0 var(--space-4) var(--space-6);
+    padding-bottom: var(--space-10);
   }
 
-  .lecture-concept__definitions > div,
   .lecture-practice__list > article {
     grid-template-columns: 1fr;
-  }
-
-  .lecture-concept__visual {
-    margin-inline: calc(var(--space-4) * -1);
-  }
-
-  .practice-prompt {
-    padding: var(--space-4);
   }
 
   .lecture-pagination {
@@ -4710,29 +4610,13 @@ svg:focus-within > .diagram-hover-label.is-visible,
   width: min(100%, 68rem);
 }
 
-.atlas-intro {
-  max-width: 48rem;
-}
-
-.atlas-intro h1 {
-  margin: var(--space-3) 0 0;
-  font-size: var(--text-display);
-  font-weight: 570;
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
-}
-
-.atlas-intro .lead {
-  max-width: 42rem;
-  margin-top: var(--space-4);
-}
 
 .atlas-toolbar {
   display: grid;
   grid-template-columns: minmax(16rem, 1.8fr) minmax(10rem, 1fr) minmax(10rem, 1fr);
   gap: var(--space-3);
   align-items: end;
-  margin: var(--space-10) 0 var(--space-16);
+  margin-block: var(--gap-controls);
   padding: var(--space-3);
   border-radius: calc(var(--radius-figure) + 4px);
   background: var(--surface-inset);
@@ -5034,7 +4918,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
 @media (max-width: 560px) {
   .atlas-toolbar {
     grid-template-columns: 1fr;
-    margin-bottom: var(--space-12);
   }
 
   .atlas-query,
@@ -5062,9 +4945,11 @@ svg:focus-within > .diagram-hover-label.is-visible,
   gap: var(--space-2);
 }
 
-/* Mobile ------------------------------------------------------------------ */
+/* Header: the single row (brand, three courses, two labelled tools, search,
+   theme) needs ~880px. Below that the rail drops to its own row, keeping
+   --header-height in tokens.css in step. -------------------------------- */
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .study-header {
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 0 var(--space-1);
@@ -5090,16 +4975,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
   .header-search-trigger,
   .theme-toggle {
     padding-inline: var(--space-2);
-  }
-
-  .atlas-link {
-    justify-content: center;
-    width: 44px;
-    padding-inline: 0;
-  }
-
-  .atlas-link-label {
-    display: none;
   }
 
   .header-action-label,
@@ -5185,13 +5060,23 @@ svg:focus-within > .diagram-hover-label.is-visible,
   .search-suggestions .suggestion-kind {
     display: none;
   }
+}
+
+/* Mobile ------------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+  .atlas-link {
+    justify-content: center;
+    width: 44px;
+    padding-inline: 0;
+  }
+
+  .atlas-link-label {
+    display: none;
+  }
 
   .study-main {
     padding-top: var(--space-10);
-  }
-
-  .breadcrumb {
-    margin-bottom: var(--space-8);
   }
 
   .registered {
@@ -5436,12 +5321,15 @@ svg:focus-within > .diagram-hover-label.is-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .global-search,
+  .search-filter-row button,
+  .practice-prompt__controls button {
+    transition: none;
   }
 
-  .global-search {
-    transition: none;
+  .search-filter-row button:active,
+  .practice-prompt__controls button:active {
+    scale: none;
   }
 }
 
@@ -5453,12 +5341,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
   display: none;
 }
 
-.week-empty {
-  display: grid;
-  gap: var(--space-2);
-  font-size: var(--text-label);
-}
-
 .week-empty strong {
   color: var(--ink-secondary);
   font-weight: 580;
@@ -5467,18 +5349,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
 .week-empty a {
   padding: 0;
   color: var(--accent);
-}
-
-.deadline-group {
-  padding: var(--space-7) 0;
-  border-top: 1px solid var(--rule);
-  border-radius: 0;
-  background: transparent;
-}
-
-.deadline-group[data-next="true"] {
-  border-top: 2px solid var(--accent);
-  background: transparent;
 }
 
 .deadline-item {
@@ -5559,66 +5429,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
   margin-top: var(--space-2);
   color: var(--accent);
   font-weight: 560;
-}
-
-.deadline-undated-list .deadline-item {
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-}
-
-.lecture-concept {
-  overflow: visible;
-  border-top: 1px solid var(--rule);
-  border-radius: 0;
-  background: transparent;
-}
-
-.lecture-concept__summary {
-  padding: var(--space-6) 0;
-  cursor: default;
-  grid-template-columns: 2rem minmax(0, 1fr);
-}
-
-.lecture-concept__summary:focus-visible {
-  box-shadow: none;
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-}
-
-.lecture-concept__disclosure::after {
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  background: transparent;
-}
-
-.lecture-concept__body {
-  padding: 0 0 var(--space-12);
-}
-
-.lecture-concept__definitions > div {
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-
-.lecture-concept__definitions article {
-  padding: var(--space-5) 0;
-  border-top: 1px solid var(--rule-soft);
-  border-radius: 0;
-  background: transparent;
-}
-
-.practice-prompt {
-  padding: var(--space-6) 0;
-  border-top: 1px solid var(--rule);
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.lecture-concept__practice .practice-prompt + .practice-prompt {
-  margin-top: 0;
 }
 
 .search-count,
@@ -5745,22 +5555,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
     font-size: 0.95rem;
   }
 
-  .filter-row {
-    flex-wrap: nowrap;
-    margin-inline: calc(-1 * var(--page-margin));
-    padding-inline: var(--page-margin);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .filter-row::-webkit-scrollbar {
-    display: none;
-  }
-
-  .filter-row button {
-    flex: 0 0 auto;
-  }
-
   .breadcrumb {
     min-height: 44px;
     align-items: center;
@@ -5772,28 +5566,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
 
   .breadcrumb > span {
     display: none;
-  }
-
-  .lecture-concept__summary {
-    grid-template-columns: 2.25rem minmax(0, 1fr) auto;
-    padding-inline: 0;
-  }
-
-  .lecture-concept__disclosure {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .lecture-concept__body {
-    padding: 0 0 var(--space-10);
-  }
-
-  .lecture-concept__visual {
-    margin-inline: 0;
-  }
-
-  .practice-prompt {
-    padding-inline: 0;
   }
 
   .atlas-register {
@@ -5824,10 +5596,6 @@ svg:focus-within > .diagram-hover-label.is-visible,
   .atlas-entry-open {
     display: inline-flex;
     margin-top: var(--space-2);
-  }
-
-  .deadline-group {
-    padding: var(--space-6) 0;
   }
 }
 

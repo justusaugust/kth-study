@@ -42,6 +42,8 @@ export function entityUrl(entity: StudyEntity): string {
     if ("lectureId" in entity && entity.lectureId) {
       return `/courses/${courseCodeFromId(entity.courseId)}/lectures/${entity.lectureId.split(":").at(-1)}`;
     }
+    const guide = entity.relationships?.find(relation => relation.type === "supports" && relation.to.startsWith("concept:"));
+    if (guide) return `/courses/${courseCodeFromId(guide.to)}/concepts/${guide.to.split(":").at(-1)}`;
     return `/courses/${courseCodeFromId(entity.courseId)}#session-${entity.slug}`;
   }
   if (type === "coursework" && "slug" in entity && "courseId" in entity) {

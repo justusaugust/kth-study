@@ -25,6 +25,7 @@ export function App() {
           <Route path="practice" element={<PracticePage />} />
           <Route path="courses/:courseCode" element={<CoursePage />} />
           <Route path="courses/:courseCode/exam" element={<ExamGuidePage />} />
+          <Route path="courses/:courseCode/concepts/course-review" element={<ExamGuidePage guideSlug="course-review" />} />
           <Route path="courses/:courseCode/lectures/:lectureSlug" element={<LecturePage />} />
           <Route path="courses/:courseCode/labs/:labSlug" element={<LabPage />} />
           <Route path="courses/:courseCode/concepts/:conceptSlug" element={<ConceptPage />} />

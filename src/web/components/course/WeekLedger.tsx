@@ -112,8 +112,9 @@ function LedgerEntry({
   const standalone =
     item.entityType === "coursework" ? courseworkById.get(item.entityId) : undefined;
   const lectureSlug = session?.lectureId ? slugOf(session.lectureId) : undefined;
+  const reviewGuide = session?.relationships.some(relation => relation.type === "supports" && relation.to.startsWith("concept:"));
   const lectureAvailability = item.kind === "lecture"
-    ? lectureSlug
+    ? reviewGuide ? "review" : lectureSlug
       ? "available"
       : item.date && item.date > todayIso
         ? "upcoming"
@@ -143,6 +144,8 @@ function LedgerEntry({
               <Link to={lectureSlug ? `/courses/${courseCode}/lectures/${lectureSlug}` : item.url}>
                 {item.title}
               </Link>
+            ) : reviewGuide ? (
+              <a href={item.url}>{item.title}</a>
             ) : item.entityType === "assessment" ? (
               <a href={`#assessment-${slug}`}>{item.title}</a>
             ) : (
@@ -150,7 +153,7 @@ function LedgerEntry({
             )}
           </h4>
           <span className="ledger-entry__kind">
-            {lectureAvailability === "available"
+            {reviewGuide ? "Authored review" : lectureAvailability === "available"
               ? "Lecture · Read lesson"
               : lectureAvailability === "upcoming"
                 ? "Upcoming"

@@ -5,6 +5,32 @@ import { entityUrl } from "./ids";
 import { buildSearchIndex, searchCorpus } from "./search";
 
 describe("exam preparation and final lecture coverage", () => {
+  it("offers an undated authored Lecture 16 review with real topic and practice destinations", async () => {
+    const corpus = await loadCorpus(path.resolve("."));
+    const review = corpus.concepts.get("concept:sf1690:course-review")!;
+    const session = corpus.sessions.get("session:sf1690:lecture-16")!;
+    expect(review.evidenceStatus).toBe("supplemental");
+    expect(review.lectureIds).toEqual([]);
+    expect(corpus.courses.get("course:sf1690")?.conceptIds).toContain(review.id);
+    expect(session.date).toBeUndefined();
+    expect(entityUrl(session)).toBe(entityUrl(review));
+    expect(review.body).toContain("/practice?course=sf1690");
+    expect(review.body).toContain("not a record of what was said in class");
+    const links = [...review.body.matchAll(/\]\((\/courses\/sf1690\/concepts\/[a-z0-9-]+(?:#[a-z0-9-]+)?)\)/g)];
+    expect(links.length).toBeGreaterThan(35);
+    for (const [, url] of links) {
+      const [page, anchor] = url.split("#");
+      expect(corpus.concepts.has(`concept:sf1690:${page.split("/").at(-1)}`), url).toBe(true);
+      if (anchor) {
+        const type = anchor.startsWith("question-") ? "question" : "example";
+        const entity = (type === "question" ? corpus.questions : corpus.examples).get(`${type}:sf1690:${anchor.slice(type.length + 1)}`)!;
+        expect(entity, url).toBeDefined();
+        expect(entityUrl(entity), url).toBe(url);
+      }
+    }
+    expect(searchCorpus(buildSearchIndex(corpus), corpus, "Lecture 16 course review", { courseId: review.courseId }).some(hit => hit.id === review.id)).toBe(true);
+  });
+
   it("exposes both guides through the shared searchable corpus", async () => {
     const corpus = await loadCorpus(path.resolve("."));
     const index = buildSearchIndex(corpus);

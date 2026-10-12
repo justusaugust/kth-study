@@ -81,9 +81,13 @@
   --surface-inset-deep: oklch(0.94 0.012 85);
 
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
-  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px; --space-10: 40px;
   --space-12: 48px; --space-14: 56px; --space-16: 64px; --space-20: 80px;
   --space-24: 96px; --space-28: 112px; --space-32: 128px;
+  /* Rhythm: a section heading sits close to what it introduces; a control
+     group (search, filters, toolbars) is held apart from heading and results. */
+  --gap-heading: var(--space-5);
+  --gap-controls: var(--space-8);
   --radius-control: 8px;
   --radius-control-soft: 12px;
   --radius-figure: 12px;
@@ -102,6 +106,8 @@
   /* Reading measure for long-form columns: ~63 characters at --text-prose. */
   --measure: 38rem;
   --page-margin: clamp(20px, 4.5vw, 64px);
+  /* Sticky study header: one row on desktop, two rows (brand + rail) ≤900px. */
+  --header-height: 68px;
   --layer-popover: 20;
   --layer-float: 15;
   --motion-micro: 160ms;
@@ -175,6 +181,9 @@ a { color: inherit; }
 :root.theme-switching *,
 :root.theme-switching *::before,
 :root.theme-switching *::after { transition: none !important; }
+@media (max-width: 900px) {
+  :root { --header-height: 96px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }

@@ -30,6 +30,7 @@ export function CoursePage() {
     (a, b) => a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug),
   );
   const undated = data.sessions.filter((session) => !session.date).length;
+  const review = data.concepts.find(concept => concept.slug === "course-review");
 
   return <article className="page-column course-page course-dossier">
     <CoursePassport course={data.course} />
@@ -50,7 +51,7 @@ export function CoursePage() {
           <time dateTime={lecture.date}>{formatStudyDate(lecture.date)}</time>
           <h3>{lecture.title}</h3>
         </Link>
-      </li>)}</ol> : <p className="course-empty-note">No lecture notes are saved for this course yet. The weekly outline below still lists the scheduled sessions.</p>}
+      </li>)}{review ? <li><Link className="lecture-list__link" to={entityUrl(review)}><span>Authored review · Date unconfirmed</span><h3>{review.title}</h3></Link></li> : null}</ol> : <p className="course-empty-note">No lecture notes are saved for this course yet. The weekly outline below still lists the scheduled sessions.</p>}
     </section>
     {undated ? <p className="course-empty-note">{undated} planned session{undated === 1 ? " has" : "s have"} no confirmed date in the saved material. Check the official timetable before attending.</p> : null}
     <WeekLedger groups={data.journey} sessions={data.sessions} coursework={data.coursework} courseStart={data.course.startDate} courseEnd={data.course.endDate} />

@@ -21,7 +21,7 @@ pnpm dev
 
 `pnpm dev` starts the web app on `http://127.0.0.1:4173` and the validated local service on `http://127.0.0.1:4318`. A production build is also served by the local service, so plugin links to port 4318 resolve to the same stable study pages.
 
-Set `VITE_CHATGPT_APP_URL` to the public KTH Study app URL after its ChatGPT launch. Until then, the web handoff says that the link is not yet available.
+The published [TCOMK Study Atlas ChatGPT app](https://chatgpt.com/plugins/plugin_asdk_app_6a9608140bb081919ec2b881d4b91836) is linked directly throughout the web app.
 
 ## What is included
 

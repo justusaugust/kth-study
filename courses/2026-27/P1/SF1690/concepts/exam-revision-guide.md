@@ -16,6 +16,8 @@ relationships: []
 
 ## Start with a diagnostic, not a reread
 
+For a guided topic-by-topic pass with selected self-checks and worked examples, open [Lecture 16 — course review](/courses/sf1690/concepts/course-review).
+
 Spend 35 minutes without notes on five tasks: a rational equation with a domain restriction; a trigonometric equation with all solutions; a complex root; a line–plane intersection; and an area computed with a cross product. Choose unfamiliar values. Explain each step on paper, then compare with the relevant worked example. A topic belongs in your revision queue if you cannot start it, lose a restriction, or cannot justify the method.
 
 The practice bank contains course self-checks, not official past-exam questions or a prediction of the paper. [Open SF1690 practice](/practice?course=sf1690). Use the official course room for past papers and solutions.

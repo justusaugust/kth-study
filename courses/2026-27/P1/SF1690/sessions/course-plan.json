@@ -634,7 +634,7 @@
       ],
       "lastChecked": "2026-08-24",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [{ "type": "supports", "from": "session:sf1690:lecture-16", "to": "concept:sf1690:course-review" }]
     },
     {
       "id": "session:sf1690:checkpoint-03",

@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 import { QuickSearch } from "./QuickSearch";
 import { StudyIcon } from "./StudyMark";
+import { CHATGPT_APP_URL } from "../links";
 
 export function AppShell() {
   const [searching, setSearching] = useState(false);
@@ -112,6 +113,7 @@ export function AppShell() {
 
       <main className="study-main">
         <Outlet />
+        <footer className="study-app-link"><a href={CHATGPT_APP_URL} target="_blank" rel="noreferrer">Open TCOMK Study Atlas in ChatGPT ↗</a></footer>
       </main>
     </div>
   );

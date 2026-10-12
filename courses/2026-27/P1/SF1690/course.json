@@ -35,6 +35,8 @@
     "outcome:sf1690:read-mathematics"
   ],
   "conceptIds": [
+    "concept:sf1690:course-review",
+    "concept:sf1690:exam-revision-guide",
     "concept:sf1690:dot-products-and-orthogonality",
     "concept:sf1690:vector-lines-and-planes",
     "concept:sf1690:cross-products-and-area",

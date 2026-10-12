@@ -14,8 +14,11 @@
 
 .course-dossier [id] { scroll-margin-top: 10rem; }
 
-.course-outline-links { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin-top: var(--space-6); padding-block: var(--space-3); border-block: 1px solid var(--rule); }
-.course-outline-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); text-underline-offset: 4px; }
+/* Secondary page navigation: one quiet chip group instead of a ruled band. */
+.course-outline-links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--gap-controls); }
+.course-outline-links a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); border-radius: var(--radius-control); background: var(--sheet-inset); color: var(--ink-secondary); font-size: 0.88rem; font-weight: 520; text-decoration: none; }
+.course-outline-links a:hover { background: color-mix(in oklch, var(--sheet-inset) 70%, var(--accent-soft)); color: var(--ink); }
+@media (prefers-reduced-motion: no-preference) { .course-outline-links a { transition: background-color var(--motion-micro) ease-out, color var(--motion-micro) ease-out; } }
 .course-reference { margin-top: var(--space-12); border-block: 1px solid var(--rule); padding-block: var(--space-4); }
 .course-reference summary { min-height: 44px; cursor: pointer; font-weight: 550; }
 .course-topic-index { columns: 2 16rem; padding-left: 1rem; }
@@ -31,7 +34,7 @@
 /* Section headings: quiet kicker with a trailing dashed rule, display title. */
 
 .course-section-heading {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--gap-heading);
 }
 
 /* Folio numbering: each section kicker carries its number in the manual. */
@@ -71,14 +74,9 @@
 .course-facts .lead { font-size: 1rem; max-width: 64ch; }
 .course-facts .course-margin-data { max-width: 32rem; margin-top: var(--space-4); }
 
+/* Type and spacing come from the shared page heading in app.css. */
 .course-passport__identity h1 {
   max-width: 30ch;
-  margin: var(--space-4) 0 0;
-  font-size: var(--text-display);
-  font-weight: 540;
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
-  text-wrap: balance;
 }
 
 .course-passport__identity {
@@ -839,12 +837,9 @@
 .week-ledger__week > details[open] .week-ledger__preview { visibility: hidden; }
 .week-ledger__week > details > .week-ledger__entries { margin: 0 0 2rem 1rem; }
 .course-outline-links + .course-empty-note { margin-block: 1rem 2rem; font-size: .875rem; line-height: 1.6; max-width: 70ch; }
-.course-outline-links a { text-decoration: none; color: var(--ink-secondary); }
-.course-outline-links a:hover { color: var(--accent); text-decoration: underline; }
-
 .reading-position {
   position: sticky;
-  top: 68px;
+  top: var(--header-height);
   right: auto;
   bottom: auto;
   z-index: var(--layer-float);
@@ -911,10 +906,6 @@
   .week-ledger__register {
     flex-direction: row;
     align-items: center;
-  }
-
-  .reading-position {
-    top: 96px;
   }
 }
 

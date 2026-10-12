@@ -1,5 +1,20 @@
 import { expect, test } from "@playwright/test";
 
+test("tablet navigation fits and the authored review links to real practice", async ({ page }) => {
+  for (const width of [768, 900, 1024]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/courses/sf1690/concepts/course-review");
+    await expect(page.getByRole("heading", { name: "Lecture 16 — course review" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Open TCOMK Study Atlas in ChatGPT ↗" })).toHaveAttribute("href", "https://chatgpt.com/plugins/plugin_asdk_app_6a9608140bb081919ec2b881d4b91836");
+    const clipped = await page.locator(".course-rail").evaluate(node => node.scrollWidth > node.clientWidth);
+    expect(clipped, `Header clips at ${width}px`).toBe(false);
+    expect(await page.locator(".course-outline-links a").evaluateAll(nodes => nodes.every(node => node.getBoundingClientRect().height >= 44))).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
+  }
+  await page.getByRole("link", { name: "Reverse an inequality correctly" }).click();
+  await expect(page.locator("#question-inequality-negative-factor")).toBeInViewport();
+});
+
 test("formula scripts retain KaTeX geometry on desktop and mobile", async ({ page }) => {
   for (const width of [375, 1440]) {
     await page.setViewportSize({ width, height: 900 });
