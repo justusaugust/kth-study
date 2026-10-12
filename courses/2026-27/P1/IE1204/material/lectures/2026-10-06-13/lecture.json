@@ -1,0 +1,20 @@
+{
+  "id": "lecture:ie1204:2026-10-06-13",
+  "courseId": "course:ie1204",
+  "slug": "2026-10-06-13",
+  "title": "Lecture 13 — arithmetic circuits, ALU and flags",
+  "date": "2026-10-06",
+  "sessionId": "session:ie1204:lecture-13",
+  "summary": "Derive adders, control subtraction and interpret ALU status flags without confusing carry with signed overflow.",
+  "conceptIds": [
+    "concept:ie1204:adders-and-carry",
+    "concept:ie1204:alu-status-flags"
+  ],
+  "body": "Begin with the half-adder and full-adder truth tables, then compose a multibit arithmetic circuit. Trace carries in the direction they actually propagate. Compare ripple, lookahead and carry-select designs by their dependency paths and hardware cost.\n\nReuse the adder for subtraction, then connect arithmetic and logic blocks to an ALU result selector. Interpret N, Z, C and V separately, and use deliberately contrasting signed and unsigned examples to test the distinction. End by using subtraction to compare operands under the declared representation.",
+  "sourceIds": [
+    "source:ie1204:lecture-13-arithmetic"
+  ],
+  "lastChecked": "2026-10-12",
+  "confidence": "supported",
+  "relationships": []
+}

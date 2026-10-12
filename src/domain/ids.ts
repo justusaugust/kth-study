@@ -19,6 +19,7 @@ export function entityUrl(entity: StudyEntity): string {
     return `/courses/${entity.code.toLowerCase()}`;
   }
   if (type === "concept" && "slug" in entity && "courseId" in entity) {
+    if (entity.slug === "exam-revision-guide") return `/courses/${courseCodeFromId(entity.courseId)}/exam`;
     return `/courses/${courseCodeFromId(entity.courseId)}/concepts/${entity.slug}`;
   }
   if (type === "explainer" && "slug" in entity) {

@@ -4,7 +4,9 @@
   "courseId": "course:ie1204",
   "slug": "fixed-width-adder",
   "conceptIds": [
-    "concept:ie1204:fixed-width-arithmetic-and-overflow"
+    "concept:ie1204:fixed-width-arithmetic-and-overflow",
+    "concept:ie1204:adders-and-carry",
+    "concept:ie1204:alu-status-flags"
   ],
   "title": "Add inside four bits",
   "caption": "Move both operands and compare the exact sum with the stored four-bit result and overflow state.",

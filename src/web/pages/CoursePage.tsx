@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import type { CourseResponse } from "../../domain";
+import { entityUrl } from "../../domain/ids";
 import { getCourse, MissingEntityError } from "../api";
 import { PageError } from "../components/PageError";
 import { AssessmentBand } from "../components/course/AssessmentBand";
@@ -36,6 +37,7 @@ export function CoursePage() {
       <a href="#course-lectures">Lectures</a>
       <a href="#week-ledger">Study outline</a>
       <Link to={`/practice?course=${courseCode}`}>Practice</Link>
+      {data.concepts.some(concept => concept.slug === "exam-revision-guide") ? <Link to={`/courses/${courseCode}/exam`}>Exam guide</Link> : null}
       <a href="#course-assessment">Assessment</a>
       <a href="#course-sources">Sources</a>
     </nav>
@@ -56,7 +58,7 @@ export function CoursePage() {
     <details className="course-reference" id="concept-register">
       <summary>Topic index and learning outcomes</summary>
       <ul className="course-topic-index">{data.concepts.map((concept) => <li key={concept.id}>
-        <Link to={`/courses/${courseCode}/concepts/${concept.slug}`}>{concept.title}</Link>
+        <Link to={entityUrl(concept)}>{concept.title}</Link>
       </li>)}</ul>
       <h3>Learning outcomes</h3>
       <ul>{data.outcomes.map((outcome) => <li key={outcome.id}>{outcome.description}</li>)}</ul>

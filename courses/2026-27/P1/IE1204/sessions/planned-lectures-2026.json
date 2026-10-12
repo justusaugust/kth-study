@@ -180,6 +180,7 @@
     },
     {
       "id": "session:ie1204:lecture-13",
+      "lectureId": "lecture:ie1204:2026-10-06-13",
       "courseId": "course:ie1204",
       "slug": "lecture-13",
       "kind": "lecture",
@@ -195,6 +196,7 @@
     },
     {
       "id": "session:ie1204:lecture-14",
+      "lectureId": "lecture:ie1204:2026-10-08-14",
       "courseId": "course:ie1204",
       "slug": "lecture-14",
       "kind": "lecture",

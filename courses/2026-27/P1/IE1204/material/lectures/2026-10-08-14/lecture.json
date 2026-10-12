@@ -1,0 +1,20 @@
+{
+  "id": "lecture:ie1204:2026-10-08-14",
+  "courseId": "course:ie1204",
+  "slug": "2026-10-08-14",
+  "title": "Lecture 14 — shifts and fractional number systems",
+  "date": "2026-10-08",
+  "sessionId": "session:ie1204:lecture-14",
+  "summary": "Trace serial storage, distinguish bit-shift operations and decode fixed-point and floating-point values.",
+  "conceptIds": [
+    "concept:ie1204:shift-registers-and-shifters",
+    "concept:ie1204:fixed-and-floating-point"
+  ],
+  "body": "Follow a word through a parallel-load shift register, distinguishing the stored old state from the values after each active edge. Then compare logical shifts, arithmetic shifts and rotations as combinational operations, and build multiplication from aligned partial products.\n\nAttach a binary-point scale to an integer word, calculate range and resolution, and keep the extra fractional positions created by multiplication. Move to floating-point sign, exponent and fraction fields, including exceptional exponent encodings. Practise exponent alignment, normalization and rounding rather than treating a floating-point word as an ordinary integer.",
+  "sourceIds": [
+    "source:ie1204:lecture-14-arithmetic"
+  ],
+  "lastChecked": "2026-10-12",
+  "confidence": "supported",
+  "relationships": []
+}

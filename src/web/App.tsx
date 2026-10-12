@@ -7,6 +7,7 @@ const HomePage = lazy(() => import("./pages/HomePage").then((module) => ({ defau
 const PracticePage = lazy(() => import("./pages/PracticePage").then((module) => ({ default: module.PracticePage })));
 const SearchPage = lazy(() => import("./pages/SearchPage").then((module) => ({ default: module.SearchPage })));
 const CoursePage = lazy(() => import("./pages/CoursePage").then((module) => ({ default: module.CoursePage })));
+const ExamGuidePage = lazy(() => import("./pages/ExamGuidePage").then((module) => ({ default: module.ExamGuidePage })));
 const LecturePage = lazy(() => import("./pages/LecturePage").then((module) => ({ default: module.LecturePage })));
 const LabPage = lazy(() => import("./pages/LabPage").then((module) => ({ default: module.LabPage })));
 const ConceptPage = lazy(() => import("./pages/ConceptPage").then((module) => ({ default: module.ConceptPage })));
@@ -23,6 +24,7 @@ export function App() {
           <Route path="search" element={<SearchPage />} />
           <Route path="practice" element={<PracticePage />} />
           <Route path="courses/:courseCode" element={<CoursePage />} />
+          <Route path="courses/:courseCode/exam" element={<ExamGuidePage />} />
           <Route path="courses/:courseCode/lectures/:lectureSlug" element={<LecturePage />} />
           <Route path="courses/:courseCode/labs/:labSlug" element={<LabPage />} />
           <Route path="courses/:courseCode/concepts/:conceptSlug" element={<ConceptPage />} />
