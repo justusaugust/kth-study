@@ -1625,7 +1625,7 @@ h4 {
 /* Preset sets: equal cells that wrap into even rows (2 × 2 on a phone). */
 .diagram-choice-row--presets {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
 }
 
 .diagram-choice-row button {
@@ -3195,7 +3195,7 @@ svg:focus-within > .diagram-hover-label.is-visible,
 
 .function-facts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
   gap: var(--space-2) var(--space-5);
   line-height: 1.4;
 }

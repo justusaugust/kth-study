@@ -11,6 +11,8 @@ test("quadratic facts and presets stay grouped at phone and desktop sizes", asyn
     const boxes = await page.locator(".diagram-choice-row--presets button").evaluateAll(nodes => nodes.map(node => ({ width: node.getBoundingClientRect().width, height: node.getBoundingClientRect().height })));
     expect(Math.max(...boxes.map(box => box.width)) - Math.min(...boxes.map(box => box.width))).toBeLessThan(1);
     expect(boxes.every(box => box.height >= 44)).toBe(true);
+    const rightGap = await page.locator(".diagram-choice-row--presets").evaluate(node => node.getBoundingClientRect().right - Math.max(...Array.from(node.querySelectorAll("button"), button => button.getBoundingClientRect().right)));
+    expect(rightGap).toBeLessThan(1);
     await expect(page.getByRole("link", { name: "Practise questions", exact: true })).toHaveAttribute("href", "/practice?course=sf1690");
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
   }
