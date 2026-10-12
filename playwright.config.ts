@@ -3,7 +3,7 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/e2e",
   testMatch: "**/*.spec.ts",
-  webServer: [
+  webServer: process.env.PLAYWRIGHT_BASE_URL ? undefined : [
     {
       command: "pnpm exec tsx src/server/main.ts --root . --port 4318",
       url: "http://127.0.0.1:4318/api/health",
@@ -17,6 +17,6 @@ export default defineConfig({
     },
   ],
   use: {
-    baseURL: "http://127.0.0.1:4173",
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:4173",
   },
 });

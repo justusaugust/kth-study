@@ -29,6 +29,24 @@ test("all lecture and exam readers keep math and graphs contained on phones", as
   }
 });
 
+test("phone reader navigation, vector formulas and truth-table targets stay usable", async ({ page }) => {
+  for (const width of [320, 375, 768]) {
+    await page.setViewportSize({ width, height: 812 });
+    await page.goto("/courses/sf1690/lectures/2026-09-23-12");
+    await page.getByText("Length from the Pythagorean theorem", { exact: true }).click();
+    const picker = page.getByRole("combobox");
+    await expect(picker).toBeInViewport();
+    const formula = page.locator(".katex-display").filter({ hasText: "in 3D" });
+    expect(await formula.evaluate(node => node.scrollWidth > node.clientWidth + 1)).toBe(false);
+    await page.goto("/courses/ie1204/lectures/2026-09-01-05");
+    await expect(page.locator(".boolean-table")).toBeVisible();
+    const targets = await page.locator('.boolean-table [role="cell"] > button').evaluateAll(nodes => nodes.map(node => ({ width: node.getBoundingClientRect().width, height: node.getBoundingClientRect().height })));
+    expect(targets).toHaveLength(4);
+    expect(targets.every(target => target.width >= 44 && target.height >= 44)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
+  }
+});
+
 test("guide picker and direct links reach sections and open sources", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 900 });
   await page.goto("/courses/sf1690/exam#guide-vector-geometry-lectures-12-15");

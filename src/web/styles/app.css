@@ -385,16 +385,40 @@ h4 {
   font-variant-numeric: tabular-nums;
 }
 
-/* Display mathematics: left-set on a consistent indent, with air. */
+/* Display mathematics: left-set on a consistent indent, with air. The indent
+   lives on the outer scroll wrapper so a phone can drop it (see Mobile). */
 .markdown-body .katex-display {
   margin: var(--space-8) 0;
+  padding-inline-start: var(--space-8);
   text-align: left;
 }
 
 .markdown-body .katex-display > .katex {
-  padding-left: var(--space-8);
   text-align: left;
   font-size: 1.12em;
+}
+
+/* Consecutive display rows read as one stacked group. */
+.markdown-body .katex-display:has(+ .katex-display) {
+  margin-bottom: var(--space-3);
+}
+
+.markdown-body .katex-display + .katex-display {
+  margin-top: var(--space-3);
+}
+
+/* Prose links (topic references in guides) must read as links. */
+.markdown-body a {
+  color: var(--accent);
+  font-weight: 520;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklch, var(--accent) 45%, transparent);
+  text-underline-offset: 3px;
+}
+
+.markdown-body a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
 }
 
 .loading,
@@ -1066,7 +1090,8 @@ h4 {
 .function-flow,
 .piecewise-rule,
 .function-symmetry-stage,
-.function-vertical-stage {
+.function-vertical-stage,
+.vector-addition__stage {
   border-radius: var(--radius-stage);
   background: var(--visual-field, var(--surface-inset));
   box-shadow: inset 0 0 0 1px var(--stage-hairline);
@@ -1620,6 +1645,74 @@ h4 {
   }
 }
 
+/* Vector addition: the plane sits on the shared figure ground; names and
+   tick labels are sized in viewBox units to read near prose size on a phone
+   (440 units ≈ 335px) without growing past 30rem on wide screens. */
+.vector-addition__stage {
+  padding: var(--space-3);
+}
+
+.vector-addition__stage svg {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  margin-inline: auto;
+  color: var(--ink);
+}
+
+.vector-addition .diagram-grid-label {
+  font-size: 19px;
+}
+
+.vector-addition__names text,
+.vector-addition__axis-names text {
+  fill: currentColor;
+  font-family: var(--font-ui);
+  font-size: 21px;
+  font-weight: 600;
+  paint-order: stroke fill;
+  stroke: var(--visual-field, var(--surface-inset));
+  stroke-linejoin: round;
+  stroke-width: 0.3em;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.vector-addition__axis-names text {
+  font-weight: 500;
+  text-anchor: start;
+  dominant-baseline: auto;
+}
+
+.vector-addition__legend {
+  margin: var(--space-3) 0 0;
+  color: var(--ink-tertiary);
+  font-size: 0.875rem;
+}
+
+.vector-addition .function-facts > .vector-addition__sum {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Controls and facts read at ≥14px, near the prose beside the figure. */
+.vector-addition .function-input-control {
+  margin-top: 0;
+  font-size: 0.875rem;
+}
+
+.vector-addition .function-readout {
+  font-size: 0.9375rem;
+}
+
+.vector-addition__value {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
 .digital-diagram,
 .function-concept {
   min-width: 0;
@@ -1931,6 +2024,15 @@ h4 {
   font-size: var(--text-label);
 }
 
+@media (max-width: 480px) {
+  .boolean-table__heading,
+  .boolean-table > [role="row"] {
+    grid-template-columns: repeat(3, 44px) minmax(0, 1fr);
+    gap: var(--space-1);
+    padding-inline: var(--space-2);
+  }
+}
+
 .boolean-table > [role="row"] {
   background: var(--surface-inset);
   color: var(--ink-secondary);
@@ -1942,9 +2044,10 @@ h4 {
   color: var(--accent-hover);
 }
 
+/* 44px targets still fit the table's 3rem bit columns. */
 .boolean-table [role="cell"] > button {
-  width: 2.25rem;
-  min-height: 2.25rem;
+  width: 44px;
+  min-height: 44px;
   border: 0;
   border-radius: 10px;
   background: var(--surface);
@@ -3785,16 +3888,21 @@ svg:focus-within > .diagram-hover-label.is-visible,
 .lesson-outline__picker { display: none; }
 .lesson-depth, .visual-explore { margin-top: var(--space-6); border-top: 1px solid var(--rule-soft); }
 .lesson-depth > summary, .visual-explore > summary { padding-block: var(--space-3); min-height: 44px; color: var(--accent); cursor: pointer; }
-.lesson-reader [id] { scroll-margin-top: 10rem; }
+.lesson-reader [id] { scroll-margin-top: calc(var(--header-height) + 5rem); }
 .lecture-heading .lead { font-size: clamp(1rem, 1.4vw, 1.1rem); max-width: var(--measure); }
 .loading { min-height: 65svh; }
 
 @media (max-width: 960px) {
   .lesson-reader { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
-  .lesson-outline { grid-area: auto; position: static; }
+  /* Phones and tablets: the section picker rides under the header as one
+     slim row; its reading-position line doubles as the bar's lower edge.
+     The canvas ground bleeds to the viewport so prose never shows beside it. */
+  .lesson-outline { grid-area: auto; top: var(--header-height); z-index: calc(var(--layer-float) - 1); margin-inline: calc(-1 * var(--page-margin)); padding: var(--space-2) var(--page-margin) 0; background: var(--canvas); }
   .lesson-reader__content { grid-area: auto; }
   .lesson-outline__links { display: none; }
-  .lesson-outline__picker { display: grid; gap: var(--space-2); font-size: var(--text-label); color: var(--ink-secondary); }
+  .lesson-outline__picker { display: block; font-size: var(--text-label); color: var(--ink-secondary); }
+  .lesson-outline__picker .atlas-select { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--space-3); }
+  .lesson-outline__progress { height: 2px; margin-top: var(--space-2); border-radius: 0; }
 }
 
 .lecture-heading {
@@ -5232,8 +5340,8 @@ svg:focus-within > .diagram-hover-label.is-visible,
     transform: rotate(90deg);
   }
 
-  .markdown-body .katex-display > .katex {
-    padding-left: var(--space-4);
+  .markdown-body .katex-display {
+    padding-inline-start: 0;
   }
 
   .search-results > li,
@@ -5311,6 +5419,9 @@ svg:focus-within > .diagram-hover-label.is-visible,
   padding-block: .3em;
   overflow-x: auto;
   overflow-y: hidden;
+  /* A visible thin rail is the cue that an indivisible equation scrolls. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) transparent;
 }
 
 /* Inline mathematics must never break mid-expression. */

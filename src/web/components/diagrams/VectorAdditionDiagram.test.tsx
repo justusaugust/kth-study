@@ -1,6 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, expect, test } from "vitest";
 import { VectorAdditionDiagram } from "./VectorAdditionDiagram";
+
+afterEach(cleanup);
 
 test("adds components tip-to-tail, including zero b and zero sum", () => {
   const { container } = render(<VectorAdditionDiagram mode="full" />);
@@ -25,4 +27,22 @@ test("adds components tip-to-tail, including zero b and zero sum", () => {
   fireEvent.change(y, { target: { value: "-2" } });
   expect(screen.getByRole("status")).toHaveTextContent("a + b = (4, -1)");
   expect(container.querySelector('[data-vector="sum"]')).toHaveAttribute("d", "M220 220 L364 256");
+});
+
+test("vector labels stay finite and inside the plot for every allowed component", () => {
+  const { container } = render(<VectorAdditionDiagram mode="full" />);
+  const x = screen.getByRole("slider", { name: "Vector b x component" });
+  const y = screen.getByRole("slider", { name: "Vector b y component" });
+  for (let bx = -2; bx <= 2; bx++) for (let by = -2; by <= 2; by++) {
+    fireEvent.change(x, { target: { value: String(bx) } });
+    fireEvent.change(y, { target: { value: String(by) } });
+    const labels = container.querySelectorAll(".vector-addition__names text");
+    expect(labels).toHaveLength(3);
+    for (const label of labels) for (const axis of ["x", "y"]) {
+      const coordinate = Number(label.getAttribute(axis));
+      expect(Number.isFinite(coordinate)).toBe(true);
+      expect(coordinate).toBeGreaterThanOrEqual(24);
+      expect(coordinate).toBeLessThanOrEqual(416);
+    }
+  }
 });

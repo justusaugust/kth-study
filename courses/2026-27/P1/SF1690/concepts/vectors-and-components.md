@@ -32,7 +32,10 @@ Subtract the starting point from the ending point. Reversing the order reverses 
 For vectors in the same dimension,
 
 $$
-\mathbf u+\mathbf v=(u_1+v_1,u_2+v_2,u_3+v_3),\qquad
+\mathbf u+\mathbf v=(u_1+v_1,u_2+v_2,u_3+v_3),
+$$
+
+$$
 \mathbf u-\mathbf v=(u_1-v_1,u_2-v_2,u_3-v_3).
 $$
 
@@ -59,7 +62,10 @@ For nonzero vectors, $\mathbf u=c\mathbf v$ means they are parallel. Positive $c
 The Euclidean length, or norm, is
 
 $$
-\|\mathbf v\|=\sqrt{v_1^2+v_2^2}\quad\text{in 2D},\qquad
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2}\quad\text{in 2D},
+$$
+
+$$
 \|\mathbf v\|=\sqrt{v_1^2+v_2^2+v_3^2}\quad\text{in 3D}.
 $$
 
