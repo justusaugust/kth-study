@@ -29,6 +29,7 @@ describe("exam preparation and final lecture coverage", () => {
       const lecture = corpus.lectures.get(id)!;
       expect(lecture.conceptIds.length).toBeGreaterThanOrEqual(2);
       for (const conceptId of lecture.conceptIds) {
+        expect(corpus.courses.get("course:ie1204")?.conceptIds).toContain(conceptId);
         expect(corpus.concepts.get(conceptId)?.body.length).toBeGreaterThan(1000);
         expect([...corpus.questions.values()].some(question => question.conceptIds.includes(conceptId))).toBe(true);
       }

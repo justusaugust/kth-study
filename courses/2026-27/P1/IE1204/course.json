@@ -49,6 +49,10 @@
     "outcome:ie1204:design-digital-systems"
   ],
   "conceptIds": [
+    "concept:ie1204:adders-and-carry",
+    "concept:ie1204:alu-status-flags",
+    "concept:ie1204:shift-registers-and-shifters",
+    "concept:ie1204:fixed-and-floating-point",
     "concept:ie1204:synchronous-counters",
     "concept:ie1204:counter-sequence-synthesis",
     "concept:ie1204:memory-addressing-and-rom",
@@ -78,6 +82,10 @@
     "concept:ie1204:cmos-power-consumption"
   ],
   "sourceIds": [
+    "source:ie1204:lecture-13-arithmetic",
+    "source:ie1204:lecture-14-arithmetic",
+    "source:ie1204:exam-updates-october-12",
+    "source:ie1204:practice-exam-2026-27",
     "source:ie1204:lecture-12-counters",
     "source:ie1204:lecture-15-memory",
     "source:ie1204:lecture-11-fsm-analysis-and-timing",
@@ -103,6 +111,26 @@
   "lastChecked": "2026-09-03",
   "confidence": "verified",
   "relationships": [
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:adders-and-carry"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:alu-status-flags"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:shift-registers-and-shifters"
+    },
+    {
+      "type": "teaches",
+      "from": "course:ie1204",
+      "to": "concept:ie1204:fixed-and-floating-point"
+    },
     {
       "type": "teaches",
       "from": "course:ie1204",
