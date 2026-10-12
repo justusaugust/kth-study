@@ -47,23 +47,24 @@ export function VisualPage() {
       <p className="lead">{data.explainer.accessibleSummary}</p>
       <ExplainerRenderer spec={data.explainer} mode="full" />
       <section className="visual-context" aria-labelledby="visual-context-title">
-        <h2 id="visual-context-title">Context</h2>
+        <h2 id="visual-context-title">Keep studying</h2>
         <div className="visual-meta">
           <StudyMark kind="concept">
             {data.concepts.length} concept{data.concepts.length === 1 ? "" : "s"}
           </StudyMark>
           <StudyMark kind="date">Checked {formatStudyDate(data.explainer.lastChecked)}</StudyMark>
         </div>
-        <SourceLinks sources={data.sources} />
-      </section>
-      <div className="context-links">
+      <nav className="course-outline-links" aria-label="Related study material">
         {data.concepts.map((concept) => (
           <Link key={concept.id} to={`/courses/${data.course.code.toLowerCase()}/concepts/${concept.slug}`}>
             Read {concept.title}
           </Link>
         ))}
         <Link to={`/courses/${data.course.code.toLowerCase()}`}>Back to {data.course.code}</Link>
-      </div>
+        <Link to={`/practice?course=${data.course.code.toLowerCase()}`}>Practise questions</Link>
+      </nav>
+      <details className="course-reference"><summary>Sources and verification dates</summary><SourceLinks sources={data.sources} /></details>
+      </section>
     </article>
   );
 }

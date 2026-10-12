@@ -1,5 +1,21 @@
 import { expect, test } from "@playwright/test";
 
+test("quadratic facts and presets stay grouped at phone and desktop sizes", async ({ page }) => {
+  for (const width of [375, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/visuals/quadratic-coefficients");
+    await page.getByText("Explore coefficients", { exact: true }).click();
+    await expect(page.locator(".function-facts > span")).toHaveCount(4);
+    await page.getByRole("button", { name: "Two roots", exact: true }).click();
+    await expect(page.locator(".function-facts")).toContainText("Roots x = −1, 1");
+    const boxes = await page.locator(".diagram-choice-row--presets button").evaluateAll(nodes => nodes.map(node => ({ width: node.getBoundingClientRect().width, height: node.getBoundingClientRect().height })));
+    expect(Math.max(...boxes.map(box => box.width)) - Math.min(...boxes.map(box => box.width))).toBeLessThan(1);
+    expect(boxes.every(box => box.height >= 44)).toBe(true);
+    await expect(page.getByRole("link", { name: "Practise questions", exact: true })).toHaveAttribute("href", "/practice?course=sf1690");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
+  }
+});
+
 test("tablet navigation fits and the authored review links to real practice", async ({ page }) => {
   for (const width of [768, 900, 1024]) {
     await page.setViewportSize({ width, height: 900 });

@@ -237,6 +237,7 @@ export function FunctionPlot({
                 key={fn.id}
                 y={(x) => values.a * x * x + values.b * x + values.c}
                 color={plotColors[fn.color]}
+                weight={index === 0 ? 3 : 2}
               />
             );
           })}
@@ -280,28 +281,30 @@ export function FunctionPlot({
 
       <output className="function-readout" aria-live="polite">
         <strong className="function-equation">{equation}</strong>
-        {facts.vertex ? (
-          <span>
-            Vertex ({formatNumber(facts.vertex[0])}, {formatNumber(facts.vertex[1])})
-          </span>
-        ) : (
-          <span>{Math.abs(coefficients.b) > EPSILON ? "Linear function" : "Constant function"}</span>
-        )}
-        {facts.axis !== undefined ? (
-          <span>Axis x = {formatNumber(facts.axis)}</span>
-        ) : null}
-        <span>{facts.rootLabel}</span>
-        {facts.discriminant !== undefined ? (
-          <span className="function-discriminant">
-            Δ = {formatNumber(facts.discriminant)}
-          </span>
-        ) : null}
+        <span className="function-facts">
+          {facts.vertex ? (
+            <span>
+              Vertex ({formatNumber(facts.vertex[0])}, {formatNumber(facts.vertex[1])})
+            </span>
+          ) : (
+            <span>{Math.abs(coefficients.b) > EPSILON ? "Linear function" : "Constant function"}</span>
+          )}
+          {facts.axis !== undefined ? (
+            <span>Axis x = {formatNumber(facts.axis)}</span>
+          ) : null}
+          <span>{facts.rootLabel}</span>
+          {facts.discriminant !== undefined ? (
+            <span className="function-discriminant">
+              Δ = {formatNumber(facts.discriminant)}
+            </span>
+          ) : null}
+        </span>
       </output>
 
       <p>Start with the given curve. Find where it meets the x-axis and where it turns, then explore how changing one coefficient moves those points.</p>
       <details className="visual-explore">
         <summary>Explore coefficients</summary>
-        <div className="diagram-choice-row" aria-label="Quadratic examples">
+        <div className="diagram-choice-row diagram-choice-row--presets" aria-label="Quadratic examples">
           <button type="button" onClick={() => setCoefficients(initial)}>Reset example</button>
           <button type="button" onClick={() => setCoefficients({ a: 1, b: 0, c: -1 })}>Two roots</button>
           <button type="button" onClick={() => setCoefficients({ a: 1, b: 0, c: 0 })}>One double root</button>
