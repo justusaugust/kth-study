@@ -6,6 +6,18 @@ beforeEach(() => { vi.stubGlobal("ResizeObserver", class { observe() {} disconne
 afterEach(() => { cleanup(); document.body.innerHTML = ""; history.replaceState(null, "", "/"); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 const sections = [{ id: "concept-one", label: "First concept" }, { id: "sources", label: "Sources" }];
 
+it("restores a deep link after content arrives and reveals its disclosure", () => {
+  const disclosure = document.createElement("details");
+  disclosure.id = "sources";
+  disclosure.scrollIntoView = vi.fn();
+  document.body.append(disclosure);
+  history.replaceState(null, "", "#sources");
+  render(<ReadingPosition sections={sections} kind="guide" />);
+  expect(disclosure.open).toBe(true);
+  expect(disclosure.scrollIntoView).toHaveBeenCalledWith({ block: "start" });
+  expect(screen.getByRole("navigation", { name: "Guide contents" })).toBeVisible();
+});
+
 it("offers stable section links and a custom mobile section picker", () => {
   render(<ReadingPosition sections={sections} />);
   expect(screen.getByRole("navigation", { name: "Lesson contents" })).toBeVisible();

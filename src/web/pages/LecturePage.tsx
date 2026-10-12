@@ -59,6 +59,9 @@ export function LecturePage() {
   const coursework = data.coursework.filter((item) =>
     item.lectureIds.includes(lecture.id),
   );
+  const lectureExamples = data.examples.filter((item) =>
+    item.conceptIds.some((id) => lecture.conceptIds.includes(id)) && belongsToLecture(item),
+  );
   const questions = data.questions.filter((question) =>
     question.conceptIds.some((conceptId) => lecture.conceptIds.includes(conceptId)) &&
     belongsToLecture(question),
@@ -75,15 +78,24 @@ export function LecturePage() {
     ...data.definitions
       .filter((item) => item.conceptIds.some((id) => lecture.conceptIds.includes(id)))
       .flatMap((item) => item.sourceIds),
-    ...data.examples
-      .filter((item) =>
-        item.conceptIds.some((id) => lecture.conceptIds.includes(id)) && belongsToLecture(item),
-      )
-      .flatMap((item) => item.sourceIds),
+    ...lectureExamples.flatMap((item) => item.sourceIds),
     ...questions.flatMap((item) => item.sourceIds),
     ...coursework.flatMap((item) => item.sourceIds),
   ]);
   const sources = data.sources.filter((source) => relatedSourceIds.has(source.id));
+  // Shortcuts target the first item of each kind as rendered below, so a
+  // phone reader can skip the explanation straight to working.
+  const firstExample = concepts
+    .map((concept) => lectureExamples.find((item) => item.conceptIds.includes(concept.id)))
+    .find(Boolean);
+  const firstQuestion = concepts
+    .map((concept) => questions.find((item) => item.conceptIds.includes(concept.id)))
+    .find(Boolean);
+  const shortcuts = [
+    ...(firstExample ? [{ href: `#example-${firstExample.slug}`, label: `Worked examples (${lectureExamples.length})` }] : []),
+    ...(firstQuestion ? [{ href: `#question-${firstQuestion.slug}`, label: `Self-checks (${questions.length})` }] : []),
+    ...(coursework.length ? [{ href: "#assigned-exercises", label: `Assigned work (${coursework.length})` }] : []),
+  ];
   const orderedLectures = [...data.lectures].sort(
     (a, b) => a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug),
   );
@@ -106,6 +118,11 @@ export function LecturePage() {
         <h1>{lecture.title}</h1>
         <p className="lead">{lecture.summary}</p>
       </header>
+      {shortcuts.length ? (
+        <nav className="course-outline-links" aria-label="Study shortcuts">
+          {shortcuts.map((shortcut) => <a key={shortcut.href} href={shortcut.href}>{shortcut.label}</a>)}
+        </nav>
+      ) : null}
       <div className="lesson-reader">
       <ReadingPosition sections={[
         ...(lecture.body ? [{ id: "lecture-overview", label: "Overview" }] : []),

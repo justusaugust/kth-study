@@ -20,6 +20,9 @@ it("renders the authored review without inventing a lecture date or forcing a vi
   expect(screen.getByText("Authored revision · Session date unconfirmed")).toBeVisible();
   expect(screen.getByRole("link", { name: "Exam guide" })).toHaveAttribute("href", "/courses/sf1690/exam");
   expect(screen.queryByRole("img")).not.toBeInTheDocument();
+  expect(screen.getByRole("navigation", { name: "Review contents" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Functions" })).toHaveAttribute("id", "guide-functions");
+  expect(screen.getByRole("link", { name: "Functions" })).toHaveAttribute("href", "#guide-functions");
 });
 
 it("keeps missing review content recoverable through the owning course", async () => {

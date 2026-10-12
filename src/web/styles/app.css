@@ -330,6 +330,15 @@ h4 {
   text-wrap: pretty;
 }
 
+.study-main pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: var(--space-4);
+  background: var(--sheet-inset);
+  border-radius: var(--radius-control);
+  font-size: .875rem;
+}
+
 .markdown-body > :last-child {
   margin-bottom: 0;
 }
