@@ -6,6 +6,7 @@ import { getDeadlines } from "../api";
 import { PageError } from "../components/PageError";
 import { QuickSearch } from "../components/QuickSearch";
 import { currentStudyDate } from "../format";
+import "../styles/home.css";
 
 type WeekEntry = {
   id: string;
@@ -96,6 +97,42 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
   return days;
 }
 
+export type UpcomingExam = {
+  id: string;
+  date: string;
+  time?: string;
+  title: string;
+  courseCode: string;
+  courseTitle: string;
+  guideUrl: string;
+  practiceUrl: string;
+};
+
+// Courses with an authored exam-revision-guide; others are skipped rather than linked to a missing page.
+const EXAM_GUIDE_COURSES = new Set(["sf1690", "ie1204"]);
+
+export function buildUpcomingExams(data: DeadlinesResponse, today: string): UpcomingExam[] {
+  const courses = new Map(data.courses.map((course) => [course.id, course]));
+  return data.assessments.flatMap((assessment) => {
+    const course = courses.get(assessment.courseId);
+    const code = course?.code.toLowerCase();
+    if (!course || !code || !EXAM_GUIDE_COURSES.has(code)) return [];
+    if (assessment.kind !== "written-exam" || !assessment.date || assessment.date < today) return [];
+    return [{
+      id: assessment.id,
+      date: assessment.date,
+      time: assessment.time,
+      title: assessment.title,
+      courseCode: course.code,
+      courseTitle: course.title,
+      guideUrl: `/courses/${code}/exam`,
+      practiceUrl: `/practice?course=${code}`,
+    }];
+  }).sort((left, right) =>
+    `${left.date}:${left.time ?? ""}:${left.courseCode}`.localeCompare(`${right.date}:${right.time ?? ""}:${right.courseCode}`),
+  );
+}
+
 function weekNumber(value: string) {
   const date = parseDate(value);
   const thursday = new Date(date);
@@ -107,6 +144,7 @@ function weekNumber(value: string) {
 const dayName = new Intl.DateTimeFormat("en-GB", { weekday: "short", timeZone: "UTC" });
 const dayNumber = new Intl.DateTimeFormat("en-GB", { day: "numeric", timeZone: "UTC" });
 const weekRange = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+const examDate = new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
 
 export function HomePage() {
   const [data, setData] = useState<DeadlinesResponse>();
@@ -122,6 +160,7 @@ export function HomePage() {
 
   const days = useMemo(() => data ? buildWeekView(data, today) : [], [data, today]);
   const weekEntries = days.flatMap((day) => day.entries);
+  const exams = useMemo(() => data ? buildUpcomingExams(data, today) : [], [data, today]);
 
   useEffect(() => {
     if (days.length && !days.some((day) => day.date === activeDate)) {
@@ -138,10 +177,35 @@ export function HomePage() {
     <section className="home-page page-column" aria-labelledby="home-title">
       <header className="home-intro">
         <p className="eyebrow">Week {weekNumber(today)} · {weekRange.format(parseDate(days[0].date))}–{weekRange.format(parseDate(days.at(-1)!.date))}</p>
-        <h1 id="home-title">This week</h1>
-        <p className="lead">Lectures, labs, exercises, and deadlines across the current courses.</p>
+        <h1 id="home-title">{exams.length ? "Exam preparation" : "This week"}</h1>
+        <p className="lead">{exams.length
+          ? "Revisit the lectures, practise the methods, and prepare for the upcoming written exams."
+          : "Lectures, labs, exercises, and deadlines across the current courses."}</p>
       </header>
 
+      {exams.length ? (
+        <section className="home-exams" aria-labelledby="home-exams-title">
+          <h2 id="home-exams-title">Revision guides</h2>
+          <ul>
+            {exams.map((exam) => (
+              <li key={exam.id}>
+                <Link className="home-exams__guide" to={exam.guideUrl}>
+                  <span className="home-exams__meta">
+                    {exam.courseCode} · {exam.title} · <time dateTime={exam.date}>{examDate.format(parseDate(exam.date))}{exam.time ? `, ${exam.time}` : ""}</time>
+                  </span>
+                  <strong>{exam.courseTitle}</strong>
+                  <span className="home-exams__cta">Open revision guide</span>
+                </Link>
+                <Link className="home-exams__practice" to={exam.practiceUrl}>
+                  Practise {exam.courseCode} questions
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <h2 className="home-week-title">Schedule</h2>
       <div className="week-day-tabs" role="tablist" aria-label="Choose a weekday">
         {days.map((day) => (
           <button

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { DeadlinesResponse } from "../../domain/api";
-import { buildWeekView } from "./HomePage";
+import { buildUpcomingExams, buildWeekView } from "./HomePage";
 
 const data = {
   courses: [{ id: "course:ie1204", code: "IE1204", title: "Digital Design" }],
@@ -37,6 +37,23 @@ const data = {
 } as unknown as DeadlinesResponse;
 
 describe("current week", () => {
+  it("offers authored exam guides in date order and excludes expired, undated and unsupported exams", () => {
+    const courses = [
+      ...data.courses,
+      { id: "course:sf1690", code: "SF1690", title: "Mathematics" },
+      { id: "course:ii1308", code: "II1308", title: "Programming" },
+    ];
+    const assessments = [
+      { id: "assessment:sf1690:ten1", courseId: "course:sf1690", slug: "ten1", title: "Written exam", kind: "written-exam", date: "2026-10-20" },
+      { id: "assessment:ie1204:tena", courseId: "course:ie1204", slug: "tena", title: "Written exam", kind: "written-exam", date: "2026-10-19" },
+      { id: "assessment:ie1204:old", courseId: "course:ie1204", slug: "old", title: "Past exam", kind: "written-exam", date: "2026-10-01" },
+      { id: "assessment:ie1204:unknown", courseId: "course:ie1204", slug: "unknown", title: "Undated exam", kind: "written-exam" },
+      { id: "assessment:ii1308:other", courseId: "course:ii1308", slug: "other", title: "Other exam", kind: "written-exam", date: "2026-10-18" },
+    ];
+    const exams = buildUpcomingExams({ ...data, courses, assessments } as DeadlinesResponse, "2026-10-13");
+    expect(exams.map(exam => exam.guideUrl)).toEqual(["/courses/ie1204/exam", "/courses/sf1690/exam"]);
+    expect(buildUpcomingExams({ ...data, courses, assessments } as DeadlinesResponse, "2026-10-21")).toEqual([]);
+  });
   it("shows a linked mini-exam once without hiding a separate submission", () => {
     const exam = { ...data.coursework[0], id: "coursework:ie1204:mini", slug: "mini", kind: "mini-exam", date: "2026-09-07", sessionIds: ["session:ie1204:mini"] };
     const session = { ...data.sessions[0], id: "session:ie1204:mini", slug: "mini", lectureId: undefined, kind: "checkpoint", date: "2026-09-07", courseworkIds: [exam.id, data.coursework[0].id] };
