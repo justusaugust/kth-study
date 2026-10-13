@@ -626,7 +626,7 @@ test("the two new course dossiers and lecture-one apparatus work across breakpoi
     await expect(page.getByRole("heading", { name: "Introduction to Programming" })).toBeVisible();
     await expect(page.locator(".course-facts > summary")).toContainText("1.5 ECTS");
     await page.locator(".week-ledger__week").filter({ hasText: "Module A quiz" }).locator("summary").click();
-    await expect(page.getByRole("heading", { name: "Module A quiz", exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Module A quiz · completion target", exact: true })).toBeVisible();
     await expect(page.locator(".course-artifact")).toHaveCount(0);
 
     expect(
