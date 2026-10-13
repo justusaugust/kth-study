@@ -9,15 +9,15 @@
       "kind": "laboratory",
       "credits": 1.5,
       "compulsory": true,
-      "description": "Pass/fail course assessment completed through the four individual module quizzes; each quiz requires at least 80 percent.",
+      "description": "Pass/fail course assessment completed through the four individual module quizzes (A–D). Each published quiz has 12 questions and requires at least 10 correct answers; multiple attempts are allowed. The teacher asks for completion by 30 October and an email to fki@kth.se if all quizzes are completed later. Canvas lists the quizzes as undated; this is not a submission cutoff.",
       "outcomeIds": [
         "outcome:ii1308:command-line",
         "outcome:ii1308:programming-concepts",
         "outcome:ii1308:simple-programs"
       ],
       "conceptIds": [],
-      "sourceIds": ["source:ii1308:official-course-page", "source:ii1308:course-memo"],
-      "lastChecked": "2026-08-26",
+      "sourceIds": ["source:ii1308:official-course-page", "source:ii1308:course-memo", "source:ii1308:quiz-publication-october-13"],
+      "lastChecked": "2026-10-13",
       "confidence": "verified",
       "relationships": []
     }

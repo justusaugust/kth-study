@@ -6,11 +6,13 @@
       "slug": "quiz-a",
       "kind": "quiz",
       "sequence": 2,
-      "title": "Module A quiz",
-      "week": 35,
+      "title": "Module A quiz · completion target",
+      "date": "2026-10-30",
+      "week": 44,
       "requirement": "required",
-      "description": "Individual Canvas quiz after studying Module A and completing its embedded exercises. A score of at least 80 percent is required; attempts are separated by a delay. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Study Module A and its exercises first.",
       "materials": [
+        { "title": "Open Quiz A in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400281" },
         {
           "title": "Module A",
           "section": "Control and Variables"
@@ -31,9 +33,9 @@
       "sourceIds": [
         "source:ii1308:course-memo",
         "source:ii1308:ai-policy",
-        "source:ii1308:canvas-modules-september-21"
+        "source:ii1308:quiz-publication-october-13"
       ],
-      "lastChecked": "2026-09-21",
+      "lastChecked": "2026-10-13",
       "confidence": "verified",
       "relationships": []
     },
@@ -43,10 +45,13 @@
       "slug": "quiz-b",
       "kind": "quiz",
       "sequence": 3,
-      "title": "Module B quiz",
+      "title": "Module B quiz · completion target",
+      "date": "2026-10-30",
+      "week": 44,
       "requirement": "required",
-      "description": "Individual Canvas quiz for Module B. A score of at least 80 percent is required. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module B functions, lists and tuples first.",
       "materials": [
+        { "title": "Open Quiz B in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400282" },
         {
           "title": "Module B — functions",
           "url": "https://canvas.kth.se/courses/63863/files/10519942"
@@ -68,9 +73,9 @@
       "sourceIds": [
         "source:ii1308:course-memo",
         "source:ii1308:ai-policy",
-        "source:ii1308:canvas-modules-september-21"
+        "source:ii1308:quiz-publication-october-13"
       ],
-      "lastChecked": "2026-09-21",
+      "lastChecked": "2026-10-13",
       "confidence": "verified",
       "relationships": []
     },
@@ -80,10 +85,13 @@
       "slug": "quiz-c",
       "kind": "quiz",
       "sequence": 4,
-      "title": "Module C quiz",
+      "title": "Module C quiz · completion target",
+      "date": "2026-10-30",
+      "week": 44,
       "requirement": "required",
-      "description": "Individual Canvas quiz for Module C. A score of at least 80 percent is required. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module C sets, dictionaries and sequence processing first.",
       "materials": [
+        { "title": "Open Quiz C in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400283" },
         {
           "title": "Module C materials in Canvas",
           "url": "https://canvas.kth.se/courses/63863/modules",
@@ -102,9 +110,9 @@
       "sourceIds": [
         "source:ii1308:course-memo",
         "source:ii1308:ai-policy",
-        "source:ii1308:canvas-modules-september-21"
+        "source:ii1308:quiz-publication-october-13"
       ],
-      "lastChecked": "2026-09-21",
+      "lastChecked": "2026-10-13",
       "confidence": "verified",
       "relationships": []
     },
@@ -114,12 +122,13 @@
       "slug": "quiz-d",
       "kind": "quiz",
       "sequence": 5,
-      "title": "Module D quiz",
-      "date": "2026-10-26",
+      "title": "Module D quiz · completion target",
+      "date": "2026-10-30",
       "week": 44,
       "requirement": "required",
-      "description": "Final individual module quiz. All four quizzes must be passed by the end of period 1; each requires at least 80 percent. Canvas's Assignments page showed no published assignment groups when checked on 21 September. The course requirement remains from the memo; quiz availability is not confirmed.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module D command shell, Python files and IO first.",
       "materials": [
+        { "title": "Open Quiz D in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400284" },
         {
           "title": "Module D materials in Canvas",
           "url": "https://canvas.kth.se/courses/63863/modules",
@@ -139,9 +148,9 @@
         "source:ii1308:course-memo",
         "source:ii1308:seminar-1",
         "source:ii1308:ai-policy",
-        "source:ii1308:canvas-modules-september-21"
+        "source:ii1308:quiz-publication-october-13"
       ],
-      "lastChecked": "2026-09-21",
+      "lastChecked": "2026-10-13",
       "confidence": "verified",
       "relationships": []
     }
