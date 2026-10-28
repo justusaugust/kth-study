@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-10-28-03",
+  "courseId": "course:sf1684",
+  "slug": "2026-10-28-03",
+  "title": "Lecture 3 — lines, planes, and orthogonal projection",
+  "date": "2026-10-28",
+  "summary": "Sections 1.3 and 7.7: parametric lines, plane equations, and projection onto a vector.",
+  "body": "Study lines and planes in space, then orthogonal projection onto a vector (Sections 1.3 and 7.7). This guide follows the published topic outline; it is not a class transcript.\n\nRead the [Module 1 guide and recommended exercises](https://canvas.kth.se/courses/65269/pages/1-vector-geometry), including the [reading and exercise PDF](https://canvas.kth.se/courses/65269/files/10687612).",
+  "conceptIds": [
+    "concept:sf1684:lines-planes-and-projection"
+  ],
+  "sessionId": "session:sf1684:lecture-03",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-1",
+    "source:sf1684:timetable"
+  ],
+  "lastChecked": "2026-10-28",
+  "confidence": "supported",
+  "relationships": []
+}

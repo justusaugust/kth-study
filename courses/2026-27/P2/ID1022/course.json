@@ -1,0 +1,46 @@
+{
+  "id": "course:id1022",
+  "code": "ID1022",
+  "slug": "id1022",
+  "title": "The Art of Programming",
+  "academicYear": "2026-27",
+  "period": "P2",
+  "summary": "Programming concepts, practical software development, and AI-assisted development. ProgGame preparation leads to an individual offline programming exam; a separate mini project uses AI-assisted tools.",
+  "credits": 7.5,
+  "language": "English",
+  "startDate": "2026-10-26",
+  "endDate": "2027-01-11",
+  "links": [
+    {
+      "kind": "kth",
+      "label": "Official course syllabus",
+      "url": "https://www.kth.se/student/kurser/kurs/ID1022?l=en",
+      "sourceId": "source:id1022:syllabus"
+    },
+    {
+      "kind": "canvas",
+      "label": "Canvas course room",
+      "url": "https://canvas.kth.se/courses/65461",
+      "sourceId": "source:id1022:lecture-plan"
+    },
+    {
+      "kind": "course-memo",
+      "label": "Course memo and grading",
+      "url": "https://canvas.kth.se/courses/65461/pages/course-memo",
+      "sourceId": "source:id1022:course-memo"
+    }
+  ],
+  "conceptIds": [
+    "concept:id1022:immutable-values-and-functions"
+  ],
+  "outcomeIds": [],
+  "sourceIds": [
+    "source:id1022:syllabus",
+    "source:id1022:lecture-plan",
+    "source:id1022:course-memo",
+    "source:id1022:important-dates"
+  ],
+  "lastChecked": "2026-10-28",
+  "confidence": "verified",
+  "relationships": []
+}

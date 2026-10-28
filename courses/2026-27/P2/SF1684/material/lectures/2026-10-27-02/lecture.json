@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-10-27-02",
+  "courseId": "course:sf1684",
+  "slug": "2026-10-27-02",
+  "title": "Lecture 2 — scalar product, orthogonality, and cross product",
+  "date": "2026-10-27",
+  "summary": "Sections 1.2 and 4.3: angles, perpendicularity, and cross products.",
+  "body": "Study scalar products, orthogonality, angles, and cross products (Sections 1.2 and 4.3). This guide follows the published topic outline; it is not a class transcript.\n\nRead the [Module 1 guide and recommended exercises](https://canvas.kth.se/courses/65269/pages/1-vector-geometry), including the [reading and exercise PDF](https://canvas.kth.se/courses/65269/files/10687612).",
+  "conceptIds": [
+    "concept:sf1684:dot-and-cross-products"
+  ],
+  "sessionId": "session:sf1684:lecture-02",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-1",
+    "source:sf1684:timetable"
+  ],
+  "lastChecked": "2026-10-28",
+  "confidence": "supported",
+  "relationships": []
+}

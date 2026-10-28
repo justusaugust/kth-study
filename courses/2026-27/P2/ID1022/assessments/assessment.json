@@ -1,0 +1,43 @@
+{
+  "assessments": [
+    {
+      "id": "assessment:id1022:dat1",
+      "courseId": "course:id1022",
+      "slug": "dat1",
+      "code": "DAT1",
+      "title": "Individual computer-based programming exam",
+      "kind": "digital-exam",
+      "credits": 6,
+      "compulsory": true,
+      "description": "Three hours, in person, without Internet or AI. Choose one slot in 14–18 December 2026 or 4–11 January 2027; no personal slot is recorded here. Complete ProgGame before signing up, by 9 December at 16:00. Bronze unlocks grades up to D, silver up to B, gold up to A; exam performance determines the grade. A requires at least one bronze, one silver, and one gold task passed.",
+      "sourceIds": [
+        "source:id1022:syllabus",
+        "source:id1022:course-memo",
+        "source:id1022:important-dates"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "assessment:id1022:pro1",
+      "courseId": "course:id1022",
+      "slug": "pro1",
+      "code": "PRO1",
+      "title": "Individual AI-assisted mini project",
+      "kind": "project",
+      "credits": 1.5,
+      "compulsory": true,
+      "date": "2026-12-10",
+      "description": "Pass/fail. Proposal due 27 November at 16:00. Present at the R1 reactor hall EXPO on 10 December in an assigned two-hour slot; the personal slot is not yet recorded. Follow the course rules for individual implementation, regular Git commits, and prompts in commit messages.",
+      "sourceIds": [
+        "source:id1022:syllabus",
+        "source:id1022:course-memo",
+        "source:id1022:important-dates"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

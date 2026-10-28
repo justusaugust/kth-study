@@ -1,0 +1,22 @@
+{
+  "assessments": [
+    {
+      "id": "assessment:sf1684:ten1",
+      "courseId": "course:sf1684",
+      "slug": "ten1",
+      "code": "TEN1",
+      "title": "Written exam",
+      "kind": "written-exam",
+      "credits": 7.5,
+      "compulsory": true,
+      "description": "Three hours, no aids. January regular exam and April re-exam; exact date is not verified here. Register through Ladok. Two parts, three questions each, six points per question (36 total). Seminar bonuses apply to Part 1, capped at 18 points. Grade thresholds: Fx 15, E 16, D 19, C 22, B 25, A 28. Clear definitions, reasoning, and presentation are required for full credit.",
+      "sourceIds": [
+        "source:sf1684:syllabus",
+        "source:sf1684:examination"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

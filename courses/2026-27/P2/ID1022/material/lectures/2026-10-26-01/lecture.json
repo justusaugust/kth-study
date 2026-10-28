@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-10-26-01",
+  "courseId": "course:id1022",
+  "slug": "2026-10-26-01",
+  "title": "Lecture 1 — course introduction",
+  "date": "2026-10-26",
+  "summary": "How the course combines classical programming, ProgGame, an AI-assisted project, and the offline programming exam.",
+  "body": "The published first slide deck introduces programming as reasoning about abstractions and constructing working software. The course develops both independent programming and responsible use of AI-assisted development.\n\n## Start here\n\nOpen [ProgGame](https://proggame.eecs.kth.se/) and use the course's Pyking playground. The slides describe learning concepts such as functions, immutability, recursion, and objects, then comparing code in JavaScript, Python, C, Java, and OCaml.\n\nThe game runs for seven modules. Complete the first milestone, **dock of adventures**, by **30 October at 09:00**. See [all milestones](https://canvas.kth.se/courses/65461/pages/important-dates).\n\n## How the grade works\n\nProgGame is preparation rather than a separately credited examination, but its level gates the exam tasks: bronze permits up to D, silver up to B, and gold up to A. The individual three-hour offline exam (DAT1, 6 credits) determines the letter grade. The AI-assisted mini project (PRO1, 1.5 credits) must also pass.\n\nThe memo prohibits AI assistance and copied solutions for ProgGame unless explicitly permitted. Use the game's own instructions and teaching assistants for its tasks. The mini project has a different policy that explicitly allows AI-assisted coding.\n\n[Read the course memo](https://canvas.kth.se/courses/65461/pages/course-memo) · [View Lecture 1 slides](https://canvas.kth.se/courses/65461/files/10935077)",
+  "conceptIds": [],
+  "sessionId": "session:id1022:lecture-01",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-1-slides",
+    "source:id1022:course-memo",
+    "source:id1022:important-dates"
+  ],
+  "lastChecked": "2026-10-28",
+  "confidence": "supported",
+  "relationships": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "lecture:id1022:2026-10-28-02",
+  "courseId": "course:id1022",
+  "slug": "2026-10-28-02",
+  "title": "Lecture 2 — basic immutable programming",
+  "date": "2026-10-28",
+  "summary": "Understand evaluation, immutable values, and functions before moving on to input and output.",
+  "body": "The published lecture plan places **Basic Immutable Programming** in Module 1, Island of Essentials. This is an independently written study companion to the listed topic, not a transcript; no Lecture 2 slides were available in the public lecture table when checked.\n\nWork through the explanation below, then return to the [course lecture page](https://canvas.kth.se/courses/65461/pages/lectures) and [ProgGame](https://proggame.eecs.kth.se/) for the assigned work. The examples here are separate practice, not solutions to game tasks.",
+  "conceptIds": [
+    "concept:id1022:immutable-values-and-functions"
+  ],
+  "sessionId": "session:id1022:lecture-02",
+  "sourceIds": [
+    "source:id1022:lecture-plan"
+  ],
+  "lastChecked": "2026-10-28",
+  "confidence": "supported",
+  "relationships": []
+}

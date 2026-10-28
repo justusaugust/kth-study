@@ -1,0 +1,64 @@
+{
+  "sessions": [
+    {
+      "id": "session:sf1684:lecture-01",
+      "courseId": "course:sf1684",
+      "slug": "lecture-01",
+      "kind": "lecture",
+      "sequence": 1,
+      "title": "Lecture 1 · vectors, components, and length",
+      "date": "2026-10-26",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 44,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": [],
+      "lectureId": "lecture:sf1684:2026-10-26-01"
+    },
+    {
+      "id": "session:sf1684:lecture-02",
+      "courseId": "course:sf1684",
+      "slug": "lecture-02",
+      "kind": "lecture",
+      "sequence": 2,
+      "title": "Lecture 2 · scalar product, orthogonality, and cross product",
+      "date": "2026-10-27",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 44,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": [],
+      "lectureId": "lecture:sf1684:2026-10-27-02"
+    },
+    {
+      "id": "session:sf1684:lecture-03",
+      "courseId": "course:sf1684",
+      "slug": "lecture-03",
+      "kind": "lecture",
+      "sequence": 3,
+      "title": "Lecture 3 · lines, planes, and orthogonal projection",
+      "date": "2026-10-28",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 44,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": [],
+      "lectureId": "lecture:sf1684:2026-10-28-03"
+    }
+  ]
+}

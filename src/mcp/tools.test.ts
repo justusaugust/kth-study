@@ -183,7 +183,7 @@ describe("KTH Study MCP tools", () => {
           course: { code: string };
           upcomingCoursework: Array<{ date: string; lastChecked: string; confidence: string; sourceIds: string[] }>;
         }>;
-        expect(courses.map(({ course }) => course.code).sort()).toEqual(["IE1204", "II1308", "SF1690"]);
+        expect(courses.map(({ course }) => course.code).sort()).toEqual(["ID1022", "IE1204", "II1308", "SF1684", "SF1690"]);
         expect(courses.flatMap((course) => course.upcomingCoursework).length).toBeGreaterThan(0);
         for (const course of courses) {
           const dates = course.upcomingCoursework.map((item) => item.date);

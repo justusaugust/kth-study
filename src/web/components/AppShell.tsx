@@ -75,6 +75,12 @@ export function AppShell() {
             </Link>
             <nav className="course-rail" aria-label="Primary">
               <div className="course-rail__group">
+                <NavLink className="course-link" to="/courses/id1022">
+                  ID1022
+                </NavLink>
+                <NavLink className="course-link" to="/courses/sf1684">
+                  SF1684
+                </NavLink>
                 <NavLink className="course-link" to="/courses/sf1690">
                   SF1690
                 </NavLink>

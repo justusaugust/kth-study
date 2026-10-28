@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-10-26-01",
+  "courseId": "course:sf1684",
+  "slug": "2026-10-26-01",
+  "title": "Lecture 1 — vectors, components, and length",
+  "date": "2026-10-26",
+  "summary": "Section 1.1: vectors in two, three, and n dimensions.",
+  "body": "Study vectors in two, three, and n dimensions (Section 1.1). This guide follows the published topic outline; it is not a class transcript.\n\nRead the [Module 1 guide and recommended exercises](https://canvas.kth.se/courses/65269/pages/1-vector-geometry), including the [reading and exercise PDF](https://canvas.kth.se/courses/65269/files/10687612).",
+  "conceptIds": [
+    "concept:sf1684:vectors-and-length"
+  ],
+  "sessionId": "session:sf1684:lecture-01",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-1",
+    "source:sf1684:timetable"
+  ],
+  "lastChecked": "2026-10-28",
+  "confidence": "supported",
+  "relationships": []
+}

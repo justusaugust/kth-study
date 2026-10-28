@@ -1,0 +1,261 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:id1022:proggame-module-1",
+      "courseId": "course:id1022",
+      "slug": "proggame-module-1",
+      "kind": "exercise",
+      "sequence": 1,
+      "title": "ProgGame · Module 1: dock of adventures",
+      "date": "2026-10-30",
+      "time": "09:00",
+      "requirement": "required",
+      "description": "Reach the dock of adventures in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "materials": [
+        {
+          "title": "Open ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Official milestones",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "lectureIds": [
+        "lecture:id1022:2026-10-26-01",
+        "lecture:id1022:2026-10-28-02"
+      ],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:proggame-module-2",
+      "courseId": "course:id1022",
+      "slug": "proggame-module-2",
+      "kind": "exercise",
+      "sequence": 2,
+      "title": "ProgGame · Module 2: no man's land",
+      "date": "2026-11-06",
+      "time": "09:00",
+      "requirement": "required",
+      "description": "Reach the no man's land in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "materials": [
+        {
+          "title": "Open ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Official milestones",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "lectureIds": [],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:proggame-module-3",
+      "courseId": "course:id1022",
+      "slug": "proggame-module-3",
+      "kind": "exercise",
+      "sequence": 3,
+      "title": "ProgGame · Module 3: port of class",
+      "date": "2026-11-13",
+      "time": "09:00",
+      "requirement": "required",
+      "description": "Reach the port of class in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "materials": [
+        {
+          "title": "Open ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Official milestones",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "lectureIds": [],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:proggame-module-4",
+      "courseId": "course:id1022",
+      "slug": "proggame-module-4",
+      "kind": "exercise",
+      "sequence": 4,
+      "title": "ProgGame · Module 4: waterfall of disposed agents",
+      "date": "2026-11-20",
+      "time": "09:00",
+      "requirement": "required",
+      "description": "Reach the waterfall of disposed agents in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "materials": [
+        {
+          "title": "Open ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Official milestones",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "lectureIds": [],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:proggame-module-5",
+      "courseId": "course:id1022",
+      "slug": "proggame-module-5",
+      "kind": "exercise",
+      "sequence": 5,
+      "title": "ProgGame · Module 5: port of flowers",
+      "date": "2026-11-27",
+      "time": "16:00",
+      "requirement": "required",
+      "description": "Reach the port of flowers in ProgGame by 16:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "materials": [
+        {
+          "title": "Open ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Official milestones",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "lectureIds": [],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:proggame-module-6",
+      "courseId": "course:id1022",
+      "slug": "proggame-module-6",
+      "kind": "exercise",
+      "sequence": 6,
+      "title": "ProgGame · Module 6: reef of sharks",
+      "date": "2026-12-04",
+      "time": "09:00",
+      "requirement": "required",
+      "description": "Reach the reef of sharks in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "materials": [
+        {
+          "title": "Open ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Official milestones",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "lectureIds": [],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:project-proposal",
+      "courseId": "course:id1022",
+      "slug": "project-proposal",
+      "kind": "assignment",
+      "sequence": 7,
+      "title": "Mini-project proposal",
+      "date": "2026-11-27",
+      "time": "16:00",
+      "requirement": "required",
+      "description": "Submit the individual mini-project proposal in Canvas. Follow the course project instructions; the specific assignment URL has not yet been verified.",
+      "materials": [
+        {
+          "title": "Official instructions and dates",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "assessmentIds": [
+        "assessment:id1022:pro1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:id1022:exam-signup",
+      "courseId": "course:id1022",
+      "slug": "exam-signup",
+      "kind": "assignment",
+      "sequence": 8,
+      "title": "Book one computer-based exam slot",
+      "date": "2026-12-09",
+      "time": "16:00",
+      "requirement": "required",
+      "description": "Complete ProgGame, then sign up for one three-hour slot in either 14–18 December or 4–11 January. This is the sign-up deadline, not the exam date.",
+      "materials": [
+        {
+          "title": "Official instructions and dates",
+          "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
+        }
+      ],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:important-dates",
+        "source:id1022:course-memo"
+      ],
+      "lastChecked": "2026-10-28",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

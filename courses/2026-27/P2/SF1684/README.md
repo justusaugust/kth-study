@@ -5,7 +5,7 @@
 - **Teaching language:** English
 - **Assessment:** TEN1 examination, 7.5 credits
 - **Official page:** https://www.kth.se/student/kurser/kurs/SF1684?l=en
-- **Private course room:** Canvas after login
+- **Public course room:** https://canvas.kth.se/courses/65269
 
 ## Local structure
 
