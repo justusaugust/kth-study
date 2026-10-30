@@ -17,9 +17,11 @@ describe("Autumn 2026 period 2", () => {
       }
     }
     expect(corpus.coursework.get("coursework:id1022:proggame-module-1")).toMatchObject({
-      date: "2026-10-30", time: "09:00", requirement: "required",
+      date: "2026-11-06", time: "09:00", requirement: "required", lastChecked: "2026-10-30",
       materials: expect.arrayContaining([expect.objectContaining({ url: "https://proggame.eecs.kth.se/" })]),
     });
+    expect(corpus.lectures.get("lecture:id1022:2026-10-26-01")?.body).toContain("**6 November at 09:00**");
+    expect(corpus.sessions.get("session:id1022:lecture-03")?.date).toBe("2026-10-30");
     expect(corpus.coursework.get("coursework:id1022:exam-signup")).toMatchObject({
       date: "2026-12-09", time: "16:00", assessmentIds: ["assessment:id1022:dat1"],
     });

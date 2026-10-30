@@ -7,10 +7,10 @@
       "kind": "exercise",
       "sequence": 1,
       "title": "ProgGame · Module 1: dock of adventures",
-      "date": "2026-10-30",
+      "date": "2026-11-06",
       "time": "09:00",
       "requirement": "required",
-      "description": "Reach the dock of adventures in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "description": "Reach the dock of adventures in ProgGame by 09:00 Stockholm time on 6 November. The course staff postponed this milestone by one week from 30 October. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -32,7 +32,7 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-10-30",
       "confidence": "verified",
       "relationships": []
     },

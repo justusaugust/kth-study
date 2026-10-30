@@ -7,7 +7,7 @@
 - **Official page:** https://www.kth.se/student/kurser/kurs/ID1022?l=en
 - **Public course room:** https://canvas.kth.se/courses/65461
 - **ProgGame:** https://proggame.eecs.kth.se/ — bronze permits grades up to D, silver up to B, gold up to A.
-- **First milestone:** Dock of adventures, 30 October at 09:00 Stockholm time.
+- **First milestone:** Dock of adventures, 6 November at 09:00 Stockholm time (postponed one week; checked 30 October).
 - **Policy:** ProgGame prohibits AI assistance unless explicitly allowed. The mini project allows AI-assisted development under the course's individual-work and Git-history rules.
 
 ## Local structure
