@@ -1,0 +1,721 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:sf1684:workshop-01",
+      "courseId": "course:sf1684",
+      "slug": "workshop-01",
+      "kind": "exercise",
+      "sequence": 1,
+      "title": "Workshop 1",
+      "date": "2026-10-27",
+      "time": "13:00",
+      "week": 44,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 1 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687612#page=2"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-01"
+      ],
+      "lectureIds": [
+        "lecture:sf1684:2026-10-26-01",
+        "lecture:sf1684:2026-10-27-02",
+        "lecture:sf1684:2026-10-28-03"
+      ],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-1-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-02",
+      "courseId": "course:sf1684",
+      "slug": "workshop-02",
+      "kind": "exercise",
+      "sequence": 2,
+      "title": "Workshop 2",
+      "date": "2026-10-28",
+      "time": "13:00",
+      "week": 44,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 1 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687612#page=3"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-02"
+      ],
+      "lectureIds": [
+        "lecture:sf1684:2026-10-26-01",
+        "lecture:sf1684:2026-10-27-02",
+        "lecture:sf1684:2026-10-28-03"
+      ],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-1-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:seminar-test-01",
+      "courseId": "course:sf1684",
+      "slug": "seminar-test-01",
+      "kind": "mini-exam",
+      "sequence": 1,
+      "title": "Optional seminar test 1 · Vector geometry",
+      "date": "2026-11-02",
+      "time": "15:00",
+      "week": 45,
+      "requirement": "optional",
+      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "materials": [
+        {
+          "title": "Module 1 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687612"
+        },
+        {
+          "title": "Seminar rules and bonus points",
+          "url": "https://canvas.kth.se/courses/65269/pages/seminars"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:seminar-01"
+      ],
+      "lectureIds": [
+        "lecture:sf1684:2026-10-26-01",
+        "lecture:sf1684:2026-10-27-02",
+        "lecture:sf1684:2026-10-28-03"
+      ],
+      "conceptIds": [
+        "concept:sf1684:seminar-bonus-points"
+      ],
+      "assessmentIds": [
+        "assessment:sf1684:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-1-reading-guide",
+        "source:sf1684:seminars"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-03",
+      "courseId": "course:sf1684",
+      "slug": "workshop-03",
+      "kind": "exercise",
+      "sequence": 3,
+      "title": "Workshop 3",
+      "date": "2026-11-04",
+      "time": "10:00",
+      "week": 45,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 2 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687614#page=2"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-03"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:linear-systems-and-elimination",
+        "concept:sf1684:matrix-arithmetic",
+        "concept:sf1684:matrix-inverses"
+      ],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-2-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-04",
+      "courseId": "course:sf1684",
+      "slug": "workshop-04",
+      "kind": "exercise",
+      "sequence": 4,
+      "title": "Workshop 4",
+      "date": "2026-11-05",
+      "time": "14:00",
+      "week": 45,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 2 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687614#page=4"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-04"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:linear-systems-and-elimination",
+        "concept:sf1684:matrix-arithmetic",
+        "concept:sf1684:matrix-inverses"
+      ],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-2-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:seminar-test-02",
+      "courseId": "course:sf1684",
+      "slug": "seminar-test-02",
+      "kind": "mini-exam",
+      "sequence": 2,
+      "title": "Optional seminar test 2 · Linear systems and matrices",
+      "date": "2026-11-09",
+      "time": "13:00",
+      "week": 46,
+      "requirement": "optional",
+      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "materials": [
+        {
+          "title": "Module 2 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687614"
+        },
+        {
+          "title": "Seminar rules and bonus points",
+          "url": "https://canvas.kth.se/courses/65269/pages/seminars"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:seminar-02"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:linear-systems-and-elimination",
+        "concept:sf1684:matrix-arithmetic",
+        "concept:sf1684:matrix-inverses",
+        "concept:sf1684:seminar-bonus-points"
+      ],
+      "assessmentIds": [
+        "assessment:sf1684:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-2-reading-guide",
+        "source:sf1684:seminars"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-05",
+      "courseId": "course:sf1684",
+      "slug": "workshop-05",
+      "kind": "exercise",
+      "sequence": 5,
+      "title": "Workshop 5",
+      "date": "2026-11-11",
+      "time": "13:00",
+      "week": 46,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 3 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687619"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-05"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-3-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-06",
+      "courseId": "course:sf1684",
+      "slug": "workshop-06",
+      "kind": "exercise",
+      "sequence": 6,
+      "title": "Workshop 6",
+      "date": "2026-11-12",
+      "time": "13:00",
+      "week": 46,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 3 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687619"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-06"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-3-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:seminar-test-03",
+      "courseId": "course:sf1684",
+      "slug": "seminar-test-03",
+      "kind": "mini-exam",
+      "sequence": 3,
+      "title": "Optional seminar test 3 · Solution sets, determinants, and volumes",
+      "date": "2026-11-16",
+      "time": "13:00",
+      "week": 47,
+      "requirement": "optional",
+      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "materials": [
+        {
+          "title": "Module 3 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687619"
+        },
+        {
+          "title": "Seminar rules and bonus points",
+          "url": "https://canvas.kth.se/courses/65269/pages/seminars"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:seminar-03"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:seminar-bonus-points"
+      ],
+      "assessmentIds": [
+        "assessment:sf1684:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-3-reading-guide",
+        "source:sf1684:seminars"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-07",
+      "courseId": "course:sf1684",
+      "slug": "workshop-07",
+      "kind": "exercise",
+      "sequence": 7,
+      "title": "Workshop 7",
+      "date": "2026-11-18",
+      "time": "10:00",
+      "week": 47,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 4 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687620"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-07"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-4-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-08",
+      "courseId": "course:sf1684",
+      "slug": "workshop-08",
+      "kind": "exercise",
+      "sequence": 8,
+      "title": "Workshop 8",
+      "date": "2026-11-19",
+      "time": "13:00",
+      "week": 47,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 4 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687620"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-08"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-4-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:seminar-test-04",
+      "courseId": "course:sf1684",
+      "slug": "seminar-test-04",
+      "kind": "mini-exam",
+      "sequence": 4,
+      "title": "Optional seminar test 4 · Linear transformations and eigenvalues",
+      "date": "2026-11-23",
+      "time": "15:00",
+      "week": 48,
+      "requirement": "optional",
+      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "materials": [
+        {
+          "title": "Module 4 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687620"
+        },
+        {
+          "title": "Seminar rules and bonus points",
+          "url": "https://canvas.kth.se/courses/65269/pages/seminars"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:seminar-04"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:seminar-bonus-points"
+      ],
+      "assessmentIds": [
+        "assessment:sf1684:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-4-reading-guide",
+        "source:sf1684:seminars"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-09",
+      "courseId": "course:sf1684",
+      "slug": "workshop-09",
+      "kind": "exercise",
+      "sequence": 9,
+      "title": "Workshop 9",
+      "date": "2026-11-25",
+      "time": "10:00",
+      "week": 48,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 5 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687625"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-09"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-5-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-10",
+      "courseId": "course:sf1684",
+      "slug": "workshop-10",
+      "kind": "exercise",
+      "sequence": 10,
+      "title": "Workshop 10",
+      "date": "2026-11-26",
+      "time": "13:00",
+      "week": 48,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 5 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687625"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-10"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-5-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:seminar-test-05",
+      "courseId": "course:sf1684",
+      "slug": "seminar-test-05",
+      "kind": "mini-exam",
+      "sequence": 5,
+      "title": "Optional seminar test 5 · Bases, projections, and least squares",
+      "date": "2026-11-30",
+      "time": "13:00",
+      "week": 49,
+      "requirement": "optional",
+      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "materials": [
+        {
+          "title": "Module 5 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687625"
+        },
+        {
+          "title": "Seminar rules and bonus points",
+          "url": "https://canvas.kth.se/courses/65269/pages/seminars"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:seminar-05"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:seminar-bonus-points"
+      ],
+      "assessmentIds": [
+        "assessment:sf1684:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-5-reading-guide",
+        "source:sf1684:seminars"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-11",
+      "courseId": "course:sf1684",
+      "slug": "workshop-11",
+      "kind": "exercise",
+      "sequence": 11,
+      "title": "Workshop 11",
+      "date": "2026-12-02",
+      "time": "10:00",
+      "week": 49,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 6 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687636"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-11"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-6-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-12",
+      "courseId": "course:sf1684",
+      "slug": "workshop-12",
+      "kind": "exercise",
+      "sequence": 12,
+      "title": "Workshop 12",
+      "date": "2026-12-03",
+      "time": "13:00",
+      "week": 49,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 6 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687636"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-12"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-6-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:seminar-test-06",
+      "courseId": "course:sf1684",
+      "slug": "seminar-test-06",
+      "kind": "mini-exam",
+      "sequence": 6,
+      "title": "Optional seminar test 6 · Diagonalization and quadratic forms",
+      "date": "2026-12-07",
+      "time": "13:00",
+      "week": 50,
+      "requirement": "optional",
+      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "materials": [
+        {
+          "title": "Module 6 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687636"
+        },
+        {
+          "title": "Seminar rules and bonus points",
+          "url": "https://canvas.kth.se/courses/65269/pages/seminars"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:seminar-06"
+      ],
+      "lectureIds": [],
+      "conceptIds": [
+        "concept:sf1684:seminar-bonus-points"
+      ],
+      "assessmentIds": [
+        "assessment:sf1684:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-6-reading-guide",
+        "source:sf1684:seminars"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-13",
+      "courseId": "course:sf1684",
+      "slug": "workshop-13",
+      "kind": "exercise",
+      "sequence": 13,
+      "title": "Workshop 13",
+      "date": "2026-12-08",
+      "time": "15:00",
+      "week": 50,
+      "requirement": "scheduled",
+      "description": "Attempt the official workshop problems before checking their solutions.",
+      "materials": [
+        {
+          "title": "Module 7 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687638"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-13"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-7-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1684:workshop-14",
+      "courseId": "course:sf1684",
+      "slug": "workshop-14",
+      "kind": "exercise",
+      "sequence": 14,
+      "title": "Workshop 14 · revision",
+      "date": "2026-12-09",
+      "time": "10:00",
+      "week": 50,
+      "requirement": "scheduled",
+      "description": "Revision workshop; revisit the course using the published module guides.",
+      "materials": [
+        {
+          "title": "Module 7 preparation and workshop problems",
+          "url": "https://canvas.kth.se/courses/65269/files/10687638"
+        }
+      ],
+      "sessionIds": [
+        "session:sf1684:exercise-14"
+      ],
+      "lectureIds": [],
+      "conceptIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:sf1684:timetable",
+        "source:sf1684:module-7-reading-guide"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

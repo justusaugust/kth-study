@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:lecture-3-slides",
+  "courseId": "course:id1022",
+  "title": "Lecture 3 — Lists, Tuples, State Machines and Loops",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/65461/files/10955598",
+  "locator": "17 slides: Pyking block scope, homogeneous lists, tuples, immutable loops, Mealy machines",
+  "lastChecked": "2026-11-02",
+  "confidence": "verified"
+}

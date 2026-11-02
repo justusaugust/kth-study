@@ -31,7 +31,12 @@
     }
   ],
   "conceptIds": [
-    "concept:id1022:immutable-values-and-functions"
+    "concept:id1022:immutable-values-and-functions",
+    "concept:id1022:lists-and-tuples",
+    "concept:id1022:immutable-loops-and-state",
+    "concept:id1022:functions-and-effects",
+    "concept:id1022:shell-and-git-workflow",
+    "concept:id1022:proggame-study-route"
   ],
   "outcomeIds": [],
   "sourceIds": [
@@ -40,7 +45,7 @@
     "source:id1022:course-memo",
     "source:id1022:important-dates"
   ],
-  "lastChecked": "2026-10-28",
+  "lastChecked": "2026-11-02",
   "confidence": "verified",
   "relationships": []
 }

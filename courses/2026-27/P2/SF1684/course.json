@@ -33,7 +33,11 @@
   "conceptIds": [
     "concept:sf1684:vectors-and-length",
     "concept:sf1684:dot-and-cross-products",
-    "concept:sf1684:lines-planes-and-projection"
+    "concept:sf1684:lines-planes-and-projection",
+    "concept:sf1684:linear-systems-and-elimination",
+    "concept:sf1684:matrix-arithmetic",
+    "concept:sf1684:matrix-inverses",
+    "concept:sf1684:seminar-bonus-points"
   ],
   "outcomeIds": [],
   "sourceIds": [
@@ -43,7 +47,7 @@
     "source:sf1684:examination",
     "source:sf1684:timetable"
   ],
-  "lastChecked": "2026-10-28",
+  "lastChecked": "2026-11-02",
   "confidence": "verified",
   "relationships": []
 }

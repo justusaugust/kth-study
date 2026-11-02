@@ -625,10 +625,14 @@ function CoordinateDiagram({ mode, slope }: { mode: DiagramMode; slope: boolean 
   );
 }
 
-export function ConceptDiagram({ slug, mode = "preview" }: Props) {
+export function getConceptDiagram(slug: string, mode: DiagramMode = "preview") {
   if (slug === "real-numbers-and-lines") return <IntervalDiagram mode={mode} />;
   if (slug === "absolute-value") return <AbsoluteValueDiagram mode={mode} />;
   if (slug === "cartesian-distance-circles") return <CoordinateDiagram mode={mode} slope={false} />;
   if (slug === "lines-and-slopes") return <CoordinateDiagram mode={mode} slope />;
   return null;
+}
+
+export function ConceptDiagram({ slug, mode = "preview" }: Props) {
+  return getConceptDiagram(slug, mode);
 }

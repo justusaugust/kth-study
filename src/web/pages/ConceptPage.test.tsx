@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 describe("ConceptPage", () => {
-  it("leads with definitions and a visual study board", async () => {
+  it("leads with definitions and omits an unavailable visual", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(
@@ -155,8 +155,9 @@ describe("ConceptPage", () => {
     expect(document.querySelector('[data-entity-mark="definition"]')).toBeInTheDocument();
     expect(document.querySelector(".definition-board > .section-marker svg")).toBeInTheDocument();
     expect(document.querySelector(".definition-heading svg")).not.toBeInTheDocument();
-    expect(document.querySelectorAll("[data-section-marker]").length).toBeGreaterThanOrEqual(4);
+    expect(document.querySelectorAll("[data-section-marker]").length).toBeGreaterThanOrEqual(3);
     expect(document.querySelector(".register")).not.toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "See the idea" })).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Explanation" })).toBeVisible();
     expect(screen.getByText(/2 curriculum outcomes/)).toBeVisible();
     expect(document.querySelectorAll(".katex").length).toBeGreaterThan(2);

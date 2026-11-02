@@ -6,7 +6,7 @@ import remarkMath from "remark-math";
 import type { ConceptResponse } from "../../domain/api";
 import { getConcept, MissingEntityError } from "../api";
 import { ExplainerRenderer } from "../components/ExplainerRenderer";
-import { ConceptDiagram } from "../components/ConceptDiagram";
+import { getConceptDiagram } from "../components/ConceptDiagram";
 import { DefinitionBoard } from "../components/DefinitionBoard";
 import { SectionMarker, StudyMark } from "../components/StudyMark";
 import { SourceLinks } from "../components/SourceLinks";
@@ -53,6 +53,13 @@ export function ConceptPage() {
   if (!data) return <p className="loading">Loading concept…</p>;
 
   const { concept, course } = data;
+  const visual = data.explainers[0]
+    ? <ExplainerRenderer spec={data.explainers[0]} mode="preview" />
+    : concept.slug === "boolean-equations-and-algebra"
+      ? <BooleanFormsDiagram mode="preview" />
+      : concept.slug === "characters-and-strings"
+        ? <StringIndexDiagram mode="preview" />
+        : getConceptDiagram(concept.slug);
   let sectionCount = 0;
   const nextRegister = () => String(++sectionCount).padStart(2, "0");
 
@@ -92,20 +99,12 @@ export function ConceptPage() {
         <DefinitionBoard register={nextRegister()} definitions={data.definitions} />
       ) : null}
 
-      <section className="registered" aria-labelledby="primary-visual-title">
+      {visual ? <section className="registered" aria-labelledby="primary-visual-title">
         <SectionMarker kind="explainer" number={nextRegister()} />
         <h2 id="primary-visual-title">See the idea</h2>
         <div className="registered-body">
           <div className="figure-frame">
-            {data.explainers[0] ? (
-              <ExplainerRenderer spec={data.explainers[0]} mode="preview" />
-            ) : concept.slug === "boolean-equations-and-algebra" ? (
-              <BooleanFormsDiagram mode="preview" />
-            ) : concept.slug === "characters-and-strings" ? (
-              <StringIndexDiagram mode="preview" />
-            ) : (
-              <ConceptDiagram slug={concept.slug} />
-            )}
+            {visual}
           </div>
           {data.explainers[0] ? (
             <Link className="figure-link" to={`/visuals/${data.explainers[0].slug}`}>
@@ -113,7 +112,7 @@ export function ConceptPage() {
             </Link>
           ) : null}
         </div>
-      </section>
+      </section> : null}
 
       <section className="registered" aria-labelledby="explanation-title">
         <SectionMarker kind="explanation" number={nextRegister()} />

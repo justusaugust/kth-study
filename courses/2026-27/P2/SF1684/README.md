@@ -9,4 +9,6 @@
 
 ## Local structure
 
-Create `material/`, `notes/`, `problem-sets/`, and `exam/` when content arrives.
+Lectures 1–3 have authored study companions. All seven official reading guides and workshop sets are linked; Module 2 has preparation guides and independent self-checks. The full published schedule includes 21 lectures, 14 workshops, and six optional seminar bonus tests.
+
+The regular written exam is 8 January 2027, 14:00–17:00 Stockholm time, verified in TimeEdit on 2 November. Rooms and personal registration are not verified.

@@ -1,0 +1,347 @@
+{
+  "sessions": [
+    {
+      "id": "session:id1022:lecture-04",
+      "courseId": "course:id1022",
+      "slug": "lecture-04",
+      "kind": "lecture",
+      "sequence": 4,
+      "title": "Lecture 4 · Functions, Git, and the Unix Shell",
+      "date": "2026-11-02",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 45,
+      "location": "F2",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-02-04"
+    },
+    {
+      "id": "session:id1022:lecture-05",
+      "courseId": "course:id1022",
+      "slug": "lecture-05",
+      "kind": "lecture",
+      "sequence": 5,
+      "title": "Lecture 5 · Imperative Programming with Mutation",
+      "date": "2026-11-04",
+      "time": "14:00",
+      "endTime": "16:00",
+      "week": 45,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-06",
+      "courseId": "course:id1022",
+      "slug": "lecture-06",
+      "kind": "lecture",
+      "sequence": 6,
+      "title": "Lecture 6 · Pointers and Memory",
+      "date": "2026-11-06",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 45,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-07",
+      "courseId": "course:id1022",
+      "slug": "lecture-07",
+      "kind": "lecture",
+      "sequence": 7,
+      "title": "Lecture 7 · Recursion and Data Structures",
+      "date": "2026-11-09",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 46,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-08",
+      "courseId": "course:id1022",
+      "slug": "lecture-08",
+      "kind": "lecture",
+      "sequence": 8,
+      "title": "Lecture 8 · Algebraic Data Types",
+      "date": "2026-11-11",
+      "time": "15:00",
+      "endTime": "17:00",
+      "week": 46,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-09",
+      "courseId": "course:id1022",
+      "slug": "lecture-09",
+      "kind": "lecture",
+      "sequence": 9,
+      "title": "Lecture 9 · Parametric Polymorphism, Static, and Dynamic Typing",
+      "date": "2026-11-13",
+      "time": "15:00",
+      "endTime": "17:00",
+      "week": 46,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-10",
+      "courseId": "course:id1022",
+      "slug": "lecture-10",
+      "kind": "lecture",
+      "sequence": 10,
+      "title": "Lecture 10 · Objects and Methods",
+      "date": "2026-11-16",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 47,
+      "location": "M1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-11",
+      "courseId": "course:id1022",
+      "slug": "lecture-11",
+      "kind": "lecture",
+      "sequence": 11,
+      "title": "Lecture 11 · Classes and Inheritance",
+      "date": "2026-11-18",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 47,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-12",
+      "courseId": "course:id1022",
+      "slug": "lecture-12",
+      "kind": "lecture",
+      "sequence": 12,
+      "title": "Lecture 12 · Subtyping Polymorphism",
+      "date": "2026-11-20",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 47,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-13",
+      "courseId": "course:id1022",
+      "slug": "lecture-13",
+      "kind": "lecture",
+      "sequence": 13,
+      "title": "Lecture 13 · LLMs, Prompting, Harnesses, Sandboxing, and Project Intro",
+      "date": "2026-11-23",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 48,
+      "location": "M1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-14",
+      "courseId": "course:id1022",
+      "slug": "lecture-14",
+      "kind": "lecture",
+      "sequence": 14,
+      "title": "Lecture 14 · Requirements and Testing with and without AI",
+      "date": "2026-11-25",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 48,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-15",
+      "courseId": "course:id1022",
+      "slug": "lecture-15",
+      "kind": "lecture",
+      "sequence": 15,
+      "title": "Lecture 15 · Architecture and Design",
+      "date": "2026-11-27",
+      "time": "08:00",
+      "endTime": "10:00",
+      "week": 48,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-16",
+      "courseId": "course:id1022",
+      "slug": "lecture-16",
+      "kind": "lecture",
+      "sequence": 16,
+      "title": "Lecture 16 · Integration and Hacking",
+      "date": "2026-11-30",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 49,
+      "location": "M1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-17",
+      "courseId": "course:id1022",
+      "slug": "lecture-17",
+      "kind": "lecture",
+      "sequence": 17,
+      "title": "Lecture 17 · Guest Lecture from Saab",
+      "date": "2026-12-02",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 49,
+      "location": "D1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-18",
+      "courseId": "course:id1022",
+      "slug": "lecture-18",
+      "kind": "lecture",
+      "sequence": 18,
+      "title": "Lecture 18 · Project Recap and Retake Easter Eggs",
+      "date": "2026-12-04",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 49,
+      "location": "M1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-19",
+      "courseId": "course:id1022",
+      "slug": "lecture-19",
+      "kind": "lecture",
+      "sequence": 19,
+      "title": "Lecture 19 · Reading, Debugging, Legacy Software",
+      "date": "2026-12-07",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 50,
+      "location": "F2",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-20",
+      "courseId": "course:id1022",
+      "slug": "lecture-20",
+      "kind": "lecture",
+      "sequence": 20,
+      "title": "Lecture 20 · Project Preparation and Retake Easter Eggs",
+      "date": "2026-12-09",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 50,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "session:id1022:lecture-21",
+      "courseId": "course:id1022",
+      "slug": "lecture-21",
+      "kind": "lecture",
+      "sequence": 21,
+      "title": "Lecture 21 · Course Summary, Exams, and Outlook",
+      "date": "2026-12-11",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 50,
+      "location": "E1",
+      "sourceIds": [
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": []
+    }
+  ]
+}

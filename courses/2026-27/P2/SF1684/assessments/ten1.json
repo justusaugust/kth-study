@@ -9,14 +9,17 @@
       "kind": "written-exam",
       "credits": 7.5,
       "compulsory": true,
-      "description": "Three hours, no aids. January regular exam and April re-exam; exact date is not verified here. Register through Ladok. Two parts, three questions each, six points per question (36 total). Seminar bonuses apply to Part 1, capped at 18 points. Grade thresholds: Fx 15, E 16, D 19, C 22, B 25, A 28. Clear definitions, reasoning, and presentation are required for full credit.",
+      "description": "Three hours, no aids. Regular exam 8 January 2027, 14:00–17:00 (Europe/Stockholm), verified in TimeEdit. April re-exam date is not verified here. Register through Ladok. Two parts, three questions each, six points per question (36 total). Seminar bonuses apply to Part 1, capped at 18 points. Grade thresholds: Fx 15, E 16, D 19, C 22, B 25, A 28. Clear definitions, reasoning, and presentation are required for full credit.",
       "sourceIds": [
         "source:sf1684:syllabus",
-        "source:sf1684:examination"
+        "source:sf1684:examination",
+        "source:sf1684:timetable"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-11-02",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "date": "2027-01-08",
+      "time": "14:00"
     }
   ]
 }

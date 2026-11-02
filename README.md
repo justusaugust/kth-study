@@ -7,8 +7,10 @@ The current public corpus covers the 2026 autumn start of:
 - SF1690 — Basic Course in Mathematics
 - IE1204 — Digital Design
 - II1308 — Introduction to Programming
+- ID1022 — The Art of Programming
+- SF1684 — Algebra and Geometry
 
-Later TCOMK courses are represented as course records and will gain lecture material as the programme progresses.
+P2 material is checked through 2 November 2026: ID1022 lectures 1–4, SF1684 lectures 1–3, all seven SF1684 reading guides, and the published P2 teaching schedules. Future timetable entries are distinguished from completed lecture study pages.
 
 ## Run locally
 

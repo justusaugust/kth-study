@@ -1,0 +1,21 @@
+{
+  "id": "lecture:id1022:2026-10-30-03",
+  "courseId": "course:id1022",
+  "slug": "2026-10-30-03",
+  "title": "Lecture 3 — lists, tuples, state machines and loops",
+  "date": "2026-10-30",
+  "summary": "Choose data shapes and trace how a loop carries its next state.",
+  "body": "Read the [Lecture 3 slides](https://canvas.kth.se/courses/65461/files/10955598), then work through the guides and independent self-checks below. First track values and types; then track each transition of the loop state.",
+  "conceptIds": [
+    "concept:id1022:lists-and-tuples",
+    "concept:id1022:immutable-loops-and-state"
+  ],
+  "sessionId": "session:id1022:lecture-03",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-3-slides"
+  ],
+  "lastChecked": "2026-11-02",
+  "confidence": "supported",
+  "relationships": []
+}

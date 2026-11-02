@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:lecture-2-slides",
+  "courseId": "course:id1022",
+  "title": "Lecture 2 — Basic Immutable Programming",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/65461/files/10940350",
+  "locator": "9 slides: REPL, expressions, types, statements, immutable bindings, lexical scope, input and output",
+  "lastChecked": "2026-11-02",
+  "confidence": "verified"
+}

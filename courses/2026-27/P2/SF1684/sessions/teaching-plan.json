@@ -1,0 +1,828 @@
+{
+  "sessions": [
+    {
+      "id": "session:sf1684:exercise-01",
+      "courseId": "course:sf1684",
+      "slug": "exercise-01",
+      "kind": "exercise",
+      "sequence": 1,
+      "date": "2026-10-27",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 44,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-01"
+      ],
+      "title": "Workshop 1"
+    },
+    {
+      "id": "session:sf1684:exercise-02",
+      "courseId": "course:sf1684",
+      "slug": "exercise-02",
+      "kind": "exercise",
+      "sequence": 2,
+      "date": "2026-10-28",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 44,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-02"
+      ],
+      "title": "Workshop 2"
+    },
+    {
+      "id": "session:sf1684:seminar-01",
+      "courseId": "course:sf1684",
+      "slug": "seminar-01",
+      "kind": "seminar",
+      "sequence": 1,
+      "date": "2026-11-02",
+      "time": "15:00",
+      "endTime": "17:00",
+      "week": 45,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:seminar-test-01"
+      ],
+      "title": "Seminar 1 · Vector geometry",
+      "agenda": [
+        "Optional bonus test during the first 30 minutes",
+        "20-minute break, then discussion of solutions"
+      ]
+    },
+    {
+      "id": "session:sf1684:lecture-04",
+      "courseId": "course:sf1684",
+      "slug": "lecture-04",
+      "kind": "lecture",
+      "sequence": 4,
+      "date": "2026-11-03",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 45,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [
+        {
+          "type": "supports",
+          "from": "session:sf1684:lecture-04",
+          "to": "concept:sf1684:linear-systems-and-elimination"
+        }
+      ],
+      "title": "Lecture 4 · linear systems and Gaussian elimination"
+    },
+    {
+      "id": "session:sf1684:lecture-05",
+      "courseId": "course:sf1684",
+      "slug": "lecture-05",
+      "kind": "lecture",
+      "sequence": 5,
+      "date": "2026-11-04",
+      "time": "08:00",
+      "endTime": "10:00",
+      "week": 45,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [
+        {
+          "type": "supports",
+          "from": "session:sf1684:lecture-05",
+          "to": "concept:sf1684:matrix-arithmetic"
+        }
+      ],
+      "title": "Lecture 5 · matrix arithmetic"
+    },
+    {
+      "id": "session:sf1684:exercise-03",
+      "courseId": "course:sf1684",
+      "slug": "exercise-03",
+      "kind": "exercise",
+      "sequence": 3,
+      "date": "2026-11-04",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 45,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-03"
+      ],
+      "title": "Workshop 3"
+    },
+    {
+      "id": "session:sf1684:lecture-06",
+      "courseId": "course:sf1684",
+      "slug": "lecture-06",
+      "kind": "lecture",
+      "sequence": 6,
+      "date": "2026-11-05",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 45,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [
+        {
+          "type": "supports",
+          "from": "session:sf1684:lecture-06",
+          "to": "concept:sf1684:matrix-inverses"
+        }
+      ],
+      "title": "Lecture 6 · inverse matrices"
+    },
+    {
+      "id": "session:sf1684:exercise-04",
+      "courseId": "course:sf1684",
+      "slug": "exercise-04",
+      "kind": "exercise",
+      "sequence": 4,
+      "date": "2026-11-05",
+      "time": "14:00",
+      "endTime": "16:00",
+      "week": 45,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-04"
+      ],
+      "title": "Workshop 4"
+    },
+    {
+      "id": "session:sf1684:seminar-02",
+      "courseId": "course:sf1684",
+      "slug": "seminar-02",
+      "kind": "seminar",
+      "sequence": 2,
+      "date": "2026-11-09",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 46,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:seminar-test-02"
+      ],
+      "title": "Seminar 2 · Linear systems and matrices",
+      "agenda": [
+        "Optional bonus test during the first 30 minutes",
+        "20-minute break, then discussion of solutions"
+      ]
+    },
+    {
+      "id": "session:sf1684:lecture-07",
+      "courseId": "course:sf1684",
+      "slug": "lecture-07",
+      "kind": "lecture",
+      "sequence": 7,
+      "date": "2026-11-10",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 46,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 7 · solution sets and linear independence"
+    },
+    {
+      "id": "session:sf1684:lecture-08",
+      "courseId": "course:sf1684",
+      "slug": "lecture-08",
+      "kind": "lecture",
+      "sequence": 8,
+      "date": "2026-11-11",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 46,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 8 · determinants"
+    },
+    {
+      "id": "session:sf1684:exercise-05",
+      "courseId": "course:sf1684",
+      "slug": "exercise-05",
+      "kind": "exercise",
+      "sequence": 5,
+      "date": "2026-11-11",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 46,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-05"
+      ],
+      "title": "Workshop 5"
+    },
+    {
+      "id": "session:sf1684:lecture-09",
+      "courseId": "course:sf1684",
+      "slug": "lecture-09",
+      "kind": "lecture",
+      "sequence": 9,
+      "date": "2026-11-12",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 46,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 9 · cross products, areas, and volumes"
+    },
+    {
+      "id": "session:sf1684:exercise-06",
+      "courseId": "course:sf1684",
+      "slug": "exercise-06",
+      "kind": "exercise",
+      "sequence": 6,
+      "date": "2026-11-12",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 46,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-06"
+      ],
+      "title": "Workshop 6"
+    },
+    {
+      "id": "session:sf1684:seminar-03",
+      "courseId": "course:sf1684",
+      "slug": "seminar-03",
+      "kind": "seminar",
+      "sequence": 3,
+      "date": "2026-11-16",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 47,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:seminar-test-03"
+      ],
+      "title": "Seminar 3 · Solution sets, determinants, and volumes",
+      "agenda": [
+        "Optional bonus test during the first 30 minutes",
+        "20-minute break, then discussion of solutions"
+      ]
+    },
+    {
+      "id": "session:sf1684:lecture-10",
+      "courseId": "course:sf1684",
+      "slug": "lecture-10",
+      "kind": "lecture",
+      "sequence": 10,
+      "date": "2026-11-17",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 47,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 10 · linear transformations"
+    },
+    {
+      "id": "session:sf1684:lecture-11",
+      "courseId": "course:sf1684",
+      "slug": "lecture-11",
+      "kind": "lecture",
+      "sequence": 11,
+      "date": "2026-11-18",
+      "time": "08:00",
+      "endTime": "10:00",
+      "week": 47,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 11 · eigenvalues and eigenvectors"
+    },
+    {
+      "id": "session:sf1684:exercise-07",
+      "courseId": "course:sf1684",
+      "slug": "exercise-07",
+      "kind": "exercise",
+      "sequence": 7,
+      "date": "2026-11-18",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 47,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-07"
+      ],
+      "title": "Workshop 7"
+    },
+    {
+      "id": "session:sf1684:lecture-12",
+      "courseId": "course:sf1684",
+      "slug": "lecture-12",
+      "kind": "lecture",
+      "sequence": 12,
+      "date": "2026-11-19",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 47,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 12 · kernel, image, and composition"
+    },
+    {
+      "id": "session:sf1684:exercise-08",
+      "courseId": "course:sf1684",
+      "slug": "exercise-08",
+      "kind": "exercise",
+      "sequence": 8,
+      "date": "2026-11-19",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 47,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-08"
+      ],
+      "title": "Workshop 8"
+    },
+    {
+      "id": "session:sf1684:seminar-04",
+      "courseId": "course:sf1684",
+      "slug": "seminar-04",
+      "kind": "seminar",
+      "sequence": 4,
+      "date": "2026-11-23",
+      "time": "15:00",
+      "endTime": "17:00",
+      "week": 48,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:seminar-test-04"
+      ],
+      "title": "Seminar 4 · Linear transformations and eigenvalues",
+      "agenda": [
+        "Optional bonus test during the first 30 minutes",
+        "20-minute break, then discussion of solutions"
+      ]
+    },
+    {
+      "id": "session:sf1684:lecture-13",
+      "courseId": "course:sf1684",
+      "slug": "lecture-13",
+      "kind": "lecture",
+      "sequence": 13,
+      "date": "2026-11-24",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 48,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 13 · bases, dimension, and rank"
+    },
+    {
+      "id": "session:sf1684:lecture-14",
+      "courseId": "course:sf1684",
+      "slug": "lecture-14",
+      "kind": "lecture",
+      "sequence": 14,
+      "date": "2026-11-25",
+      "time": "08:00",
+      "endTime": "10:00",
+      "week": 48,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 14 · projections and least squares"
+    },
+    {
+      "id": "session:sf1684:exercise-09",
+      "courseId": "course:sf1684",
+      "slug": "exercise-09",
+      "kind": "exercise",
+      "sequence": 9,
+      "date": "2026-11-25",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 48,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-09"
+      ],
+      "title": "Workshop 9"
+    },
+    {
+      "id": "session:sf1684:lecture-15",
+      "courseId": "course:sf1684",
+      "slug": "lecture-15",
+      "kind": "lecture",
+      "sequence": 15,
+      "date": "2026-11-26",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 48,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 15 · Gram–Schmidt orthogonalization"
+    },
+    {
+      "id": "session:sf1684:exercise-10",
+      "courseId": "course:sf1684",
+      "slug": "exercise-10",
+      "kind": "exercise",
+      "sequence": 10,
+      "date": "2026-11-26",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 48,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-10"
+      ],
+      "title": "Workshop 10"
+    },
+    {
+      "id": "session:sf1684:seminar-05",
+      "courseId": "course:sf1684",
+      "slug": "seminar-05",
+      "kind": "seminar",
+      "sequence": 5,
+      "date": "2026-11-30",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 49,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:seminar-test-05"
+      ],
+      "title": "Seminar 5 · Bases, projections, and least squares",
+      "agenda": [
+        "Optional bonus test during the first 30 minutes",
+        "20-minute break, then discussion of solutions"
+      ]
+    },
+    {
+      "id": "session:sf1684:lecture-16",
+      "courseId": "course:sf1684",
+      "slug": "lecture-16",
+      "kind": "lecture",
+      "sequence": 16,
+      "date": "2026-12-01",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 49,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 16 · coordinates and change of basis"
+    },
+    {
+      "id": "session:sf1684:lecture-17",
+      "courseId": "course:sf1684",
+      "slug": "lecture-17",
+      "kind": "lecture",
+      "sequence": 17,
+      "date": "2026-12-02",
+      "time": "08:00",
+      "endTime": "10:00",
+      "week": 49,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 17 · matrix representations and diagonalization"
+    },
+    {
+      "id": "session:sf1684:exercise-11",
+      "courseId": "course:sf1684",
+      "slug": "exercise-11",
+      "kind": "exercise",
+      "sequence": 11,
+      "date": "2026-12-02",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 49,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-11"
+      ],
+      "title": "Workshop 11"
+    },
+    {
+      "id": "session:sf1684:lecture-18",
+      "courseId": "course:sf1684",
+      "slug": "lecture-18",
+      "kind": "lecture",
+      "sequence": 18,
+      "date": "2026-12-03",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 49,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 18 · orthogonal diagonalization and quadratic forms"
+    },
+    {
+      "id": "session:sf1684:exercise-12",
+      "courseId": "course:sf1684",
+      "slug": "exercise-12",
+      "kind": "exercise",
+      "sequence": 12,
+      "date": "2026-12-03",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 49,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-12"
+      ],
+      "title": "Workshop 12"
+    },
+    {
+      "id": "session:sf1684:seminar-06",
+      "courseId": "course:sf1684",
+      "slug": "seminar-06",
+      "kind": "seminar",
+      "sequence": 6,
+      "date": "2026-12-07",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 50,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:seminar-test-06"
+      ],
+      "title": "Seminar 6 · Diagonalization and quadratic forms",
+      "agenda": [
+        "Optional bonus test during the first 30 minutes",
+        "20-minute break, then discussion of solutions"
+      ]
+    },
+    {
+      "id": "session:sf1684:lecture-19",
+      "courseId": "course:sf1684",
+      "slug": "lecture-19",
+      "kind": "lecture",
+      "sequence": 19,
+      "date": "2026-12-08",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 50,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 19 · conic sections and quadrics"
+    },
+    {
+      "id": "session:sf1684:exercise-13",
+      "courseId": "course:sf1684",
+      "slug": "exercise-13",
+      "kind": "exercise",
+      "sequence": 13,
+      "date": "2026-12-08",
+      "time": "15:00",
+      "endTime": "17:00",
+      "week": 50,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-13"
+      ],
+      "title": "Workshop 13"
+    },
+    {
+      "id": "session:sf1684:lecture-20",
+      "courseId": "course:sf1684",
+      "slug": "lecture-20",
+      "kind": "lecture",
+      "sequence": 20,
+      "date": "2026-12-09",
+      "time": "08:00",
+      "endTime": "10:00",
+      "week": 50,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 20 · abstract vector spaces"
+    },
+    {
+      "id": "session:sf1684:exercise-14",
+      "courseId": "course:sf1684",
+      "slug": "exercise-14",
+      "kind": "exercise",
+      "sequence": 14,
+      "date": "2026-12-09",
+      "time": "10:00",
+      "endTime": "12:00",
+      "week": 50,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "courseworkIds": [
+        "coursework:sf1684:workshop-14"
+      ],
+      "title": "Workshop 14 · revision"
+    },
+    {
+      "id": "session:sf1684:lecture-21",
+      "courseId": "course:sf1684",
+      "slug": "lecture-21",
+      "kind": "lecture",
+      "sequence": 21,
+      "date": "2026-12-11",
+      "time": "13:00",
+      "endTime": "15:00",
+      "week": 50,
+      "sourceIds": [
+        "source:sf1684:lecture-plan",
+        "source:sf1684:timetable"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "verified",
+      "relationships": [],
+      "title": "Lecture 21 · review and exam preparation"
+    }
+  ]
+}

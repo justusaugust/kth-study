@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("all lecture and exam readers keep math and graphs contained on phones", async ({ page, request }) => {
   test.setTimeout(180_000);
   const routes = ["/courses/sf1690/exam", "/courses/ie1204/exam", "/courses/sf1690/concepts/course-review"];
-  for (const code of ["sf1690", "ie1204", "ii1308"]) {
+  for (const code of ["sf1690", "ie1204", "ii1308", "id1022", "sf1684"]) {
     const response = await request.get(`/api/courses/${code}`);
     expect(response.ok()).toBe(true);
     const data = await response.json();

@@ -1,0 +1,42 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:id1022:essentials-study-route",
+      "courseId": "course:id1022",
+      "slug": "essentials-study-route",
+      "kind": "reading",
+      "sequence": 1,
+      "title": "ProgGame essentials study route",
+      "week": 44,
+      "requirement": "recommended",
+      "description": "Review the linked study guide and independent self-checks, then complete the official individual game work under the course rules.",
+      "materials": [
+        {
+          "title": "Official ProgGame",
+          "url": "https://proggame.eecs.kth.se/"
+        },
+        {
+          "title": "Course rules and grading",
+          "url": "https://canvas.kth.se/courses/65461/pages/course-memo"
+        }
+      ],
+      "conceptIds": [
+        "concept:id1022:proggame-study-route"
+      ],
+      "lectureIds": [
+        "lecture:id1022:2026-10-28-02",
+        "lecture:id1022:2026-10-30-03",
+        "lecture:id1022:2026-11-02-04"
+      ],
+      "sessionIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:id1022:course-memo",
+        "source:id1022:lecture-3-slides"
+      ],
+      "lastChecked": "2026-11-02",
+      "confidence": "supported",
+      "relationships": []
+    }
+  ]
+}

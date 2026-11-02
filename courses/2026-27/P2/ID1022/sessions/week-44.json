@@ -6,7 +6,7 @@
       "slug": "lecture-01",
       "kind": "lecture",
       "sequence": 1,
-      "title": "Lecture 1 · Course introduction",
+      "title": "Lecture 1 · Course Introduction",
       "date": "2026-10-26",
       "time": "15:00",
       "endTime": "17:00",
@@ -14,7 +14,7 @@
       "sourceIds": [
         "source:id1022:lecture-plan"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-11-02",
       "confidence": "verified",
       "relationships": [],
       "location": "F2",
@@ -26,7 +26,7 @@
       "slug": "lecture-02",
       "kind": "lecture",
       "sequence": 2,
-      "title": "Lecture 2 · Basic immutable programming",
+      "title": "Lecture 2 · Basic Immutable Programming",
       "date": "2026-10-28",
       "time": "15:00",
       "endTime": "17:00",
@@ -34,7 +34,7 @@
       "sourceIds": [
         "source:id1022:lecture-plan"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-11-02",
       "confidence": "verified",
       "relationships": [],
       "location": "E1",
@@ -46,7 +46,7 @@
       "slug": "lecture-03",
       "kind": "lecture",
       "sequence": 3,
-      "title": "Lecture 3 · More on functions and I/O",
+      "title": "Lecture 3 · Lists, Tuples, State Machines and Loops",
       "date": "2026-10-30",
       "time": "10:00",
       "endTime": "12:00",
@@ -54,10 +54,11 @@
       "sourceIds": [
         "source:id1022:lecture-plan"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-11-02",
       "confidence": "verified",
       "relationships": [],
-      "location": "D1"
+      "location": "D1",
+      "lectureId": "lecture:id1022:2026-10-30-03"
     }
   ]
 }
