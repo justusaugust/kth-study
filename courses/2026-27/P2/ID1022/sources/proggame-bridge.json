@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:proggame-bridge",
+  "courseId": "course:id1022",
+  "title": "ProgGame — bridge geometry",
+  "kind": "lecture-material",
+  "url": "https://proggame.eecs.kth.se/island/island-of-essentials/task/essentials-task-bridge",
+  "locator": "Task inspected 2 November: parameterized brick and mortar geometry, alternating rows and consistent outer bounds. No task solution is reproduced.",
+  "lastChecked": "2026-11-02",
+  "confidence": "verified"
+}

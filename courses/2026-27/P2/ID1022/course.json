@@ -36,7 +36,13 @@
     "concept:id1022:immutable-loops-and-state",
     "concept:id1022:functions-and-effects",
     "concept:id1022:shell-and-git-workflow",
-    "concept:id1022:proggame-study-route"
+    "concept:id1022:proggame-study-route",
+    "concept:id1022:input-and-branching",
+    "concept:id1022:rhythm-and-timing",
+    "concept:id1022:canvas-graphics",
+    "concept:id1022:graphics-layout-and-grids",
+    "concept:id1022:easter-eggs-and-catch-up",
+    "concept:id1022:mutation-and-aliasing"
   ],
   "outcomeIds": [],
   "sourceIds": [

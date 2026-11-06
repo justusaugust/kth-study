@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:easter-egg-catch-up",
+  "courseId": "course:id1022",
+  "title": "Easter eggs — catch-up and setup announcement",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/65461/announcements/586880",
+  "locator": "6 November announcement, checked through its Canvas email notification: catch-up next week, exact date/time not given; egg 2 requires a Unix shell and Git.",
+  "lastChecked": "2026-11-06",
+  "confidence": "verified"
+}

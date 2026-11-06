@@ -7,7 +7,9 @@
   "summary": "An inverse undoes a square matrix; row reduction constructs it or reveals that it does not exist.",
   "centralInsight": "Apply row operations to the identity alongside the matrix to record the transformation that undoes it.",
   "outcomeIds": [],
-  "lectureIds": [],
+  "lectureIds": [
+    "lecture:sf1684:2026-11-05-06"
+  ],
   "evidenceStatus": "curriculum",
   "sourceIds": [
     "source:sf1684:module-2",

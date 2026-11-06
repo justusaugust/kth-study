@@ -37,7 +37,8 @@
       ],
       "lastChecked": "2026-11-02",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-04-05"
     },
     {
       "id": "session:id1022:lecture-06",

@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:proggame-control-flow",
+  "courseId": "course:id1022",
+  "title": "ProgGame — Names and Control Flow",
+  "kind": "lecture-material",
+  "url": "https://proggame.eecs.kth.se/island/island-of-essentials/task/essentials-control-flow",
+  "locator": "Tutorial inspected 2 November: line input, lexical scope, conditional output and audio effects. Companion explanations and exercises are independently authored.",
+  "lastChecked": "2026-11-02",
+  "confidence": "verified"
+}

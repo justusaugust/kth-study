@@ -94,6 +94,17 @@ describe("deadline schedule", () => {
     ]);
   });
 
+  it("keeps an announced catch-up visible without inventing a calendar date", () => {
+    const schedule = buildDeadlineSchedule({ ...data, coursework: [{
+      ...data.coursework[1], title: "Easter-egg catch-up", requirement: "scheduled",
+      description: "Week of 9 November; date and time unannounced.",
+    }] }, "2026-11-06");
+    expect(schedule.groups).toEqual([]);
+    expect(schedule.undated).toEqual(expect.arrayContaining([
+      expect.objectContaining({ title: "Easter-egg catch-up", date: undefined }),
+    ]));
+  });
+
   it("includes dated mini-exams with links to their covered lectures", () => {
     const miniExamData = {
       ...data,

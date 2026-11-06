@@ -7,7 +7,9 @@
   "summary": "Elementary row operations preserve the complete solution set.",
   "centralInsight": "A pivot constrains a variable; a free variable describes a whole family of solutions rather than a failed calculation.",
   "outcomeIds": [],
-  "lectureIds": [],
+  "lectureIds": [
+    "lecture:sf1684:2026-11-03-04"
+  ],
   "evidenceStatus": "curriculum",
   "sourceIds": [
     "source:sf1684:module-2",

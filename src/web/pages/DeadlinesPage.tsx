@@ -109,7 +109,7 @@ export function buildDeadlineSchedule(data: DeadlinesResponse, today: string) {
     undated: items
       .filter((item) =>
         !item.date &&
-        (item.requirement === "Required" || item.requirement === "Compulsory assessment"),
+        (item.requirement === "Required" || item.requirement === "Compulsory assessment" || item.requirement === "Scheduled"),
       )
       .sort((left, right) =>
         `${left.courseCode}:${left.title}`.localeCompare(`${right.courseCode}:${right.title}`),
@@ -148,7 +148,7 @@ export function DeadlinesPage() {
         <p className="eyebrow">All courses</p>
         <h1 id="deadlines-title">Upcoming deadlines</h1>
         <p className="lead">
-          Dated coursework and assessments in one chronological list. Required work without a confirmed date appears separately.
+          Dated coursework and assessments in one chronological list. Required work and announced catch-up opportunities without a confirmed date appear separately. All times use Europe/Stockholm.
         </p>
       </header>
 
@@ -171,8 +171,8 @@ export function DeadlinesPage() {
       {undated.length ? (
         <section className="deadline-undated" aria-labelledby="undated-title">
           <p className="eyebrow">Keep watching</p>
-          <h2 id="undated-title">Required work without a confirmed date</h2>
-          <p>These items are part of the course, but the Study Hub does not yet have a reliable deadline for them.</p>
+          <h2 id="undated-title">Work awaiting a confirmed date</h2>
+          <p>These items have no confirmed date or time. Open each entry for the announced window and official source.</p>
           <div className="deadline-undated-list">
             {undated.map((item) => <DeadlineEntry item={item} key={item.id} compact />)}
           </div>

@@ -93,7 +93,8 @@
           "to": "concept:sf1684:linear-systems-and-elimination"
         }
       ],
-      "title": "Lecture 4 · linear systems and Gaussian elimination"
+      "title": "Lecture 4 · linear systems and Gaussian elimination",
+      "lectureId": "lecture:sf1684:2026-11-03-04"
     },
     {
       "id": "session:sf1684:lecture-05",
@@ -118,7 +119,8 @@
           "to": "concept:sf1684:matrix-arithmetic"
         }
       ],
-      "title": "Lecture 5 · matrix arithmetic"
+      "title": "Lecture 5 · matrix arithmetic",
+      "lectureId": "lecture:sf1684:2026-11-04-05"
     },
     {
       "id": "session:sf1684:exercise-03",
@@ -165,7 +167,8 @@
           "to": "concept:sf1684:matrix-inverses"
         }
       ],
-      "title": "Lecture 6 · inverse matrices"
+      "title": "Lecture 6 · inverse matrices",
+      "lectureId": "lecture:sf1684:2026-11-05-06"
     },
     {
       "id": "session:sf1684:exercise-04",

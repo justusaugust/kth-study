@@ -1,0 +1,22 @@
+{
+  "id": "lecture:sf1684:2026-11-05-06",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-05-06",
+  "title": "Lecture 6 — inverse matrices",
+  "date": "2026-11-05",
+  "summary": "Find and verify an inverse, and recognize when a square matrix is singular.",
+  "body": "This study companion follows the published topic outline saved on 2 November. Newer slides and actual classroom coverage have not been checked; it is not a lecture transcript.\n\nUse the augmented matrix [A | I] to find an inverse when row reduction permits it. Verify the result by multiplication and explain what a missing pivot says about invertibility. Read Sections 3.3.\n\nUse the [Module 2 reading guide and recommended exercises](https://canvas.kth.se/courses/65269/files/10687614). Read the worked methods below, attempt the self-checks, then prepare for the [seminar bonus test](/courses/sf1684/concepts/seminar-bonus-points).",
+  "conceptIds": [
+    "concept:sf1684:matrix-inverses"
+  ],
+  "sessionId": "session:sf1684:lecture-06",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:timetable",
+    "source:sf1684:module-2",
+    "source:sf1684:module-2-reading-guide"
+  ],
+  "lastChecked": "2026-11-02",
+  "confidence": "supported",
+  "relationships": []
+}

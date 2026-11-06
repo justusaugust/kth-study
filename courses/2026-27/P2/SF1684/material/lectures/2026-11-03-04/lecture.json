@@ -1,0 +1,22 @@
+{
+  "id": "lecture:sf1684:2026-11-03-04",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-03-04",
+  "title": "Lecture 4 — linear systems and Gaussian elimination",
+  "date": "2026-11-03",
+  "summary": "Reduce a system using legal row operations, identify pivots and classify its solutions.",
+  "body": "This study companion follows the published topic outline saved on 2 November. Newer slides and actual classroom coverage have not been checked; it is not a lecture transcript.\n\nStart with an augmented matrix. Identify legal row operations, reduce to echelon form and distinguish a free variable from an inconsistent row. Explain why each operation preserves the solution set. Read Sections 2.1–2.2.\n\nUse the [Module 2 reading guide and recommended exercises](https://canvas.kth.se/courses/65269/files/10687614). Read the worked methods below, attempt the self-checks, then prepare for the [seminar bonus test](/courses/sf1684/concepts/seminar-bonus-points).",
+  "conceptIds": [
+    "concept:sf1684:linear-systems-and-elimination"
+  ],
+  "sessionId": "session:sf1684:lecture-04",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:timetable",
+    "source:sf1684:module-2",
+    "source:sf1684:module-2-reading-guide"
+  ],
+  "lastChecked": "2026-11-02",
+  "confidence": "supported",
+  "relationships": []
+}

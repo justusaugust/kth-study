@@ -1,0 +1,19 @@
+{
+  "id": "lecture:id1022:2026-11-04-05",
+  "courseId": "course:id1022",
+  "slug": "2026-11-04-05",
+  "title": "Lecture 5 — imperative programming with mutation",
+  "date": "2026-11-04",
+  "summary": "Distinguish mutation, rebinding, object identity and shared state.",
+  "body": "This study companion follows the published topic outline saved on 2 November. Newer slides and actual classroom coverage have not been checked; it is not a lecture transcript.\n\nThe primer below explains the scheduled topic with independent examples. Consult [Canvas lectures](https://canvas.kth.se/courses/65461/pages/lectures) for current slides and exact language syntax.",
+  "conceptIds": [
+    "concept:id1022:mutation-and-aliasing"
+  ],
+  "sessionId": "session:id1022:lecture-05",
+  "sourceIds": [
+    "source:id1022:lecture-plan"
+  ],
+  "lastChecked": "2026-11-02",
+  "confidence": "supported",
+  "relationships": []
+}

@@ -7,7 +7,9 @@
   "summary": "Dimensions determine whether a product exists; multiplication follows row-by-column order.",
   "centralInsight": "Read each product entry as one row paired with one column, and check dimensions before multiplying.",
   "outcomeIds": [],
-  "lectureIds": [],
+  "lectureIds": [
+    "lecture:sf1684:2026-11-04-05"
+  ],
   "evidenceStatus": "curriculum",
   "sourceIds": [
     "source:sf1684:module-2",

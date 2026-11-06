@@ -12,9 +12,10 @@
   ],
   "evidenceStatus": "lecture",
   "sourceIds": [
-    "source:id1022:lecture-3-slides"
+    "source:id1022:lecture-3-slides",
+    "source:id1022:proggame-loops"
   ],
-  "lastChecked": "2026-11-02",
+  "lastChecked": "2026-11-06",
   "confidence": "supported",
   "relationships": [],
   "commonMistake": "Printing before checking the stopping condition when the intended final state should not be printed.",
@@ -47,3 +48,21 @@ A tuple can carry an index and accumulated result together. State what each fiel
 The slides introduce a Mealy machine: states $S$, input symbols $\Sigma$, output symbols $\Gamma$, transition $\delta:S\times\Sigma\to S$, output $\lambda:S\times\Sigma\to\Gamma$, and initial state $s_0$. Each state/input pair determines both output and next state.
 
 A finite-state machine has finitely many states. An unrestricted integer counter is not automatically finite-state. A Moore machine associates output with the state instead; keep the conventions separate when reading diagrams.
+
+## Check before entering
+
+A guarded Pyking loop tests its condition before each iteration, including the first:
+
+```text
+loop x = 2 while x < 8:
+    print(x)
+    continue x + 2
+```
+
+It prints 2, 4 and 6. If the initial state fails the guard, the body runs zero times. An inclusive boundary uses `<=`; a positive step with an already larger start produces no output. Floating-point additions can accumulate rounding error, so an apparently exact endpoint may need care.
+
+## Nested loops
+
+An inner loop restarts each time its enclosing body executes. A two-row, three-column scan therefore visits six coordinate pairs, not five. A `break` exits the innermost loop containing it. State which loop a stop condition belongs to before tracing the program. A `loop:` without a state binding can repeat effects indefinitely; stop conditions still need a clear purpose.
+
+Connect a loop to [audio timing](/courses/id1022/concepts/rhythm-and-timing) or [drawing a grid](/courses/id1022/concepts/graphics-layout-and-grids).

@@ -19,9 +19,15 @@
     "source:id1022:lecture-plan",
     "source:id1022:lecture-2-slides",
     "source:id1022:lecture-3-slides",
-    "source:id1022:proggame-topic-map"
+    "source:id1022:proggame-topic-map",
+    "source:id1022:proggame-control-flow",
+    "source:id1022:proggame-loops",
+    "source:id1022:proggame-canvas",
+    "source:id1022:proggame-bridge",
+    "source:id1022:easter-egg-eligibility",
+    "source:id1022:easter-egg-catch-up"
   ],
-  "lastChecked": "2026-11-02",
+  "lastChecked": "2026-11-06",
   "confidence": "supported",
   "relationships": []
 }
@@ -29,7 +35,7 @@
 
 ## Start with the foundations
 
-The Island of Essentials topic map names expressions, values and types; names and control flow; loops and state machines; lists; tuples; functions; and graphics. The guides linked here are independently authored from the published course topics and slides. Task bodies and solutions have not been copied from the game.
+The Island of Essentials topic map names expressions, values and types; names and control flow; loops and state machines; lists; tuples; functions; and graphics. The guides linked here are independently authored from the published course topics and slides. The input, loop, audio and graphics companions also use tutorials inspected on 2 November. They explain the methods with independent examples rather than reproducing assessed solutions.
 
 1. [Values, types, bindings, and scope](/courses/id1022/concepts/immutable-values-and-functions): distinguish a literal, an expression, its value, and the name bound to it. Trace which binding is visible inside a branch.
 2. [Lists and tuples](/courses/id1022/concepts/lists-and-tuples): choose a sequence or fixed record, and check the bounds before indexing.
@@ -37,7 +43,12 @@ The Island of Essentials topic map names expressions, values and types; names an
 4. [Functions and effects](/courses/id1022/concepts/functions-and-effects): separate parameters, arguments, returned results, and printed output.
 5. [Shell and Git workflow](/courses/id1022/concepts/shell-and-git-workflow): locate the project and review a staged snapshot before recording it.
 
-Each topic has short explanations and independent self-checks. For the original lecture sequence, open [Lecture 2](/courses/id1022/lectures/2026-10-28-02), [Lecture 3](/courses/id1022/lectures/2026-10-30-03), or [Lecture 4](/courses/id1022/lectures/2026-11-02-04). The game map also lists graphics tutorials; their task content has not been reviewed or imported here.
+Each topic has short explanations and independent self-checks. For the original lecture sequence, open [Lecture 2](/courses/id1022/lectures/2026-10-28-02), [Lecture 3](/courses/id1022/lectures/2026-10-30-03), or [Lecture 4](/courses/id1022/lectures/2026-11-02-04). Continue through the practical topics:
+
+6. [Line input and independent decisions](/courses/id1022/concepts/input-and-branching): handle empty lines, competing rules and separate checks.
+7. [Audio effects and rhythm timing](/courses/id1022/concepts/rhythm-and-timing): convert BPM, place simultaneous events and close a repeating bar.
+8. [Canvas coordinates, color and layers](/courses/id1022/concepts/canvas-graphics): predict drawing order, blend state and image placement.
+9. [Proportions, grids and staggered rows](/courses/id1022/concepts/graphics-layout-and-grids): derive positions and account for integer rounding.
 
 ## What matters for the grade
 
@@ -47,7 +58,7 @@ Lectures are strongly recommended, and hacking sessions provide teaching-assista
 
 ## Keep track of the milestones
 
-The first two milestones are both due **6 November at 09:00 Stockholm time**: reach the dock of adventures and no man's land. Later milestones and exam signup are on [the deadlines page](/deadlines) and the [official important-dates page](https://canvas.kth.se/courses/65461/pages/important-dates).
+The first two milestones are both due **6 November at 09:00 Stockholm time**: reach the dock of adventures and no man's land. These cutoffs unlock separate lecture tasks; they are not egg completion. A catch-up opportunity was announced for the week of 9 November, with exact date and time still unannounced in the checked notice. Read [Easter eggs and catch-up](/courses/id1022/concepts/easter-eggs-and-catch-up). Later milestones and exam signup are on [the deadlines page](/deadlines) and the [official important-dates page](https://canvas.kth.se/courses/65461/pages/important-dates).
 
 ## Use the permitted support
 

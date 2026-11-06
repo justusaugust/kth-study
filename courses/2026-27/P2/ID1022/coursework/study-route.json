@@ -21,7 +21,12 @@
         }
       ],
       "conceptIds": [
-        "concept:id1022:proggame-study-route"
+        "concept:id1022:proggame-study-route",
+        "concept:id1022:input-and-branching",
+        "concept:id1022:rhythm-and-timing",
+        "concept:id1022:canvas-graphics",
+        "concept:id1022:graphics-layout-and-grids",
+        "concept:id1022:easter-eggs-and-catch-up"
       ],
       "lectureIds": [
         "lecture:id1022:2026-10-28-02",
@@ -32,9 +37,13 @@
       "assessmentIds": [],
       "sourceIds": [
         "source:id1022:course-memo",
-        "source:id1022:lecture-3-slides"
+        "source:id1022:lecture-3-slides",
+        "source:id1022:proggame-control-flow",
+        "source:id1022:proggame-loops",
+        "source:id1022:proggame-canvas",
+        "source:id1022:proggame-bridge"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-06",
       "confidence": "supported",
       "relationships": []
     }

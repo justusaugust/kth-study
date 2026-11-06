@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:proggame-loops",
+  "courseId": "course:id1022",
+  "title": "ProgGame — Loops and State Machines",
+  "kind": "lecture-material",
+  "url": "https://proggame.eecs.kth.se/island/island-of-essentials/task/essentials-state-machine",
+  "locator": "Tutorial inspected 2 November: immutable loop state, entry guards, nested loops, Mealy machines and BPM timing.",
+  "lastChecked": "2026-11-02",
+  "confidence": "verified"
+}

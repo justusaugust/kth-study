@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:proggame-canvas",
+  "courseId": "course:id1022",
+  "title": "ProgGame — Basic Graphics: The Canvas",
+  "kind": "lecture-material",
+  "url": "https://proggame.eecs.kth.se/island/island-of-essentials/task/essentials-basic-graphics",
+  "locator": "Tutorial inspected 2 November: canvas coordinates, RGB, layers, blend state, images, proportional geometry and repeated grids.",
+  "lastChecked": "2026-11-02",
+  "confidence": "verified"
+}
