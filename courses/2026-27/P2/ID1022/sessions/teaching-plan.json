@@ -47,6 +47,7 @@
       "kind": "lecture",
       "sequence": 6,
       "title": "Lecture 6 · Pointers and Memory",
+      "lectureId": "lecture:id1022:2026-11-06-06",
       "date": "2026-11-06",
       "time": "10:00",
       "endTime": "12:00",
@@ -65,18 +66,20 @@
       "slug": "lecture-07",
       "kind": "lecture",
       "sequence": 7,
-      "title": "Lecture 7 · Recursion and Data Structures",
+      "title": "Lecture 7 · recursion, higher-order functions, and structs",
       "date": "2026-11-09",
       "time": "10:00",
       "endTime": "12:00",
       "week": 46,
-      "location": "E1",
       "sourceIds": [
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:week-46-announcement",
+        "source:id1022:lecture-7-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-09-07"
     },
     {
       "id": "session:id1022:lecture-08",
@@ -84,18 +87,20 @@
       "slug": "lecture-08",
       "kind": "lecture",
       "sequence": 8,
-      "title": "Lecture 8 · Algebraic Data Types",
-      "date": "2026-11-11",
+      "title": "Lecture 8 · algebraic data types and binary trees",
+      "date": "2026-11-10",
       "time": "15:00",
       "endTime": "17:00",
       "week": 46,
-      "location": "E1",
       "sourceIds": [
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:week-46-announcement",
+        "source:id1022:lecture-8-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-10-08"
     },
     {
       "id": "session:id1022:lecture-09",
@@ -103,18 +108,20 @@
       "slug": "lecture-09",
       "kind": "lecture",
       "sequence": 9,
-      "title": "Lecture 9 · Parametric Polymorphism, Static, and Dynamic Typing",
+      "title": "Lecture 9 · types and parametric polymorphism",
       "date": "2026-11-13",
       "time": "15:00",
       "endTime": "17:00",
       "week": 46,
-      "location": "E1",
       "sourceIds": [
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:week-46-announcement",
+        "source:id1022:lecture-9-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-13-09"
     },
     {
       "id": "session:id1022:lecture-10",
@@ -122,18 +129,20 @@
       "slug": "lecture-10",
       "kind": "lecture",
       "sequence": 10,
-      "title": "Lecture 10 · Objects and Methods",
+      "title": "Lecture 10 · objects, methods, and events",
       "date": "2026-11-16",
       "time": "10:00",
       "endTime": "12:00",
       "week": 47,
       "location": "M1",
       "sourceIds": [
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:lecture-10-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-16-10"
     },
     {
       "id": "session:id1022:lecture-11",
@@ -343,6 +352,44 @@
       "lastChecked": "2026-11-02",
       "confidence": "verified",
       "relationships": []
+    },
+    {
+      "id": "session:id1022:help-2026-11-18",
+      "courseId": "course:id1022",
+      "slug": "help-2026-11-18",
+      "kind": "exercise",
+      "title": "ProgGame hacking help session",
+      "date": "2026-11-18",
+      "time": "12:00",
+      "endTime": "13:00",
+      "week": 47,
+      "sourceIds": [
+        "source:id1022:week-47-help"
+      ],
+      "lastChecked": "2026-11-17",
+      "confidence": "verified",
+      "relationships": [],
+      "sequence": 19,
+      "location": "E1"
+    },
+    {
+      "id": "session:id1022:help-2026-11-19",
+      "courseId": "course:id1022",
+      "slug": "help-2026-11-19",
+      "kind": "exercise",
+      "title": "ProgGame hacking help session",
+      "date": "2026-11-19",
+      "time": "12:00",
+      "endTime": "13:00",
+      "week": 47,
+      "sourceIds": [
+        "source:id1022:week-47-help"
+      ],
+      "lastChecked": "2026-11-17",
+      "confidence": "verified",
+      "relationships": [],
+      "sequence": 20,
+      "location": "Sing Sing, Lindstedtsvägen 30, bottom-floor open area"
     }
   ]
 }

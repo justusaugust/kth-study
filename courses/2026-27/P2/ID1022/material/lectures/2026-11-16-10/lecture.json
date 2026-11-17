@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-16-10",
+  "courseId": "course:id1022",
+  "slug": "2026-11-16-10",
+  "title": "Lecture 10 — objects, methods, and events",
+  "date": "2026-11-16",
+  "summary": "Trace receivers, shared state and callbacks through an object-oriented event-driven program.",
+  "body": "Authored study companion based on the published lecture slides, checked 17 November. Work through the topic below, then attempt its self-check before opening the solution.\n\nBundle state with methods, understand self, and distinguish immutable updates from mutable event handlers.\n\nRead the linked original slides for Pyking syntax and language comparisons.",
+  "conceptIds": [
+    "concept:id1022:objects-methods-and-events"
+  ],
+  "sessionId": "session:id1022:lecture-10",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-10-slides"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}

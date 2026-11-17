@@ -5,16 +5,17 @@
   "title": "Lecture 4 — functions, Git, and the Unix shell",
   "date": "2026-11-02",
   "summary": "Separate function inputs and results, navigate a project, and inspect a staged change.",
-  "body": "The published topic is **Functions, Git, and the Unix Shell**. Slides were not linked when checked on 2 November. These independent guides cover the listed topics; they are not a transcript of the classroom demonstration.\n\nCheck the [lecture page](https://canvas.kth.se/courses/65461/pages/lectures) for new slides. Practice commands in a disposable folder.",
+  "body": "Published slides now verified on 17 November: functions, parameters and defaults, immutable loops, shell commands, pipes and redirection, Git, editors and debugging. Work through the linked concept guides and practice below.\n\nSeparate function inputs and results, navigate a project, and inspect a staged change.",
   "conceptIds": [
     "concept:id1022:functions-and-effects",
     "concept:id1022:shell-and-git-workflow"
   ],
   "sessionId": "session:id1022:lecture-04",
   "sourceIds": [
-    "source:id1022:lecture-plan"
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-4-slides"
   ],
-  "lastChecked": "2026-11-02",
+  "lastChecked": "2026-11-17",
   "confidence": "supported",
   "relationships": []
 }

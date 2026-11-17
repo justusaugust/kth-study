@@ -1,0 +1,22 @@
+{
+  "id": "lecture:sf1684:2026-11-12-09",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-12-09",
+  "title": "Lecture 9 — cross products, areas, and volumes",
+  "date": "2026-11-12",
+  "summary": "Connect cross products and scalar triple products with geometric area and volume.",
+  "body": "Study companion based on the official lecture plan, checked 17 November: section 4.3. Read the vector guide below, then use the Module 3 workshop problems.\n\nFor vectors $\\mathbf{u},\\mathbf{v}$ in three dimensions, the parallelogram area is $\\|\\mathbf{u}\\times\\mathbf{v}\\|$ and the triangle area is half that value. For points, first form displacement vectors from the same vertex.\n\nAdding a third vector $\\mathbf{w}$ gives parallelepiped volume $|\\mathbf{u}\\cdot(\\mathbf{v}\\times\\mathbf{w})|$. A tetrahedron with those three edges has one sixth of that volume. The signed scalar triple product detects orientation; zero means the three vectors are linearly dependent and span no three-dimensional volume.\n\nFor $\\mathbf{u}=(2,0,0)$, $\\mathbf{v}=(0,3,0)$ and $\\mathbf{w}=(0,0,4)$, the parallelogram area is 6, triangle area 3, parallelepiped volume 24 and tetrahedron volume 4. Swapping two input vectors reverses orientation but preserves geometric volume.\n\nVerify perpendicularity with dot products before interpreting a cross product's length. Revisit [determinants](/courses/sf1684/concepts/determinants-and-volume) to connect the scalar triple product with a 3 by 3 determinant.",
+  "conceptIds": [
+    "concept:sf1684:dot-and-cross-products",
+    "concept:sf1684:determinants-and-volume"
+  ],
+  "sessionId": "session:sf1684:lecture-09",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-3",
+    "source:sf1684:module-3-reading-guide"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}

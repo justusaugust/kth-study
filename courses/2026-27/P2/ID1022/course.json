@@ -42,7 +42,12 @@
     "concept:id1022:canvas-graphics",
     "concept:id1022:graphics-layout-and-grids",
     "concept:id1022:easter-eggs-and-catch-up",
-    "concept:id1022:mutation-and-aliasing"
+    "concept:id1022:mutation-and-aliasing",
+    "concept:id1022:recursion-and-data-structures",
+    "concept:id1022:algebraic-data-types-and-trees",
+    "concept:id1022:types-and-parametric-polymorphism",
+    "concept:id1022:objects-methods-and-events",
+    "concept:id1022:mutation-recursion-review"
   ],
   "outcomeIds": [],
   "sourceIds": [

@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-06-06",
+  "courseId": "course:id1022",
+  "slug": "2026-11-06-06",
+  "title": "Lecture 6 — mutation, arrays, and pointers",
+  "date": "2026-11-06",
+  "summary": "Trace references, shared objects and the difference between copying a reference and copying a value.",
+  "body": "Published slides verified on 17 November: arrays versus immutable lists, passing references into functions, aliases, addresses and dereferencing.\n\nUpdating an array element changes the shared object. Reassigning a variable changes the value held by that variable. With pointers enabled, &x obtains the address of x and *p reads through a pointer. These are distinct operations: sketch the storage locations and arrows before tracing them.\n\nAn array index can fail at runtime even when the program type-checks. Compare a reference copy with a fresh array construction, then explain which observations can change through aliases. The guide below develops the distinction.",
+  "conceptIds": [
+    "concept:id1022:mutation-and-aliasing"
+  ],
+  "sessionId": "session:id1022:lecture-06",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-6-slides"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}

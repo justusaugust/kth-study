@@ -230,12 +230,15 @@
       "week": 46,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-3",
+        "source:sf1684:module-3-reading-guide"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 7 · solution sets and linear independence"
+      "title": "Lecture 7 · solution sets and linear independence",
+      "lectureId": "lecture:sf1684:2026-11-10-07"
     },
     {
       "id": "session:sf1684:lecture-08",
@@ -249,12 +252,15 @@
       "week": 46,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-3",
+        "source:sf1684:module-3-reading-guide"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 8 · determinants"
+      "title": "Lecture 8 · determinants and oriented volume",
+      "lectureId": "lecture:sf1684:2026-11-11-08"
     },
     {
       "id": "session:sf1684:exercise-05",
@@ -290,12 +296,15 @@
       "week": 46,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-3",
+        "source:sf1684:module-3-reading-guide"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 9 · cross products, areas, and volumes"
+      "title": "Lecture 9 · cross products, areas, and volumes",
+      "lectureId": "lecture:sf1684:2026-11-12-09"
     },
     {
       "id": "session:sf1684:exercise-06",
@@ -331,18 +340,16 @@
       "week": 47,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": [],
-      "courseworkIds": [
-        "coursework:sf1684:seminar-test-03"
-      ],
+      "courseworkIds": [],
       "title": "Seminar 3 · Solution sets, determinants, and volumes",
       "agenda": [
-        "Optional bonus test during the first 30 minutes",
-        "20-minute break, then discussion of solutions"
+        "Original Module 3 test did not take place; rescheduled to 23 November."
       ]
     },
     {
@@ -357,12 +364,15 @@
       "week": 47,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-4",
+        "source:sf1684:module-4-reading-guide"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 10 · linear transformations"
+      "title": "Lecture 10 · linear transformations and geometry",
+      "lectureId": "lecture:sf1684:2026-11-17-10"
     },
     {
       "id": "session:sf1684:lecture-11",
@@ -458,18 +468,21 @@
       "week": 48,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": [],
       "courseworkIds": [
-        "coursework:sf1684:seminar-test-04"
+        "coursework:sf1684:seminar-test-04",
+        "coursework:sf1684:seminar-test-03"
       ],
       "title": "Seminar 4 · Linear transformations and eigenvalues",
       "agenda": [
-        "Optional bonus test during the first 30 minutes",
-        "20-minute break, then discussion of solutions"
+        "Module 4 test first",
+        "Short break",
+        "Rescheduled Module 3 test during second half"
       ]
     },
     {

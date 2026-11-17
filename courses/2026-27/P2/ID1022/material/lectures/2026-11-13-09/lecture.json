@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-13-09",
+  "courseId": "course:id1022",
+  "slug": "2026-11-13-09",
+  "title": "Lecture 9 — types and parametric polymorphism",
+  "date": "2026-11-13",
+  "summary": "Read generic signatures and distinguish when type errors are detected across programming languages.",
+  "body": "Authored study companion based on the published lecture slides, checked 17 November. Work through the topic below, then attempt its self-check before opening the solution.\n\nDistinguish static checking from annotations, infer generic function signatures, and connect lambdas with functional programming.\n\nRead the linked original slides for Pyking syntax and language comparisons.",
+  "conceptIds": [
+    "concept:id1022:types-and-parametric-polymorphism"
+  ],
+  "sessionId": "session:id1022:lecture-09",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-9-slides"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}

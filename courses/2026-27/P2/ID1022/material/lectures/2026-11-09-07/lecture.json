@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-09-07",
+  "courseId": "course:id1022",
+  "slug": "2026-11-09-07",
+  "title": "Lecture 7 — recursion, higher-order functions, and structs",
+  "date": "2026-11-09",
+  "summary": "Follow recursive calls, list patterns, lambdas and record updates without losing track of values.",
+  "body": "Authored study companion based on the published lecture slides, checked 17 November. Work through the topic below, then attempt its self-check before opening the solution.\n\nBreak a recursive problem into a base case and a smaller problem; pass functions as values and choose immutable or mutable records.\n\nRead the linked original slides for Pyking syntax and language comparisons.",
+  "conceptIds": [
+    "concept:id1022:recursion-and-data-structures"
+  ],
+  "sessionId": "session:id1022:lecture-07",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-7-slides"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}

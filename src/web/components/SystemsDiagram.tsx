@@ -22,6 +22,8 @@ import { VectorAdditionDiagram } from "./diagrams/VectorAdditionDiagram";
 import { VectorProductsDiagram } from "./diagrams/VectorProductsDiagram";
 import { SequentialTimingDiagram } from "./diagrams/SequentialTimingDiagram";
 
+import { ProgrammingDiagram } from "./diagrams/ProgrammingDiagram";
+
 type DiagramMode = "preview" | "full";
 
 interface Props {
@@ -412,6 +414,7 @@ export function BooleanFormsDiagram({ mode }: { mode: DiagramMode }) {
 }
 
 export function SystemsDiagram({ variant, mode }: Props) {
+  if (variant === "reference-aliasing" || variant === "tree-traversal") return <ProgrammingDiagram variant={variant} mode={mode} />;
   if (variant === "sequential-timing") return <SequentialTimingDiagram mode={mode} />;
   if (variant === "state-machine") return <StateMachineDiagram mode={mode} />;
   if (variant === "vector-addition") return <VectorAdditionDiagram mode={mode} />;

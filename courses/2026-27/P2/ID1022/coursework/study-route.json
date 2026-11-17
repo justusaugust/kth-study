@@ -46,6 +46,34 @@
       "lastChecked": "2026-11-06",
       "confidence": "supported",
       "relationships": []
+    },
+    {
+      "id": "coursework:id1022:mutation-recursion-review",
+      "courseId": "course:id1022",
+      "slug": "mutation-recursion-review",
+      "kind": "reading",
+      "sequence": 2,
+      "title": "Mutation and recursion review",
+      "requirement": "recommended",
+      "description": "Trace references, explain a recursive call, and practise tree traversal before returning to the official tasks.",
+      "materials": [],
+      "conceptIds": [
+        "concept:id1022:mutation-recursion-review",
+        "concept:id1022:mutation-and-aliasing",
+        "concept:id1022:recursion-and-data-structures",
+        "concept:id1022:algebraic-data-types-and-trees"
+      ],
+      "lectureIds": [],
+      "sessionIds": [],
+      "assessmentIds": [],
+      "sourceIds": [
+        "source:id1022:lecture-5-slides",
+        "source:id1022:lecture-7-slides",
+        "source:id1022:lecture-8-slides"
+      ],
+      "lastChecked": "2026-11-17",
+      "confidence": "supported",
+      "relationships": []
     }
   ]
 }

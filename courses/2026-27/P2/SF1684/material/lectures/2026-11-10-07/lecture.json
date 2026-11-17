@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-11-10-07",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-10-07",
+  "title": "Lecture 7 — solution sets and linear independence",
+  "date": "2026-11-10",
+  "summary": "Turn row reduction into parameterized solution families and explicit dependence relations.",
+  "body": "Authored study companion based on the published lecture plan and module scope, rechecked 17 November. This is not a transcript or a claim about unpublished classroom coverage.\n\nDescribe every solution to a system and use homogeneous equations to test independence.\n\nUse the linked module reading guide for textbook preparation and workshop exercises.",
+  "conceptIds": [
+    "concept:sf1684:solution-sets-and-independence"
+  ],
+  "sessionId": "session:sf1684:lecture-07",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-3",
+    "source:sf1684:module-3-reading-guide"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}

@@ -345,6 +345,8 @@ export const SystemsDiagramExplainerSchema = z.object({
     "logic-levels",
     "control-structures",
     "variable-binding",
+    "reference-aliasing",
+    "tree-traversal",
     "twos-complement",
     "fixed-width-adder",
     "logic-gates",

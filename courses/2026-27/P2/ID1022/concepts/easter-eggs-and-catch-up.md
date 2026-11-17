@@ -12,9 +12,12 @@
   "sourceIds": [
     "source:id1022:easter-egg-eligibility",
     "source:id1022:easter-egg-catch-up",
-    "source:id1022:important-dates"
+    "source:id1022:week-46-announcement",
+    "source:id1022:important-dates",
+    "source:id1022:lecture-10-slides",
+    "source:id1022:week-47-help"
   ],
-  "lastChecked": "2026-11-06",
+  "lastChecked": "2026-11-17",
   "confidence": "supported",
   "relationships": []
 }
@@ -28,16 +31,28 @@ The [4 November announcement](https://canvas.kth.se/courses/65461/announcements/
 
 ## Missed one or both milestones?
 
-The [6 November announcement](https://canvas.kth.se/courses/65461/announcements/586880) promises a catch-up opportunity **the following week, 9–15 November**. Its exact date, time and format were not given in that announcement. Check newer Canvas announcements or lecture instructions before attending. The app lists this separately under deadlines without a confirmed date; it does not move the original cutoff or assume that a catch-up has been completed.
+The [8 November announcement](https://canvas.kth.se/courses/65461/announcements/587096) confirms a retake **Tuesday 10 November, during the ordinary 15:00–17:00 lecture**. There is time for **one egg during an extended break**; the exact break time is not specified. The other egg will have a later opportunity, whose date is still unannounced. Try to finish the relevant game prerequisites before Tuesday's lecture.
+
+## Week 46 schedule and game releases
+
+Ordinary lectures are **Monday 9 November 10:00–12:00**, **Tuesday 10 November 15:00–17:00**, and **Friday 13 November 15:00–17:00**, Europe/Stockholm. There is also an optional **Monday 15:00–17:00 Swedish revision session**, with no new content; English-speaking students are welcome. Check KTH's timetable for rooms.
+
+Mutation and Recursion tasks are announced to continue **Monday 9 November**. No opening hour is given; check the live game for availability. While waiting, the teacher recommends reviewing the previous lecture, making small original programs and testing ideas in the REPL.
 
 ## Prepare for egg 2
 
-Have a Unix shell and Git available in that shell. On macOS and Linux use the standard shell; the announcement recommends WSL for Windows. Review [shell and Git workflow](/courses/id1022/concepts/shell-and-git-workflow). Installing tools is separate from reaching no man's land and completing the lecture task.
+Have a Unix shell and Git available in that shell. On macOS and Linux use the standard shell; the [6 November announcement](https://canvas.kth.se/courses/65461/announcements/586880) recommends WSL for Windows. Review [shell and Git workflow](/courses/id1022/concepts/shell-and-git-workflow). Installing tools is separate from reaching no man's land and completing the lecture task.
 
-The same announcement offers a teaching-assistant hacking session on **6 November, 14:30–15:30**, on the bottom floor of Sing Sing. That support session is not an announced Easter-egg catch-up slot.
+That notice also listed a teaching-assistant hacking session on **6 November, 14:30–15:30**, on the bottom floor of Sing Sing. It was a support session, separate from the Easter-egg retake.
 
 ## Keep the later dates separate
 
-The recorded subsequent milestones are **13 November 09:00** (port of class), **20 November 09:00** (waterfall of disposed agents), **27 November 16:00** (port of flowers) and **4 December 09:00** (reef of sharks). The mini-project proposal is also due **27 November 16:00**; exam signup is due **9 December 16:00**. These later dates were last checked on 2 November; use [official important dates](https://canvas.kth.se/courses/65461/pages/important-dates) for changes.
+The [current Important Dates page](https://canvas.kth.se/courses/65461/pages/important-dates), checked 17 November, moves the next four checkpoints to Wednesdays: **18 November 09:00** (port of class), **25 November 09:00** (waterfall), **2 December 09:00** (port of flowers), and **9 December 09:00** (reef of sharks), Europe/Stockholm. The proposal remains **27 November 16:00** and exam signup **9 December 16:00**. These replace the earlier Friday checkpoint dates.
 
-See [all deadlines](/deadlines). No personal completion, exam booking or egg result is inferred from this guide.
+## Next lecture egg and support
+
+Lecture 10's published slides announce **egg 3, focused on mutability, for Wednesday 18 November's lecture**. That lecture runs 13:00–15:00 in E1 according to the lecture list. The slides also mention retake possibilities on Wednesday and Friday, without a precise break time, access code or allocation to a particular older egg. Check the lecturer's instructions; an announced opportunity does not establish your personal eligibility.
+
+The same slides describe five eggs, at least three required for exam eligibility, and all treasures at the desired level plus the holy code. Check the current course memo for the full requirements. Extra eggs above three are described as providing exam tips.
+
+The [17 November support announcement](https://canvas.kth.se/courses/65461/announcements/588981) lists help on **18 November 12:00–13:00 in E1** and **19 November 12:00–13:00 at Sing Sing, Lindstedtsvägen 30, bottom-floor open area**. Bring any blocked prerequisite and ask staff about the catch-up arrangements.

@@ -1,0 +1,22 @@
+{
+  "id": "explainer:id1022:tree-traversal",
+  "atlasOrder": 41,
+  "courseId": "course:id1022",
+  "slug": "tree-traversal",
+  "kind": "systems-diagram",
+  "variant": "tree-traversal",
+  "conceptIds": [
+    "concept:id1022:algebraic-data-types-and-trees",
+    "concept:id1022:mutation-recursion-review"
+  ],
+  "title": "Step through a binary tree",
+  "caption": "Choose a traversal and follow the order one node at a time.",
+  "accessibleSummary": "A binary search tree with root 4 and children 2 and 6. Compare preorder 4, 2, 6; inorder 2, 4, 6; and postorder 2, 6, 4.",
+  "sourceIds": [
+    "source:id1022:lecture-8-slides"
+  ],
+  "evidenceStatus": "supplemental",
+  "relationships": [],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported"
+}

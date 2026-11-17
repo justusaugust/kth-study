@@ -10,7 +10,7 @@
       "date": "2026-11-06",
       "time": "09:00",
       "requirement": "required",
-      "description": "Reach the dock of adventures through the Island of Essentials by 6 November 2026 at 09:00 Europe/Stockholm. This eligibility cutoff unlocks Easter egg 1; the egg is a separate task during the Friday lecture. Missing the cutoff has a catch-up opportunity in the week of 9 November; exact date/time were not announced in the 6 November notice. It does not change the original cutoff. Follow the course individual-work rules.",
+      "description": "Reach the dock of adventures through the Island of Essentials by 6 November 2026 at 09:00 Europe/Stockholm. This eligibility cutoff unlocks Easter egg 1; the egg is a separate task during the Friday lecture. The 8 November notice announces a retake for one egg during the extended break in Tuesday 10 November's 15:00–17:00 lecture; the exact break time is unspecified. The other egg has a later opportunity, date unannounced. It does not change the original cutoff. Follow the course individual-work rules.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -36,9 +36,10 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo",
         "source:id1022:easter-egg-eligibility",
-        "source:id1022:easter-egg-catch-up"
+        "source:id1022:easter-egg-catch-up",
+        "source:id1022:week-46-announcement"
       ],
-      "lastChecked": "2026-11-06",
+      "lastChecked": "2026-11-09",
       "confidence": "verified",
       "relationships": [],
       "conceptIds": [
@@ -55,7 +56,7 @@
       "date": "2026-11-06",
       "time": "09:00",
       "requirement": "required",
-      "description": "Reach no man's land through the Island of Tools by 6 November 2026 at 09:00 Europe/Stockholm. This eligibility cutoff unlocks Easter egg 2; the egg is a separate task during the Friday lecture. Missing the cutoff has a catch-up opportunity in the week of 9 November; exact date/time were not announced in the 6 November notice. It does not change the original cutoff. Follow the course individual-work rules.",
+      "description": "Reach no man's land through the Island of Tools by 6 November 2026 at 09:00 Europe/Stockholm. This eligibility cutoff unlocks Easter egg 2; the egg is a separate task during the Friday lecture. The 8 November notice announces a retake for one egg during the extended break in Tuesday 10 November's 15:00–17:00 lecture; the exact break time is unspecified. The other egg has a later opportunity, date unannounced. It does not change the original cutoff. Follow the course individual-work rules.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -78,9 +79,10 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo",
         "source:id1022:easter-egg-eligibility",
-        "source:id1022:easter-egg-catch-up"
+        "source:id1022:easter-egg-catch-up",
+        "source:id1022:week-46-announcement"
       ],
-      "lastChecked": "2026-11-06",
+      "lastChecked": "2026-11-09",
       "confidence": "verified",
       "relationships": [],
       "conceptIds": [
@@ -94,10 +96,10 @@
       "kind": "exercise",
       "sequence": 3,
       "title": "ProgGame · Module 3: port of class",
-      "date": "2026-11-13",
+      "date": "2026-11-18",
       "time": "09:00",
       "requirement": "required",
-      "description": "Reach the port of class in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "description": "Reach the named checkpoint by 2026-11-18 at 09:00 Europe/Stockholm. The official Important Dates page explicitly moves this cutoff to the following Wednesday. Complete the required upstream game tasks; current personal prerequisites and completion are not inferred.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -116,7 +118,7 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": []
     },
@@ -127,10 +129,10 @@
       "kind": "exercise",
       "sequence": 4,
       "title": "ProgGame · Module 4: waterfall of disposed agents",
-      "date": "2026-11-20",
+      "date": "2026-11-25",
       "time": "09:00",
       "requirement": "required",
-      "description": "Reach the waterfall of disposed agents in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "description": "Reach the named checkpoint by 2026-11-25 at 09:00 Europe/Stockholm. The official Important Dates page explicitly moves this cutoff to the following Wednesday. Complete the required upstream game tasks; current personal prerequisites and completion are not inferred.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -149,7 +151,7 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": []
     },
@@ -160,10 +162,10 @@
       "kind": "exercise",
       "sequence": 5,
       "title": "ProgGame · Module 5: port of flowers",
-      "date": "2026-11-27",
-      "time": "16:00",
+      "date": "2026-12-02",
+      "time": "09:00",
       "requirement": "required",
-      "description": "Reach the port of flowers in ProgGame by 16:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "description": "Reach the named checkpoint by 2026-12-02 at 09:00 Europe/Stockholm. The official Important Dates page explicitly moves this cutoff to the following Wednesday. Complete the required upstream game tasks; current personal prerequisites and completion are not inferred.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -182,7 +184,7 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": []
     },
@@ -193,10 +195,10 @@
       "kind": "exercise",
       "sequence": 6,
       "title": "ProgGame · Module 6: reef of sharks",
-      "date": "2026-12-04",
+      "date": "2026-12-09",
       "time": "09:00",
       "requirement": "required",
-      "description": "Reach the reef of sharks in ProgGame by 09:00 Stockholm time. The game level gates the tasks available in DAT1. Complete your own work; AI tools are prohibited unless the task explicitly allows them.",
+      "description": "Reach the named checkpoint by 2026-12-09 at 09:00 Europe/Stockholm. The official Important Dates page explicitly moves this cutoff to the following Wednesday. Complete the required upstream game tasks; current personal prerequisites and completion are not inferred.",
       "materials": [
         {
           "title": "Open ProgGame",
@@ -215,7 +217,7 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": []
     },
@@ -281,14 +283,57 @@
       "slug": "easter-egg-catch-up",
       "kind": "exercise",
       "sequence": 9,
-      "title": "Easter eggs 1–2 · catch-up week of 9 November; time unannounced",
+      "title": "Easter-egg retake · one egg during Tuesday’s lecture",
       "week": 46,
       "requirement": "scheduled",
-      "description": "Catch-up opportunity for students who missed one or both 6 November 09:00 eligibility cutoffs. Announced for the following week (9–15 November); exact date, time and format are not provided in the checked announcement. Check Canvas or lecture instructions. This is not a confirmed event on 9 November. Egg 2 preparation requires a Unix shell and Git.",
+      "description": "Retake for students who have not completed Easter egg 1 or 2. There is time for one egg during an extended break in the ordinary Tuesday 10 November 15:00–17:00 lecture, Europe/Stockholm. The exact break start time is not announced. Try to finish the relevant game prerequisites before the lecture. The other egg has a later opportunity, whose date is still unannounced. This does not move the original eligibility cutoffs.",
       "materials": [
         {
-          "title": "Catch-up announcement",
-          "url": "https://canvas.kth.se/courses/65461/announcements/586880"
+          "title": "Retake and week-46 announcement",
+          "url": "https://canvas.kth.se/courses/65461/announcements/587096"
+        },
+        {
+          "title": "Eligibility and lecture tasks",
+          "url": "https://canvas.kth.se/courses/65461/announcements/586378"
+        },
+        {
+          "title": "Easter-egg preparation and catch-up guide",
+          "url": "https://kth-study.vercel.app/courses/id1022/concepts/easter-eggs-and-catch-up"
+        }
+      ],
+      "conceptIds": [
+        "concept:id1022:easter-eggs-and-catch-up"
+      ],
+      "lectureIds": [],
+      "sessionIds": [
+        "session:id1022:lecture-08"
+      ],
+      "assessmentIds": [
+        "assessment:id1022:dat1"
+      ],
+      "sourceIds": [
+        "source:id1022:easter-egg-eligibility",
+        "source:id1022:easter-egg-catch-up",
+        "source:id1022:week-46-announcement"
+      ],
+      "lastChecked": "2026-11-09",
+      "confidence": "verified",
+      "relationships": [],
+      "date": "2026-11-10"
+    },
+    {
+      "id": "coursework:id1022:easter-egg-second-retake",
+      "courseId": "course:id1022",
+      "slug": "easter-egg-second-retake",
+      "kind": "exercise",
+      "sequence": 10,
+      "title": "Second Easter-egg retake · date unannounced",
+      "requirement": "scheduled",
+      "description": "Lecture 10 slides announce retake possibilities on Wednesday 18 and Friday 20 November, without an exact break time or specifying which older egg is offered. Keep this item undated until that specific second-egg arrangement is confirmed. Follow the lecturer’s live instructions.",
+      "materials": [
+        {
+          "title": "Retake and week-46 announcement",
+          "url": "https://canvas.kth.se/courses/65461/announcements/587096"
         },
         {
           "title": "Eligibility and lecture tasks",
@@ -308,12 +353,42 @@
         "assessment:id1022:dat1"
       ],
       "sourceIds": [
-        "source:id1022:easter-egg-eligibility",
-        "source:id1022:easter-egg-catch-up"
+        "source:id1022:week-46-announcement",
+        "source:id1022:lecture-10-slides"
       ],
-      "lastChecked": "2026-11-06",
+      "lastChecked": "2026-11-17",
       "confidence": "verified",
       "relationships": []
+    },
+    {
+      "id": "coursework:id1022:easter-egg-3",
+      "courseId": "course:id1022",
+      "slug": "easter-egg-3",
+      "kind": "exercise",
+      "title": "Easter egg 3 · mutability",
+      "date": "2026-11-18",
+      "week": 47,
+      "requirement": "scheduled",
+      "description": "Lecture 10 slides announce the mutability egg during Wednesday 18 November’s 13:00–15:00 lecture in E1. Exact task opening and break time are not stated. Complete required game prerequisites and follow staff instructions; personal eligibility is unverified.",
+      "sessionIds": [
+        "session:id1022:lecture-11"
+      ],
+      "lectureIds": [
+        "lecture:id1022:2026-11-16-10",
+        "lecture:id1022:2026-11-06-06"
+      ],
+      "conceptIds": [
+        "concept:id1022:mutation-and-aliasing",
+        "concept:id1022:easter-eggs-and-catch-up"
+      ],
+      "sourceIds": [
+        "source:id1022:lecture-10-slides",
+        "source:id1022:lecture-plan"
+      ],
+      "lastChecked": "2026-11-17",
+      "confidence": "supported",
+      "relationships": [],
+      "sequence": 11
     }
   ]
 }

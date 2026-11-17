@@ -1,0 +1,23 @@
+{
+  "id": "explainer:id1022:reference-aliasing",
+  "atlasOrder": 40,
+  "courseId": "course:id1022",
+  "slug": "reference-aliasing",
+  "kind": "systems-diagram",
+  "variant": "reference-aliasing",
+  "conceptIds": [
+    "concept:id1022:mutation-and-aliasing",
+    "concept:id1022:objects-methods-and-events",
+    "concept:id1022:mutation-recursion-review"
+  ],
+  "title": "References and shared mutation",
+  "caption": "Compare changing a shared counter with pointing one name at a new counter.",
+  "accessibleSummary": "Two names initially refer to the same counter. Increment changes the shared object; rebinding changes only one reference.",
+  "sourceIds": [
+    "source:id1022:lecture-10-slides"
+  ],
+  "evidenceStatus": "supplemental",
+  "relationships": [],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported"
+}

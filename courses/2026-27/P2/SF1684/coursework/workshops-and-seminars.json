@@ -304,11 +304,10 @@
       "kind": "mini-exam",
       "sequence": 3,
       "title": "Optional seminar test 3 · Solution sets, determinants, and volumes",
-      "date": "2026-11-16",
-      "time": "13:00",
-      "week": 47,
+      "date": "2026-11-23",
+      "week": 48,
       "requirement": "optional",
-      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "description": "Rescheduled from 16 November because of a course scheduling error. During the second half of Monday 23 November’s 15:00–17:00 seminar, after the Module 4 test and a short break. Exact start minute not announced. Prepare Module 3; bring valid physical photo ID. Existing bonus-point rules apply.",
       "materials": [
         {
           "title": "Module 3 preparation and workshop problems",
@@ -320,7 +319,7 @@
         }
       ],
       "sessionIds": [
-        "session:sf1684:seminar-03"
+        "session:sf1684:seminar-04"
       ],
       "lectureIds": [],
       "conceptIds": [
@@ -332,9 +331,10 @@
       "sourceIds": [
         "source:sf1684:timetable",
         "source:sf1684:module-3-reading-guide",
-        "source:sf1684:seminars"
+        "source:sf1684:seminars",
+        "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "supported",
       "relationships": []
     },
@@ -413,7 +413,7 @@
       "time": "15:00",
       "week": 48,
       "requirement": "optional",
-      "description": "Optional two-problem test during the first 30 minutes, followed by seminar discussion. Bring valid physical photo ID. No make-up test. Prepare the preceding module; exact test questions are not announced. Total scores 1–2, 3–4, 5–6, 7–8, 9–10, 11–12 give 1, 2, 3, 4, 5, 6 bonus points respectively; zero gives none. Bonus applies to exam Part 1, capped at 18.",
+      "description": "Module 4 test first in the 23 November 15:00–17:00 seminar, followed by a short break and the rescheduled Module 3 test. Prepare both modules; bring valid physical photo ID. Existing bonus-point rules apply.",
       "materials": [
         {
           "title": "Module 4 preparation and workshop problems",
@@ -437,9 +437,10 @@
       "sourceIds": [
         "source:sf1684:timetable",
         "source:sf1684:module-4-reading-guide",
-        "source:sf1684:seminars"
+        "source:sf1684:seminars",
+        "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-17",
       "confidence": "supported",
       "relationships": []
     },

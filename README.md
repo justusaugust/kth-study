@@ -10,7 +10,7 @@ The current public corpus covers the 2026 autumn start of:
 - ID1022 — The Art of Programming
 - SF1684 — Algebra and Geometry
 
-P2 material is checked through 2 November 2026: ID1022 lectures 1–4, SF1684 lectures 1–3, all seven SF1684 reading guides, and the published P2 teaching schedules. Future timetable entries are distinguished from completed lecture study pages.
+P2 lecture material was refreshed on 17 November 2026: ID1022 lectures 1–10 use published slides; SF1684 lectures 1–10 follow the published syllabus and module guides. Current checkpoint extensions, help sessions and the rescheduled Module 3 test are linked to official sources. Future timetable entries are distinguished from completed lecture study pages.
 
 ## Run locally
 

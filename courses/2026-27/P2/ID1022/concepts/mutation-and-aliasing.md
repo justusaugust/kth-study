@@ -8,7 +8,8 @@
   "centralInsight": "An update through one reference can be visible through every alias of the same mutable object.",
   "outcomeIds": [],
   "lectureIds": [
-    "lecture:id1022:2026-11-04-05"
+    "lecture:id1022:2026-11-04-05",
+    "lecture:id1022:2026-11-06-06"
   ],
   "evidenceStatus": "curriculum",
   "sourceIds": [

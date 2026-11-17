@@ -5,15 +5,16 @@
   "title": "Lecture 5 — imperative programming with mutation",
   "date": "2026-11-04",
   "summary": "Distinguish mutation, rebinding, object identity and shared state.",
-  "body": "This study companion follows the published topic outline saved on 2 November. Newer slides and actual classroom coverage have not been checked; it is not a lecture transcript.\n\nThe primer below explains the scheduled topic with independent examples. Consult [Canvas lectures](https://canvas.kth.se/courses/65461/pages/lectures) for current slides and exact language syntax.",
+  "body": "Published slides verified on 17 November: shadowing versus reassignment, mutable variables, tracing and debugging, and comparison with Python. Trace values after each assignment; explain whether a new binding or an existing variable changes. Use the aliasing guide below and verify predictions before running code.",
   "conceptIds": [
     "concept:id1022:mutation-and-aliasing"
   ],
   "sessionId": "session:id1022:lecture-05",
   "sourceIds": [
-    "source:id1022:lecture-plan"
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-5-slides"
   ],
-  "lastChecked": "2026-11-02",
+  "lastChecked": "2026-11-17",
   "confidence": "supported",
   "relationships": []
 }

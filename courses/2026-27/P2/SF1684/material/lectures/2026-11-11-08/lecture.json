@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-11-11-08",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-11-08",
+  "title": "Lecture 8 — determinants and oriented volume",
+  "date": "2026-11-11",
+  "summary": "Use row-operation bookkeeping and cofactor expansion to compute and interpret a determinant.",
+  "body": "Authored study companion based on the published lecture plan and module scope, rechecked 17 November. This is not a transcript or a claim about unpublished classroom coverage.\n\nCompute determinants efficiently and track their response to row operations.\n\nUse the linked module reading guide for textbook preparation and workshop exercises.",
+  "conceptIds": [
+    "concept:sf1684:determinants-and-volume"
+  ],
+  "sessionId": "session:sf1684:lecture-08",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-3",
+    "source:sf1684:module-3-reading-guide"
+  ],
+  "lastChecked": "2026-11-17",
+  "confidence": "supported",
+  "relationships": []
+}
