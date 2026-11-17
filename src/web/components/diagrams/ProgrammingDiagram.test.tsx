@@ -5,11 +5,11 @@ afterEach(cleanup);
 it("shares mutations until one reference is rebound", () => {
   render(<ProgrammingDiagram variant="reference-aliasing" mode="full" />);
   fireEvent.click(screen.getByText("Increment through a"));
-  expect(screen.getByText(/b → Counter A: 3/)).toBeTruthy();
+  expect(screen.getByRole("img", { name: /a reads 3; b reads 3/ })).toBeTruthy();
   fireEvent.click(screen.getByText("Rebind b to a new counter"));
   fireEvent.click(screen.getByText("Increment through a"));
-  expect(screen.getByText(/b → Counter B: 9/)).toBeTruthy();
-  expect(screen.getByText("4")).toBeTruthy();
+  expect(screen.getByRole("img", { name: /a reads 4; b reads 9/ })).toBeTruthy();
+  expect(screen.getByText("Counter A: 4")).toBeTruthy();
 });
 it("steps through the chosen traversal and restarts on order change", () => {
   render(<ProgrammingDiagram variant="tree-traversal" mode="full" />);

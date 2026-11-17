@@ -11,10 +11,13 @@ export function ProgrammingDiagram({ variant, mode }: {
   const visits = order === "Preorder" ? [4, 2, 6] : order === "Inorder" ? [2, 4, 6] : [2, 6, 4];
   return <figure className={`systems-diagram systems-diagram--${mode}`} aria-label={variant === "reference-aliasing" ? "References and shared mutation" : "Binary tree traversal"}>
     {variant === "reference-aliasing" ? <>
-      <div className="binding-map" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-        <div className="binding-map__name">a → Counter A: <strong>{value}</strong></div>
-        <div className="binding-map__name">b → Counter {rebound ? "B: 9" : `A: ${value}`}</div>
-      </div>
+      <svg viewBox="0 0 320 175" role="img" aria-label={`a reads ${value}; b reads ${rebound ? 9 : value}. ${rebound ? "Two separate counters." : "Both arrows point to the same counter."}`} style={{ width: "100%", maxHeight: 240 }}>
+        <g fill="currentColor" fontSize="22" textAnchor="middle"><text x="80" y="28">a</text><text x="240" y="28">b</text></g>
+        <path d={rebound ? "M80 38V98m-5-8 5 8 5-8 M240 38V98m-5-8 5 8 5-8" : "M80 38L150 98m-10-2 10 2-3-10 M240 38L170 98m3-10-3 10 10-2"} fill="none" stroke="var(--accent)" strokeWidth="2" />
+        <rect x={rebound ? 20 : 100} y="102" width="120" height="56" rx="12" fill="none" stroke="currentColor" />
+        <text x={rebound ? 80 : 160} y="137" fill="currentColor" fontSize="18" textAnchor="middle">Counter A: {value}</text>
+        {rebound ? <><rect x="180" y="102" width="120" height="56" rx="12" fill="none" stroke="currentColor" /><text x="240" y="137" fill="currentColor" fontSize="18" textAnchor="middle">Counter B: 9</text></> : null}
+      </svg>
       <div className="binding-choices">
         <button type="button" className="diagram-reset" onClick={() => setValue(v => v + 1)}>Increment through a</button>
         <button type="button" className="diagram-reset" disabled={rebound} onClick={() => setRebound(true)}>Rebind b to a new counter</button>

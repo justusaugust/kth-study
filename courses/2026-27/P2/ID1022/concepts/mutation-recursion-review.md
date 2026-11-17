@@ -29,7 +29,7 @@
 
 Start with [mutation and aliasing](/courses/id1022/concepts/mutation-and-aliasing). Draw one box per object and one arrow per reference. After each statement, change either a box's contents or an arrow; say which operation happened.
 
-Check yourself: two names refer to one counter initially holding 2. Increment through one name. Both now observe 3. Rebinding one name to a new counter holding 9 leaves the other observing 3. Explain why before using the interactive reference diagram below.
+Check yourself: two names refer to one counter initially holding 2. Increment through one name. Both now observe 3. Rebinding one name to a new counter holding 9 leaves the other observing 3. Explain why before using the interactive reference diagram.
 
 ## 2. Trace a recursive call
 
