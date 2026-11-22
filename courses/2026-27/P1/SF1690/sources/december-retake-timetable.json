@@ -1,0 +1,10 @@
+{
+  "id": "source:sf1690:december-retake-timetable",
+  "courseId": "course:sf1690",
+  "title": "SF1690 re-exam on the TCOMK1 timetable",
+  "kind": "schedule",
+  "url": "https://cloud.timeedit.net/kth/web/public01/",
+  "locator": "TCOMK1 subscribed TimeEdit event 1011184 checked 22 November: SF1690 re-exam 15 December, 08:00–11:00, listed room E33. The timetable does not establish a personal seat or registration.",
+  "lastChecked": "2026-11-22",
+  "confidence": "supported"
+}

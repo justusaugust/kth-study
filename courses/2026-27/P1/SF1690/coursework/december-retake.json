@@ -1,0 +1,66 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:sf1690:december-retake-register",
+      "courseId": "course:sf1690",
+      "slug": "december-retake-register",
+      "title": "December written re-exam registration closes",
+      "kind": "assignment",
+      "date": "2026-11-26",
+      "time": "23:59",
+      "requirement": "optional",
+      "sequence": 40,
+      "description": "KTH registration is open from 12 November through 26 November at 23:59 Stockholm time. Sign up in Ladok if you plan to take the re-exam.",
+      "materials": [
+        {
+          "title": "KTH registration dates",
+          "url": "https://www.kth.se/2.237/tentaperioder-1.278515"
+        },
+        {
+          "title": "Ladok for students",
+          "url": "https://www.student.ladok.se/"
+        }
+      ],
+      "assessmentIds": [
+        "assessment:sf1690:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1690:december-retake-registration"
+      ],
+      "lastChecked": "2026-11-22",
+      "confidence": "verified",
+      "relationships": []
+    },
+    {
+      "id": "coursework:sf1690:december-retake",
+      "courseId": "course:sf1690",
+      "slug": "december-retake",
+      "title": "December written re-exam",
+      "kind": "assignment",
+      "date": "2026-12-15",
+      "time": "08:00",
+      "requirement": "optional",
+      "sequence": 41,
+      "description": "The TCOMK1 timetable lists the SF1690 re-exam from 08:00 to 11:00 Stockholm time, with E33 shown as a venue. Check your assigned seat and registration in the official systems.",
+      "materials": [
+        {
+          "title": "SF1690 written exam preparation",
+          "url": "https://kth-study.vercel.app/courses/sf1690/exam"
+        },
+        {
+          "title": "KTH room E33",
+          "url": "https://www.kth.se/places/room/id/718917f0-d694-451f-97f5-ccd3ebf205b9"
+        }
+      ],
+      "assessmentIds": [
+        "assessment:sf1690:ten1"
+      ],
+      "sourceIds": [
+        "source:sf1690:december-retake-timetable"
+      ],
+      "lastChecked": "2026-11-22",
+      "confidence": "supported",
+      "relationships": []
+    }
+  ]
+}
