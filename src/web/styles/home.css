@@ -116,6 +116,29 @@
   text-decoration-color: var(--accent);
 }
 
+.home-test-prep {
+  margin-top: var(--space-10);
+}
+
+.home-test-prep .lecture-list {
+  margin-top: var(--space-4);
+}
+
+.home-test-prep .lecture-list__link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.home-test-prep time {
+  grid-column: 1 / -1;
+}
+
+.home-test-prep .lecture-list__link > span:last-child {
+  color: var(--accent);
+}
+
 /* Schedule heading ---------------------------------------------------------- */
 
 .home-page .home-week-title {

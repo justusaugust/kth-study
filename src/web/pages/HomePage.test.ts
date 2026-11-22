@@ -62,6 +62,25 @@ describe("current week", () => {
     expect(result[0].entries[0].url).toContain("#coursework-mini");
     expect(result[0].entries.some((item) => item.id === data.coursework[0].id)).toBe(true);
   });
+  it("looks ahead on Sunday and keeps both tests in a shared Monday seminar", () => {
+    const session = {
+      ...data.sessions[0], id: "session:ie1204:seminar", slug: "seminar",
+      kind: "seminar", date: "2026-11-23", time: "15:00",
+      lectureId: undefined, courseworkIds: [],
+    };
+    const tests = [
+      { ...data.coursework[0], id: "coursework:ie1204:module-3", slug: "module-3", title: "Module 3", time: undefined },
+      { ...data.coursework[0], id: "coursework:ie1204:module-4", slug: "module-4", title: "Module 4", time: "15:00" },
+    ].map((test) => ({
+      ...test, kind: "mini-exam" as const, date: session.date, sessionIds: [session.id],
+    }));
+    const [monday] = buildWeekView({ ...data, sessions: [session], coursework: tests } as DeadlinesResponse, "2026-11-22");
+    expect(monday.date).toBe("2026-11-23");
+    expect(monday.entries.filter((entry) => entry.kind === "mini-exam").map((entry) => entry.title))
+      .toEqual(["Module 4", "Module 3"]);
+    expect(monday.entries).toContainEqual(expect.objectContaining({ id: session.id, kind: "seminar" }));
+  });
+
   it("builds weekdays and includes both lectures and labs", () => {
     const days = buildWeekView(data, "2026-09-02");
 

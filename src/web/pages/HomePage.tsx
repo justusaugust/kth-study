@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import type { DeadlinesResponse } from "../../domain/api";
-import { entityUrl } from "../../domain/ids";
+import { courseCodeFromId, entityUrl } from "../../domain/ids";
 import { getDeadlines } from "../api";
 import { PageError } from "../components/PageError";
 import { QuickSearch } from "../components/QuickSearch";
@@ -24,11 +24,13 @@ type WeekDay = { date: string; entries: WeekEntry[] };
 
 const parseDate = (value: string) => new Date(`${value}T12:00:00Z`);
 const dateKey = (date: Date) => date.toISOString().slice(0, 10);
+const timeOrder = (time?: string) => time ?? "23:59";
 
 export function buildWeekView(data: DeadlinesResponse, today: string) {
   const current = parseDate(today);
   const monday = new Date(current);
-  monday.setUTCDate(current.getUTCDate() - ((current.getUTCDay() + 6) % 7));
+  const dayOfWeek = (current.getUTCDay() + 6) % 7;
+  monday.setUTCDate(current.getUTCDate() - dayOfWeek + (dayOfWeek >= 5 ? 7 : 0));
   const days: WeekDay[] = Array.from({ length: 5 }, (_, index) => {
     const date = new Date(monday);
     date.setUTCDate(monday.getUTCDate() + index);
@@ -40,13 +42,16 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
     if (day) day.entries.push(entry);
   };
 
+  const shownWithSession = new Set<string>();
   for (const session of data.sessions) {
     if (!session.date) continue;
     const course = courses.get(session.courseId)!;
-    const sameEvent = data.coursework.find((item) =>
+    const linkedTests = data.coursework.filter((item) =>
       item.date === session.date && item.kind === "mini-exam" &&
       (session.courseworkIds.includes(item.id) || item.sessionIds.includes(session.id)),
     );
+    const sameEvent = linkedTests.length === 1 ? linkedTests[0] : undefined;
+    if (sameEvent) shownWithSession.add(sameEvent.id);
     add({
       id: session.id,
       date: session.date,
@@ -60,11 +65,7 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
     });
   }
   for (const item of data.coursework) {
-    if (!item.date) continue;
-    if (item.kind === "mini-exam" && data.sessions.some((session) =>
-      session.date === item.date &&
-      (session.courseworkIds.includes(item.id) || item.sessionIds.includes(session.id)),
-    )) continue;
+    if (!item.date || shownWithSession.has(item.id)) continue;
     add({
       id: item.id,
       date: item.date,
@@ -89,9 +90,10 @@ export function buildWeekView(data: DeadlinesResponse, today: string) {
   }
   for (const day of days) {
     day.entries.sort((left, right) =>
-      `${left.time ?? "00:00"}:${left.courseCode}:${left.title}`.localeCompare(
-        `${right.time ?? "00:00"}:${right.courseCode}:${right.title}`,
-      ),
+      (left.kind === "mini-exam" ? timeOrder(left.time) : left.time ?? "00:00")
+        .localeCompare(right.kind === "mini-exam" ? timeOrder(right.time) : right.time ?? "00:00")
+      || left.courseCode.localeCompare(right.courseCode)
+      || left.title.localeCompare(right.title),
     );
   }
   return days;
@@ -161,6 +163,11 @@ export function HomePage() {
   const days = useMemo(() => data ? buildWeekView(data, today) : [], [data, today]);
   const weekEntries = days.flatMap((day) => day.entries);
   const exams = useMemo(() => data ? buildUpcomingExams(data, today) : [], [data, today]);
+  const tests = data?.coursework
+    .filter((item) => item.kind === "mini-exam" && item.date && item.date >= today
+      && days.some((day) => day.date === item.date)
+      && (item.lectureIds.length > 0 || item.conceptIds.length > 0))
+    .sort((left, right) => left.date!.localeCompare(right.date!) || timeOrder(left.time).localeCompare(timeOrder(right.time))) ?? [];
 
   useEffect(() => {
     if (days.length && !days.some((day) => day.date === activeDate)) {
@@ -176,8 +183,8 @@ export function HomePage() {
   return (
     <section className="home-page page-column" aria-labelledby="home-title">
       <header className="home-intro">
-        <p className="eyebrow">Week {weekNumber(today)} · {weekRange.format(parseDate(days[0].date))}–{weekRange.format(parseDate(days.at(-1)!.date))}</p>
-        <h1 id="home-title">{exams.length ? "Exam preparation" : "This week"}</h1>
+        <p className="eyebrow">Week {weekNumber(days[0].date)} · {weekRange.format(parseDate(days[0].date))}–{weekRange.format(parseDate(days.at(-1)!.date))}</p>
+        <h1 id="home-title">{exams.length ? "Exam preparation" : days[0].date > today ? "Next week" : "This week"}</h1>
         <p className="lead">{exams.length
           ? "Revisit the lectures, practise the methods, and prepare for the upcoming written exams."
           : "Lectures, labs, exercises, and deadlines across the current courses."}</p>
@@ -198,6 +205,23 @@ export function HomePage() {
                 </Link>
                 <Link className="home-exams__practice" to={exam.practiceUrl}>
                   Practise {exam.courseCode} questions
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {tests.length ? (
+        <section className="home-test-prep" aria-labelledby="home-test-prep-title">
+          <h2 id="home-test-prep-title">Prepare for your tests</h2>
+          <ul className="lecture-list">
+            {tests.map((test) => (
+              <li key={test.id}>
+                <Link className="lecture-list__link" to={`/practice?course=${courseCodeFromId(test.courseId)}&work=${test.slug}`}>
+                  <time dateTime={test.date}>{courseCodeFromId(test.courseId).toUpperCase()} · {examDate.format(parseDate(test.date!))}{test.time ? `, ${test.time}` : ""}</time>
+                  <span>{test.title}</span>
+                  <span aria-hidden="true">→</span>
                 </Link>
               </li>
             ))}
