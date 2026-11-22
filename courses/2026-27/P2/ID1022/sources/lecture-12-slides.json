@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:lecture-12-slides",
+  "courseId": "course:id1022",
+  "title": "ID1022 Lecture 12 slides",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/65461/files/11083124",
+  "locator": "Published deck checked 22 November. Slides 2–3 cover the retake and exam scheduling; remaining slides cover interfaces, subtyping and kinds of polymorphism.",
+  "lastChecked": "2026-11-22",
+  "confidence": "verified"
+}

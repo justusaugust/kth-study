@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-11-19-12",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-19-12",
+  "title": "Lecture 12 — Kernel, image, and composition",
+  "lastChecked": "2026-11-22",
+  "confidence": "supported",
+  "relationships": [],
+  "date": "2026-11-19",
+  "summary": "Use pivots to read a map and matrix products to follow two maps in order.",
+  "body": "This study companion follows the official Module 4 guide, sections 6.3–6.4. Find the kernel by solving $A\\mathbf x=0$. Pick image vectors from the original pivot columns. Check injectivity and surjectivity against the domain and codomain separately. For composition, trace one vector through the rightmost matrix first. For an orthogonal matrix, use transpose to reverse the transformation.",
+  "conceptIds": [
+    "concept:sf1684:kernel-image-and-composition"
+  ],
+  "sessionId": "session:sf1684:lecture-12",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-4",
+    "source:sf1684:module-4-reading-guide"
+  ]
+}

@@ -386,12 +386,15 @@
       "week": 47,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-4",
+        "source:sf1684:module-4-reading-guide"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 11 · eigenvalues and eigenvectors"
+      "title": "Lecture 11 · eigenvalues and eigenvectors",
+      "lectureId": "lecture:sf1684:2026-11-18-11"
     },
     {
       "id": "session:sf1684:exercise-07",
@@ -427,12 +430,15 @@
       "week": 47,
       "sourceIds": [
         "source:sf1684:lecture-plan",
-        "source:sf1684:timetable"
+        "source:sf1684:timetable",
+        "source:sf1684:module-4",
+        "source:sf1684:module-4-reading-guide"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 12 · kernel, image, and composition"
+      "title": "Lecture 12 · kernel, image, and composition",
+      "lectureId": "lecture:sf1684:2026-11-19-12"
     },
     {
       "id": "session:sf1684:exercise-08",

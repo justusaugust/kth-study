@@ -130,7 +130,10 @@ export async function callTool(
         .slice(0, 12),
       upcomingCoursework: [...context.corpus.coursework.values()]
         .filter((item) => item.courseId === course.id && item.date && item.date >= today)
-        .sort((left, right) => left.date!.localeCompare(right.date!))
+        .sort((left, right) =>
+          (left.date + "T" + (left.time ?? "23:59"))
+            .localeCompare(right.date + "T" + (right.time ?? "23:59")),
+        )
         .slice(0, 12)
         .map((item) => {
           const sessions = item.sessionIds.map((id) => context.corpus.sessions.get(id))

@@ -6,7 +6,7 @@
       "slug": "modules-3-4-review",
       "kind": "reading",
       "sequence": 2,
-      "title": "Modules 3\u20134 review",
+      "title": "Modules 3–4 review",
       "requirement": "recommended",
       "description": "A short route through solution sets, determinants and linear maps, with links back to the lessons and practice.",
       "materials": [],
@@ -14,9 +14,18 @@
         "concept:sf1684:modules-3-4-review",
         "concept:sf1684:solution-sets-and-independence",
         "concept:sf1684:determinants-and-volume",
-        "concept:sf1684:linear-transformations"
+        "concept:sf1684:linear-transformations",
+        "concept:sf1684:eigenvalues-and-eigenspaces",
+        "concept:sf1684:kernel-image-and-composition"
       ],
-      "lectureIds": [],
+      "lectureIds": [
+        "lecture:sf1684:2026-11-10-07",
+        "lecture:sf1684:2026-11-11-08",
+        "lecture:sf1684:2026-11-12-09",
+        "lecture:sf1684:2026-11-17-10",
+        "lecture:sf1684:2026-11-18-11",
+        "lecture:sf1684:2026-11-19-12"
+      ],
       "sessionIds": [],
       "assessmentIds": [],
       "sourceIds": [
@@ -24,7 +33,7 @@
         "source:sf1684:module-4-reading-guide",
         "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-22",
       "confidence": "supported",
       "relationships": []
     }

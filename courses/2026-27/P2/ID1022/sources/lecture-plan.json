@@ -4,7 +4,7 @@
   "title": "Autumn 2026 lecture plan",
   "kind": "canvas",
   "url": "https://canvas.kth.se/courses/65461/pages/lectures",
-  "locator": "Official lecture list checked 17 November. Slides published for ID1022 lectures 1–10. Lecture 8 row still says 11 November, conflicting with the 8 November announcement specifying Tuesday 10 November; retain announcement date.",
-  "lastChecked": "2026-11-17",
+  "locator": "Official lecture list checked 17 November. Slides published for ID1022 lectures 1–10. Lecture 8 row still says 11 November, conflicting with the 8 November announcement specifying Tuesday 10 November; retain announcement date. Also checked 22 November: Lecture 11 and Lecture 12 both have official slides; Lecture 12 covers interfaces and subtyping polymorphism.",
+  "lastChecked": "2026-11-22",
   "confidence": "verified"
 }

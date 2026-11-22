@@ -150,18 +150,20 @@
       "slug": "lecture-11",
       "kind": "lecture",
       "sequence": 11,
-      "title": "Lecture 11 · Classes and Inheritance",
+      "title": "Lecture 11 · Classes and inheritance",
       "date": "2026-11-18",
       "time": "13:00",
       "endTime": "15:00",
       "week": 47,
       "location": "E1",
       "sourceIds": [
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:lecture-11-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-18-11"
     },
     {
       "id": "session:id1022:lecture-12",
@@ -169,18 +171,20 @@
       "slug": "lecture-12",
       "kind": "lecture",
       "sequence": 12,
-      "title": "Lecture 12 · Subtyping Polymorphism",
+      "title": "Lecture 12 · Interfaces and subtyping polymorphism",
       "date": "2026-11-20",
       "time": "10:00",
       "endTime": "12:00",
       "week": 47,
       "location": "E1",
       "sourceIds": [
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:lecture-12-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-20-12"
     },
     {
       "id": "session:id1022:lecture-13",
@@ -390,6 +394,44 @@
       "relationships": [],
       "sequence": 20,
       "location": "Sing Sing, Lindstedtsvägen 30, bottom-floor open area"
+    },
+    {
+      "id": "session:id1022:week-48-help-monday",
+      "courseId": "course:id1022",
+      "slug": "week-48-help-monday",
+      "title": "Hacking session",
+      "lastChecked": "2026-11-22",
+      "confidence": "verified",
+      "relationships": [],
+      "kind": "exercise",
+      "sequence": 48,
+      "date": "2026-11-23",
+      "time": "12:00",
+      "endTime": "13:00",
+      "week": 48,
+      "location": "M1",
+      "sourceIds": [
+        "source:id1022:week-48-help"
+      ]
+    },
+    {
+      "id": "session:id1022:week-48-help-thursday",
+      "courseId": "course:id1022",
+      "slug": "week-48-help-thursday",
+      "title": "Hacking session",
+      "lastChecked": "2026-11-22",
+      "confidence": "verified",
+      "relationships": [],
+      "kind": "exercise",
+      "sequence": 49,
+      "date": "2026-11-26",
+      "time": "12:00",
+      "endTime": "13:00",
+      "week": 48,
+      "location": "Sing Sing, ground floor, Lindstedtsvägen 30",
+      "sourceIds": [
+        "source:id1022:week-48-help"
+      ]
     }
   ]
 }

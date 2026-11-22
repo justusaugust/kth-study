@@ -143,7 +143,11 @@
           "url": "https://canvas.kth.se/courses/65461/pages/important-dates"
         }
       ],
-      "lectureIds": [],
+      "lectureIds": [
+        "lecture:id1022:2026-11-16-10",
+        "lecture:id1022:2026-11-18-11",
+        "lecture:id1022:2026-11-20-12"
+      ],
       "assessmentIds": [
         "assessment:id1022:dat1"
       ],
@@ -151,7 +155,7 @@
         "source:id1022:important-dates",
         "source:id1022:course-memo"
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": []
     },
@@ -259,7 +263,7 @@
       "date": "2026-12-09",
       "time": "16:00",
       "requirement": "required",
-      "description": "Complete ProgGame, then sign up for one three-hour slot in either 14–18 December or 4–11 January. This is the sign-up deadline, not the exam date.",
+      "description": "The official cutoff is 9 December at 16:00 Stockholm time. Lecture 12 announced a separate preference form for 21–22 November. List preferred slots and explain any slot you cannot attend. Staff plan a preliminary schedule on 26 November for students who submitted the form and cracked three eggs. Students who complete ProgGame and reach at least bronze before the exam can still receive a later assignment. The form link has not been confirmed as of 22 November.",
       "materials": [
         {
           "title": "Official instructions and dates",
@@ -271,11 +275,15 @@
       ],
       "sourceIds": [
         "source:id1022:important-dates",
-        "source:id1022:course-memo"
+        "source:id1022:course-memo",
+        "source:id1022:lecture-12-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureIds": [
+        "lecture:id1022:2026-11-20-12"
+      ]
     },
     {
       "id": "coursework:id1022:easter-egg-catch-up",
@@ -329,7 +337,7 @@
       "sequence": 10,
       "title": "Second Easter-egg retake · date unannounced",
       "requirement": "scheduled",
-      "description": "Lecture 10 slides announce retake possibilities on Wednesday 18 and Friday 20 November, without an exact break time or specifying which older egg is offered. Keep this item undated until that specific second-egg arrangement is confirmed. Follow the lecturer’s live instructions.",
+      "description": "The 20 November retake was cancelled. Lecture 12 announces a retake and optional egg #4 on 25 November, but does not identify which earlier egg will be offered. Follow staff instructions for eligibility and access.",
       "materials": [
         {
           "title": "Retake and week-46 announcement",
@@ -354,9 +362,10 @@
       ],
       "sourceIds": [
         "source:id1022:week-46-announcement",
-        "source:id1022:lecture-10-slides"
+        "source:id1022:lecture-10-slides",
+        "source:id1022:lecture-12-slides"
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": []
     },
@@ -389,6 +398,40 @@
       "confidence": "supported",
       "relationships": [],
       "sequence": 11
+    },
+    {
+      "id": "coursework:id1022:easter-egg-nov25",
+      "courseId": "course:id1022",
+      "slug": "easter-egg-nov25",
+      "title": "Easter-egg retake and optional egg 4",
+      "lastChecked": "2026-11-22",
+      "confidence": "supported",
+      "relationships": [],
+      "kind": "exercise",
+      "sequence": 12,
+      "date": "2026-11-25",
+      "week": 48,
+      "requirement": "optional",
+      "description": "Lecture 12 announced a Wednesday retake and optional egg #4. The scheduled lecture runs 13:00–15:00 in E1. Staff have not specified an exact retake minute, which earlier egg will be offered, or individual eligibility. The Waterfall checkpoint is separate and is due at 09:00.",
+      "sessionIds": [
+        "session:id1022:lecture-14"
+      ],
+      "lectureIds": [
+        "lecture:id1022:2026-11-20-12"
+      ],
+      "conceptIds": [
+        "concept:id1022:easter-eggs-and-catch-up"
+      ],
+      "sourceIds": [
+        "source:id1022:lecture-12-slides",
+        "source:id1022:lecture-plan"
+      ],
+      "materials": [
+        {
+          "title": "Lecture 12 slides and retake announcement",
+          "url": "https://canvas.kth.se/courses/65461/files/11083124"
+        }
+      ]
     }
   ]
 }

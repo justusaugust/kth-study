@@ -15,9 +15,10 @@ it("lists all published II1308 quizzes with the sourced completion target, not a
   expect(schedule.undated).toEqual([]);
   for (const [index, quiz] of quizzes.entries()) {
     expect(quiz.time).toBeUndefined();
-    expect(quiz.lastChecked).toBe("2026-10-13");
+    expect(quiz.lastChecked).toBe("2026-11-22");
     expect(quiz.description).toContain("12 questions, at least 10 correct");
     expect(quiz.description).toContain("Multiple attempts");
+    expect(quiz.description).toContain("LATE indicates a score below 10");
     expect(quiz.description).toContain("not a Canvas submission cutoff");
     expect(quiz.description).toContain("fki@kth.se");
     const item = schedule.groups[0][1].find(item => item.id === quiz.id)!;

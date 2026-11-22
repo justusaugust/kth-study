@@ -5,7 +5,7 @@
   "slug": "solution-sets-and-independence",
   "title": "Solution sets and linear independence",
   "summary": "Describe every solution to a system and use homogeneous equations to test independence.",
-  "centralInsight": "An inhomogeneous solution set is a particular solution plus the nullspace.",
+  "centralInsight": "When an inhomogeneous system is consistent, its solution set is a particular solution plus the nullspace.",
   "outcomeIds": [],
   "lectureIds": [
     "lecture:sf1684:2026-11-10-07"
@@ -27,6 +27,10 @@
 Row-reduce the augmented matrix. A contradictory row makes the system inconsistent. Otherwise pivot columns constrain variables and nonpivot columns give free parameters. Count variable columns, not the augmented column, when counting unknowns.
 
 If $A\mathbf{x}=\mathbf{b}$ has one solution $\mathbf{x}_p$, every solution is $\mathbf{x}_p+\mathbf{z}$ with $A\mathbf{z}=\mathbf{0}$. Substituting verifies both directions: subtracting two particular solutions gives a homogeneous solution, and adding any homogeneous solution preserves the right-hand side.
+
+## Subspaces and span
+
+A subspace contains zero and is closed under addition and scalar multiplication. The span is the set of all linear combinations of the given vectors and is always a subspace. To check whether $b$ is in the span, put the generators in the columns of $A$ and solve $Ax=b$. For a quick counterexample to a subspace claim, try zero first, then test closure.
 
 ## Worked family
 

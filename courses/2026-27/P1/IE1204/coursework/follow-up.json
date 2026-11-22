@@ -1,0 +1,91 @@
+{
+  "coursework": [
+    {
+      "id": "coursework:ie1204:tena-january-registration",
+      "courseId": "course:ie1204",
+      "slug": "tena-january-registration",
+      "title": "January TENA retake registration closes",
+      "lastChecked": "2026-11-22",
+      "confidence": "verified",
+      "relationships": [],
+      "kind": "assignment",
+      "sequence": 30,
+      "date": "2026-12-10",
+      "description": "Registration opens 26 November and closes 10 December at 23:59 Stockholm time for KTH exam period 2. Use Ladok to confirm your registration.",
+      "requirement": "optional",
+      "materials": [
+        {
+          "title": "Official Canvas announcement",
+          "url": "https://canvas.kth.se/courses/69284/announcements/586049"
+        },
+        {
+          "title": "KTH exam registration dates",
+          "url": "https://www.kth.se/2.237/tentaperioder-1.278515"
+        }
+      ],
+      "sourceIds": [
+        "source:ie1204:january-retake",
+        "source:ie1204:exam-period-2-registration"
+      ],
+      "assessmentIds": [
+        "assessment:ie1204:tena"
+      ],
+      "time": "23:59"
+    },
+    {
+      "id": "coursework:ie1204:tena-january-retake",
+      "courseId": "course:ie1204",
+      "slug": "tena-january-retake",
+      "title": "January TENA written exam",
+      "lastChecked": "2026-11-22",
+      "confidence": "verified",
+      "relationships": [],
+      "kind": "assignment",
+      "sequence": 31,
+      "date": "2027-01-07",
+      "description": "The examiner announced the 7 January retake at 08:00–12:00 Stockholm time. Check your assigned room and registration in official systems.",
+      "requirement": "optional",
+      "materials": [
+        {
+          "title": "Official Canvas announcement",
+          "url": "https://canvas.kth.se/courses/69284/announcements/586049"
+        },
+        {
+          "title": "IE1204 written exam preparation",
+          "url": "https://kth-study.vercel.app/courses/ie1204/exam"
+        }
+      ],
+      "sourceIds": [
+        "source:ie1204:january-retake"
+      ],
+      "time": "08:00",
+      "assessmentIds": [
+        "assessment:ie1204:tena"
+      ]
+    },
+    {
+      "id": "coursework:ie1204:elab-soldering-nov24",
+      "courseId": "course:ie1204",
+      "slug": "elab-soldering-nov24",
+      "title": "Optional ELAB soldering event",
+      "lastChecked": "2026-11-22",
+      "confidence": "verified",
+      "relationships": [],
+      "kind": "exercise",
+      "sequence": 32,
+      "date": "2026-11-24",
+      "description": "Starts at 17:00 in ELAB at Teknikringen 29. The revised venue replaces Q33.",
+      "requirement": "optional",
+      "materials": [
+        {
+          "title": "Official Canvas announcement",
+          "url": "https://canvas.kth.se/courses/63848/announcements/589913"
+        }
+      ],
+      "sourceIds": [
+        "source:ie1204:elab-soldering-nov24"
+      ],
+      "time": "17:00"
+    }
+  ]
+}

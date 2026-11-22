@@ -1,0 +1,10 @@
+{
+  "id": "source:ii1308:quiz-late-status",
+  "courseId": "course:ii1308",
+  "title": "Canvas quiz status clarification",
+  "kind": "canvas",
+  "url": "https://canvas.kth.se/courses/63863/announcements/587222",
+  "locator": "The instructor says a LATE quiz status means some points were earned but the score is still below 10.",
+  "lastChecked": "2026-11-22",
+  "confidence": "verified"
+}

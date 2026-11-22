@@ -5,16 +5,17 @@
   "title": "Lecture 8 — algebraic data types and binary trees",
   "date": "2026-11-10",
   "summary": "Build tagged alternatives and recursive trees, then trace traversal, lookup and persistent insertion.",
-  "body": "Authored study companion based on the published lecture slides, checked 17 November. Work through the topic below, then attempt its self-check before opening the solution.\n\nModel alternatives with constructors, handle missing values explicitly, and recurse over binary search trees.\n\nRead the linked original slides for Pyking syntax and language comparisons.\n\nDate note: the lecture table still lists Wednesday 11 November, but the newer 8 November announcement places this ordinary lecture on Tuesday 10 November, 15–17. The Tuesday date is retained here.",
+  "body": "Authored study companion based on the published lecture slides, checked 17 November. Work through the topic below, then attempt its self-check before opening the solution.\n\nModel alternatives with constructors, handle missing values explicitly, and recurse over binary search trees.\n\nRead the linked original slides for Pyking syntax and language comparisons.\n\nDate note: the lecture table still lists Wednesday 11 November, but the newer 8 November announcement places this ordinary lecture on Tuesday 10 November, 15–17. The Tuesday date is retained here.\n\nFor a second language view, see the [official Scala examples announcement](https://canvas.kth.se/courses/65461/announcements/589438).",
   "conceptIds": [
     "concept:id1022:algebraic-data-types-and-trees"
   ],
   "sessionId": "session:id1022:lecture-08",
   "sourceIds": [
     "source:id1022:lecture-plan",
-    "source:id1022:lecture-8-slides"
+    "source:id1022:lecture-8-slides",
+    "source:id1022:lecture-8-scala"
   ],
-  "lastChecked": "2026-11-17",
+  "lastChecked": "2026-11-22",
   "confidence": "supported",
   "relationships": []
 }

@@ -41,7 +41,9 @@
     "concept:sf1684:solution-sets-and-independence",
     "concept:sf1684:determinants-and-volume",
     "concept:sf1684:linear-transformations",
-    "concept:sf1684:modules-3-4-review"
+    "concept:sf1684:modules-3-4-review",
+    "concept:sf1684:eigenvalues-and-eigenspaces",
+    "concept:sf1684:kernel-image-and-composition"
   ],
   "outcomeIds": [],
   "sourceIds": [

@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-20-12",
+  "courseId": "course:id1022",
+  "slug": "2026-11-20-12",
+  "title": "Lecture 12 — Interfaces and subtyping polymorphism",
+  "lastChecked": "2026-11-22",
+  "confidence": "supported",
+  "relationships": [],
+  "date": "2026-11-20",
+  "summary": "Compare interface-based dispatch with generics and overloaded operations.",
+  "body": "Based on the published slides. Compare subtype dispatch, generic functions and overloading. The slides also give exam logistics. See the [ID1022 milestones](/deadlines) for the preference form announcement, the Wednesday retake and the official signup cutoff.",
+  "conceptIds": [
+    "concept:id1022:interfaces-and-subtyping"
+  ],
+  "sessionId": "session:id1022:lecture-12",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-12-slides"
+  ]
+}

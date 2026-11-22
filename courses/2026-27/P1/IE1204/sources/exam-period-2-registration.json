@@ -1,0 +1,10 @@
+{
+  "id": "source:ie1204:exam-period-2-registration",
+  "courseId": "course:ie1204",
+  "title": "KTH exam period 2 registration dates",
+  "kind": "schedule",
+  "url": "https://www.kth.se/2.237/tentaperioder-1.278515",
+  "locator": "KTH lists registration for examination period 2 from 26 November through 10 December at 23:59.",
+  "lastChecked": "2026-11-22",
+  "confidence": "verified"
+}

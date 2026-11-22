@@ -319,10 +319,20 @@
         }
       ],
       "sessionIds": [
-        "session:sf1684:seminar-04"
+        "session:sf1684:seminar-04",
+        "session:sf1684:lecture-07",
+        "session:sf1684:lecture-08",
+        "session:sf1684:lecture-09"
       ],
-      "lectureIds": [],
+      "lectureIds": [
+        "lecture:sf1684:2026-11-10-07",
+        "lecture:sf1684:2026-11-11-08",
+        "lecture:sf1684:2026-11-12-09"
+      ],
       "conceptIds": [
+        "concept:sf1684:solution-sets-and-independence",
+        "concept:sf1684:determinants-and-volume",
+        "concept:sf1684:dot-and-cross-products",
         "concept:sf1684:seminar-bonus-points"
       ],
       "assessmentIds": [
@@ -334,7 +344,7 @@
         "source:sf1684:seminars",
         "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-22",
       "confidence": "supported",
       "relationships": []
     },
@@ -425,10 +435,20 @@
         }
       ],
       "sessionIds": [
-        "session:sf1684:seminar-04"
+        "session:sf1684:seminar-04",
+        "session:sf1684:lecture-10",
+        "session:sf1684:lecture-11",
+        "session:sf1684:lecture-12"
       ],
-      "lectureIds": [],
+      "lectureIds": [
+        "lecture:sf1684:2026-11-17-10",
+        "lecture:sf1684:2026-11-18-11",
+        "lecture:sf1684:2026-11-19-12"
+      ],
       "conceptIds": [
+        "concept:sf1684:linear-transformations",
+        "concept:sf1684:eigenvalues-and-eigenspaces",
+        "concept:sf1684:kernel-image-and-composition",
         "concept:sf1684:seminar-bonus-points"
       ],
       "assessmentIds": [
@@ -440,7 +460,7 @@
         "source:sf1684:seminars",
         "source:sf1684:module-3-test-rescheduled"
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-22",
       "confidence": "supported",
       "relationships": []
     },

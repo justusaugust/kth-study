@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-18-11",
+  "courseId": "course:id1022",
+  "slug": "2026-11-18-11",
+  "title": "Lecture 11 — Classes and inheritance",
+  "lastChecked": "2026-11-22",
+  "confidence": "supported",
+  "relationships": [],
+  "date": "2026-11-18",
+  "summary": "Follow a subclass from construction through its inherited and overridden methods.",
+  "body": "Based on the published slides. Trace inherited behaviour and abstract methods with the examples below.",
+  "conceptIds": [
+    "concept:id1022:inheritance-and-dispatch"
+  ],
+  "sessionId": "session:id1022:lecture-11",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-11-slides"
+  ]
+}

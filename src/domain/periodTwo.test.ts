@@ -10,7 +10,7 @@ describe("Autumn 2026 period 2", () => {
         period: "P2", credits: 7.5, startDate: "2026-10-26",
       });
       const lessons = [...corpus.lectures.values()].filter((item) => item.courseId === `course:${code}`);
-      expect(lessons).toHaveLength(10);
+      expect(lessons).toHaveLength(12);
       for (const lesson of lessons) {
         expect(corpus.sessions.get(lesson.sessionId!)?.lectureId).toBe(lesson.id);
         expect(lesson.sourceIds).toContain(`source:${code}:lecture-plan`);
@@ -33,7 +33,7 @@ describe("Autumn 2026 period 2", () => {
     });
     expect(corpus.coursework.get("coursework:id1022:easter-egg-catch-up")?.time).toBeUndefined();
     expect(corpus.coursework.get("coursework:id1022:easter-egg-second-retake")).toMatchObject({
-      requirement: "scheduled", lastChecked: "2026-11-17",
+      requirement: "scheduled", lastChecked: "2026-11-22",
     });
     expect(corpus.coursework.get("coursework:id1022:easter-egg-second-retake")?.date).toBeUndefined();
     expect(corpus.sessions.get("session:id1022:lecture-08")).toMatchObject({
@@ -63,8 +63,23 @@ describe("Autumn 2026 period 2", () => {
     }
     expect([...corpus.sessions.values()].filter(item => item.courseId === "course:sf1684" && item.kind === "lecture")).toHaveLength(21);
     expect([...corpus.sessions.values()].filter(item => item.courseId === "course:id1022" && item.kind === "lecture")).toHaveLength(21);
-    expect(corpus.coursework.get("coursework:sf1684:seminar-test-03")).toMatchObject({ date: "2026-11-23", sessionIds: ["session:sf1684:seminar-04"] });
+    expect(corpus.coursework.get("coursework:sf1684:seminar-test-03")).toMatchObject({ date: "2026-11-23", sessionIds: expect.arrayContaining(["session:sf1684:seminar-04"]) });
     expect(corpus.coursework.get("coursework:sf1684:seminar-test-03")?.time).toBeUndefined();
+    const module3 = corpus.coursework.get("coursework:sf1684:seminar-test-03")!;
+    const module4 = corpus.coursework.get("coursework:sf1684:seminar-test-04")!;
+    expect(module3.lectureIds).toEqual(["lecture:sf1684:2026-11-10-07", "lecture:sf1684:2026-11-11-08", "lecture:sf1684:2026-11-12-09"]);
+    expect(module4).toMatchObject({
+      date: "2026-11-23",
+      time: "15:00",
+      lectureIds: ["lecture:sf1684:2026-11-17-10", "lecture:sf1684:2026-11-18-11", "lecture:sf1684:2026-11-19-12"],
+    });
+    expect(module4.conceptIds).toContain("concept:sf1684:eigenvalues-and-eigenspaces");
+    expect(module3.conceptIds).not.toContain("concept:sf1684:eigenvalues-and-eigenspaces");
+    expect(corpus.coursework.get("coursework:id1022:easter-egg-nov25")).toMatchObject({
+      date: "2026-11-25",
+      requirement: "optional",
+      sessionIds: ["session:id1022:lecture-14"],
+    });
     expect(corpus.coursework.get("coursework:id1022:proggame-module-3")).toMatchObject({ date: "2026-11-18", time: "09:00" });
     for (const slug of ["recursion-and-data-structures", "algebraic-data-types-and-trees", "types-and-parametric-polymorphism", "objects-methods-and-events"]) {
       expect(corpus.courses.get("course:id1022")?.conceptIds).toContain(`concept:id1022:${slug}`);

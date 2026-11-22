@@ -10,9 +10,12 @@
       "date": "2026-10-30",
       "week": 44,
       "requirement": "required",
-      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Study Module A and its exercises first.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Study Module A and its exercises first. The instructor also clarified that LATE indicates a score below 10 despite some points earned; revisit the quiz to reach the required score.",
       "materials": [
-        { "title": "Open Quiz A in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400281" },
+        {
+          "title": "Open Quiz A in Canvas",
+          "url": "https://canvas.kth.se/courses/63863/assignments/400281"
+        },
         {
           "title": "Module A",
           "section": "Control and Variables"
@@ -33,9 +36,10 @@
       "sourceIds": [
         "source:ii1308:course-memo",
         "source:ii1308:ai-policy",
-        "source:ii1308:quiz-publication-october-13"
+        "source:ii1308:quiz-publication-october-13",
+        "source:ii1308:quiz-late-status"
       ],
-      "lastChecked": "2026-10-13",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": []
     },
@@ -49,9 +53,12 @@
       "date": "2026-10-30",
       "week": 44,
       "requirement": "required",
-      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module B functions, lists and tuples first.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module B functions, lists and tuples first. The instructor also clarified that LATE indicates a score below 10 despite some points earned; revisit the quiz to reach the required score.",
       "materials": [
-        { "title": "Open Quiz B in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400282" },
+        {
+          "title": "Open Quiz B in Canvas",
+          "url": "https://canvas.kth.se/courses/63863/assignments/400282"
+        },
         {
           "title": "Module B — functions",
           "url": "https://canvas.kth.se/courses/63863/files/10519942"
@@ -73,9 +80,10 @@
       "sourceIds": [
         "source:ii1308:course-memo",
         "source:ii1308:ai-policy",
-        "source:ii1308:quiz-publication-october-13"
+        "source:ii1308:quiz-publication-october-13",
+        "source:ii1308:quiz-late-status"
       ],
-      "lastChecked": "2026-10-13",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": []
     },
@@ -89,9 +97,12 @@
       "date": "2026-10-30",
       "week": 44,
       "requirement": "required",
-      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module C sets, dictionaries and sequence processing first.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module C sets, dictionaries and sequence processing first. The instructor also clarified that LATE indicates a score below 10 despite some points earned; revisit the quiz to reach the required score.",
       "materials": [
-        { "title": "Open Quiz C in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400283" },
+        {
+          "title": "Open Quiz C in Canvas",
+          "url": "https://canvas.kth.se/courses/63863/assignments/400283"
+        },
         {
           "title": "Module C materials in Canvas",
           "url": "https://canvas.kth.se/courses/63863/modules",
@@ -110,9 +121,10 @@
       "sourceIds": [
         "source:ii1308:course-memo",
         "source:ii1308:ai-policy",
-        "source:ii1308:quiz-publication-october-13"
+        "source:ii1308:quiz-publication-october-13",
+        "source:ii1308:quiz-late-status"
       ],
-      "lastChecked": "2026-10-13",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": []
     },
@@ -126,9 +138,12 @@
       "date": "2026-10-30",
       "week": 44,
       "requirement": "required",
-      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module D command shell, Python files and IO first.",
+      "description": "Published individual Canvas quiz: 12 questions, at least 10 correct answers required. Multiple attempts are allowed. Complete all four quizzes (A–D) by 30 October; if you finish them later, email fki@kth.se. This is the teacher's completion target, not a Canvas submission cutoff; Canvas currently lists the quizzes as undated. Review Module D command shell, Python files and IO first. The instructor also clarified that LATE indicates a score below 10 despite some points earned; revisit the quiz to reach the required score.",
       "materials": [
-        { "title": "Open Quiz D in Canvas", "url": "https://canvas.kth.se/courses/63863/assignments/400284" },
+        {
+          "title": "Open Quiz D in Canvas",
+          "url": "https://canvas.kth.se/courses/63863/assignments/400284"
+        },
         {
           "title": "Module D materials in Canvas",
           "url": "https://canvas.kth.se/courses/63863/modules",
@@ -148,9 +163,10 @@
         "source:ii1308:course-memo",
         "source:ii1308:seminar-1",
         "source:ii1308:ai-policy",
-        "source:ii1308:quiz-publication-october-13"
+        "source:ii1308:quiz-publication-october-13",
+        "source:ii1308:quiz-late-status"
       ],
-      "lastChecked": "2026-10-13",
+      "lastChecked": "2026-11-22",
       "confidence": "verified",
       "relationships": []
     }

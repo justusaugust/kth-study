@@ -15,9 +15,10 @@
     "source:id1022:week-46-announcement",
     "source:id1022:important-dates",
     "source:id1022:lecture-10-slides",
-    "source:id1022:week-47-help"
+    "source:id1022:week-47-help",
+    "source:id1022:lecture-12-slides"
   ],
-  "lastChecked": "2026-11-17",
+  "lastChecked": "2026-11-22",
   "confidence": "supported",
   "relationships": []
 }
@@ -56,3 +57,7 @@ Lecture 10's published slides announce **egg 3, focused on mutability, for Wedne
 The same slides describe five eggs, at least three required for exam eligibility, and all treasures at the desired level plus the holy code. Check the current course memo for the full requirements. Extra eggs above three are described as providing exam tips.
 
 The [17 November support announcement](https://canvas.kth.se/courses/65461/announcements/588981) lists help on **18 November 12:00–13:00 in E1** and **19 November 12:00–13:00 at Sing Sing, Lindstedtsvägen 30, bottom-floor open area**. Bring any blocked prerequisite and ask staff about the catch-up arrangements.
+
+## 25 November retake and optional egg
+
+The 20 November retake was cancelled. Lecture 12 announces a retake and optional egg #4 on Wednesday 25 November. The lecture is 13:00–15:00 in E1. The specific earlier egg and individual eligibility are still unconfirmed. The Waterfall deadline is 09:00 that morning.

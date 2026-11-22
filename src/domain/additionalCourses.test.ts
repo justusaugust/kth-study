@@ -45,9 +45,12 @@ describe("IE1204 and II1308 course dossiers", () => {
     expect(
       [...corpus.coursework.values()].filter(
         (item) =>
-          item.courseId === "course:ie1204" && item.kind === "exercise",
+          item.courseId === "course:ie1204" && item.kind === "exercise" && item.requirement !== "optional",
       ),
     ).toHaveLength(5);
+    expect(corpus.coursework.get("coursework:ie1204:elab-soldering-nov24")).toMatchObject({
+      date: "2026-11-24", time: "17:00", requirement: "optional",
+    });
     expect(corpus.coursework.get("coursework:ie1204:lab-report")).toMatchObject({
       date: "2026-10-12",
       requirement: "required",

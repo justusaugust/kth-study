@@ -1,0 +1,21 @@
+{
+  "id": "lecture:sf1684:2026-11-18-11",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-18-11",
+  "title": "Lecture 11 — Eigenvalues and eigenvectors",
+  "lastChecked": "2026-11-22",
+  "confidence": "supported",
+  "relationships": [],
+  "date": "2026-11-18",
+  "summary": "Work from the characteristic equation to a basis of each eigenspace.",
+  "body": "This study companion follows the official Module 4 guide, section 4.4 through Example 3. Solve $\\det(A-\\lambda I)=0$, then solve one homogeneous system per eigenvalue. Separate the eigenvalue (a scalar) from its eigenspace (a subspace). For a diagonal matrix, compare the algebra with the effect on the coordinate axes.",
+  "conceptIds": [
+    "concept:sf1684:eigenvalues-and-eigenspaces"
+  ],
+  "sessionId": "session:sf1684:lecture-11",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-4",
+    "source:sf1684:module-4-reading-guide"
+  ]
+}
