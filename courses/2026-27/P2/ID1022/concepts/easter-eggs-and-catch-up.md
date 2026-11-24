@@ -16,9 +16,10 @@
     "source:id1022:important-dates",
     "source:id1022:lecture-10-slides",
     "source:id1022:week-47-help",
-    "source:id1022:lecture-12-slides"
+    "source:id1022:lecture-12-slides",
+    "source:id1022:lecture-13-slides"
   ],
-  "lastChecked": "2026-11-22",
+  "lastChecked": "2026-11-24",
   "confidence": "supported",
   "relationships": []
 }
@@ -30,15 +31,15 @@ By **Friday 6 November 2026 at 09:00, Europe/Stockholm**, reach the **dock of ad
 
 The [4 November announcement](https://canvas.kth.se/courses/65461/announcements/586378) says the two Easter-egg tasks take place during the Friday lecture, between presentation segments. Reaching the corresponding place unlocks the task; it does not complete the egg. The Island of Mutation was not required for this cutoff.
 
-## Missed one or both milestones?
+## Earlier catch-up opportunities
 
-The [8 November announcement](https://canvas.kth.se/courses/65461/announcements/587096) confirms a retake **Tuesday 10 November, during the ordinary 15:00–17:00 lecture**. There is time for **one egg during an extended break**; the exact break time is not specified. The other egg will have a later opportunity, whose date is still unannounced. Try to finish the relevant game prerequisites before Tuesday's lecture.
+The [8 November announcement](https://canvas.kth.se/courses/65461/announcements/587096) confirms a retake **Tuesday 10 November, during the ordinary 15:00–17:00 lecture**. There is time for **one egg during an extended break**; the exact break time is not specified. The other egg will have a later opportunity, whose date is still unannounced. That announcement described the 10 November opportunity; use the latest dated notice below for the next retake.
 
-## Week 46 schedule and game releases
+## Earlier Week 46 schedule and releases
 
-Ordinary lectures are **Monday 9 November 10:00–12:00**, **Tuesday 10 November 15:00–17:00**, and **Friday 13 November 15:00–17:00**, Europe/Stockholm. There is also an optional **Monday 15:00–17:00 Swedish revision session**, with no new content; English-speaking students are welcome. Check KTH's timetable for rooms.
+The announced ordinary lectures were **Monday 9 November 10:00–12:00**, **Tuesday 10 November 15:00–17:00**, and **Friday 13 November 15:00–17:00**, Europe/Stockholm. There was also an optional **Monday 15:00–17:00 Swedish revision session**, with no new content; English-speaking students are welcome. Check KTH's timetable for rooms.
 
-Mutation and Recursion tasks are announced to continue **Monday 9 November**. No opening hour is given; check the live game for availability. While waiting, the teacher recommends reviewing the previous lecture, making small original programs and testing ideas in the REPL.
+Mutation and Recursion tasks were announced to continue **Monday 9 November**. No opening hour is given; check the live game for availability. While waiting, the teacher recommends reviewing the previous lecture, making small original programs and testing ideas in the REPL.
 
 ## Prepare for egg 2
 
@@ -48,9 +49,9 @@ That notice also listed a teaching-assistant hacking session on **6 November, 14
 
 ## Keep the later dates separate
 
-The [current Important Dates page](https://canvas.kth.se/courses/65461/pages/important-dates), checked 17 November, moves the next four checkpoints to Wednesdays: **18 November 09:00** (port of class), **25 November 09:00** (waterfall), **2 December 09:00** (port of flowers), and **9 December 09:00** (reef of sharks), Europe/Stockholm. The proposal remains **27 November 16:00** and exam signup **9 December 16:00**. These replace the earlier Friday checkpoint dates.
+The [current Important Dates page](https://canvas.kth.se/courses/65461/pages/important-dates), rechecked 24 November, moves the next four checkpoints to Wednesdays: **18 November 09:00** (port of class), **25 November 09:00** (waterfall), **2 December 09:00** (port of flowers), and **9 December 09:00** (reef of sharks), Europe/Stockholm. The proposal remains **27 November 16:00** and exam signup **9 December 16:00**. These replace the earlier Friday checkpoint dates.
 
-## Next lecture egg and support
+## Egg 3 and earlier support
 
 Lecture 10's published slides announce **egg 3, focused on mutability, for Wednesday 18 November's lecture**. That lecture runs 13:00–15:00 in E1 according to the lecture list. The slides also mention retake possibilities on Wednesday and Friday, without a precise break time, access code or allocation to a particular older egg. Check the lecturer's instructions; an announced opportunity does not establish your personal eligibility.
 
@@ -60,4 +61,4 @@ The [17 November support announcement](https://canvas.kth.se/courses/65461/annou
 
 ## 25 November retake and optional egg
 
-The 20 November retake was cancelled. Lecture 12 announces a retake and optional egg #4 on Wednesday 25 November. The lecture is 13:00–15:00 in E1. The specific earlier egg and individual eligibility are still unconfirmed. The Waterfall deadline is 09:00 that morning.
+The 20 November retake was cancelled. Lecture 12 announces a retake and optional egg #4 on Wednesday 25 November. The newer Lecture 13 deck identifies egg #4 as **Objects**, correcting Lecture 12’s Recursion label. The lecture is 13:00–15:00 in E1. The specific earlier egg and individual eligibility are still unconfirmed. The Waterfall deadline is 09:00 that morning.

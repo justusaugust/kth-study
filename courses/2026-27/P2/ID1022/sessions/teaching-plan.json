@@ -201,9 +201,10 @@
       "sourceIds": [
         "source:id1022:lecture-plan"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-24",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureId": "lecture:id1022:2026-11-23-13"
     },
     {
       "id": "session:id1022:lecture-14",

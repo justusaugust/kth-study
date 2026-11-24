@@ -43,7 +43,10 @@
     "concept:sf1684:linear-transformations",
     "concept:sf1684:modules-3-4-review",
     "concept:sf1684:eigenvalues-and-eigenspaces",
-    "concept:sf1684:kernel-image-and-composition"
+    "concept:sf1684:kernel-image-and-composition",
+    "concept:sf1684:bases-dimension-and-rank",
+    "concept:sf1684:projections-and-least-squares",
+    "concept:sf1684:gram-schmidt-and-orthogonal-complements"
   ],
   "outcomeIds": [],
   "sourceIds": [

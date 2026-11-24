@@ -505,10 +505,11 @@
         "source:sf1684:lecture-plan",
         "source:sf1684:timetable"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-24",
       "confidence": "verified",
       "relationships": [],
-      "title": "Lecture 13 · bases, dimension, and rank"
+      "title": "Lecture 13 · bases, dimension, and rank",
+      "lectureId": "lecture:sf1684:2026-11-24-13"
     },
     {
       "id": "session:sf1684:lecture-14",

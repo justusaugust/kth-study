@@ -1,0 +1,20 @@
+{
+  "id": "lecture:sf1684:2026-11-24-13",
+  "courseId": "course:sf1684",
+  "slug": "2026-11-24-13",
+  "title": "Lecture 13 — Bases, dimension, and rank",
+  "date": "2026-11-24",
+  "summary": "Find independent spanning sets and connect pivots, image dimension and nullity.",
+  "body": "Curriculum-backed study companion to the official Lecture 13 plan and Module 5 guide, sections 7.1–7.6. This is not a transcript or evidence of classroom delivery. Work through basis selection, original pivot columns, row-space and null-space bases, and rank-nullity. Projection, least squares and Gram–Schmidt preparation is linked in the Module 5 practice pack; their later lecture notes are not yet available.",
+  "conceptIds": [
+    "concept:sf1684:bases-dimension-and-rank"
+  ],
+  "sessionId": "session:sf1684:lecture-13",
+  "sourceIds": [
+    "source:sf1684:lecture-plan",
+    "source:sf1684:module-5-reading-guide"
+  ],
+  "lastChecked": "2026-11-24",
+  "confidence": "supported",
+  "relationships": []
+}

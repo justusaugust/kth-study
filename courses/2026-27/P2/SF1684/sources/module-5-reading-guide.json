@@ -4,7 +4,7 @@
   "title": "Module 5 reading guide and exercises",
   "kind": "lecture-material",
   "url": "https://canvas.kth.se/courses/65269/files/10687625",
-  "locator": "Reading instructions, workshop problems, recommended textbook exercises and solutions",
-  "lastChecked": "2026-11-02",
+  "locator": "Official Module 5 guide rechecked 24 November. Sections 7.1–7.9 cover bases/dimension, null/column/row spaces, rank-nullity, projections, least squares, orthogonal complements and Gram–Schmidt. Authored self-checks use new examples; raw guide and its workshop solutions remain private.",
+  "lastChecked": "2026-11-24",
   "confidence": "verified"
 }

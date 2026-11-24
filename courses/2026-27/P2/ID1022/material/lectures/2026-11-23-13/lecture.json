@@ -1,0 +1,20 @@
+{
+  "id": "lecture:id1022:2026-11-23-13",
+  "courseId": "course:id1022",
+  "slug": "2026-11-23-13",
+  "title": "Lecture 13 — LLMs, harnesses, sandboxing, and project planning",
+  "date": "2026-11-23",
+  "summary": "Separate generated suggestions from tool execution and verified results; plan the individual mini project.",
+  "body": "Authored study companion based on the published slides, checked 24 November. Follow the linked topic for context limits, prompting, permission boundaries, prompt injection and the review/test loop. The project section explains the README proposal, Git/prompt history, make dev, make test and the EXPO. The newer deck identifies the optional fourth egg on 25 November as Objects, superseding the Recursion label in Lecture 12. No exact break-opening minute is given.",
+  "conceptIds": [
+    "concept:id1022:ai-assisted-development"
+  ],
+  "sessionId": "session:id1022:lecture-13",
+  "sourceIds": [
+    "source:id1022:lecture-plan",
+    "source:id1022:lecture-13-slides"
+  ],
+  "lastChecked": "2026-11-24",
+  "confidence": "supported",
+  "relationships": []
+}

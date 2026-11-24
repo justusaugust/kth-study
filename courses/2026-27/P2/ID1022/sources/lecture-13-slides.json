@@ -1,0 +1,10 @@
+{
+  "id": "source:id1022:lecture-13-slides",
+  "courseId": "course:id1022",
+  "title": "ID1022 Lecture 13 slides",
+  "kind": "lecture-material",
+  "url": "https://canvas.kth.se/courses/65461/files/11089015",
+  "locator": "Published deck checked 24 November. LLM context and prompting, harnesses and permissions, sandboxing and prompt injection, verification, and mini-project requirements. Slide 2 corrects optional egg 4 to Objects; slides 24–26 cover the project.",
+  "lastChecked": "2026-11-24",
+  "confidence": "verified"
+}

@@ -235,7 +235,7 @@
       "date": "2026-11-27",
       "time": "16:00",
       "requirement": "required",
-      "description": "Submit the individual mini-project proposal in Canvas. Follow the course project instructions; the specific assignment URL has not yet been verified.",
+      "description": "Commit a one-to-two-page project plan as README.md in the root of the separate project-<username> repository on KTH GitHub by 27 November at 16:00. Include a summary, main requirements, optional extensions and a weeks 48–50 timeline. Record later changes of direction in README.md. Submit it through Git as specified in Lecture 13.",
       "materials": [
         {
           "title": "Official instructions and dates",
@@ -247,11 +247,15 @@
       ],
       "sourceIds": [
         "source:id1022:important-dates",
-        "source:id1022:course-memo"
+        "source:id1022:course-memo",
+        "source:id1022:lecture-13-slides"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-24",
       "confidence": "verified",
-      "relationships": []
+      "relationships": [],
+      "lectureIds": [
+        "lecture:id1022:2026-11-23-13"
+      ]
     },
     {
       "id": "coursework:id1022:exam-signup",
@@ -263,7 +267,7 @@
       "date": "2026-12-09",
       "time": "16:00",
       "requirement": "required",
-      "description": "The official cutoff is 9 December at 16:00 Stockholm time. Lecture 12 announced a separate preference form for 21–22 November. List preferred slots and explain any slot you cannot attend. Staff plan a preliminary schedule on 26 November for students who submitted the form and cracked three eggs. Students who complete ProgGame and reach at least bronze before the exam can still receive a later assignment. The form link has not been confirmed as of 22 November.",
+      "description": "The official signup cutoff is 9 December at 16:00 Stockholm time. Use the separate slot-preference form distributed by staff; preferred slots are not guaranteed and unavailable slots need a reason. Lecture 12 plans a preliminary schedule on 26 November for students who submitted the form and cracked three eggs. Completing the game and reaching at least bronze before the exam allows later allocation. Form submission and a final assigned slot are different; no personal form receipt or allocation is stored here.",
       "materials": [
         {
           "title": "Official instructions and dates",
@@ -278,7 +282,7 @@
         "source:id1022:course-memo",
         "source:id1022:lecture-12-slides"
       ],
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-24",
       "confidence": "verified",
       "relationships": [],
       "lectureIds": [
@@ -404,7 +408,7 @@
       "courseId": "course:id1022",
       "slug": "easter-egg-nov25",
       "title": "Easter-egg retake and optional egg 4",
-      "lastChecked": "2026-11-22",
+      "lastChecked": "2026-11-24",
       "confidence": "supported",
       "relationships": [],
       "kind": "exercise",
@@ -412,7 +416,7 @@
       "date": "2026-11-25",
       "week": 48,
       "requirement": "optional",
-      "description": "Lecture 12 announced a Wednesday retake and optional egg #4. The scheduled lecture runs 13:00–15:00 in E1. Staff have not specified an exact retake minute, which earlier egg will be offered, or individual eligibility. The Waterfall checkpoint is separate and is due at 09:00.",
+      "description": "Lecture 13 corrects optional egg #4 to Objects, superseding the Recursion label in Lecture 12. A retake and optional egg are announced for Wednesday 25 November, during the scheduled 13:00–15:00 E1 lecture. No exact opening minute or personal eligibility is stated. The separate Waterfall checkpoint is due at 09:00.",
       "sessionIds": [
         "session:id1022:lecture-14"
       ],
@@ -424,7 +428,8 @@
       ],
       "sourceIds": [
         "source:id1022:lecture-12-slides",
-        "source:id1022:lecture-plan"
+        "source:id1022:lecture-plan",
+        "source:id1022:lecture-13-slides"
       ],
       "materials": [
         {

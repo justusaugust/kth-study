@@ -551,10 +551,18 @@
         }
       ],
       "sessionIds": [
-        "session:sf1684:seminar-05"
+        "session:sf1684:seminar-05",
+        "session:sf1684:lecture-13",
+        "session:sf1684:lecture-14",
+        "session:sf1684:lecture-15"
       ],
-      "lectureIds": [],
+      "lectureIds": [
+        "lecture:sf1684:2026-11-24-13"
+      ],
       "conceptIds": [
+        "concept:sf1684:bases-dimension-and-rank",
+        "concept:sf1684:projections-and-least-squares",
+        "concept:sf1684:gram-schmidt-and-orthogonal-complements",
         "concept:sf1684:seminar-bonus-points"
       ],
       "assessmentIds": [
@@ -565,7 +573,7 @@
         "source:sf1684:module-5-reading-guide",
         "source:sf1684:seminars"
       ],
-      "lastChecked": "2026-11-02",
+      "lastChecked": "2026-11-24",
       "confidence": "supported",
       "relationships": []
     },

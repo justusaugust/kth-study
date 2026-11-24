@@ -10,7 +10,7 @@ describe("Autumn 2026 period 2", () => {
         period: "P2", credits: 7.5, startDate: "2026-10-26",
       });
       const lessons = [...corpus.lectures.values()].filter((item) => item.courseId === `course:${code}`);
-      expect(lessons).toHaveLength(12);
+      expect(lessons).toHaveLength(13);
       for (const lesson of lessons) {
         expect(corpus.sessions.get(lesson.sessionId!)?.lectureId).toBe(lesson.id);
         expect(lesson.sourceIds).toContain(`source:${code}:lecture-plan`);

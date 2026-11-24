@@ -9,13 +9,14 @@
       "kind": "digital-exam",
       "credits": 6,
       "compulsory": true,
-      "description": "Three hours, in person, without Internet or AI. Choose one slot in 14–18 December 2026 or 4–11 January 2027; no personal slot is recorded here. Complete ProgGame before signing up, by 9 December at 16:00. Bronze unlocks grades up to D, silver up to B, gold up to A; exam performance determines the grade. A requires at least one bronze, one silver, and one gold task passed.",
+      "description": "Three hours, in person, without Internet or AI; questions available in English and Swedish. One assigned slot in 14–18 December 2026 or 4–11 January 2027. The slot-preference form is separate from final eligibility and allocation: staff plan a preliminary schedule on 26 November for submitted forms and three cracked eggs, with later allocation after game completion and at least bronze before the exam. Official signup cutoff: 9 December at 16:00. Bronze unlocks grades up to D, silver up to B, gold up to A; exam performance determines the grade. A requires at least one bronze, one silver, and one gold task passed. Retakes can improve an existing grade without lowering it.",
       "sourceIds": [
         "source:id1022:syllabus",
         "source:id1022:course-memo",
-        "source:id1022:important-dates"
+        "source:id1022:important-dates",
+        "source:id1022:lecture-12-slides"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-11-24",
       "confidence": "verified",
       "relationships": []
     },
@@ -29,13 +30,14 @@
       "credits": 1.5,
       "compulsory": true,
       "date": "2026-12-10",
-      "description": "Pass/fail. Proposal due 27 November at 16:00. Present at the R1 reactor hall EXPO on 10 December in an assigned two-hour slot; the personal slot is not yet recorded. Follow the course rules for individual implementation, regular Git commits, and prompts in commit messages.",
+      "description": "Individual pass/fail project. Commit the one-to-two-page README proposal to the separate KTH project repository by 27 November at 16:00. Use AI tools together with hand-written code; include prompts in commit messages, commit at least every second working day and understand the code. Provide make dev and make test. Present and explain code and Git decisions at the 10 December R1 EXPO in a staff-assigned two-hour slot.",
       "sourceIds": [
         "source:id1022:syllabus",
         "source:id1022:course-memo",
-        "source:id1022:important-dates"
+        "source:id1022:important-dates",
+        "source:id1022:lecture-13-slides"
       ],
-      "lastChecked": "2026-10-28",
+      "lastChecked": "2026-11-24",
       "confidence": "verified",
       "relationships": []
     }
