@@ -1,0 +1,24 @@
+# Local evidence and retained sources do not belong in the deployment.
+.env*
+.agent/
+.claude/
+.playwright-cli/
+.playwright-mcp/
+test-results/
+playwright-report/
+blob-report/
+coverage/
+notes/
+organisation/
+inbox/
+work/
+*.log
+courses/**/material/canvas/
+courses/**/material/**/originals/
+courses/**/material/**/extracted/
+courses/**/material/**/*.pdf
+courses/**/material/**/*.zip
+courses/**/material/**/*.txt
+courses/**/material/**/*.jpg
+courses/**/material/**/*.jpeg
+courses/**/material/**/*.heic
